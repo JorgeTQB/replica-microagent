@@ -7,7 +7,7 @@ doi:10.1145/3832783.3834441. Artefacto: doi:10.5281/zenodo.19250602.
 **Fecha de las corridas:** 2026-11-20 a 2026-11-22. **Autor de la réplica:** Jorge Quispe (Universidad de Lima).
 
 - Cómo ejecutar cada fase: `README.md`.
-- Registro de decisiones: `DECISIONES.md` (D1 a D60).
+- Registro de decisiones: `DECISIONES.md` (D1 a D61).
 - Datos: `evaluation/results.csv` y `evaluation/error_analysis.md`.
 
 ---
@@ -36,14 +36,16 @@ doi:10.1145/3832783.3834441. Artefacto: doi:10.5281/zenodo.19250602.
 | LLM | DeepSeek-V3.2 (principal), GPT-5.2, Claude Sonnet 4.5; temperatura 0 | `claude-sonnet-4-6` en todas las llamadas, esfuerzo `high`, sin razonamiento extendido (`MAX_THINKING_TOKENS=0`). Claude Code envía `temperature: 1` y no permite cambiarla (D3, D4, D35) | **Cambio aprobado** |
 | Aplicaciones | 10 | JPetStore (24 clases, 1 409 LOC, 3 servicios) y PartsUnlimitedMRP (53 clases, 4 407 LOC, 5 servicios) | **Cambio aprobado** |
 | Repeticiones | 1 corrida (implícita) | Tabla principal: MicroAgent 10 corridas en JPetStore (D58) y 3 en PartsUnlimitedMRP; línea base 3 por app. Aparte: 5 repeticiones aisladas de la Etapa 4 (D41) y 6 corridas anteriores con otra versión de Claude Code (D60) | Consecuencia del cambio |
-| Llamada a herramientas | Plantilla ReAct de CrewAI | Llamada nativa por MCP; el bloque ReAct se excluye del system prompt (D28) | Consecuencia del cambio |
+| Llamada a herramientas | Plantilla ReAct de CrewAI: una herramienta por llamada al LLM; caché de llamadas idénticas y bloqueo de una llamada repetida seguida | Llamada nativa por MCP, con varias herramientas por petición; el bloque ReAct se excluye del system prompt (D28). La caché y el bloqueo de CrewAI no se reproducen; en las 2 039 llamadas a herramientas de las 19 corridas y las 5 repeticiones de la Etapa 4, ninguna repite herramienta y argumentos dentro de una misma etapa, así que no tuvieron efecto. Entre etapas sí se repiten, pero en el original cada etapa es un `Crew` con su propia caché, así que tampoco la habrían usado (D61) | Consecuencia del cambio |
 | Prompts de agentes | `agents.yaml` + `tasks.yaml` + texto de `main.py` | Mensaje de usuario idéntico carácter por carácter al que enviaba CrewAI 1.8.1, comprobado contra capturas del original (D24–D30) | Igual |
 | Herramientas | `custom_tools.py` | Copia con 2 líneas de importación cambiadas, sin tocar ningún `_run`, expuesta por un servidor MCP (D18–D21) | Igual |
-| Herramientas por agente y límite de iteraciones | `crew.py` | Las mismas listas por agente; `max_iter` → `--max-turns`, con respuesta final forzada como en CrewAI (D39) | Igual |
+| Herramientas por agente | `crew.py` | Las mismas listas por agente (D18–D21) | Igual |
+| Límite de iteraciones | `max_iter` (30/30/30/45/45): como mucho una herramienta por iteración | `--max-turns` con los mismos valores, con respuesta final forzada como en CrewAI (D39). Cuenta peticiones a la API, no herramientas: el Domain Agent de PartsUnlimitedMRP hizo 32, 37 y 48 llamadas a herramientas en las 3 corridas de la tabla, más de las 30 que permitía el original (D33, D61) | Consecuencia del cambio |
 | Contexto de JPetStore | Publicado por los autores | Reutilizado byte a byte; JPetStore fijado en el commit `a37c02f` (D6) | Igual |
 | Contexto de PartsUnlimitedMRP | No publicado | Generado con el mismo analizador y los mismos prompts; los resúmenes los escribe Claude (D7–D11) | Parcial |
-| Línea base | Prompt no publicado | Prompt reconstruido a partir de la descripción del paper (D45) | Parcial |
+| Línea base | Prompt no publicado | Prompt reconstruido a partir de la descripción del paper y de §8 de la especificación, que añade una frase permitiendo repetir clases compartidas (D45, D61) | Parcial |
 | Métricas | `json_similarity.py`, `common_metrics.py` | Los mismos scripts, importados sin modificar (D51) | Igual |
+| Dependencias de las herramientas | `uv.lock`: sentence-transformers 4.1.0, transformers 4.46.3, torch 2.7.1, scikit-learn 1.7.0 | sentence-transformers 5.6.0, transformers 5.13.0, torch 2.12.1, scikit-learn 1.8.0, fijadas en `requirements.txt`; mismo modelo `all-MiniLM-L6-v2` (revisión `1110a24`). Afecta solo a `codebase_semantic_search` (D61) | Consecuencia del entorno |
 | `common_dict` | Publicado solo para JPetStore | PartsUnlimitedMRP: reconstruido con una regla que reproduce el de JPetStore (D50) | Parcial |
 | CMod, CiD, BCP | Repositorio de Wang et al. | Fuera de alcance | Recorte |
 
@@ -77,8 +79,9 @@ configuración, y ninguna de las dos es un fallo:
 - **WS (Weighted Similarity):** cada servicio producido se compara con la partición de referencia más parecida
   (similitud = |intersección| / máx. de los tamaños), ponderando por tamaño. Se calcula en las dos direcciones y se
   combina con media armónica. Excluye las clases `uncounted`. Corresponde a `metrics_m2.weighted_average`.
-- **c2c@50/75/90:** porcentaje de servicios cuya mejor coincidencia supera el 50, 75 o 90 %. El script usa `>` y el
-  paper dice `≥`; se reporta como el script (D52). Con `≥` solo cambian dos valores de la tabla de §4:
+- **c2c@50/75/90:** porcentaje de servicios cuya mejor coincidencia supera el 50, 75 o 90 %. El script usa `>`. El
+  paper es ambiguo: su definición dice "exceeds a similarity threshold" (`>`), pero su fórmula usa `≥` (según el PDF; D52) y el ejemplo
+  dice "at least 90% similar". Se reporta como el script (D52, D61). Con `≥` solo cambian dos valores de la tabla de §4:
   - el c2c@90 de JPetStore / MicroAgent pasaría de 26,7 a 60,0 %, porque la similitud Catalog ↔ catalog es
     exactamente 0,900 en las 10 corridas;
   - el c2c@50 de PartsUnlimitedMRP / línea base pasaría de 86,7 a 93,3 %, porque uno de sus servicios tiene
@@ -155,7 +158,10 @@ con un error aproximado de ±1 punto.
 
 - **PartsUnlimitedMRP: sí.** MicroAgent queda en el mismo nivel que el paper. La ventaja es incluso mayor, porque
   la línea base de la réplica rinde 13 puntos menos que la del paper. Esa diferencia de unos 33 puntos es mucho
-  mayor que la dispersión de cualquiera de las dos configuraciones (≤ 0,8 puntos).
+  mayor que la dispersión de cualquiera de las dos configuraciones (≤ 0,8 puntos). Dos diferencias con el original
+  pueden haber influido en esta aplicación: el prompt reconstruido de la línea base permite repetir clases
+  compartidas, que es su error principal, y el Domain Agent hizo más llamadas a herramientas de las que permitía
+  `max_iter` (§8, amenazas 6 y 13).
 - **JPetStore: no.** La media de MicroAgent queda solo 1,4 puntos por encima de la línea base, y su desviación es de
   8,0 puntos, así que las dos configuraciones no se distinguen. El paper reporta una ventaja de unos 11,5 puntos. El
   mejor resultado de la réplica (92,66 %) sí coincide con el ≈ 93 % del paper, y se repitió en 4 de las 10 corridas.
@@ -332,7 +338,12 @@ uno bueno de una distribución parecida a la de la réplica.
    JPetStore. Aun así, quedó con 7 clases en lugar de 8, porque `SimpleCORSFilter` no tiene dependientes en el grafo
    (D50).
 6. **Prompt de la línea base reconstruido**, porque el artefacto no lo publica (D45). Puede explicar parte de la
-   diferencia con la línea base del paper, sobre todo en PartsUnlimitedMRP.
+   diferencia con la línea base del paper, sobre todo en PartsUnlimitedMRP. En concreto, el prompt incluye la frase
+   *"A class that is shared by several microservices may appear in more than one microservice."*, que viene de §8
+   de la especificación y no del paper. El error principal de la línea base en PartsUnlimitedMRP es justamente
+   repetir clases de dominio en varios servicios (21 a 24 clases de más por corrida, §6.4), así que esa frase puede
+   haber bajado su WS y agrandado la ventaja de MicroAgent (+33,0 frente a ≈ +20,5 en el paper). No se midió su
+   efecto (D61).
 7. **Lo que añade Claude Code a cada llamada.** Un system prompt fijo ("You are a Claude agent, built on
    Anthropic's Claude Agent SDK.") y bloques `<system-reminder>` con el entorno, la fecha y la cuenta, que suman unos
    590 tokens. No se pueden quitar desde la CLI (D4).
@@ -342,12 +353,23 @@ uno bueno de una distribución parecida a la de la réplica.
 9. **Posible contaminación de datos.** JPetStore y PartsUnlimitedMRP son repositorios públicos. Es posible que el
    modelo los haya visto durante su entrenamiento, incluidas sus versiones en microservicios, y eso podría favorecer
    sobre todo a la línea base, que recibe el código completo.
-10. **`>` frente a `≥` en c2c.** Con `≥`, el c2c@90 de JPetStore / MicroAgent sería 60,0 % en lugar de 26,7 %, y el
+10. **`>` frente a `≥` en c2c.** El paper usa las dos formas. Con `≥`, el c2c@90 de JPetStore / MicroAgent sería 60,0 % en lugar de 26,7 %, y el
     c2c@50 de la línea base de PartsUnlimitedMRP sería 93,3 % en lugar de 86,7 % (§3; D52). WS y F1 no cambian.
 11. **El F1 de clases comunes de JPetStore no discrimina.** El diccionario publicado solo evalúa una clase, así que
     da 100 % aunque haya duplicados de más.
 12. **Distinto número de corridas.** JPetStore / MicroAgent tiene 10 corridas; las demás configuraciones, 3. La
     desviación de las configuraciones con n = 3 es poco precisa.
+13. **Más llamadas a herramientas de las que permitía el original.** En CrewAI cada iteración usa como mucho una
+    herramienta, así que `max_iter = 30` limita también las llamadas a herramientas. `--max-turns` limita
+    peticiones, y Claude pide varias herramientas por petición. El Domain Agent de PartsUnlimitedMRP hizo 32, 37 y
+    48 llamadas en las 3 corridas de la tabla (43 y 51 en dos de las corridas con 2.1.327). En el original habría
+    tenido que dar su respuesta final antes, con menos resúmenes de clase leídos. No se sabe en qué dirección
+    cambia eso el resultado, pero afecta justo a la aplicación que reproduce el paper (D33, D61). En JPetStore
+    ninguna etapa pasó el límite.
+14. **Versiones de las bibliotecas de la búsqueda semántica.** `codebase_semantic_search` (Etapa 2) calcula
+    embeddings con `all-MiniLM-L6-v2` mediante sentence-transformers 5.6.0, transformers 5.13.0 y torch 2.12.1; el
+    `uv.lock` del artefacto fija 4.1.0, 4.46.3 y 2.7.1. El modelo es el mismo, pero diferencias numéricas pequeñas
+    pueden cambiar el orden de los resultados o qué clases pasan el umbral de similitud de 0,3 (D61).
 
 ---
 
@@ -355,6 +377,7 @@ uno bueno de una distribución parecida a la de la réplica.
 
 **PartsUnlimitedMRP.** La metodología de MicroAgent se sostiene. Con otro modelo y otro orquestador, los mismos
 prompts y herramientas producen una descomposición casi idéntica a la referencia, muy por encima de la línea base.
+El tamaño exacto de esa ventaja depende en parte del prompt reconstruido de la línea base (amenaza 6).
 
 **JPetStore.** MicroAgent puede alcanzar el resultado del paper (4 de 10 corridas), pero con `temperature: 1` su
 resultado medio no se distingue del de la línea base. La diferencia se explica casi por completo por la Etapa 4,

@@ -12,7 +12,7 @@ métricas) es igual al artefacto. Hay tres documentos de referencia:
 | Documento | Contenido |
 |---|---|
 | `docs/INSTRUCCIONES-REPLICA-MICROAGENT-CLAUDE-CODE.md` | especificación de la réplica (los § que cita este README) |
-| `DECISIONES.md` | registro de cada decisión y desviación (D1 a D60) |
+| `DECISIONES.md` | registro de cada decisión y desviación (D1 a D61) |
 | `docs/FASES-DEL-PROYECTO.md` | explicación de cada fase y de sus resultados |
 | `REPORTE.md` | resultados y comparación con el paper |
 

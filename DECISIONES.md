@@ -2159,3 +2159,53 @@ Se aplican en el orquestador (Fase 4); aquí solo se registran.
     anterior (97,40 %) queda 1,3 puntos por debajo del mínimo con 2.1.330 (98,68 %). Con n = 3 no hay evidencia de
     que la versión influya.
 - Se actualizaron `REPORTE.md`, `README.md` y `FASES-DEL-PROYECTO.md`. Queda resuelto lo pendiente de D58 y D59.
+
+### D61. Revisión de fidelidad de la réplica completa y correcciones al reporte (2026-11-23, pedido de Jorge)
+- **Qué se revisó:** `run_pipeline.py`, `build_prompts.py`, `mcp_server.py` y `evaluate.py` frente a `main.py`,
+  `crew.py`, `custom_tools.py` y los scripts de métricas; el paper (§4.1); las cifras de `REPORTE.md` frente a
+  `results.csv`; y CrewAI 1.8.1 (`crewai/tools/tool_usage.py`, leído de la caché de `uv` de la Fase 3). Se volvieron a
+  correr `check_microagent_untouched.py` (AVISO, el mismo de D14) y `check_prompts.py` (OK, 0 problemas). No se gastó
+  cupo de `claude`.
+- **Sin cambios en el código ni en los resultados.** Las correcciones son de documentación y de `requirements.txt`.
+- **Hallazgo 1, límite de iteraciones.** `REPORTE.md` calificaba `max_iter` → `--max-turns` como "Igual". D33 ya
+  explicaba que `--max-turns` cuenta peticiones y que Claude pide varias herramientas por petición, pero el reporte no
+  lo llevaba a las amenazas. En CrewAI cada iteración tiene como mucho una acción, así que `max_iter = 30` también
+  limita las llamadas a herramientas. Datos (`run_status.json`, `llamadas_a_herramientas` frente a `max_turns`):
+  - PartsUnlimitedMRP, Etapa 1 (Domain, límite 30): 32, 37 y 48 llamadas en `claude-run4` a `run6` (9, 9 y 11
+    peticiones); 43 y 51 en `claude-run1` y `run3` (2.1.327).
+  - Ninguna otra etapa de ninguna corrida pasa su límite en llamadas a herramientas; en JPetStore el Domain Agent
+    hace 12 a 21.
+  → `REPORTE.md` §2: la fila se separa en "Herramientas por agente" (Igual) y "Límite de iteraciones" (Consecuencia del
+  cambio, con los datos). Nueva amenaza 13 y nota en §5.
+- **Hallazgo 2, frase del prompt de la línea base.** El prompt de D45 incluye "A class that is shared by several
+  microservices may appear in more than one microservice.", tomada de §8 de la especificación; el paper no la menciona.
+  El error principal de la línea base en PartsUnlimitedMRP es repetir clases de dominio (21 a 24 de más por corrida,
+  D56), así que la frase puede haber agrandado la ventaja de MicroAgent. → Amenaza 6 ampliada, nota en §5 y en la
+  conclusión. **No se midió su efecto.** Medirlo costaría 3 corridas de la línea base sin la frase (unos USD 0,5 según
+  D48); queda a decisión de Jorge.
+- **Hallazgo 3, caché y bloqueo de llamadas repetidas de CrewAI.** CrewAI 1.8.1 (`ToolUsage`) no ejecuta una
+  herramienta si la llamada anterior tuvo el mismo nombre y argumentos (responde "I tried reusing the same input, I must
+  stop using this action input. I'll try something else instead."), y con `cache=True` (valor por defecto del agente)
+  devuelve de la caché las llamadas idénticas. La réplica no reproduce ninguna de las dos cosas. **Sin efecto en los
+  datos:** en las 2 039 llamadas registradas por el servidor MCP (19 corridas y 5 repeticiones de la Etapa 4) ninguna
+  repite herramienta y argumentos **dentro de una misma etapa**, ni seguida ni separada. Entre etapas de una misma
+  corrida sí hay 648 repeticiones (sobre todo `get_class_relation_and_code`, `get_database_summary` y
+  `get_all_class_hierarchy_complete`), pero en el original tampoco habrían usado la caché ni el bloqueo: cada etapa
+  es un `Crew` distinto (`main.py` 68, 208, 281, 369 y 458), cada `Crew` crea su propio `CacheHandler` y
+  `last_used_tool` se reinicia por tarea (`agent/core.py` 331). → Anotado en la fila "Llamada a herramientas" de §2.
+  (Acotación del alcance pedida por la revisión independiente.)
+- **Hallazgo 4, versiones de dependencias.** `requirements.txt` no fijaba versiones y las instaladas difieren del
+  `uv.lock` del artefacto: sentence-transformers 5.6.0 (original 4.1.0), transformers 5.13.0 (4.46.3), torch 2.12.1
+  (2.7.1), scikit-learn 1.8.0 (1.7.0), numpy 2.4.0 (2.2.6/2.3.0). Solo afecta a `codebase_semantic_search` (Etapa 2).
+  → `requirements.txt` fija ahora las versiones usadas y anota la revisión del modelo `all-MiniLM-L6-v2`
+  (`1110a243fdf4706b3f48f1d95db1a4f5529b4d41`, la de la caché local de Hugging Face). Nueva fila en §2 y amenaza 14.
+- **Hallazgo 5, redacción de c2c.** El paper define c2c con "exceeds a similarity threshold" (`>`) en el texto, pero
+  su fórmula usa `≥` (D52; el símbolo se lee en el PDF, no en el texto extraído) y el ejemplo dice "at least 90% similar". → §3 y amenaza 10 dicen ahora que el paper es
+  ambiguo.
+- **Comprobado sin problemas:** `custom_tools.py` solo difiere en las 2 importaciones (D18); el contexto de JPetStore es
+  idéntico byte a byte al del artefacto; `decomposition/jpetstore.json` es idéntico a `metrics/test/jpetstore_classes.json`
+  (la verdad de referencia del README del artefacto); las 53 clases de PartsUnlimitedMRP coinciden con la referencia;
+  las cifras de las tablas de `REPORTE.md` y de `GUION-PPT.md` coinciden con `results.csv`; ninguna llamada a
+  `search_file` salió de `resources/<app>/`.
+- **No verificado:** los valores leídos de la Figura 3 del paper (están en la imagen, no en el texto), y las pruebas sin
+  cupo del orquestador (exigen apartar `evaluation/references/`; no cambió el código que prueban).

@@ -2,7 +2,7 @@
 
 Este documento explica el proyecto; no es una guía de pasos. Las instrucciones están en
 `INSTRUCCIONES-REPLICA-MICROAGENT-CLAUDE-CODE.md` y el registro detallado de cada decisión en
-`replica-claude-code/DECISIONES.md` (D1 a D56). Aquí se cuenta, fase por fase, **para qué sirve**, **qué entra
+`replica-claude-code/DECISIONES.md` (D1 a D61). Aquí se cuenta, fase por fase, **para qué sirve**, **qué entra
 y qué sale (con nombres de archivo)** y **qué resultados dio**. Estado al 2026-11-22: fases 1 a 6 terminadas, y
 `replica-claude-code/REPORTE.md` y `README.md` escritos.
 
@@ -405,7 +405,14 @@ diferencias con las corridas de 2.1.330 caben en la variabilidad normal entre co
 5. **Lo que añade Claude Code** a cada llamada: un system prompt fijo y bloques con la fecha, el entorno y la
    cuenta. La tabla principal usa una sola versión de la CLI (2.1.330); con 2.1.327 quedan solo las repeticiones
    de la Etapa 4 y las corridas aparte (D60).
-6. **Prompt de la línea base reconstruido**, porque el artefacto no lo publica.
+6. **Prompt de la línea base reconstruido**, porque el artefacto no lo publica. Incluye una frase de la
+   especificación (no del paper) que permite repetir clases compartidas, y repetir clases es justo el error
+   principal de la línea base en PartsUnlimitedMRP (D61).
 7. **Posible contaminación de datos:** las dos apps son públicas y el modelo pudo haberlas visto al entrenarse.
 8. **`>` frente a `≥`** en el c2c: con `≥`, el c2c@90 de JPetStore / MicroAgent sería 60,0 % y el c2c@50 de
-   la línea base de PartsUnlimitedMRP, 93,3 % (D52, D59).
+   la línea base de PartsUnlimitedMRP, 93,3 % (D52, D59). El paper usa las dos formas.
+9. **Más llamadas a herramientas que en el original:** `--max-turns` cuenta peticiones y Claude pide varias
+   herramientas por petición. El Domain Agent de PartsUnlimitedMRP hizo 32 a 48 llamadas, más de las 30 que
+   permitía `max_iter` (D61).
+10. **Otras versiones de las bibliotecas** de la búsqueda semántica (sentence-transformers, transformers, torch)
+    que las del `uv.lock` del artefacto; ahora fijadas en `requirements.txt` (D61).

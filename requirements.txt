@@ -1,8 +1,16 @@
 # Réplica de MicroAgent con Claude Code (INSTRUCCIONES §4.1). No se instala CrewAI (shim en tools/microagent_shim.py).
-sentence-transformers>=4.1.0
-scikit-learn
-numpy
-pyyaml
-pydantic>=2
+# Versiones exactas con las que se hicieron todas las corridas (Python 3.14.0, DECISIONES.md D1 y D61).
+# El artefacto (MicroAgent/microagent/uv.lock) fija otras: sentence-transformers 4.1.0, transformers 4.46.3,
+# torch 2.7.1, scikit-learn 1.7.0 (la diferencia se reporta como amenaza a la validez en REPORTE.md).
+sentence-transformers==5.6.0
+transformers==5.13.0
+torch==2.12.1
+huggingface-hub==1.22.0
+scikit-learn==1.8.0
+numpy==2.4.0
+pyyaml==6.0.3
+pydantic==2.14.3
 # mcp 2.x renombró FastMCP a MCPServer; la especificación pide FastMCP (DECISIONES.md D19).
-mcp>=1.30,<2
+mcp==1.30.0
+# Modelo de codebase_semantic_search: sentence-transformers/all-MiniLM-L6-v2, revisión
+# 1110a243fdf4706b3f48f1d95db1a4f5529b4d41 (la que estaba en la caché de Hugging Face durante las corridas).
