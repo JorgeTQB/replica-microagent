@@ -1,0 +1,11 @@
+[2026-11-16T16:03:41-05:00] Corrida comprobacion-max-turns de jpetstore-6 (number=3, num=THREE, modelo=claude-sonnet-4-6)
+[2026-11-16T16:03:41-05:00] Contexto: 27 archivos, sha256 335b319a4ee4465c... (igual al de la primera corrida (prueba-humo-etapa1, 2026-11-16T15:57:25-05:00))
+[2026-11-16T16:03:41-05:00] --- Stage 1: Identifying Business Domains ---
+[2026-11-16T16:03:41-05:00] 
+>>> 1_domain (domain_agent; 5 herramientas; max-turns 1; prompt 2659 caracteres)
+[2026-11-16T16:04:11-05:00] 
+--- CORRIDA FALLIDA (registrar y reintentar con otro run_id, §10.4) ---
+[2026-11-16T16:04:11-05:00] Estado: fallida | fusion: no_alcanzada | llamadas a agentes: 1 | turnos: 2 | duracion: 2 s | costo nominal: USD 0.0121 | observaciones: 0
+[2026-11-16T16:04:11-05:00] Fallo en 1_domain: error_max_turns
+is_error=True; exit=1; api_error_status=None; texto: ''
+[2026-11-16T16:04:11-05:00] Registro: output\jpetstore-6\comprobacion-max-turns\logs

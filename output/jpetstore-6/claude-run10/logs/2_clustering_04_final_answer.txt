@@ -1,0 +1,42 @@
+Based on my thorough analysis of the codebase, I can now identify all domain-specific classes for the Order Management domain. Let me summarize my findings:
+
+**Core Order Management Classes:**
+
+1. **Domain Objects (Presentation/Business Layer)**:
+   - `org.mybatis.jpetstore.domain.Order` - Core order entity with shipping/billing info, payment details, status, and line items
+   - `org.mybatis.jpetstore.domain.LineItem` - Individual order line items with quantity, price, item details
+   - `org.mybatis.jpetstore.domain.Sequence` - Sequence generation for unique order IDs (exclusively used by OrderService)
+
+2. **Presentation Layer**:
+   - `org.mybatis.jpetstore.web.actions.OrderActionBean` - Handles order-related web actions (list, create, view orders)
+
+3. **Business Layer**:
+   - `org.mybatis.jpetstore.service.OrderService` - Business logic for order management (insert, retrieve, sequence generation)
+
+4. **Data Layer (Mappers)**:
+   - `org.mybatis.jpetstore.mapper.OrderMapper` - Database operations for orders
+   - `org.mybatis.jpetstore.mapper.LineItemMapper` - Database operations for line items
+   - `org.mybatis.jpetstore.mapper.SequenceMapper` - Database operations for sequence generation
+
+**Classes NOT included** (belong to other domains):
+- `AbstractActionBean` - Cross-domain support class used by all action beans
+- `Account`, `AccountMapper`, `AccountService`, `AccountActionBean` - Account Management domain
+- `Cart`, `CartItem`, `CartActionBean` - Shopping Cart domain
+- `Category`, `Product`, `Item`, `CategoryMapper`, `ProductMapper`, `ItemMapper`, `CatalogService`, `CatalogActionBean` - Catalog Management domain
+
+The `Sequence` and `SequenceMapper` are exclusively created by and used by `OrderService` for order ID generation, making them Order Management domain classes. The `ItemMapper` is used in `OrderService` for inventory deduction, but it primarily belongs to the Catalog Management domain.
+
+```json
+{
+  "Order Management": [
+    "org.mybatis.jpetstore.domain.Order",
+    "org.mybatis.jpetstore.domain.LineItem",
+    "org.mybatis.jpetstore.domain.Sequence",
+    "org.mybatis.jpetstore.service.OrderService",
+    "org.mybatis.jpetstore.web.actions.OrderActionBean",
+    "org.mybatis.jpetstore.mapper.OrderMapper",
+    "org.mybatis.jpetstore.mapper.LineItemMapper",
+    "org.mybatis.jpetstore.mapper.SequenceMapper"
+  ]
+}
+```

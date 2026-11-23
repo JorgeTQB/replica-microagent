@@ -1,0 +1,137 @@
+Analyzing Java project at paths:
+  - resources/jpetstore-6/src/main/java
+Results will be exported to JSON: logs/jpetstore_control/graph_5a81f2f.json
+Collecting user-defined classes...
+Found 24 user-defined classes
+Building class hierarchy and collecting method information...
+Resolving imports...
+Resolved imports for class relationships
+Analyzing class relationships and method calls...
+Analyzing repository relationships with entities...
+Removed 0 classes (built-in classes, framework classes, and inner classes) from the analysis
+Class Relationships:
+===================
+org.mybatis.jpetstore.domain.Category:
+  No relationships
+
+org.mybatis.jpetstore.domain.Account:
+  No relationships
+
+org.mybatis.jpetstore.service.AccountService:
+  USES -> org.mybatis.jpetstore.mapper.AccountMapper
+  USES -> org.mybatis.jpetstore.domain.Account
+  CALLS -> org.mybatis.jpetstore.domain.Account
+
+org.mybatis.jpetstore.mapper.LineItemMapper:
+  USES -> org.mybatis.jpetstore.domain.LineItem
+
+org.mybatis.jpetstore.mapper.ProductMapper:
+  USES -> org.mybatis.jpetstore.domain.Product
+
+org.mybatis.jpetstore.domain.Item:
+  USES -> org.mybatis.jpetstore.domain.Product
+
+org.mybatis.jpetstore.domain.CartItem:
+  USES -> org.mybatis.jpetstore.domain.Item
+
+org.mybatis.jpetstore.mapper.CategoryMapper:
+  USES -> org.mybatis.jpetstore.domain.Category
+
+org.mybatis.jpetstore.web.actions.CatalogActionBean:
+  EXTENDS -> org.mybatis.jpetstore.web.actions.AbstractActionBean
+  USES -> org.mybatis.jpetstore.service.CatalogService
+  USES -> org.mybatis.jpetstore.domain.Category
+  USES -> org.mybatis.jpetstore.domain.Product
+  USES -> org.mybatis.jpetstore.domain.Item
+
+org.mybatis.jpetstore.domain.Cart:
+  USES -> org.mybatis.jpetstore.domain.CartItem
+  USES -> org.mybatis.jpetstore.domain.Item
+  CALLS -> org.mybatis.jpetstore.domain.Item
+  CREATES -> org.mybatis.jpetstore.domain.CartItem
+  CALLS -> org.mybatis.jpetstore.domain.CartItem
+
+org.mybatis.jpetstore.web.actions.AccountActionBean:
+  EXTENDS -> org.mybatis.jpetstore.web.actions.AbstractActionBean
+  USES -> org.mybatis.jpetstore.service.AccountService
+  USES -> org.mybatis.jpetstore.service.CatalogService
+  USES -> org.mybatis.jpetstore.domain.Account
+  CREATES -> org.mybatis.jpetstore.domain.Account
+  USES -> org.mybatis.jpetstore.domain.Product
+
+org.mybatis.jpetstore.mapper.SequenceMapper:
+  USES -> org.mybatis.jpetstore.domain.Sequence
+
+org.mybatis.jpetstore.web.actions.CartActionBean:
+  EXTENDS -> org.mybatis.jpetstore.web.actions.AbstractActionBean
+  USES -> org.mybatis.jpetstore.service.CatalogService
+  USES -> org.mybatis.jpetstore.domain.Cart
+  CREATES -> org.mybatis.jpetstore.domain.Cart
+  USES -> org.mybatis.jpetstore.domain.Item
+  USES -> org.mybatis.jpetstore.domain.CartItem
+  CALLS -> org.mybatis.jpetstore.domain.CartItem
+
+org.mybatis.jpetstore.domain.Product:
+  No relationships
+
+org.mybatis.jpetstore.service.CatalogService:
+  USES -> org.mybatis.jpetstore.mapper.CategoryMapper
+  USES -> org.mybatis.jpetstore.mapper.ItemMapper
+  USES -> org.mybatis.jpetstore.mapper.ProductMapper
+  USES -> org.mybatis.jpetstore.domain.Category
+  USES -> org.mybatis.jpetstore.domain.Product
+  USES -> org.mybatis.jpetstore.domain.Item
+
+org.mybatis.jpetstore.mapper.OrderMapper:
+  USES -> org.mybatis.jpetstore.domain.Order
+
+org.mybatis.jpetstore.web.actions.AbstractActionBean:
+  No relationships
+
+org.mybatis.jpetstore.service.OrderService:
+  USES -> org.mybatis.jpetstore.mapper.ItemMapper
+  USES -> org.mybatis.jpetstore.mapper.OrderMapper
+  USES -> org.mybatis.jpetstore.mapper.SequenceMapper
+  USES -> org.mybatis.jpetstore.mapper.LineItemMapper
+  USES -> org.mybatis.jpetstore.domain.Order
+  CALLS -> org.mybatis.jpetstore.domain.Order
+  USES -> org.mybatis.jpetstore.domain.Item
+  CALLS -> org.mybatis.jpetstore.domain.Item
+  USES -> org.mybatis.jpetstore.domain.Sequence
+  CREATES -> org.mybatis.jpetstore.domain.Sequence
+  CALLS -> org.mybatis.jpetstore.domain.Sequence
+
+org.mybatis.jpetstore.domain.Sequence:
+  No relationships
+
+org.mybatis.jpetstore.web.actions.OrderActionBean:
+  EXTENDS -> org.mybatis.jpetstore.web.actions.AbstractActionBean
+  USES -> org.mybatis.jpetstore.service.OrderService
+  USES -> org.mybatis.jpetstore.domain.Order
+  CREATES -> org.mybatis.jpetstore.domain.Order
+  USES -> org.mybatis.jpetstore.web.actions.AccountActionBean
+  CALLS -> org.mybatis.jpetstore.web.actions.AccountActionBean
+  USES -> org.mybatis.jpetstore.web.actions.CartActionBean
+  CALLS -> org.mybatis.jpetstore.web.actions.CartActionBean
+
+org.mybatis.jpetstore.domain.Order:
+  USES -> org.mybatis.jpetstore.domain.LineItem
+  USES -> org.mybatis.jpetstore.domain.Account
+  USES -> org.mybatis.jpetstore.domain.Cart
+  CALLS -> org.mybatis.jpetstore.domain.Account
+  CALLS -> org.mybatis.jpetstore.domain.Cart
+  USES -> org.mybatis.jpetstore.domain.CartItem
+  CREATES -> org.mybatis.jpetstore.domain.LineItem
+
+org.mybatis.jpetstore.mapper.AccountMapper:
+  USES -> org.mybatis.jpetstore.domain.Account
+
+org.mybatis.jpetstore.domain.LineItem:
+  USES -> org.mybatis.jpetstore.domain.Item
+  USES -> org.mybatis.jpetstore.domain.CartItem
+  CALLS -> org.mybatis.jpetstore.domain.CartItem
+
+org.mybatis.jpetstore.mapper.ItemMapper:
+  USES -> org.mybatis.jpetstore.domain.Item
+
+Relationships exported to: logs/jpetstore_control/graph_5a81f2f.json

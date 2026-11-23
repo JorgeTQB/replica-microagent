@@ -1,0 +1,50 @@
+
+Current Task: You are analyzing the 'Product Catalog' domain. The description of this domain is: This domain manages the catalog of products/items available for quoting and ordering. It is responsible for maintaining product master data, including product identifiers (SKU numbers), descriptions, pricing, inventory levels, and lead times. The catalog serves as the reference product data used when building quotes. Core capabilities include retrieving the full catalog listing, looking up individual catalog items by SKU, adding new catalog items, updating existing items, and removing items from the catalog. The domain exposes a RESTful API under the '/catalog' path and uses both MongoDB-backed and in-memory persistence implementations. The CatalogItems database table is the primary data store for this domain.
+
+Summary of all business domains:
+
+1. Product Catalog: This domain manages the catalog of products/items available for quoting and ordering. It is responsible for maintaining product master data, including product identifiers (SKU numbers), descriptions, pricing, inventory levels, and lead times. The catalog serves as the reference product data used when building quotes. Core capabilities include retrieving the full catalog listing, looking up individual catalog items by SKU, adding new catalog items, updating existing items, and removing items from the catalog. The domain exposes a RESTful API under the '/catalog' path and uses both MongoDB-backed and in-memory persistence implementations. The CatalogItems database table is the primary data store for this domain.
+2. Dealer Management: This domain manages the dealers (suppliers/partners) in the ordering system. It maintains dealer profiles including dealer name, primary contact name, address, email, and phone number. Dealers are associated with quotes, linking commercial relationships to pricing agreements. Core capabilities include retrieving all dealers, looking up a dealer by name, adding new dealers, updating dealer information, and removing dealers. The domain exposes a RESTful API under the '/dealers' path and uses both MongoDB-backed and in-memory persistence. The Dealers database table is the primary data store. Dealer information is referenced by the Quote domain when creating or validating quotes.
+3. Quote Management: This domain handles the creation and management of customer price quotes. A quote represents a formal pricing offer to a customer, associated with a specific dealer, containing one or more quoted line items (referencing catalog SKU numbers with amounts), pricing information (total cost, discount), validity period, and delivery location details (city, state, postal code). Core business capabilities include creating new quotes, retrieving quotes by ID or by customer name, updating quote details, and deleting quotes. The Quote domain also supports querying quotes by dealer name. It depends on the Dealer domain for dealer validation and the Product Catalog domain for item references. The Quotes and QuoteAdditionalItemRecord database tables form the data boundary for this domain. The domain exposes its API under the '/quotes' path.
+4. Order Management: This domain manages the lifecycle of customer orders, which are created from approved quotes. An order tracks the transition from a quote to a fulfillment action, maintaining status (e.g., Created, Fulfilled, Cancelled) and a chronological event log of activities with comments and timestamps. Core business capabilities include creating an order from a quote, retrieving orders by ID or by dealer name, updating order details, updating order status with associated event notes, logging order events, and deleting orders. The domain owns the Orders and OrderEvents database tables. Order status is a key concept shared across this domain and the Shipment domain. The domain exposes its REST API under the '/orders' path and depends on the Quote domain to validate the referenced quote when creating an order.
+5. Shipment and Delivery: This domain is responsible for managing the physical fulfillment and delivery of orders. It tracks shipment records linked to orders, including delivery date, delivery address (street, city, state, postal code, special instructions), primary and alternate contact person information (name and phone numbers with type/kind), and a shipment event log for tracking the progression of delivery activities. The domain also supports retrieving completed deliveries with the full context of the associated quote and order. Core capabilities include creating shipment records for orders, retrieving shipment records by order ID or by order status, updating shipment details, adding shipment tracking events, and querying all deliveries. The domain owns the ShipmentRecords, ShipmentEventInfo, DeliveryAddress, and PhoneInfo database tables and exposes its API under the '/shipments' path. It depends on the Order domain to validate referenced orders and retrieve order status context.
+
+You are responsible for analyzing ONLY your assigned domain, but understanding the boundaries between domains is important for proper classification.
+
+For the given business domain, your task is to identify ALL of its domain-specific classes, and try to aggregate them by layer (e.g., Presentation, Business, Data, Support, Domain Objects, Other Domain Related Classes etc.).
+Provide the output containing the aggregated class lists for the domain provided.
+# Critical Rules
+1. Include ALL domain-specific classes exclusively belonging to the domain.
+2. Focus ONLY on the CURRENT domain. DO NOT cross the context boundary and include classes of OTHER business domains!
+# Problem Solving Strategy
+1. Understand the problem deeply. Carefully read the issue and think critically about what is required.
+2. Develop a clear, step-by-step plan. Break down the problem into manageable, incremental, and hierarchical steps to investigate and solve the problem.
+3. Reflect and validate comprehensively. After obtaining an initial answer, think about the original intent, and ask yourself whether the answer is absolutely correct.
+# Tool Utilization Guidance
+1. At the beginning, use BOTH get_all_class_hierarchy_complete AND get_database_summary tools to get an overview of the application. Then investigate the code information by using other tools. Explore relevant files, search for classes, inspect the code carefully and gather context.
+2. Use BOTH codebase_semantic_search and get_related_class_list to get more comprehensive results. BUT you should note that they may contain classes that do not belong to the current domain, you should carefully consider and exclude them. Tool codebase_semantic_search can help you get classes that are POSSIBLY semantically related; Tool get_related_class_list can help you get classes that are POSSIBLY dependency related to the list of classes you provided. 
+3. IMPORTANT: You MUST make FULL use of all the tools provided! Do not draw to any conclusions before you make sure with tools, especially checking the dependency and source code to ensure accuracy. Note that the provided dependency information is not absolutely accurate, you should still carefully consider and analyze the source code to decide.
+
+
+This is the expected criteria for your final answer: 
+A JSON object containing the clustering class list for the 'Product Catalog' domain.
+The JSON MUST follow this EXACT structure with proper commas between elements:
+{
+  "Product Catalog": [
+    "org.example.Class1",
+    "org.example.Class2",
+    "org.example.Class3"
+  ]
+}
+
+DO NOT nest the classes under categories like "Domain Objects", "Presentation Layer", etc.
+Just provide a flat array of class names under the domain name key.
+
+Ensure all JSON elements have proper commas between them.
+Your final answer MUST be ONLY the JSON object, with no other text, commentary, or explanation.
+
+you MUST return the actual complete content as the final answer, not a summary.
+
+Begin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!
+
+Thought:

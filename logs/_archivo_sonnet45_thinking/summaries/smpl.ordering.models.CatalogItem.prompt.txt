@@ -1,0 +1,114 @@
+    Analyze the following Java code and for each class or interface, provide a concise and comprehensive summary of the class:
+    1. purpose of the class.
+    2. key methods and their functions.
+    3. any other important information.
+    These information should all be presented in "summary" entry.
+    
+    Note:
+    -If the class contains a summary in the comment, you should fully utilize it and complement if needed.
+    -If there are multiple classes in a file, you should separately summarize them; but if a class contains inner class(es), you only need to generate an entry for the outer class and summarize both the inner and outer classes.
+
+    Format your response as a JSON object where keys are complete class names and values are the summaries and paths:
+    
+    {
+        "package.ClassName1": {"summary": "Summary of class1", "file_path": "path/to/file.java"},
+        "package.ClassName2": {"summary": "Summary of class2", "file_path": "path/to/file.java"}
+    }
+    
+    Here's the Java code:
+    
+    package smpl.ordering.models;
+
+import smpl.ordering.Utility;
+
+/**
+ * Represents an catalog item item description
+ */
+public class CatalogItem
+{
+    private String skuNumber;
+    private String description;
+    private double price;
+    private int inventory;
+    private int leadTime;
+
+    public CatalogItem()
+    {
+    }
+
+    public CatalogItem(String skuNumber, String description, double price, int inventory, int leadTime)
+    {
+        this.skuNumber = skuNumber;
+        this.description = description;
+        this.price = price;
+        this.inventory = inventory;
+        this.leadTime = leadTime;
+    }
+
+    public CatalogItem(CatalogItem catalogItem)
+    {
+        this.skuNumber = catalogItem.getSkuNumber();
+        this.description = catalogItem.getDescription();
+        this.price = catalogItem.getPrice();
+        this.inventory = catalogItem.getInventory();
+        this.leadTime  = catalogItem.getLeadTime();
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+
+    public double getPrice()
+    {
+        return price;
+    }
+
+    public void setPrice(double price)
+    {
+        this.price = price;
+    }
+
+    public String getSkuNumber()
+    {
+        return skuNumber;
+    }
+
+    public void setSkuNumber(String skuNumber)
+    {
+        this.skuNumber = skuNumber;
+    }
+
+    public int getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
+    }
+
+    public int getLeadTime() {
+        return leadTime;
+    }
+
+    public void setLeadTime(int leadTime) {
+        this.leadTime = leadTime;
+    }
+
+    public String validate()
+    {
+        int count = 0;
+        StringBuilder errors = new StringBuilder("{\"errors\": [");
+        count = Utility.validateStringField(skuNumber, "SKU #", count, errors);
+        count = Utility.validateStringField(description, "description", count, errors);
+        errors.append("]}");
+
+        return (count > 0) ? errors.toString() : null;
+    }
+
+}

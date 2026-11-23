@@ -1,0 +1,440 @@
+{
+ "app": "partsunlimited",
+ "run_id": "baseline-run3",
+ "configuracion": "baseline",
+ "number": "5",
+ "modelo_pedido": "claude-sonnet-4-6",
+ "simulado": false,
+ "fecha": "2026-11-21T22:09:00-05:00",
+ "argv": [
+  "run_baseline.py",
+  "--app",
+  "partsunlimited",
+  "--run-id",
+  "baseline-run3"
+ ],
+ "claude_code_version": "2.1.330 (Claude Code)",
+ "claude_cmd": [
+  "C:\\Users\\jquis\\.local\\bin\\claude.EXE"
+ ],
+ "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+ "plataforma": "Windows-11-10.0.26200-SP0",
+ "entorno_de_claude": {
+  "DISABLE_AUTOUPDATER": "1",
+  "API_TIMEOUT_MS": "900000",
+  "CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1",
+  "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
+  "PYTHONDONTWRITEBYTECODE": "1",
+  "MAX_THINKING_TOKENS": "0",
+  "MCP_TIMEOUT": "300000",
+  "MCP_TOOL_TIMEOUT": "600000"
+ },
+ "esfuerzo": "high",
+ "system_prompt": "",
+ "max_turns": 1,
+ "variables_quitadas_del_entorno": [
+  "AI_AGENT",
+  "ANTHROPIC_BASE_URL",
+  "API_TIMEOUT_MS",
+  "BAGGAGE",
+  "CLAUDECODE",
+  "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+  "CLAUDE_AGENT_SDK_VERSION",
+  "CLAUDE_CODE_ACCOUNT_UUID",
+  "CLAUDE_CODE_CHILD_NOTES_DIR",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_DESKTOP_APP_VERSION",
+  "CLAUDE_CODE_DISABLE_CRON",
+  "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+  "CLAUDE_CODE_EAGER_FLUSH",
+  "CLAUDE_CODE_EMIT_STARTUP_TIMING",
+  "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+  "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+  "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_HOST_SESSION_ID",
+  "CLAUDE_CODE_HOST_SHORT_TEMP_DIRS",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_ORGANIZATION_UUID",
+  "CLAUDE_CODE_REPORT_FINDINGS",
+  "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_CODE_SIMPLE",
+  "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+  "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+  "CLAUDE_CODE_USER_EMAIL",
+  "CLAUDE_EFFORT",
+  "CLAUDE_PID",
+  "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+  "DISABLE_AUTOUPDATER",
+  "DISABLE_MICROCOMPACT",
+  "MCP_CONNECTION_NONBLOCKING",
+  "MCP_SERVER_CONNECTION_BATCH_SIZE",
+  "SENTRY-TRACE",
+  "USE_LOCAL_OAUTH",
+  "USE_STAGING_OAUTH"
+ ],
+ "variables_que_recibe_claude": [
+  "ALLUSERSPROFILE",
+  "API_TIMEOUT_MS",
+  "APPDATA",
+  "BUN_ENABLE_CRASH_REPORTING",
+  "CHOCOLATEYINSTALL",
+  "CLAUDE_CODE_DISABLE_AUTO_MEMORY",
+  "CLAUDE_CODE_DISABLE_CLAUDE_MDS",
+  "COMMONPROGRAMFILES",
+  "COMMONPROGRAMFILES(X86)",
+  "COMMONPROGRAMW6432",
+  "COMPUTERNAME",
+  "COMSPEC",
+  "COREPACK_ENABLE_AUTO_PIN",
+  "DISABLE_AUTOUPDATER",
+  "DRIVERDATA",
+  "EXEPATH",
+  "GIT_EDITOR",
+  "HOME",
+  "HOMEDRIVE",
+  "HOMEPATH",
+  "INTELLIJ IDEA",
+  "LEVEL_ZERO_V1_SDK_PATH",
+  "LOCALAPPDATA",
+  "LOGONSERVER",
+  "MAVEN_HOME",
+  "MAX_THINKING_TOKENS",
+  "MCP_TIMEOUT",
+  "MCP_TOOL_TIMEOUT",
+  "MSYSTEM",
+  "NODEFAULTCURRENTDIRECTORYINEXEPATH",
+  "NODE_USE_SYSTEM_CA",
+  "NUMBER_OF_PROCESSORS",
+  "OLDPWD",
+  "ONEDRIVE",
+  "OS",
+  "PATH",
+  "PATHEXT",
+  "PLINK_PROTOCOL",
+  "PROCESSOR_ARCHITECTURE",
+  "PROCESSOR_IDENTIFIER",
+  "PROCESSOR_LEVEL",
+  "PROCESSOR_REVISION",
+  "PROGRAMDATA",
+  "PROGRAMFILES",
+  "PROGRAMFILES(X86)",
+  "PROGRAMW6432",
+  "PSMODULEPATH",
+  "PT8HOME",
+  "PUBLIC",
+  "PWD",
+  "PYTHONDONTWRITEBYTECODE",
+  "SHELL",
+  "SHLVL",
+  "SYSTEMDRIVE",
+  "SYSTEMROOT",
+  "TEMP",
+  "TERM",
+  "TMP",
+  "USERDOMAIN",
+  "USERDOMAIN_ROAMINGPROFILE",
+  "USERNAME",
+  "USERPROFILE",
+  "VBOX_MSI_INSTALL_PATH",
+  "WINDIR",
+  "_"
+ ],
+ "prompt": {
+  "caracteres": 171341,
+  "bytes_utf8": 171341,
+  "sha256": "31230f37abefba161a9119c8f611901224a68ef1569c0f1448e5e1195352f1ab",
+  "comparacion": "igual al de baseline-run1 (2026-11-21T22:08:21-05:00)",
+  "clases": 53,
+  "archivos_incluidos_sha256": {
+   "resources/partsunlimited/src/Backend/OrderService/scripts/schema.psql": {
+    "disco": "692f5c43e501aaf9bf23f4402b13b92e99ab24d4d320b6d98139436b7e0dd819",
+    "texto": "c3d458d831f0328bfad7e9ddc7035bcbceb0c12820cdd18b2be6623c103ce838"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/AppInsightsFilter.java": {
+    "disco": "f4297d8a0738a4b1fe201196c42dce6b454d471fa22c7babdb094f8f15116485",
+    "texto": "b0ce49c5befab6640d64df60551b656a30f462063f258a09acbb95a12b7a1abc"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/BadRequestException.java": {
+    "disco": "9f8074617cac48855cfc2036d356e740327c8aee9ec7a1b6f933b949bbacacd8",
+    "texto": "dccfc7522b028eced5b2462e2bcb1d091e944fb388e6b68f2a3177d1072ab5cc"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/ConflictingRequestException.java": {
+    "disco": "69b452c0c6ac20a515bd46c2bed167a2128ee1cf19bac337491e6973c2f69352",
+    "texto": "30fd5f3bd66e9315ef2218f17aa1c996096bd2f5c986164eee229af7ee5d8523"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/MongoDBProperties.java": {
+    "disco": "c94877e2558eee4ee3b25e48af9bc56ec8dfd53b0fc6ceff28be703778395302",
+    "texto": "e244d41d111f95f4ccc8e3a164bf972223c871b8b1b147553d5cfb664da29ad1"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/OrderingConfiguration.java": {
+    "disco": "060771d1dc362a4c514dffc8c293b08ab665941eabca1a6e7d8d9ac70ba7ca64",
+    "texto": "4b1480d3098e96dccb46b2c40a1459aab9c940bbf7010b46772b8f7418971819"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/OrderingInitializer.java": {
+    "disco": "aac2b925299a7a9ff1a9c80fda689a75b13c3a512d8f51925be7cc32c42ce666",
+    "texto": "7ee1ad7401f74ade0f206a6726af9c9f428190971a123f119b0bdd2462e5ece0"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/OrderingServiceProperties.java": {
+    "disco": "d9f3175ee7322bcda51573193834d567bb101add6fa5338d1b87c5605a34b464",
+    "texto": "786c5d0662b8a4dad533d67be1c650e740fae4a15db502e79cae892729556486"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/PostgresqlProperties.java": {
+    "disco": "91fbc597c32657723b113fa6da8a606bfe4149cecc1feac73bc9edfc9b9515c9",
+    "texto": "22c417481d3cab5ca6da7f0f8abff7648007053d100e68b52c222899b8098b02"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/PropertyHelper.java": {
+    "disco": "cc8854a297004abd064628d34ab10d5954bad820cff65a4a2a376a5254a37cc7",
+    "texto": "9eca74bf9d6ab0d01cb4d8aebfbbbd6adfeea26b175ff25f60486014f541be46"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/SimpleCORSFilter.java": {
+    "disco": "723f717f6e622e7805f824e1477266d2ae6eb4371c961f55e043d8c2ba30b995",
+    "texto": "a3077e936fa2e236879ab47e398ff8b2959e6c0ef804a9cd14ff59f5fa02e070"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/TestPath.java": {
+    "disco": "52e9ea11c1c6c4da823665046e79ed9cc52efb9ecb591e7ef1e4bd53512c191a",
+    "texto": "36265ab7573f08ed45ca94605376c5def839f800d91019d5baa1e5419166562d"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/Utility.java": {
+    "disco": "b3d1f66971cc240e55512698c244000b5c557894751b7f3be9a5118fab9d8f87",
+    "texto": "828abcbb88f7eeda41f3dba19c93bbaaab69cf70925c091ab1cd5f6430a8f4a4"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/CatalogController.java": {
+    "disco": "56bd79777e5caf6f3e066cb807ec77d7adf7c0f25692272672dde54e7caf578e",
+    "texto": "dc49ff2798d13c648768c1ff7ad8933be7e10aa12d398e1a77a090a244722498"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/DealerController.java": {
+    "disco": "45f9ea40b583a626e1f77779197e938887e5b224ac488256c562e2ce04fa6c2f",
+    "texto": "5a99551b5ba3cb63e596b5dccb926ead45190d7e5f0ecfb875666ebd5937d8c7"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/OrderController.java": {
+    "disco": "65101fb45e1d69857b8f4bbd507c00e946240735ff24d2e26346f409c5639f7d",
+    "texto": "cd143bbc028f8c08e808962ca03df77517cf5dcc521182c86ee06dd86570fc63"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/PingController.java": {
+    "disco": "9329ce20b7aa52fa0ae7ed6514c7787046c1e24404be260e3380a35ff047093a",
+    "texto": "03f2119f7349c44291172c6a475b7d65952ddbbc9dd605a4e27706960937f7ff"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/QuoteController.java": {
+    "disco": "d57fe8405b66e24b2f46d7a063ec1895d9f27e5ca4154832859b604ce01c82b2",
+    "texto": "2eee889548f9e7a2cc2151d4a7cc18efc2146ec3ffc1be836e9e5c7b4c8a9e5c"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/ShipmentController.java": {
+    "disco": "0a6393227a500be1b9b21e656156b735161103b435654c370f9ce8e6d7a7342b",
+    "texto": "cca787f89929d5bf968136f39f74469269c25594565f9865ffa4f6f13fb21153"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/CatalogItem.java": {
+    "disco": "a0011139e69606d6b508ab87ecb5fca94462af663ba28b0e26549ee068c700e6",
+    "texto": "af2cb58f9ba5ffeab21ebd3cab99caf43b1773d659eae2c054bd6791bd108b92"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/DealerInfo.java": {
+    "disco": "f9993807f1c2f42902d400d886d237c36be8c812d3e51f5e5a59c4a4bcf08e39",
+    "texto": "8977badb79c53d7a162db95d7f31e789f8c24e3eddcabca254ae4476fa6fa5d0"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/Delivery.java": {
+    "disco": "35131721ceee7a8c15ff2c9c404633b107a4518ac518c8b673c89f626a039194",
+    "texto": "1b0761fc73b6b1f094cc5c4cad7a67e210304c7b445a3737997a42dc03bd5345"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/DeliveryAddress.java": {
+    "disco": "283edc91fdd7f330ececa51470042241ead61639643218383e9498dc93bd70f9",
+    "texto": "cc48153f783e68bb18a6e8a675ca2eb05e6a492efbb88f15831c0a644805f1af"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/Order.java": {
+    "disco": "d44f60abd77d22a1bedef12b3081a78deb20c440f85971fb06e93b9bdce5f6a4",
+    "texto": "bf09f1247399c234810664520d42b5c3dd14aab7bf31e33e1db9aa31ce47134f"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/OrderEventInfo.java": {
+    "disco": "28d7ee684c6a43d15e5d9b44e962d7eba39a43952d909ac243ecc12625002288",
+    "texto": "899eaed41adcc82d10e220feaa67fbdb843599841370c61df1b32a5831fb94e8"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/OrderStatus.java": {
+    "disco": "771df5172945ffb85fe581ee5d3ee36ceae9a55c11508779562e4164f839dd50",
+    "texto": "c7113ee50428846704bc3e6f556eb4fc9b76a53877fd3c0f858f906b2d82715b"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/OrderUpdateInfo.java": {
+    "disco": "98612b6af2b4f74a2b1e60cd51629117a9ce642749516f5a445598fc08217131",
+    "texto": "e00a636ae57e96d5000ef02f16079c1469798c6cabea0ba80d4907f94520a4d6"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/PhoneInfo.java": {
+    "disco": "ef5af82e4acb684c0184ab996a651a20fd5b9ea2bb0629b1bfdde5e8955d459a",
+    "texto": "60a6d62a76c2ce5d6b85a2d0be5e8f40bc7ade311631986928668cf268239d3b"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/Quote.java": {
+    "disco": "9ec6ef41eef719a439bbc82cb1bae15fa9b9aa378e12ff33e4a5102f23a4e7a5",
+    "texto": "8d2367b2918587fcea2aff699ae8621a6645f89ae3a817605a08d3b649de0a6a"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/QuoteItemInfo.java": {
+    "disco": "f9a2eeb167b89ff0689c1f426de5a5304e48c8a2434b5b9b5a05a250061130f5",
+    "texto": "abf1f1224d130f5245a92ee6256cd905d94897f4f979d08a71df3c42e54662c6"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/ShipmentEventInfo.java": {
+    "disco": "daa6ad93fdfaef76c9f3e5a202d76677edd3682b468ff76fa0a9e10562614285",
+    "texto": "b05905957235b094261c1d50180768d51f7ebc3d4a542a4511385bee7689f69b"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/ShipmentRecord.java": {
+    "disco": "e6e30c77f0d871b18a05ae4ec991a007697cc3bb85c7de675efd13c3ef8077dc",
+    "texto": "0a027dba759b6c8d871f1d0480cfa0e26c71eafc6fc1f097b4d0b9c784b3a90c"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/CatalogItemsRepository.java": {
+    "disco": "9ab6790866f051659b9da06aa1eab94d57f157b57817169310fe030da8f5c6c1",
+    "texto": "adb97d27b4bd59727bd1293d84a80ae4a41b430940aa232a69d742a8d24f28cb"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/DealersRepository.java": {
+    "disco": "ee1beb6f20721a687462f5f17cb5789929ea5518c990231c13039507cadb4ae5",
+    "texto": "356fb662be9d50b23d71ca9a25f3c699716a6753fa3ef9ecaf4df5e8ca611b16"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/OrderRepository.java": {
+    "disco": "6cc2d2c5a7c91d6925d754c561580f44f90c57fe195cf1c6d920a452b8544ac8",
+    "texto": "6aaa5c9da48befa66901e214fea5a121a89807d82f1a8f81ec2e494deacab632"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/QuoteRepository.java": {
+    "disco": "03918808b97424ffa9101169db70066609ca9d1d6efe3aaea75573f395882b27",
+    "texto": "97f26d8a07128af5f5edfc03fd67132f3bdf361ac9b556ebb74c650e4396efb8"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/RepositoryFactory.java": {
+    "disco": "8a7be13600d69b06ea2e405df2ea8357b73e8338500c3f10df9390034be5b149",
+    "texto": "faa293fc2083ca816dc539a09ecb33e67469d2e55161b0e3fc3947218e041290"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/ShipmentRepository.java": {
+    "disco": "ee998da6ec1148173ff611a31d6c8427581a7d1b5bd8789eacdaf63aef15a127",
+    "texto": "9e683d410ccfd7b0b6f281e375199a324368e9c21964cf09468136e2c72a0576"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockCatalogItemsRepository.java": {
+    "disco": "dbbac8ac000937ee8e7950e4686259058f601dff9d47e6382aec00140cac51c6",
+    "texto": "944addceb5061c93f9b72ec51bf6c05bbce2c50d7a0cb45f1ba4f87bbea7acaf"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockDealersRepository.java": {
+    "disco": "40da1f4cfc9841e4b4c054f116def05e9c9804d5fa6d3ad43acab7f31f8a97e1",
+    "texto": "73a156b98d22663a4b93f3f738527588ed43945f76dcbfa41565cc922572b498"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockOrderRepository.java": {
+    "disco": "304b308a3b38e25d99ca5679bc8e9bc1d4a5b5c460966bd8cc0295b95b338abe",
+    "texto": "87d06af875e40707ceed102d66ca34293056025f8a6c1500c179a95d68db618c"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockQuoteRepository.java": {
+    "disco": "3f46cbc35312dc34272de47e595e09a92e2d135e372bf0f7c11a87ca3bac44b7",
+    "texto": "72e6cca50d9ee344ab49bc2f1981492f89f1aac27e29c70978278a9c5ddfb1a8"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockShipmentRepository.java": {
+    "disco": "b43c392096c24bc13a67f1268e925e201ec5f323b5d904abb2ed25737f8f1208",
+    "texto": "d9369cd57eb1fe9b4fe649fd472729b676c932ce98b6b9787924b63dea8e8725"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoCatalogItemsRepository.java": {
+    "disco": "befae295257a3c39913672877d45336e24f2e97d84c03a5502995c44678d118b",
+    "texto": "3ebde1a82beeec2bddaf20fe8bbfb4c3fe06b7394d3396797a009b3618123576"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoDealersRepository.java": {
+    "disco": "79ae3e512905ff10b3d5618748bc965eb47407708a0acb242a9912af5d807edf",
+    "texto": "d3c54b5264f164e579fd8e11d487fa2b77c163c92ee2021ba885736c2b8c33f7"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoOperationsWithRetry.java": {
+    "disco": "04e055a7700036a00af53dee96454585b21edba4dc166ed7bba41651af60f1b3",
+    "texto": "e6681ed41bd715dddb610af1f93af5a39e4bc703c1a0ce1e94676da9f3493e5b"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoOrderRepository.java": {
+    "disco": "478af3a27460c9a6f25b0b20c1cece670684266a5cc022fc9b0ba31aa4e5838b",
+    "texto": "cf5497af9ca7996c94b0bca24a90f18de66b3cb311e2c8fb9c034fc278c17074"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoQuoteRepository.java": {
+    "disco": "1128a71b0095cb0861ac915959b7cac5d643846e7f0212411339513b16dacf32",
+    "texto": "dc68bc4230d5c0ed3b06a256d975eec12edd5b1beb2aeb5fc933d4b45e854f07"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoShipmentRepository.java": {
+    "disco": "92c827255748dfc8dadce0467469a4c5550e89c194bff448be45c287458ea3af",
+    "texto": "8e737b014d57f0822b14db65db0c997f5eb701beead93781f9a3b78bce7d6a21"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/CatalogItem.java": {
+    "disco": "2ff96a59e046de7a74931558cde1df975c9275d3fd73208554b3bb89d6afe9a6",
+    "texto": "42ad9808e32b8d88c117bc89e0a144a3ac02fcd91e408bb86937080c77afa970"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/Dealer.java": {
+    "disco": "14dd15d9ed6e1a5651a0ea2f49bb23b9d41ef17c8152d4d817c1d1ad72b1a039",
+    "texto": "d8800d080f0231ac5f72e641ac64b1eca69c650bfc815f0198c795fe93841899"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/OrderDetails.java": {
+    "disco": "64d021298354389135820e4e4ee1e7b11144d3dabc0971e53d75f940080791e4",
+    "texto": "91cf0ab074d7ff94166f62a527111b55c5f66589e745c506fe75575e72b1d4a1"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/QuoteDetails.java": {
+    "disco": "250936821863a4abf6ee4b0db55dde9af35a90b62148b3f44e0460fc5955461f",
+    "texto": "8cface82a4a3e2d78d917b45410572d76f037ded2cbe88c6f03282efc0a1deb8"
+   },
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/ShipmentDetails.java": {
+    "disco": "ff13940dde42580460592c18a1da7b42888969f3dafdd0814790779ca3357ab3",
+    "texto": "abea82499cf5d2b923ce08030b63aab2dcbb9dfddce0496657d52382f7d8ac0f"
+   }
+  }
+ },
+ "contexto": {
+  "comparacion": "igual al de las corridas de MicroAgent (linea base claude-run1, 2026-11-21T14:32:42-05:00)",
+  "app": "partsunlimited",
+  "digest": "086b0cab52cb8021668e1b6e21ff98e6e510df840b8adee3e6f584ccdf0f1dd6",
+  "n_files": 56,
+  "files": {
+   "context/partsunlimited/class_info_dependency.json": "b7a16a9f87ddf5ac0df83750b535c07e3cd26165bdd4fefae3eb8b90eefdf790",
+   "context/partsunlimited/class_summaries.json": "a599b54b85d6a0826f71b4f2190201647160e1f5c5675183fad5fce017d6d0e0",
+   "database/partsunlimited/sql-summary.json": "cc01470a95e6cd77ca3ddc1333c2346246bd5c91604dfaebaf6d39abd9d86aec",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/AppInsightsFilter.java": "f4297d8a0738a4b1fe201196c42dce6b454d471fa22c7babdb094f8f15116485",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/BadRequestException.java": "9f8074617cac48855cfc2036d356e740327c8aee9ec7a1b6f933b949bbacacd8",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/ConflictingRequestException.java": "69b452c0c6ac20a515bd46c2bed167a2128ee1cf19bac337491e6973c2f69352",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/MongoDBProperties.java": "c94877e2558eee4ee3b25e48af9bc56ec8dfd53b0fc6ceff28be703778395302",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/OrderingConfiguration.java": "060771d1dc362a4c514dffc8c293b08ab665941eabca1a6e7d8d9ac70ba7ca64",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/OrderingInitializer.java": "aac2b925299a7a9ff1a9c80fda689a75b13c3a512d8f51925be7cc32c42ce666",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/OrderingServiceProperties.java": "d9f3175ee7322bcda51573193834d567bb101add6fa5338d1b87c5605a34b464",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/PostgresqlProperties.java": "91fbc597c32657723b113fa6da8a606bfe4149cecc1feac73bc9edfc9b9515c9",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/PropertyHelper.java": "cc8854a297004abd064628d34ab10d5954bad820cff65a4a2a376a5254a37cc7",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/SimpleCORSFilter.java": "723f717f6e622e7805f824e1477266d2ae6eb4371c961f55e043d8c2ba30b995",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/TestPath.java": "52e9ea11c1c6c4da823665046e79ed9cc52efb9ecb591e7ef1e4bd53512c191a",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/Utility.java": "b3d1f66971cc240e55512698c244000b5c557894751b7f3be9a5118fab9d8f87",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/CatalogController.java": "56bd79777e5caf6f3e066cb807ec77d7adf7c0f25692272672dde54e7caf578e",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/DealerController.java": "45f9ea40b583a626e1f77779197e938887e5b224ac488256c562e2ce04fa6c2f",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/OrderController.java": "65101fb45e1d69857b8f4bbd507c00e946240735ff24d2e26346f409c5639f7d",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/PingController.java": "9329ce20b7aa52fa0ae7ed6514c7787046c1e24404be260e3380a35ff047093a",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/QuoteController.java": "d57fe8405b66e24b2f46d7a063ec1895d9f27e5ca4154832859b604ce01c82b2",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/controllers/ShipmentController.java": "0a6393227a500be1b9b21e656156b735161103b435654c370f9ce8e6d7a7342b",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/CatalogItem.java": "a0011139e69606d6b508ab87ecb5fca94462af663ba28b0e26549ee068c700e6",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/DealerInfo.java": "f9993807f1c2f42902d400d886d237c36be8c812d3e51f5e5a59c4a4bcf08e39",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/Delivery.java": "35131721ceee7a8c15ff2c9c404633b107a4518ac518c8b673c89f626a039194",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/DeliveryAddress.java": "283edc91fdd7f330ececa51470042241ead61639643218383e9498dc93bd70f9",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/Order.java": "d44f60abd77d22a1bedef12b3081a78deb20c440f85971fb06e93b9bdce5f6a4",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/OrderEventInfo.java": "28d7ee684c6a43d15e5d9b44e962d7eba39a43952d909ac243ecc12625002288",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/OrderStatus.java": "771df5172945ffb85fe581ee5d3ee36ceae9a55c11508779562e4164f839dd50",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/OrderUpdateInfo.java": "98612b6af2b4f74a2b1e60cd51629117a9ce642749516f5a445598fc08217131",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/PhoneInfo.java": "ef5af82e4acb684c0184ab996a651a20fd5b9ea2bb0629b1bfdde5e8955d459a",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/Quote.java": "9ec6ef41eef719a439bbc82cb1bae15fa9b9aa378e12ff33e4a5102f23a4e7a5",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/QuoteItemInfo.java": "f9a2eeb167b89ff0689c1f426de5a5304e48c8a2434b5b9b5a05a250061130f5",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/ShipmentEventInfo.java": "daa6ad93fdfaef76c9f3e5a202d76677edd3682b468ff76fa0a9e10562614285",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/models/ShipmentRecord.java": "e6e30c77f0d871b18a05ae4ec991a007697cc3bb85c7de675efd13c3ef8077dc",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/CatalogItemsRepository.java": "9ab6790866f051659b9da06aa1eab94d57f157b57817169310fe030da8f5c6c1",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/DealersRepository.java": "ee1beb6f20721a687462f5f17cb5789929ea5518c990231c13039507cadb4ae5",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/OrderRepository.java": "6cc2d2c5a7c91d6925d754c561580f44f90c57fe195cf1c6d920a452b8544ac8",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/QuoteRepository.java": "03918808b97424ffa9101169db70066609ca9d1d6efe3aaea75573f395882b27",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/RepositoryFactory.java": "8a7be13600d69b06ea2e405df2ea8357b73e8338500c3f10df9390034be5b149",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/ShipmentRepository.java": "ee998da6ec1148173ff611a31d6c8427581a7d1b5bd8789eacdaf63aef15a127",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockCatalogItemsRepository.java": "dbbac8ac000937ee8e7950e4686259058f601dff9d47e6382aec00140cac51c6",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockDealersRepository.java": "40da1f4cfc9841e4b4c054f116def05e9c9804d5fa6d3ad43acab7f31f8a97e1",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockOrderRepository.java": "304b308a3b38e25d99ca5679bc8e9bc1d4a5b5c460966bd8cc0295b95b338abe",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockQuoteRepository.java": "3f46cbc35312dc34272de47e595e09a92e2d135e372bf0f7c11a87ca3bac44b7",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mock/MockShipmentRepository.java": "b43c392096c24bc13a67f1268e925e201ec5f323b5d904abb2ed25737f8f1208",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoCatalogItemsRepository.java": "befae295257a3c39913672877d45336e24f2e97d84c03a5502995c44678d118b",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoDealersRepository.java": "79ae3e512905ff10b3d5618748bc965eb47407708a0acb242a9912af5d807edf",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoOperationsWithRetry.java": "04e055a7700036a00af53dee96454585b21edba4dc166ed7bba41651af60f1b3",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoOrderRepository.java": "478af3a27460c9a6f25b0b20c1cece670684266a5cc022fc9b0ba31aa4e5838b",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoQuoteRepository.java": "1128a71b0095cb0861ac915959b7cac5d643846e7f0212411339513b16dacf32",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/MongoShipmentRepository.java": "92c827255748dfc8dadce0467469a4c5550e89c194bff448be45c287458ea3af",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/CatalogItem.java": "2ff96a59e046de7a74931558cde1df975c9275d3fd73208554b3bb89d6afe9a6",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/Dealer.java": "14dd15d9ed6e1a5651a0ea2f49bb23b9d41ef17c8152d4d817c1d1ad72b1a039",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/OrderDetails.java": "64d021298354389135820e4e4ee1e7b11144d3dabc0971e53d75f940080791e4",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/QuoteDetails.java": "250936821863a4abf6ee4b0db55dde9af35a90b62148b3f44e0460fc5955461f",
+   "resources/partsunlimited/src/Backend/OrderService/src/main/java/smpl/ordering/repositories/mongodb/models/ShipmentDetails.java": "ff13940dde42580460592c18a1da7b42888969f3dafdd0814790779ca3357ab3"
+  }
+ },
+ "archivos_sha256": {
+  "replica-claude-code/run_baseline.py": "eaee00b03d7e0e8012be8cf679a08268f5abeee728fe9d2577e3acd105bce718",
+  "replica-claude-code/run_pipeline.py": "7db75bbb1f774f5e11d92174057092abb280087f7b6de8d475af00d414ccf108"
+ }
+}

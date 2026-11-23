@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 15138,
+  "stop_reason": "end_turn",
+  "session_id": "bab72c45-0ac7-4031-bd6a-0481eab90dea",
+  "total_cost_usd": 0.032928,
+  "usage": {
+    "input_tokens": 3,
+    "cache_creation_input_tokens": 1619,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1547,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1619,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 3,
+        "output_tokens": 1547,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1619,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1619
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 1547,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1619,
+      "webSearchRequests": 0,
+      "costUSD": 0.032928,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1619,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"schema_summary\": {\n    \"tables\": [\n      {\n        \"table_name\": \"CatalogItems\",\n        \"purpose\": \"Stores the product catalog with pricing information available for quoting and ordering.\",\n        \"columns\": [\n          \"sku_number\",\n          \"description\",\n          \"price\"\n        ],\n        \"primary_key\": [\"sku_number\"]\n      },\n      {\n        \"table_name\": \"Dealers\",\n        \"purpose\": \"Stores dealer/supplier contact and location information associated with quotes.\",\n        \"columns\": [\n          \"name\",\n          \"contact\",\n          \"address\",\n          \"email\",\n          \"phone\"\n        ],\n        \"primary_key\": [\"name\"]\n      },\n      {\n        \"table_name\": \"Quotes\",\n        \"purpose\": \"Stores customer price quotes including cost, discount, validity, and delivery location details.\",\n        \"columns\": [\n          \"quote_id\",\n          \"valid_until\",\n          \"customer_name\",\n          \"dealer_name\",\n          \"total_cost\",\n          \"discount\",\n          \"city\",\n          \"postal_code\",\n          \"state\"\n        ],\n        \"primary_key\": [\"quote_id\"],\n        \"foreign_keys\": [\n          \"dealer_name references Dealers.name\"\n        ]\n      },\n      {\n        \"table_name\": \"QuoteAdditionalItemRecord\",\n        \"purpose\": \"Stores individual line items (catalog products) associated with each quote.\",\n        \"columns\": [\n          \"id\",\n          \"quote_id\",\n          \"sku_number\",\n          \"amount\"\n        ],\n        \"primary_key\": [\"id\"],\n        \"foreign_keys\": [\n          \"quote_id references Quotes.quote_id\",\n          \"sku_number references CatalogItems.sku_number\"\n        ]\n      },\n      {\n        \"table_name\": \"Orders\",\n        \"purpose\": \"Tracks customer orders created from approved quotes, including current order status.\",\n        \"columns\": [\n          \"order_id\",\n          \"quote_id\",\n          \"order_date\",\n          \"status\"\n        ],\n        \"primary_key\": [\"order_id\"],\n        \"foreign_keys\": [\n          \"quote_id references Quotes.quote_id\"\n        ]\n      },\n      {\n        \"table_name\": \"OrderEvents\",\n        \"purpose\": \"Records a chronological event/activity log with comments for each order.\",\n        \"columns\": [\n          \"id\",\n          \"order_id\",\n          \"order_date\",\n          \"comments\"\n        ],\n        \"primary_key\": [\"id\"],\n        \"foreign_keys\": [\n          \"order_id references Orders.order_id\"\n        ]\n      },\n      {\n        \"table_name\": \"PhoneInfo\",\n        \"purpose\": \"Stores phone numbers with their type/kind classification used in shipment contact records.\",\n        \"columns\": [\n          \"phone\",\n          \"kind\"\n        ],\n        \"primary_key\": [\"phone\"]\n      },\n      {\n        \"table_name\": \"DeliveryAddress\",\n        \"purpose\": \"Stores physical delivery addresses referenced by shipment records.\",\n        \"columns\": [\n          \"id\",\n          \"street\",\n          \"city\",\n          \"state\",\n          \"postal_code\"\n        ],\n        \"primary_key\": [\"id\"]\n      },\n      {\n        \"table_name\": \"ShipmentRecords\",\n        \"purpose\": \"Stores shipment details for orders including delivery address, date, and primary/alternate contact phone numbers.\",\n        \"columns\": [\n          \"order_id\",\n          \"delivery_date\",\n          \"delivery_address\",\n          \"contact_name\",\n          \"primary_phone\",\n          \"alternate_phone\"\n        ],\n        \"primary_key\": [\"order_id\"],\n        \"foreign_keys\": [\n          \"order_id references Orders.order_id\",\n          \"delivery_address references DeliveryAddress.id\",\n          \"primary_phone references PhoneInfo.phone\",\n          \"alternate_phone references PhoneInfo.phone\"\n        ]\n      },\n      {\n        \"table_name\": \"ShipmentEventInfo\",\n        \"purpose\": \"Records a chronological shipment event log with dates and comments for each order's shipment lifecycle.\",\n        \"columns\": [\n          \"id\",\n          \"order_id\",\n          \"date\",\n          \"comments\"\n        ],\n        \"primary_key\": [\"id\"],\n        \"foreign_keys\": [\n          \"order_id references Orders.order_id\"\n        ]\n      }\n    ],\n    \"relationships\": [\n      {\n        \"source_table\": \"Quotes\",\n        \"source_field\": \"dealer_name\",\n        \"target_table\": \"Dealers\"\n      },\n      {\n        \"source_table\": \"QuoteAdditionalItemRecord\",\n        \"source_field\": \"quote_id\",\n        \"target_table\": \"Quotes\"\n      },\n      {\n        \"source_table\": \"QuoteAdditionalItemRecord\",\n        \"source_field\": \"sku_number\",\n        \"target_table\": \"CatalogItems\"\n      },\n      {\n        \"source_table\": \"Orders\",\n        \"source_field\": \"quote_id\",\n        \"target_table\": \"Quotes\"\n      },\n      {\n        \"source_table\": \"OrderEvents\",\n        \"source_field\": \"order_id\",\n        \"target_table\": \"Orders\"\n      },\n      {\n        \"source_table\": \"ShipmentRecords\",\n        \"source_field\": \"order_id\",\n        \"target_table\": \"Orders\"\n      },\n      {\n        \"source_table\": \"ShipmentRecords\",\n        \"source_field\": \"delivery_address\",\n        \"target_table\": \"DeliveryAddress\"\n      },\n      {\n        \"source_table\": \"ShipmentRecords\",\n        \"source_field\": \"primary_phone\",\n        \"target_table\": \"PhoneInfo\"\n      },\n      {\n        \"source_table\": \"ShipmentRecords\",\n        \"source_field\": \"alternate_phone\",\n        \"target_table\": \"PhoneInfo\"\n      },\n      {\n        \"source_table\": \"ShipmentEventInfo\",\n        \"source_field\": \"order_id\",\n        \"target_table\": \"Orders\"\n      }\n    ]\n  }\n}\n```",
+  "ttft_ms": 15261,
+  "type": "result",
+  "duration_ms": 15293,
+  "uuid": "4cb41f0f-9273-416c-bec7-a0575874dcca",
+  "ttft_stream_ms": 3111,
+  "time_to_request_ms": 151,
+  "first_content_frame_ms": 3111,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

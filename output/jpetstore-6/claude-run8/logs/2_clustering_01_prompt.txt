@@ -1,0 +1,49 @@
+
+Current Task: You are analyzing the 'Account Management' domain. The description of this domain is: This domain handles all aspects of user identity and account lifecycle within the application. It encompasses user registration, authentication (sign-on/sign-off), profile management, and personal preferences. The domain manages user credentials, personal contact information, and customization options such as language preference, favorite category, and banner display settings. It is responsible for validating and persisting user data across multiple related data stores (account details, signon credentials, profile preferences). This domain has a clear bounded context around user identity and personalization, with operations including creating new accounts, updating existing account information, and authenticating users against stored credentials.
+
+Summary of all business domains:
+
+1. Account Management: This domain handles all aspects of user identity and account lifecycle within the application. It encompasses user registration, authentication (sign-on/sign-off), profile management, and personal preferences. The domain manages user credentials, personal contact information, and customization options such as language preference, favorite category, and banner display settings. It is responsible for validating and persisting user data across multiple related data stores (account details, signon credentials, profile preferences). This domain has a clear bounded context around user identity and personalization, with operations including creating new accounts, updating existing account information, and authenticating users against stored credentials.
+2. Catalog: This domain manages the product catalog that users browse when shopping. It covers the hierarchical organization of merchandise into categories, products within those categories, and specific items (SKUs) with associated pricing, supplier details, attributes, and inventory status. The domain provides capabilities to browse categories, view products within a category, search for products by keywords, view specific item details, and check item availability in stock. Inventory tracking is also part of this domain, as it determines whether items are available for purchase. The catalog domain serves as the primary product information repository that other domains (such as cart and order) reference when dealing with specific items.
+3. Shopping Cart: This domain manages the transient, session-based shopping experience where users collect items they intend to purchase before proceeding to checkout. It encapsulates the concept of a cart that holds cart items (each being a product item with quantity and total price), and provides capabilities to add items to the cart, remove items, update item quantities, view the current cart contents, and calculate the cart subtotal. The cart is a session-scoped construct that exists in memory during a user's shopping session and does not persist to a database directly. It acts as an intermediate state between browsing the catalog and placing an order, and is consumed during order creation to initialize an order with the selected items.
+4. Order Management: This domain handles the full lifecycle of purchase orders from creation through fulfillment tracking. It covers capturing an order from a user's cart (including shipping address, billing address, payment details like credit card information), persisting orders and their associated line items to the database, tracking order status, retrieving order history by user, and viewing individual order details. The domain manages the conversion of cart items into order line items with finalized pricing, generates unique order identifiers via a sequence mechanism, and updates inventory quantities when orders are placed. It also enforces authorization rules to ensure users can only view their own orders. This domain represents a completed financial and logistical transaction within the system.
+
+You are responsible for analyzing ONLY your assigned domain, but understanding the boundaries between domains is important for proper classification.
+
+For the given business domain, your task is to identify ALL of its domain-specific classes, and try to aggregate them by layer (e.g., Presentation, Business, Data, Support, Domain Objects, Other Domain Related Classes etc.).
+Provide the output containing the aggregated class lists for the domain provided.
+# Critical Rules
+1. Include ALL domain-specific classes exclusively belonging to the domain.
+2. Focus ONLY on the CURRENT domain. DO NOT cross the context boundary and include classes of OTHER business domains!
+# Problem Solving Strategy
+1. Understand the problem deeply. Carefully read the issue and think critically about what is required.
+2. Develop a clear, step-by-step plan. Break down the problem into manageable, incremental, and hierarchical steps to investigate and solve the problem.
+3. Reflect and validate comprehensively. After obtaining an initial answer, think about the original intent, and ask yourself whether the answer is absolutely correct.
+# Tool Utilization Guidance
+1. At the beginning, use BOTH get_all_class_hierarchy_complete AND get_database_summary tools to get an overview of the application. Then investigate the code information by using other tools. Explore relevant files, search for classes, inspect the code carefully and gather context.
+2. Use BOTH codebase_semantic_search and get_related_class_list to get more comprehensive results. BUT you should note that they may contain classes that do not belong to the current domain, you should carefully consider and exclude them. Tool codebase_semantic_search can help you get classes that are POSSIBLY semantically related; Tool get_related_class_list can help you get classes that are POSSIBLY dependency related to the list of classes you provided. 
+3. IMPORTANT: You MUST make FULL use of all the tools provided! Do not draw to any conclusions before you make sure with tools, especially checking the dependency and source code to ensure accuracy. Note that the provided dependency information is not absolutely accurate, you should still carefully consider and analyze the source code to decide.
+
+
+This is the expected criteria for your final answer: 
+A JSON object containing the clustering class list for the 'Account Management' domain.
+The JSON MUST follow this EXACT structure with proper commas between elements:
+{
+  "Account Management": [
+    "org.example.Class1",
+    "org.example.Class2",
+    "org.example.Class3"
+  ]
+}
+
+DO NOT nest the classes under categories like "Domain Objects", "Presentation Layer", etc.
+Just provide a flat array of class names under the domain name key.
+
+Ensure all JSON elements have proper commas between them.
+Your final answer MUST be ONLY the JSON object, with no other text, commentary, or explanation.
+
+you MUST return the actual complete content as the final answer, not a summary.
+
+Begin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!
+
+Thought:

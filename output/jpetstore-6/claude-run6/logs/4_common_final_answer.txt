@@ -1,0 +1,35 @@
+All 3 domains have been saved successfully. Here's a complete summary of the analysis and results:
+
+---
+
+## Common Class Identification & Assignment Summary
+
+### Common Class Identified: `AbstractActionBean`
+
+**Analysis Process:**
+
+1. **Entropy Analysis**: `AbstractActionBean` ranked #2 in incoming dependency entropy (1.5) with `incoming dependency_ratio: Infinity` (it has no dependencies of its own but is extended by 4 classes across all domains).
+
+2. **Code Inspection**: `AbstractActionBean` is a pure infrastructure/utility base class:
+   - Implements the Stripes framework `ActionBean` interface
+   - Provides shared web context management (`getContext()`/`setContext()`)
+   - Provides shared message utilities (`setMessage()`)
+   - Has zero domain-specific logic
+   - Extended by ALL 4 action beans across all 3 domains
+
+3. **Assignment**: Assigned to all 3 domains since all action beans in every domain extend it.
+
+### Classes Considered But NOT Classified as Common:
+
+- **`CatalogService`**: Used by 3 classes across 2 domains (AccountActionBean uses it for favorite category products, CartActionBean uses it for item/stock lookup). However, it is a **domain-specific service** of Product Catalog, not a utility class. Cross-domain usage represents inter-service calls in a microservice architecture. It stays in Product Catalog.
+- **`ItemMapper`**: Used by both CatalogService and OrderService. It's a Product Catalog data layer class - remains in Product Catalog domain.
+
+### Final Domain Assignments:
+
+| Domain | Original Classes | Added Common Classes | Total |
+|--------|-----------------|---------------------|-------|
+| Account Management | 4 | `AbstractActionBean` | **5** |
+| Product Catalog | 8 | `AbstractActionBean` | **9** |
+| Shopping Cart and Order Management | 11 | `AbstractActionBean` | **12** |
+
+All 3 domains have been saved to JSON with their complete class lists.

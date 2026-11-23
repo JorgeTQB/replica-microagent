@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 9954,
+  "stop_reason": "end_turn",
+  "session_id": "42d74981-3a76-4985-831f-a40534830cd8",
+  "total_cost_usd": 0.020784,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1963,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 600,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1963,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 600,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1963,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1963
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 600,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1963,
+      "webSearchRequests": 0,
+      "costUSD": 0.020784,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1963,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.RepositoryFactory\": {\n        \"summary\": \"RepositoryFactory is a factory class responsible for creating and managing repository instances for the ordering system, supporting two storage backends: in-memory (mock) and MongoDB. It follows a singleton-like pattern via a static instance (`s_factory`) and provides static accessor methods for each repository type.\\n\\n**Purpose:** Acts as a central factory to abstract the selection of repository implementations (mock vs. MongoDB), allowing the application to switch storage strategies without changing client code.\\n\\n**Key Methods:**\\n- `getCatalogItemsRepository()`: Returns the appropriate `CatalogItemsRepository` instance based on the configured storage kind.\\n- `getDealersRepository()`: Returns the appropriate `DealersRepository` instance.\\n- `getOrderRepository()`: Returns the appropriate `OrderRepository` instance.\\n- `getQuoteRepository()`: Returns the appropriate `QuoteRepository` instance.\\n- `getShipmentRepository()`: Returns the appropriate `ShipmentRepository` instance.\\n- `getFactory()`: Synchronized static method that returns the current singleton factory instance.\\n- `reset(String storage)`: Reinitializes the factory with a new storage kind, resetting the MongoDB template and creating fresh repository instances for both mock and MongoDB backends.\\n- `init(String storage)`: Private initialization method that sets up both mock (in-memory) and MongoDB repository instances, injecting inter-repository dependencies as needed (e.g., quotes depend on catalog items and dealers).\\n\\n**Inner Class - `Repositories`:** A private inner class acting as a simple container holding references to all five repository types (`CatalogItemsRepository`, `DealersRepository`, `QuoteRepository`, `OrderRepository`, `ShipmentRepository`). Two instances are maintained: `mockRepos` for in-memory storage and `mongodbRepos` for MongoDB storage.\\n\\n**Important Details:**\\n- Supports two storage modes defined as constants: `MEMORY = \\\"memory\\\"` and `MONGODB = \\\"mongodb\\\"`.\\n- Uses Spring's `@Autowired` to inject a `MongoTemplate`; if injection fails, it attempts to retrieve it from the application context via `OrderingConfiguration.getApplicationContext()`.\\n- Repository dependencies are wired manually during initialization, ensuring consistent dependency graphs for both storage backends.\\n- The `@SuppressWarnings(\\\"EmptyCatchBlock\\\")` annotation suppresses warnings for the silent exception handling during `MongoTemplate` retrieval.\",\n        \"file_path\": \"smpl/ordering/repositories/RepositoryFactory.java\"\n    }\n}\n```",
+  "ttft_ms": 10202,
+  "type": "result",
+  "duration_ms": 10239,
+  "uuid": "89e1e905-0abb-4efa-bf91-9f0b784ad28c",
+  "ttft_stream_ms": 1520,
+  "time_to_request_ms": 275,
+  "first_content_frame_ms": 1520,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

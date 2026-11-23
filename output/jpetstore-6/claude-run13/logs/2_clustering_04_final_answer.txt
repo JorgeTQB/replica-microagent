@@ -1,0 +1,34 @@
+Based on my thorough analysis of the codebase, I have identified all the domain-specific classes for the Order Management domain. Let me summarize my findings:
+
+**Domain Objects (Data Layer):**
+- `org.mybatis.jpetstore.domain.Order` - Core order entity with shipping/billing details, payment info, line items
+- `org.mybatis.jpetstore.domain.LineItem` - Individual order line items with quantity, unit price
+- `org.mybatis.jpetstore.domain.Sequence` - Sequence generator for order IDs (used exclusively by OrderService)
+
+**Data Access Layer (Mappers):**
+- `org.mybatis.jpetstore.mapper.OrderMapper` - Data access for orders (maps to orders/orderstatus tables)
+- `org.mybatis.jpetstore.mapper.LineItemMapper` - Data access for line items (maps to lineitem table)
+- `org.mybatis.jpetstore.mapper.SequenceMapper` - Data access for sequence generation (maps to sequence table)
+
+**Business Layer (Service):**
+- `org.mybatis.jpetstore.service.OrderService` - Business logic for order creation, retrieval, inventory deduction
+
+**Presentation Layer (Action Bean):**
+- `org.mybatis.jpetstore.web.actions.OrderActionBean` - Web presentation for order management workflows
+
+Note: `AbstractActionBean` is a shared base class used by all action beans (Account, Cart, Catalog, Order) so it's a common/utility class, not exclusively owned by Order Management. `ItemMapper` is used by OrderService for inventory deduction but belongs to the Catalog domain.
+
+```json
+{
+  "Order Management": [
+    "org.mybatis.jpetstore.domain.Order",
+    "org.mybatis.jpetstore.domain.LineItem",
+    "org.mybatis.jpetstore.domain.Sequence",
+    "org.mybatis.jpetstore.mapper.OrderMapper",
+    "org.mybatis.jpetstore.mapper.LineItemMapper",
+    "org.mybatis.jpetstore.mapper.SequenceMapper",
+    "org.mybatis.jpetstore.service.OrderService",
+    "org.mybatis.jpetstore.web.actions.OrderActionBean"
+  ]
+}
+```

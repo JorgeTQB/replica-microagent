@@ -1,0 +1,245 @@
+{
+    "schema": {
+      "schema_summary": {
+        "tables": [
+          {
+            "table_name": "supplier",
+            "purpose": "Stores supplier information including address and contact details.",
+            "columns": [
+              "suppid",
+              "name",
+              "status",
+              "addr1",
+              "addr2",
+              "city",
+              "state",
+              "zip",
+              "phone"
+            ],
+            "primary_key": [
+              "suppid"
+            ]
+          },
+          {
+            "table_name": "signon",
+            "purpose": "Stores user authentication credentials.",
+            "columns": [
+              "username",
+              "password"
+            ],
+            "primary_key": [
+              "username"
+            ]
+          },
+          {
+            "table_name": "account",
+            "purpose": "Stores user account details including personal and contact information.",
+            "columns": [
+              "userid",
+              "email",
+              "firstname",
+              "lastname",
+              "status",
+              "addr1",
+              "addr2",
+              "city",
+              "state",
+              "zip",
+              "country",
+              "phone"
+            ],
+            "primary_key": [
+              "userid"
+            ]
+          },
+          {
+            "table_name": "profile",
+            "purpose": "Stores user preferences and profile settings.",
+            "columns": [
+              "userid",
+              "langpref",
+              "favcategory",
+              "mylistopt",
+              "banneropt"
+            ],
+            "primary_key": [
+              "userid"
+            ]
+          },
+          {
+            "table_name": "bannerdata",
+            "purpose": "Stores banner data associated with favorite categories.",
+            "columns": [
+              "favcategory",
+              "bannername"
+            ],
+            "primary_key": [
+              "favcategory"
+            ]
+          },
+          {
+            "table_name": "orders",
+            "purpose": "Stores order details including shipping and billing information.",
+            "columns": [
+              "orderid",
+              "userid",
+              "orderdate",
+              "shipaddr1",
+              "shipaddr2",
+              "shipcity",
+              "shipstate",
+              "shipzip",
+              "shipcountry",
+              "billaddr1",
+              "billaddr2",
+              "billcity",
+              "billstate",
+              "billzip",
+              "billcountry",
+              "courier",
+              "totalprice",
+              "billtofirstname",
+              "billtolastname",
+              "shiptofirstname",
+              "shiptolastname",
+              "creditcard",
+              "exprdate",
+              "cardtype",
+              "locale"
+            ],
+            "primary_key": [
+              "orderid"
+            ]
+          },
+          {
+            "table_name": "orderstatus",
+            "purpose": "Tracks the status of orders by line item.",
+            "columns": [
+              "orderid",
+              "linenum",
+              "timestamp",
+              "status"
+            ],
+            "primary_key": [
+              "orderid",
+              "linenum"
+            ]
+          },
+          {
+            "table_name": "lineitem",
+            "purpose": "Stores details of individual items in an order.",
+            "columns": [
+              "orderid",
+              "linenum",
+              "itemid",
+              "quantity",
+              "unitprice"
+            ],
+            "primary_key": [
+              "orderid",
+              "linenum"
+            ]
+          },
+          {
+            "table_name": "category",
+            "purpose": "Stores product category information.",
+            "columns": [
+              "catid",
+              "name",
+              "descn"
+            ],
+            "primary_key": [
+              "catid"
+            ]
+          },
+          {
+            "table_name": "product",
+            "purpose": "Stores product details including category and description.",
+            "columns": [
+              "productid",
+              "category",
+              "name",
+              "descn"
+            ],
+            "primary_key": [
+              "productid"
+            ],
+            "foreign_keys": [
+              "category references category.catid"
+            ],
+            "indexes": [
+              "category",
+              "name"
+            ]
+          },
+          {
+            "table_name": "item",
+            "purpose": "Stores item details including supplier and product associations.",
+            "columns": [
+              "itemid",
+              "productid",
+              "listprice",
+              "unitcost",
+              "supplier",
+              "status",
+              "attr1",
+              "attr2",
+              "attr3",
+              "attr4",
+              "attr5"
+            ],
+            "primary_key": [
+              "itemid"
+            ],
+            "foreign_keys": [
+              "productid references product.productid",
+              "supplier references supplier.suppid"
+            ],
+            "indexes": [
+              "productid"
+            ]
+          },
+          {
+            "table_name": "inventory",
+            "purpose": "Tracks inventory quantities for items.",
+            "columns": [
+              "itemid",
+              "qty"
+            ],
+            "primary_key": [
+              "itemid"
+            ]
+          },
+          {
+            "table_name": "sequence",
+            "purpose": "Stores sequence information for generating unique IDs.",
+            "columns": [
+              "name",
+              "nextid"
+            ],
+            "primary_key": [
+              "name"
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "source_table": "product",
+            "source_field": "category",
+            "target_table": "category"
+          },
+          {
+            "source_table": "item",
+            "source_field": "productid",
+            "target_table": "product"
+          },
+          {
+            "source_table": "item",
+            "source_field": "supplier",
+            "target_table": "supplier"
+          }
+        ]
+      },
+      "file_path": "sql_schemas/schema.sql"
+    }
+  }

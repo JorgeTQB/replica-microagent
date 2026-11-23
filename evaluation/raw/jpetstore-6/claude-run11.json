@@ -1,0 +1,165 @@
+{
+  "referencia": "evaluation/references/jpetstore-6.json",
+  "common_dict": "evaluation/common_dicts/jpetstore-6.json",
+  "objetivo": "output/jpetstore-6/claude-run11/result.json",
+  "evaluate_similarity": {
+    "p2r": {
+      "results_m1": {
+        "Account Management": {
+          "best_match": "account",
+          "similarity": 0.8333333333333334,
+          "weight": 5
+        },
+        "Catalog": {
+          "best_match": "catalog",
+          "similarity": 0.9,
+          "weight": 10
+        },
+        "Shopping Cart & Order Management": {
+          "best_match": "order",
+          "similarity": 0.8461538461538461,
+          "weight": 11
+        }
+      },
+      "results_m2": {
+        "Account Management": {
+          "best_match": "account",
+          "similarity": 0.8333333333333334,
+          "weight": 5
+        },
+        "Catalog": {
+          "best_match": "catalog",
+          "similarity": 0.9,
+          "weight": 10
+        },
+        "Shopping Cart & Order Management": {
+          "best_match": "order",
+          "similarity": 0.8461538461538461,
+          "weight": 11
+        }
+      },
+      "metrics_m1": {
+        "average": 0.8598290598290599,
+        "weighted_average": 0.8643984220907298,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 0.0
+      },
+      "metrics_m2": {
+        "average": 0.8598290598290599,
+        "weighted_average": 0.8643984220907298,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 0.0
+      }
+    },
+    "r2p": {
+      "results_m1": {
+        "account": {
+          "best_match": "Account Management",
+          "similarity": 0.8333333333333334,
+          "weight": 6
+        },
+        "order": {
+          "best_match": "Shopping Cart & Order Management",
+          "similarity": 0.8461538461538461,
+          "weight": 13
+        },
+        "catalog": {
+          "best_match": "Catalog",
+          "similarity": 0.9,
+          "weight": 9
+        }
+      },
+      "results_m2": {
+        "account": {
+          "best_match": "Account Management",
+          "similarity": 0.8333333333333334,
+          "weight": 6
+        },
+        "order": {
+          "best_match": "Shopping Cart & Order Management",
+          "similarity": 0.8461538461538461,
+          "weight": 13
+        },
+        "catalog": {
+          "best_match": "Catalog",
+          "similarity": 0.9,
+          "weight": 9
+        }
+      },
+      "metrics_m1": {
+        "average": 0.8598290598290599,
+        "weighted_average": 0.8607142857142858,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 0.0
+      },
+      "metrics_m2": {
+        "average": 0.8598290598290599,
+        "weighted_average": 0.8607142857142858,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 0.0
+      }
+    },
+    "f1": {
+      "metrics_m1": {
+        "average": 0.8598290598290599,
+        "weighted_average": 0.8625524199969784,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 0
+      },
+      "metrics_m2": {
+        "average": 0.8598290598290599,
+        "weighted_average": 0.8625524199969784,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 0
+      }
+    },
+    "uncounted_info": {
+      "uncounted_classes": [],
+      "uncounted_count": 0,
+      "reference_class_count": 24,
+      "target_class_count": 24,
+      "universal_class_count": null,
+      "reference_partition_count": 3,
+      "target_partition_count": 3,
+      "using_universal_set": false
+    }
+  },
+  "calculate_metrics": {
+    "service_level": {
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "utility_level": {
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+Based on my analysis, I can now identify the Account Management domain classes:
+
+**Domain-Specific Classes:**
+1. `org.mybatis.jpetstore.domain.Account` - Domain object representing user account with personal info, credentials, and preferences
+2. `org.mybatis.jpetstore.service.AccountService` - Business service for account operations (insert, update, get)
+3. `org.mybatis.jpetstore.mapper.AccountMapper` - Data mapper interface for account persistence (CRUD on account, profile, signon tables)
+4. `org.mybatis.jpetstore.web.actions.AccountActionBean` - Presentation layer for account actions (registration, sign-on, sign-off, edit profile)
+
+**Classes to EXCLUDE:**
+- `org.mybatis.jpetstore.domain.Order` - Belongs to Order Management domain
+- `org.mybatis.jpetstore.domain.Product` - Belongs to Catalog domain (only used by AccountActionBean to display myList of products based on favorite category, but it's a Catalog domain class)
+- `org.mybatis.jpetstore.service.CatalogService` - Belongs to Catalog domain
+- `org.mybatis.jpetstore.web.actions.OrderActionBean` - Belongs to Order Management domain
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` - This is a shared base class used by ALL action beans (Account, Catalog, Cart, Order). It's a common/support class used across multiple domains.
+
+The `AbstractActionBean` deserves special consideration - it's used by ALL 4 action beans across all domains. It's truly a shared infrastructure class. However, since the task says to include ALL domain-specific classes, and AccountActionBean extends it, I need to decide. Since it's a cross-cutting infrastructure class shared by all domains, it should NOT be assigned exclusively to Account Management.
+
+```json
+{
+  "Account Management": [
+    "org.mybatis.jpetstore.domain.Account",
+    "org.mybatis.jpetstore.service.AccountService",
+    "org.mybatis.jpetstore.mapper.AccountMapper",
+    "org.mybatis.jpetstore.web.actions.AccountActionBean"
+  ]
+}
+```

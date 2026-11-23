@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 11132,
+  "stop_reason": "end_turn",
+  "session_id": "2010ac69-ab5a-4807-a6ac-e58705761212",
+  "total_cost_usd": 0.016914,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1057,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 703,
+    "output_tokens_details": {
+      "thinking_tokens": 519
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1057,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 703,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1057,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1057
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 703,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1057,
+      "webSearchRequests": 0,
+      "costUSD": 0.016914,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 519,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1057,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.OrderEventInfo\": {\n        \"summary\": \"A data model class that represents information about order-related events (comments). It stores two fields: a date (as a String) and comments text. The class provides three constructors: a default no-argument constructor, one that accepts comments and automatically sets the current date using SHORT date format, and one that accepts both date and comments explicitly. It includes standard getter and setter methods for both fields (getDate/setDate and getComments/setComments). This is a simple POJO (Plain Old Java Object) used to track timestamped events and notes associated with orders in the ordering system.\",\n        \"file_path\": \"smpl/ordering/models/OrderEventInfo.java\"\n    }\n}\n```",
+  "ttft_ms": 9256,
+  "type": "result",
+  "duration_ms": 11261,
+  "uuid": "a7fccb56-1679-4f58-9365-9a2e51e5a159",
+  "ttft_stream_ms": 1045,
+  "time_to_request_ms": 127,
+  "first_content_frame_ms": 1045,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

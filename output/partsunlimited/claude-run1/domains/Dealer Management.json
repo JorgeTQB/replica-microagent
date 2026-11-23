@@ -1,0 +1,10 @@
+{
+  "Dealer Management": [
+    "smpl.ordering.controllers.DealerController",
+    "smpl.ordering.models.DealerInfo",
+    "smpl.ordering.repositories.DealersRepository",
+    "smpl.ordering.repositories.mock.MockDealersRepository",
+    "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+    "smpl.ordering.repositories.mongodb.models.Dealer"
+  ]
+}

@@ -1,0 +1,31 @@
+All 3 domains have been saved successfully. Here's a comprehensive summary of what was done:
+
+---
+
+## Summary of Common Class Identification and Assignment
+
+### Common Classes Identified
+
+| Class | Type | Reason |
+|-------|------|--------|
+| `AbstractActionBean` | Utility/Infrastructure | Base class for ALL 4 action beans across all domains; provides common web action functionality with no domain specificity |
+| `CatalogService` | Cross-domain Service | Used by `CatalogActionBean` (Catalog), `AccountActionBean` (Account Management, to get product lists by favorite category), and `CartActionBean` (Shopping Cart & Order, to fetch items and check stock) |
+| `ItemMapper` | Cross-domain Data Access | Used by `CatalogService` (Catalog domain) AND `OrderService` (Shopping Cart & Order domain, for inventory updates) |
+| `Item` | Cross-domain Entity | Used across Catalog (primary), Cart (CartItem, CartActionBean), and Order (LineItem, OrderService) |
+| `Account` | Cross-domain Entity | Used by Account Management (primary) AND by `Order.initOrder()` in Shopping Cart & Order Management |
+
+### Final Domain Clusters (with common classes added)
+
+**1. Account Management** — 8 classes (original 4 + 4 common)
+- Original: `Account`, `AccountMapper`, `AccountService`, `AccountActionBean`
+- Added: `AbstractActionBean`, `CatalogService`, `ItemMapper`, `Item`
+
+**2. Catalog** — 9 classes (original 8 + 2 common)
+- Original: `CatalogActionBean`, `CatalogService`, `CategoryMapper`, `ProductMapper`, `ItemMapper`, `Category`, `Product`, `Item`
+- Added: `AbstractActionBean`
+
+**3. Shopping Cart and Order Management** — 16 classes (original 11 + 5 common)
+- Original: `Cart`, `CartItem`, `CartActionBean`, `Order`, `LineItem`, `Sequence`, `OrderService`, `OrderMapper`, `LineItemMapper`, `SequenceMapper`, `OrderActionBean`
+- Added: `AbstractActionBean`, `CatalogService`, `ItemMapper`, `Item`, `Account`
+
+**Total: 3 domains, 33 class assignments saved** (with shared common classes appearing in multiple domains as appropriate).

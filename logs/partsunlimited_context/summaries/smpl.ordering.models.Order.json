@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 6669,
+  "stop_reason": "end_turn",
+  "session_id": "944e79d9-8266-4c4b-a3b3-2f45b86a45f6",
+  "total_cost_usd": 0.01641,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1524,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 484,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1524,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 484,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1524,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1524
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 484,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1524,
+      "webSearchRequests": 0,
+      "costUSD": 0.01641,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1524,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.Order\": {\n        \"summary\": \"Represents an agreed-upon order of a refrigeration or freezer room, along with any catalog item such as shelving and cooling equipment. It encapsulates order details including a unique order ID, an associated quote ID, the order date, the current order status (defaulting to 'None'), and a list of order events.\\n\\nKey methods:\\n- `Order()`: Default constructor that initializes the events list as an empty ArrayList and sets status to OrderStatus.None.\\n- `validate()`: Validates required string fields (quoteId and orderDate) and returns a JSON-formatted error string if validation fails, or null if the order is valid.\\n- `equals(Object o)`: Compares two Order objects for equality based on orderId, quoteId, orderDate, status, and events.\\n- `hashCode()`: Generates a hash code based on all five fields (orderId, quoteId, orderDate, status, events).\\n- `getQuoteId()` / `setQuoteId(String)`: Accessor and mutator for the associated quote ID.\\n- `getOrderId()` / `setOrderId(String)`: Accessor and mutator for the unique order ID.\\n- `getOrderDate()` / `setOrderDate(String)`: Accessor and mutator for the order date.\\n- `getStatus()` / `setStatus(OrderStatus)`: Accessor and mutator for the order's current status.\\n- `getEvents()` / `setEvents(List<OrderEventInfo>)`: Accessor and mutator for the list of order events.\\n- `addEvent(OrderEventInfo)`: Appends a single OrderEventInfo event to the events list.\\n\\nThis is a standard model/entity class used in the ordering domain. It depends on `smpl.ordering.Utility` for field validation, `OrderStatus` enum for status representation, and `OrderEventInfo` for tracking order lifecycle events.\",\n        \"file_path\": \"smpl/ordering/models/Order.java\"\n    }\n}\n```",
+  "ttft_ms": 7048,
+  "type": "result",
+  "duration_ms": 7079,
+  "uuid": "d90b0c6e-5663-4975-b34e-14ce93e8814e",
+  "ttft_stream_ms": 1366,
+  "time_to_request_ms": 400,
+  "first_content_frame_ms": 1367,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

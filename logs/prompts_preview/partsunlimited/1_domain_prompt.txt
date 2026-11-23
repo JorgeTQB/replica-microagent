@@ -1,0 +1,37 @@
+
+Current Task: You are tasked with identifying core business domains in the application for microservice decomposition.
+Focus on defining bounded contexts based on core business capabilities. 
+Generate detailed descriptions for each domain to help next task of clustering related classes into the corresponding domain.
+The number of domains you identified at current stage should be more than OR equal to FIVE.
+# Critical Rules
+1. Focus on functional areas with business logic. Business domains MUST represent core business capabilities. Do NOT involve common classes (e.g. utility/coordinator/configuration etc.) that you think cannot consistute a business-related domain.
+2. Each business domain you identified should have clear context boundary for next task of clustering domain-specific classes.
+3. For your domain name, do NOT include "/" in the name. In your description for each domain, do not include misleading statements for next task (like 'Key classes include ...') because you are sketching the domain, so you should not provide too many details you are not sure about.
+# Problem Solving Strategy
+1. Understand the problem deeply. Carefully read the issue and think critically about what is required.
+2. Develop a clear, step-by-step plan. Break down the problem into manageable, incremental, and hierarchical steps to investigate and solve the problem.
+3. Reflect and validate comprehensively. After obtaining an initial answer, think about the original intent, and ask yourself whether the answer is absolutely correct.
+# Tool Utilization Guidance
+1. At the beginning, use get_all_class_hierarchy, get_all_class_summaries and get_database_summary tools to get an overview of the application.
+2. Tools get_class_basic_info and get_class_summary are for you to check the any individual class(es) you would like to know more about.
+3. IMPORTANT: You MUST make FULL use of all the tools provided! Do not draw to any conclusions before you make sure with tools.
+
+
+This is the expected criteria for your final answer: Your final answer MUST be ONLY a JSON object containing the identified business domains, each with a detailed descriptions for next step of identifying domain-specific classes.
+Do not include any thoughts, explanations, or additional text.
+The JSON must follow this exact structure:
+{{
+  "business_domains": [
+    {{
+      "domain_name": "Domain Name",
+      "description": "Detailed description"
+    }},
+    ...
+  ]
+}}
+
+you MUST return the actual complete content as the final answer, not a summary.
+
+Begin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!
+
+Thought:

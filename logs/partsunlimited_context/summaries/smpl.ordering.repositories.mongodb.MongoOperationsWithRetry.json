@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 15097,
+  "stop_reason": "end_turn",
+  "session_id": "55a784f9-dbbd-45e7-a5d4-cb067dd85031",
+  "total_cost_usd": 0.049785,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 6499,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 719,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6499,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 719,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 6499,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 6499
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 719,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 6499,
+      "webSearchRequests": 0,
+      "costUSD": 0.049785,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 6499,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.MongoOperationsWithRetry\": {\n        \"summary\": \"A decorator/wrapper class that implements the `MongoOperations` interface to add retry logic and telemetry tracking on top of an underlying `MongoOperations` instance. It follows the Decorator design pattern, delegating all MongoDB operations to the wrapped `underlying` instance while selectively enhancing specific methods with fault tolerance and observability.\\n\\n**Purpose:** To improve resilience of MongoDB operations by automatically retrying operations that fail due to `SocketTimeoutException` (wrapped in `DataAccessResourceFailureException`), and to track operation performance and success/failure via Azure Application Insights telemetry.\\n\\n**Key Methods and Behavior:**\\n- **Constructor `MongoOperationsWithRetry(MongoOperations underlying)`:** Accepts and stores the underlying `MongoOperations` instance to be decorated.\\n- **`sendTelemetry(Date start, Date end, String operation, boolean success)`:** Private helper that sends a `RemoteDependencyTelemetry` event to Azure Application Insights via `Utility.getTelemetryClient()`, recording the operation name (prefixed with `MongoDB.`), duration, and success status.\\n- **Methods with retry + telemetry:** `dropCollection(Class<T>)`, `dropCollection(String)`, `findAll(Class<T>)`, `findOne(Query, Class<T>)`, `exists(Query, Class<?>)`, `find(Query, Class<T>)`, `findAndRemove(Query, Class<T>)`, `insert(Object)`, `save(Object)`. Each of these wraps the underlying call in a try-catch that retries once if a `SocketTimeoutException` is the root cause, and always sends telemetry in a `finally` block.\\n- **All other `MongoOperations` methods** (e.g., `executeCommand`, `aggregate`, `mapReduce`, `geoNear`, `upsert`, `updateFirst`, `updateMulti`, `remove`, `findAllAndRemove`, `getConverter`, `indexOps`, etc.) are simple pass-through delegations to the underlying instance with no retry or telemetry.\\n\\n**Important Notes:**\\n- Annotated with `@SuppressWarnings({\\\"ALL\\\", \\\"deprecation\\\"})`, indicating use of deprecated MongoDB/Spring APIs.\\n- Retry logic is a single retry (not configurable), only triggered by `SocketTimeoutException`; other exceptions are re-thrown immediately.\\n- Telemetry integration relies on `smpl.ordering.Utility.getTelemetryClient()`, which may return `null` (checked before use).\\n- Not all overloaded variants of retried methods get retry logic; e.g., `findOne(Query, Class<T>, String collectionName)` does not retry, only `findOne(Query, Class<T>)` does.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/MongoOperationsWithRetry.java\"\n    }\n}\n```",
+  "ttft_ms": 15291,
+  "type": "result",
+  "duration_ms": 15320,
+  "uuid": "a699d118-ace4-49b7-a39c-5480c9d36ed1",
+  "ttft_stream_ms": 3398,
+  "time_to_request_ms": 220,
+  "first_content_frame_ms": 3399,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

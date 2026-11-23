@@ -1,0 +1,36 @@
+Based on my thorough analysis of the codebase, I can now identify all classes that belong to the Catalog domain. Let me compile the final list:
+
+**Domain Objects (Data Model):**
+- `org.mybatis.jpetstore.domain.Category` - Represents product categories (FISH, DOGS, CATS)
+- `org.mybatis.jpetstore.domain.Product` - Represents products within categories
+- `org.mybatis.jpetstore.domain.Item` - Represents individual inventory items with pricing and supplier info
+
+**Business Layer:**
+- `org.mybatis.jpetstore.service.CatalogService` - Business logic for catalog operations (browsing, search, inventory checks)
+
+**Presentation Layer:**
+- `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Web controller handling catalog browsing and search
+
+**Data Access Layer (Mappers):**
+- `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for categories
+- `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for products (including search)
+- `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for items and inventory
+
+**Note on AbstractActionBean:** This is a shared/common class used by all action beans (Account, Catalog, Cart, Order domains), so it's not exclusively Catalog-domain and should be classified as a common class.
+
+**Note on ItemMapper:** While it's also used by OrderService for updating inventory quantities upon order placement, it's primarily a Catalog domain data access class (managing item data and inventory). The core ownership of item/inventory data belongs to the Catalog domain per the domain description.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper"
+  ]
+}
+```

@@ -1,0 +1,81 @@
+All 3 domains have been saved successfully. Here is the complete final summary:
+
+---
+
+## Final Microservice Decomposition — JPetStore
+
+### Summary: 3 domains saved, 33 total class assignments
+
+---
+
+### Microservice 1: Account Management (8 classes)
+Responsible for user registration, authentication, profile management, and personalized product display.
+
+| Class | Layer |
+|-------|-------|
+| `org.mybatis.jpetstore.domain.Account` | Domain Entity |
+| `org.mybatis.jpetstore.mapper.AccountMapper` | Data Access |
+| `org.mybatis.jpetstore.service.AccountService` | Business Logic |
+| `org.mybatis.jpetstore.web.actions.AccountActionBean` | Presentation |
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Infrastructure (shared) |
+| `org.mybatis.jpetstore.service.CatalogService` | Cross-domain Service (shared) |
+| `org.mybatis.jpetstore.mapper.ItemMapper` | Data Access (shared) |
+| `org.mybatis.jpetstore.domain.Item` | Domain Entity (shared) |
+
+---
+
+### Microservice 2: Catalog (9 classes)
+Responsible for browsing categories, products, and items; product search.
+
+| Class | Layer |
+|-------|-------|
+| `org.mybatis.jpetstore.web.actions.CatalogActionBean` | Presentation |
+| `org.mybatis.jpetstore.service.CatalogService` | Business Logic |
+| `org.mybatis.jpetstore.mapper.CategoryMapper` | Data Access |
+| `org.mybatis.jpetstore.mapper.ProductMapper` | Data Access |
+| `org.mybatis.jpetstore.mapper.ItemMapper` | Data Access (shared) |
+| `org.mybatis.jpetstore.domain.Category` | Domain Entity |
+| `org.mybatis.jpetstore.domain.Product` | Domain Entity |
+| `org.mybatis.jpetstore.domain.Item` | Domain Entity (shared) |
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Infrastructure (shared) |
+
+---
+
+### Microservice 3: Shopping Cart and Order Management (16 classes)
+Responsible for shopping cart operations, order placement, order retrieval, inventory updates, and sequence generation.
+
+| Class | Layer |
+|-------|-------|
+| `org.mybatis.jpetstore.domain.Cart` | Domain Entity |
+| `org.mybatis.jpetstore.domain.CartItem` | Domain Entity |
+| `org.mybatis.jpetstore.web.actions.CartActionBean` | Presentation |
+| `org.mybatis.jpetstore.domain.Order` | Domain Entity |
+| `org.mybatis.jpetstore.domain.LineItem` | Domain Entity |
+| `org.mybatis.jpetstore.domain.Sequence` | Domain Entity |
+| `org.mybatis.jpetstore.service.OrderService` | Business Logic |
+| `org.mybatis.jpetstore.mapper.OrderMapper` | Data Access |
+| `org.mybatis.jpetstore.mapper.LineItemMapper` | Data Access |
+| `org.mybatis.jpetstore.mapper.SequenceMapper` | Data Access |
+| `org.mybatis.jpetstore.web.actions.OrderActionBean` | Presentation |
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Infrastructure (shared) |
+| `org.mybatis.jpetstore.service.CatalogService` | Cross-domain Service (shared) |
+| `org.mybatis.jpetstore.mapper.ItemMapper` | Data Access (shared) |
+| `org.mybatis.jpetstore.domain.Item` | Domain Entity (shared) |
+| `org.mybatis.jpetstore.domain.Account` | Domain Entity (shared) |
+
+---
+
+### Design Rationale
+
+**No anti-patterns detected.** The microservice boundaries are well-justified:
+
+1. **`AbstractActionBean`** is correctly shared across all 3 services — it's a pure infrastructure base class providing Stripes framework integration, with no business logic or domain specificity.
+
+2. **`CatalogService`** is shared because:
+   - `AccountActionBean` calls it to retrieve products for the user's favorite category after login/registration
+   - `CartActionBean` calls it to fetch item details and check stock availability
+   - In a real microservice architecture, these would become API calls to the Catalog service
+
+3. **`ItemMapper`** and **`Item`** are shared because the `Item` entity bridges catalog data (product details) with cart/order operations (inventory management) — `OrderService` directly updates inventory through `ItemMapper`.
+
+4. **`Account`** is shared into Shopping Cart & Order Management because `Order.initOrder()` takes an `Account` parameter to initialize shipping/billing address data.

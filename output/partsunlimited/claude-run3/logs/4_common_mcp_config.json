@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "microagent": {
+      "command": "C:\\Python314\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\tools\\mcp_server.py"
+      ],
+      "env": {
+        "APP_NAME": "partsunlimited",
+        "RUN_ID": "claude-run3",
+        "MICROAGENT_TOOLS": "get_all_class_hierarchy_complete,get_database_summary,rank_dependency_entropy,assign_common_class_list,get_more_potential_common_classes,write_result_to_json,get_class_relation_and_code,search_file",
+        "MICROAGENT_LOG": "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\output\\partsunlimited\\claude-run3\\logs\\4_common_server.jsonl",
+        "RESULT_FILE": "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\output\\partsunlimited\\claude-run3\\common_result.json"
+      }
+    }
+  }
+}

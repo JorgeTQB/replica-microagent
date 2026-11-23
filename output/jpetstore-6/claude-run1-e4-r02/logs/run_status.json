@@ -1,0 +1,102 @@
+{
+  "app": "jpetstore-6",
+  "run_id": "claude-run1-e4-r02",
+  "modelo": "claude-sonnet-4-6",
+  "number": "3",
+  "num": "THREE",
+  "simulado": false,
+  "solo_etapa1": false,
+  "estado": "parcial_etapa4",
+  "inicio": "2026-11-21T12:36:35-05:00",
+  "fin": "2026-11-21T12:38:02-05:00",
+  "fallo": null,
+  "fusion": "de_la_corrida_de_origen: ejecutada",
+  "etapas": [
+    {
+      "etapa": "4_common",
+      "agente": "common_class_agent",
+      "session_id": "10af1594-c1dc-4884-85b9-cce48b5ad8a3",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 17,
+      "max_turns": 45,
+      "peticiones_api": 12,
+      "duracion_ms": 60879,
+      "duracion_api_ms": 60356,
+      "costo_usd": 0.22943970000000002,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 4128,
+        "cache_creation_input_tokens": 19372,
+        "cache_read_input_tokens": 170819
+      },
+      "llamadas_a_herramientas": 16,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__rank_dependency_entropy": 1,
+        "mcp__microagent__get_more_potential_common_classes": 1,
+        "mcp__microagent__get_class_relation_and_code": 8,
+        "mcp__microagent__assign_common_class_list": 1,
+        "mcp__microagent__write_result_to_json": 3
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 1737,
+      "limite_de_turnos": false,
+      "problemas": []
+    }
+  ],
+  "observaciones": [
+    {
+      "etapa": "4_common",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    }
+  ],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 17,
+    "peticiones_api": 12,
+    "duracion_ms": 60879,
+    "duracion_api_ms": 60356,
+    "costo_usd": 0.22943970000000002,
+    "llamadas_a_herramientas": 16,
+    "tokens": {
+      "input_tokens": 14,
+      "output_tokens": 4128,
+      "cache_creation_input_tokens": 19372,
+      "cache_read_input_tokens": 170819
+    }
+  },
+  "resultado": {
+    "archivo": "output/jpetstore-6/claude-run1-e4-r02/common_result.json",
+    "particiones": 3,
+    "clases_por_particion": {
+      "Account Management": 7,
+      "Catalog": 9,
+      "Shopping Cart and Order Management": 16
+    },
+    "clases_distintas_asignadas": 24,
+    "clases_del_universo": 24,
+    "clases_sin_asignar": [],
+    "clases_fuera_del_universo": [],
+    "clases_anadidas_por_la_etapa4": {
+      "Account Management": [
+        "org.mybatis.jpetstore.domain.Product",
+        "org.mybatis.jpetstore.service.CatalogService",
+        "org.mybatis.jpetstore.web.actions.AbstractActionBean"
+      ],
+      "Catalog": [
+        "org.mybatis.jpetstore.web.actions.AbstractActionBean"
+      ],
+      "Shopping Cart and Order Management": [
+        "org.mybatis.jpetstore.domain.Account",
+        "org.mybatis.jpetstore.domain.Item",
+        "org.mybatis.jpetstore.domain.Product",
+        "org.mybatis.jpetstore.service.CatalogService",
+        "org.mybatis.jpetstore.web.actions.AbstractActionBean"
+      ]
+    }
+  },
+  "solo_etapa4_desde": "claude-run1"
+}

@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 14674,
+  "stop_reason": "end_turn",
+  "session_id": "eabec3a0-f928-47fc-a242-c8566624d04a",
+  "total_cost_usd": 0.031181999999999994,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 3175,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 807,
+    "output_tokens_details": {
+      "thinking_tokens": 473
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3175,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 807,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 3175,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3175
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 807,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 3175,
+      "webSearchRequests": 0,
+      "costUSD": 0.031181999999999994,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 473,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 3175,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.controllers.OrderController\": {\n    \"summary\": \"Spring MVC REST controller that manages order-related HTTP operations. Provides RESTful endpoints for CRUD operations on orders including retrieving orders by ID or dealer name, creating orders from quotes, updating order details and status, adding events to orders, and deleting orders. Utilizes RepositoryFactory to access OrderRepository and QuoteRepository for data operations. Implements comprehensive error handling with Application Insights telemetry tracking for exceptions. Key methods include: getOrderById() for retrieving a single order (GET /orders/{orderId}), getOrdersByDealerName() for querying orders by dealer and status (GET /orders), createOrder() for creating orders from quotes (POST /orders), addEvent() for adding events to orders (POST /orders/{orderId}/events), updateOrder() for full order updates (PUT /orders/{orderId}), updateStatus() for status-only updates (PUT /orders/{orderId}/status), and deleteOrder() for order removal (DELETE /orders/{orderId}). Returns appropriate HTTP status codes (OK, NOT_FOUND, CREATED, BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, NO_CONTENT) based on operation results. Validates input data and handles custom exceptions like ConflictingRequestException and BadRequestException.\",\n    \"file_path\": \"smpl/ordering/controllers/OrderController.java\"\n  }\n}\n```",
+  "ttft_ms": 9886,
+  "type": "result",
+  "duration_ms": 14892,
+  "uuid": "8aa9264c-77f8-4d50-a070-92e87c381701",
+  "ttft_stream_ms": 1129,
+  "time_to_request_ms": 217,
+  "first_content_frame_ms": 1129,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

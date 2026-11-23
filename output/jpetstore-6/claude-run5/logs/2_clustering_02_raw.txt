@@ -1,0 +1,36 @@
+Based on my thorough analysis of the codebase, I can now identify all the domain-specific classes for the Catalog domain. Let me summarize my findings:
+
+**Catalog Domain Classes:**
+
+1. **Domain Objects (Business Entities):**
+   - `org.mybatis.jpetstore.domain.Category` - Represents a product category (maps to `category` table)
+   - `org.mybatis.jpetstore.domain.Product` - Represents a product within a category (maps to `product` table)
+   - `org.mybatis.jpetstore.domain.Item` - Represents a specific SKU/item with pricing and supplier info (maps to `item` and `inventory` tables)
+
+2. **Business Layer:**
+   - `org.mybatis.jpetstore.service.CatalogService` - Core business service for catalog operations (browsing categories, products, items, search, stock check)
+
+3. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Web action bean for catalog UI (view category, product, item, search)
+
+4. **Data Access Layer:**
+   - `org.mybatis.jpetstore.mapper.CategoryMapper` - Mapper for category table queries
+   - `org.mybatis.jpetstore.mapper.ProductMapper` - Mapper for product table queries
+   - `org.mybatis.jpetstore.mapper.ItemMapper` - Mapper for item and inventory table queries (also used by OrderService for updating inventory)
+
+Note: `ItemMapper` is used by both CatalogService and OrderService (for inventory updates during order placement). However, since it primarily maps to `item` and `inventory` tables which are core Catalog domain tables, it belongs to the Catalog domain.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper"
+  ]
+}
+```

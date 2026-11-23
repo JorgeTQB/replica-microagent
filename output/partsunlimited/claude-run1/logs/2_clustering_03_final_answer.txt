@@ -1,0 +1,42 @@
+Now I have a comprehensive list. Let me analyze which classes belong exclusively to the Quote Management domain:
+
+**Core Quote Domain Classes:**
+1. `smpl.ordering.controllers.QuoteController` - Presentation layer, handles `/quotes` API
+2. `smpl.ordering.models.Quote` - Domain object for a quote
+3. `smpl.ordering.models.QuoteItemInfo` - Domain object for quote line items
+4. `smpl.ordering.repositories.QuoteRepository` - Data layer interface
+5. `smpl.ordering.repositories.mock.MockQuoteRepository` - In-memory implementation
+6. `smpl.ordering.repositories.mongodb.MongoQuoteRepository` - MongoDB implementation
+7. `smpl.ordering.repositories.mongodb.models.QuoteDetails` - MongoDB document model
+
+**Classes to exclude (belong to other domains or are shared utilities):**
+- `smpl.ordering.controllers.OrderController` - Order Management domain
+- `smpl.ordering.controllers.ShipmentController` - Shipment domain
+- `smpl.ordering.repositories.mock.MockOrderRepository` - Order domain
+- `smpl.ordering.repositories.mongodb.MongoOrderRepository` - Order domain
+- `smpl.ordering.models.DealerInfo` - Dealer domain
+- `smpl.ordering.models.Delivery` - Shipment/Order domain
+- `smpl.ordering.repositories.CatalogItemsRepository` - Product Catalog domain
+- `smpl.ordering.repositories.DealersRepository` - Dealer domain
+- `smpl.ordering.repositories.RepositoryFactory` - Shared utility
+- `smpl.ordering.repositories.mongodb.MongoOperationsWithRetry` - Shared infrastructure
+- `smpl.ordering.BadRequestException` - Shared utility
+- `smpl.ordering.OrderingInitializer` - Shared utility
+- `smpl.ordering.TestPath` - Shared utility
+- `smpl.ordering.Utility` - Shared utility
+
+The 7 classes identified are exclusively part of the Quote Management domain.
+
+```json
+{
+  "Quote Management": [
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.models.Quote",
+    "smpl.ordering.models.QuoteItemInfo",
+    "smpl.ordering.repositories.QuoteRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.models.QuoteDetails"
+  ]
+}
+```

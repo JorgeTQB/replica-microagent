@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 10250,
+  "stop_reason": "end_turn",
+  "session_id": "d7189f90-a9c6-4f2e-9606-18b98cdfaae4",
+  "total_cost_usd": 0.021066,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1920,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 636,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1920,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 636,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1920,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1920
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 636,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1920,
+      "webSearchRequests": 0,
+      "costUSD": 0.021066,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1920,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mock.MockOrderRepository\": {\n        \"summary\": \"An in-memory implementation of the `OrderRepository` interface, used primarily for testing purposes (also implements `TestPath`). It stores `Order` objects in an `ArrayList` and delegates quote lookups to an injected `QuoteRepository`.\\n\\n**Key Methods:**\\n- `MockOrderRepository(QuoteRepository quotes)`: Constructor that initializes the in-memory order list and injects the quote repository dependency.\\n- `hasOrder(String id)`: Checks whether an order with the given ID exists in the list.\\n- `getOrder(String id)`: Retrieves a single order by its ID, returning `null` if not found.\\n- `getOrdersByStatus(OrderStatus status)`: Returns all orders matching the given status; if status is `OrderStatus.None`, all orders are returned.\\n- `getOrdersByDealerName(String name, OrderStatus status)`: Returns orders associated with a dealer (case-insensitive match), optionally filtered by status, by cross-referencing the quote repository.\\n- `getOrderByQuoteId(String id)`: Retrieves the order that was created from a specific quote ID.\\n- `createOrder(String from)`: Creates a new `Order` from a quote ID. Throws `BadRequestException` if the quote does not exist, or `ConflictingRequestException` if an order already exists for that quote. Sets the order date, generates an order ID (`order-<quoteId>`), and sets status to `Created`.\\n- `updateOrder(String id, Order order, String eTag)`: Replaces an existing order object entirely; returns `false` if the order is not found.\\n- `updateOrder(String id, OrderUpdateInfo info, String eTag)`: Partially updates an order by appending an event and updating its status; throws `BadRequestException` if the order does not exist.\\n- `removeOrder(String id, String eTag)`: Stub implementation that always returns `false` (deletion not supported in mock).\\n- `reset()`: Clears all orders and resets the static atomic counter, used to restore a clean state between tests.\\n\\n**Other Important Details:**\\n- Uses a static `AtomicLong` counter (`s_counter`) initialized in a static block, though it is not currently used for ID generation (IDs are derived from quote IDs).\\n- The `eTag` parameter in update/remove methods is accepted but not enforced, as this is an in-memory mock without concurrency control.\\n- Intended strictly for testing; not suitable for production use.\",\n        \"file_path\": \"smpl/ordering/repositories/mock/MockOrderRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 10534,
+  "type": "result",
+  "duration_ms": 10576,
+  "uuid": "8ddec780-cc7f-4f81-830b-5fc046cfff1d",
+  "ttft_stream_ms": 1302,
+  "time_to_request_ms": 311,
+  "first_content_frame_ms": 1303,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

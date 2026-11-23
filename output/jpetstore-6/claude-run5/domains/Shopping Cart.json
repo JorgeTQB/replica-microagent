@@ -1,0 +1,7 @@
+{
+  "Shopping Cart": [
+    "org.mybatis.jpetstore.domain.Cart",
+    "org.mybatis.jpetstore.domain.CartItem",
+    "org.mybatis.jpetstore.web.actions.CartActionBean"
+  ]
+}

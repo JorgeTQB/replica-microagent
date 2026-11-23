@@ -1,0 +1,17 @@
+Loading and embedding class summaries for semantic search...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[11/14/26 20:34:18] WARNING  Warning: You are sending              _http.py:951
+                             unauthenticated requests to the HF                
+                             Hub. Please set a HF_TOKEN to enable              
+                             higher rate limits and faster                     
+                             downloads.                                        
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4388.46it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.10it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+Finished embedding class summaries.
+Found 4 domains in C:\Jorge Quispe Bendezu\ULima\Tesis\Replica de Paper\replica-claude-code\output\jpetstore-6\smoke-test\domains\domain_clusters.json
+Using top_n=6 for semantic search (total_class_num=24, domain_count=4)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7863.80it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.47it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.47it/s]
+Successfully loaded 24 classes from merged_domains.json
+[mcp_server] RESULT_FILE no se pudo leer (Expecting value: line 1 column 33 (char 32)); se ignora su contenido. Copia: C:\Jorge Quispe Bendezu\ULima\Tesis\Replica de Paper\replica-claude-code\output\jpetstore-6\smoke-test\smoke_result.json.descartado-20261114-203507

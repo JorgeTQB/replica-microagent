@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 5604,
+  "stop_reason": "end_turn",
+  "session_id": "b93b80c6-d71c-4bda-b9c7-0a6f55f31c41",
+  "total_cost_usd": 0.01029,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1079,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 254,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1079,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 254,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1079,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1079
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 254,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1079,
+      "webSearchRequests": 0,
+      "costUSD": 0.01029,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1079,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.OrderingServiceProperties\": {\n        \"summary\": \"A Spring Boot configuration properties class that holds general service configuration for the ordering service. It is annotated with @ConfigurationProperties(prefix = 'ordering'), meaning its fields are bound to properties prefixed with 'ordering' in the application configuration files (e.g., application.yml or application.properties). Key fields include: 'storage' (defaults to 'memory', indicating the storage backend type), 'pingMessage' (a health-check message, defaults to 'The ordering service is available'), 'validationMessage' (a version/validation status message, defaults to 'Version unknown'), and 'instrumentationKey' (used for telemetry/monitoring integration, defaults to empty string). Each field is exposed via standard getter and setter methods: getStorage/setStorage, getPingMessage/setPingMessage, getValidationMessage/setValidationMessage, and getInstrumentationKey/setInstrumentationKey.\",\n        \"file_path\": \"smpl/ordering/OrderingServiceProperties.java\"\n    }\n}\n```",
+  "ttft_ms": 5716,
+  "type": "result",
+  "duration_ms": 6308,
+  "uuid": "39e6a028-1374-4a7f-b51a-effbaf7939ec",
+  "ttft_stream_ms": 1869,
+  "time_to_request_ms": 400,
+  "first_content_frame_ms": 1870,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

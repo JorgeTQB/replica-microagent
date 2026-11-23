@@ -1,0 +1,213 @@
+{
+  "referencia": "evaluation/references/partsunlimited.json",
+  "common_dict": "evaluation/common_dicts/partsunlimited.json",
+  "objetivo": "output/partsunlimited/claude-run4/result.json",
+  "evaluate_similarity": {
+    "p2r": {
+      "results_m1": {
+        "Catalog": {
+          "best_match": "catalog",
+          "similarity": 0.631578947368421,
+          "weight": 12
+        },
+        "Dealer": {
+          "best_match": "dealer",
+          "similarity": 0.631578947368421,
+          "weight": 12
+        },
+        "Quote": {
+          "best_match": "quote",
+          "similarity": 0.6666666666666666,
+          "weight": 14
+        },
+        "Order": {
+          "best_match": "order",
+          "similarity": 0.7083333333333334,
+          "weight": 17
+        },
+        "Shipment": {
+          "best_match": "shipment",
+          "similarity": 0.72,
+          "weight": 18
+        }
+      },
+      "results_m2": {
+        "Catalog": {
+          "best_match": "catalog",
+          "similarity": 1.0,
+          "weight": 12
+        },
+        "Dealer": {
+          "best_match": "dealer",
+          "similarity": 1.0,
+          "weight": 12
+        },
+        "Quote": {
+          "best_match": "quote",
+          "similarity": 1.0,
+          "weight": 14
+        },
+        "Order": {
+          "best_match": "order",
+          "similarity": 1.0,
+          "weight": 17
+        },
+        "Shipment": {
+          "best_match": "shipment",
+          "similarity": 1.0,
+          "weight": 18
+        }
+      },
+      "metrics_m1": {
+        "average": 0.6716315789473685,
+        "weighted_average": 0.6779848594087959,
+        "above_0.5": 1.0,
+        "above_0.75": 0.0,
+        "above_0.8": 0.0,
+        "above_0.9": 0.0
+      },
+      "metrics_m2": {
+        "average": 1.0,
+        "weighted_average": 1.0,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 1.0
+      }
+    },
+    "r2p": {
+      "results_m1": {
+        "catalog": {
+          "best_match": "Catalog",
+          "similarity": 0.631578947368421,
+          "weight": 19
+        },
+        "dealer": {
+          "best_match": "Dealer",
+          "similarity": 0.631578947368421,
+          "weight": 19
+        },
+        "order": {
+          "best_match": "Order",
+          "similarity": 0.7083333333333334,
+          "weight": 24
+        },
+        "quote": {
+          "best_match": "Quote",
+          "similarity": 0.6666666666666666,
+          "weight": 21
+        },
+        "shipment": {
+          "best_match": "Shipment",
+          "similarity": 0.72,
+          "weight": 25
+        }
+      },
+      "results_m2": {
+        "catalog": {
+          "best_match": "Catalog",
+          "similarity": 1.0,
+          "weight": 12
+        },
+        "dealer": {
+          "best_match": "Dealer",
+          "similarity": 1.0,
+          "weight": 12
+        },
+        "order": {
+          "best_match": "Order",
+          "similarity": 1.0,
+          "weight": 17
+        },
+        "quote": {
+          "best_match": "Quote",
+          "similarity": 1.0,
+          "weight": 14
+        },
+        "shipment": {
+          "best_match": "Shipment",
+          "similarity": 1.0,
+          "weight": 18
+        }
+      },
+      "metrics_m1": {
+        "average": 0.6716315789473685,
+        "weighted_average": 0.6759259259259259,
+        "above_0.5": 1.0,
+        "above_0.75": 0.0,
+        "above_0.8": 0.0,
+        "above_0.9": 0.0
+      },
+      "metrics_m2": {
+        "average": 1.0,
+        "weighted_average": 1.0,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 1.0
+      }
+    },
+    "f1": {
+      "metrics_m1": {
+        "average": 0.6716315789473685,
+        "weighted_average": 0.676953827125845,
+        "above_0.5": 1.0,
+        "above_0.75": 0,
+        "above_0.8": 0,
+        "above_0.9": 0
+      },
+      "metrics_m2": {
+        "average": 1.0,
+        "weighted_average": 1.0,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 1.0,
+        "above_0.9": 1.0
+      }
+    },
+    "uncounted_info": {
+      "uncounted_classes": [
+        "smpl.ordering.AppInsightsFilter",
+        "smpl.ordering.MongoDBProperties",
+        "smpl.ordering.OrderingServiceProperties",
+        "smpl.ordering.PostgresqlProperties",
+        "smpl.ordering.PropertyHelper",
+        "smpl.ordering.controllers.PingController",
+        "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry"
+      ],
+      "uncounted_count": 7,
+      "reference_class_count": 46,
+      "target_class_count": 53,
+      "universal_class_count": null,
+      "reference_partition_count": 5,
+      "target_partition_count": 5,
+      "using_universal_set": false
+    }
+  },
+  "calculate_metrics": {
+    "service_level": {
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "utility_level": {
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  }
+}

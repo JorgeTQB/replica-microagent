@@ -1,0 +1,69 @@
+{
+  "resultado": "OK",
+  "apps": {
+    "jpetstore-6": {
+      "referencia": "evaluation/references/jpetstore-6.json",
+      "common_dict": "evaluation/common_dicts/jpetstore-6.json",
+      "valores": {
+        "f1.metrics_m2.average": 1.0,
+        "f1.metrics_m2.weighted_average": 1.0,
+        "f1.metrics_m2.above_0.5": 1.0,
+        "f1.metrics_m2.above_0.75": 1.0,
+        "f1.metrics_m2.above_0.8": 1.0,
+        "f1.metrics_m2.above_0.9": 1.0,
+        "f1.metrics_m1.average": 1.0,
+        "f1.metrics_m1.weighted_average": 1.0,
+        "f1.metrics_m1.above_0.5": 1.0,
+        "f1.metrics_m1.above_0.75": 1.0,
+        "f1.metrics_m1.above_0.8": 1.0,
+        "f1.metrics_m1.above_0.9": 1.0,
+        "common.service_level.micro.precision": 1.0,
+        "common.service_level.micro.recall": 1.0,
+        "common.service_level.micro.f1": 1.0,
+        "common.service_level.macro.precision": 1.0,
+        "common.service_level.macro.recall": 1.0,
+        "common.service_level.macro.f1": 1.0,
+        "common.utility_level.micro.precision": 1.0,
+        "common.utility_level.micro.recall": 1.0,
+        "common.utility_level.micro.f1": 1.0,
+        "common.utility_level.macro.precision": 1.0,
+        "common.utility_level.macro.recall": 1.0,
+        "common.utility_level.macro.f1": 1.0
+      },
+      "distintos_de_1": {},
+      "fp_fn_impresos": []
+    },
+    "partsunlimited": {
+      "referencia": "evaluation/references/partsunlimited.json",
+      "common_dict": "evaluation/common_dicts/partsunlimited.json",
+      "valores": {
+        "f1.metrics_m2.average": 1.0,
+        "f1.metrics_m2.weighted_average": 1.0,
+        "f1.metrics_m2.above_0.5": 1.0,
+        "f1.metrics_m2.above_0.75": 1.0,
+        "f1.metrics_m2.above_0.8": 1.0,
+        "f1.metrics_m2.above_0.9": 1.0,
+        "f1.metrics_m1.average": 1.0,
+        "f1.metrics_m1.weighted_average": 1.0,
+        "f1.metrics_m1.above_0.5": 1.0,
+        "f1.metrics_m1.above_0.75": 1.0,
+        "f1.metrics_m1.above_0.8": 1.0,
+        "f1.metrics_m1.above_0.9": 1.0,
+        "common.service_level.micro.precision": 1.0,
+        "common.service_level.micro.recall": 1.0,
+        "common.service_level.micro.f1": 1.0,
+        "common.service_level.macro.precision": 1.0,
+        "common.service_level.macro.recall": 1.0,
+        "common.service_level.macro.f1": 1.0,
+        "common.utility_level.micro.precision": 1.0,
+        "common.utility_level.micro.recall": 1.0,
+        "common.utility_level.micro.f1": 1.0,
+        "common.utility_level.macro.precision": 1.0,
+        "common.utility_level.macro.recall": 1.0,
+        "common.utility_level.macro.f1": 1.0
+      },
+      "distintos_de_1": {},
+      "fp_fn_impresos": []
+    }
+  }
+}

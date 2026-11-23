@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 15827,
+  "stop_reason": "end_turn",
+  "session_id": "ae1bc47f-2f7d-4d27-9964-837054933564",
+  "total_cost_usd": 0.0219,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1373,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 909,
+    "output_tokens_details": {
+      "thinking_tokens": 662
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1373,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 909,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1373,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1373
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 909,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1373,
+      "webSearchRequests": 0,
+      "costUSD": 0.0219,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 662,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1373,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.PingController\": {\n        \"summary\": \"Spring MVC controller that provides health check and status endpoints for the ordering service. Exposes two endpoints at '/ping': (1) HEAD method - performs a simple health check returning HTTP 200 OK for lightweight service availability verification, and (2) GET method - returns detailed status information including ping/validation messages from OrderingServiceProperties, build number, and build timestamp loaded from 'buildinfo.properties'. Key features include: lazy loading and caching of build properties in a private Properties field; exception handling integrated with Application Insights TelemetryClient for monitoring failures; returns HTTP 500 with exception details on errors. Dependencies: OrderingServiceProperties (autowired for configuration messages), PropertyHelper (for loading build properties), and Utility (for telemetry client access). Implements a standard ping/health check pattern commonly used in microservices for monitoring, diagnostics, and automated health checks.\",\n        \"file_path\": \"smpl/ordering/controllers/PingController.java\"\n    }\n}\n```",
+  "ttft_ms": 12391,
+  "type": "result",
+  "duration_ms": 16025,
+  "uuid": "444f3b24-d662-47ad-916b-5c7e8806244d",
+  "ttft_stream_ms": 1061,
+  "time_to_request_ms": 193,
+  "first_content_frame_ms": 1061,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

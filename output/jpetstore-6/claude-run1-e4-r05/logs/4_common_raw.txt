@@ -1,0 +1,23 @@
+All 3 domains have been saved successfully. Here is a summary of what was done:
+
+## Summary
+
+### Common Class Identified
+**`org.mybatis.jpetstore.web.actions.AbstractActionBean`** — This is the only true common/utility class in this application. It is:
+- An abstract base class extended by **all 4 ActionBeans** across all 3 domains
+- It provides shared web action infrastructure (Stripes framework `ActionBean` interface, context management, messaging utilities)
+- It has **no domain-specific logic** — purely a utility/base class
+- Confirmed by both `rank_dependency_entropy` (highest incoming entropy = 1.5, with Infinity incoming dependency ratio meaning it depends on nothing but is depended on by all action beans) and direct source code inspection
+
+### Results Saved (3 domains, 26 total class assignments)
+
+| Domain | Classes | Common Class Added |
+|--------|---------|-------------------|
+| **Account Management** | 5 classes | `AbstractActionBean` ✓ |
+| **Catalog** | 9 classes | `AbstractActionBean` ✓ |
+| **Shopping Cart and Order Management** | 12 classes | `AbstractActionBean` ✓ |
+
+### Why Only AbstractActionBean?
+- `CatalogService` is used by multiple domains but it's a **domain-specific service** belonging to Catalog — not a utility class
+- `Item`, `Account`, `Product` have high incoming entropy but they are **domain business objects** used for cross-domain communication, not utility/helper classes
+- No other classes exist outside the 3 established domains that could serve as shared utilities

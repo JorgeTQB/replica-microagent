@@ -1,0 +1,38 @@
+Based on my thorough analysis, I can now identify all classes that belong to the Catalog domain. Let me verify my findings:
+
+**Catalog Domain Classes:**
+
+1. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.CatalogActionBean` - The web action bean handling catalog browsing, category/product/item viewing, and search
+
+2. **Business Layer:**
+   - `org.mybatis.jpetstore.service.CatalogService` - Service handling all catalog operations (categories, products, items, inventory checks)
+
+3. **Data Layer (Mappers):**
+   - `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for category entities
+   - `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for product entities
+   - `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for item entities (also includes inventory quantity operations)
+
+4. **Domain Objects:**
+   - `org.mybatis.jpetstore.domain.Category` - Category domain entity (used exclusively by catalog)
+   - `org.mybatis.jpetstore.domain.Product` - Product domain entity (used by catalog; also referenced by Account and Cart but it's a catalog core entity)
+   - `org.mybatis.jpetstore.domain.Item` - Item domain entity (core catalog entity; used by Cart/Order but belongs to catalog)
+
+**Note on AbstractActionBean:** This is a shared infrastructure class used by all action beans - it doesn't exclusively belong to Catalog.
+
+**Note on Item**: While `Item` is used by Cart and Order domains, it is a core catalog entity (product variant with pricing, supplier info, attributes), and those other domains simply reference it. It clearly belongs to the Catalog domain.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper",
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item"
+  ]
+}
+```

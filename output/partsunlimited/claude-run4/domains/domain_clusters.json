@@ -1,0 +1,24 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Catalog",
+      "description": "This domain manages the product catalog that serves as the foundation for the ordering system. It is responsible for maintaining product definitions including SKU numbers, descriptions, pricing, inventory levels, and lead times. The Catalog domain supports operations such as creating, retrieving, updating, and deleting catalog items. It provides a central repository of available products that other domains (such as Quote) can reference when constructing product line items. The bounded context includes the presentation layer for catalog HTTP endpoints, business logic for catalog item validation, and data access layer for persisting and retrieving catalog items from the database."
+    },
+    {
+      "domain_name": "Dealer",
+      "description": "This domain manages dealer and supplier information within the ordering ecosystem. It is responsible for maintaining dealer profiles including business name, contact person, physical address, email, and phone information. The Dealer domain supports full lifecycle management of dealers: registration, retrieval, updating, and removal. Dealer records are referenced by other domains—particularly the Quote domain—to associate quotes with specific dealers. The bounded context includes the presentation layer for dealer HTTP endpoints, business logic for dealer data validation, and data access for persisting and retrieving dealer records."
+    },
+    {
+      "domain_name": "Quote",
+      "description": "This domain manages customer price quotes in the sales pipeline. It is responsible for the creation, retrieval, modification, and deletion of quotes, including quote line items that link catalog products (by SKU) to specific quantity/pricing details. A quote captures customer and dealer associations, validity period, total cost, discount, and delivery location details (city, state, postal code). The Quote domain enforces business rules around quote validity and structure. Quotes serve as the basis for creating orders once approved. The bounded context includes the presentation layer for quote HTTP endpoints, models capturing quote structure and line item details, and data access for persisting and retrieving quote records."
+    },
+    {
+      "domain_name": "Order",
+      "description": "This domain manages the order lifecycle from creation through fulfillment. Orders are created from approved quotes and track the progress of a customer's purchase through various statuses. The Order domain is responsible for order creation (referencing an existing quote), status management, event/activity logging (recording comments and dates for order events), and order retrieval by various criteria (order ID, dealer name, status). The bounded context includes the presentation layer for order HTTP endpoints, models for order data and order event information, status tracking enumerations, and data access for persisting and querying order records."
+    },
+    {
+      "domain_name": "Shipment",
+      "description": "This domain manages the physical delivery and logistics of fulfilled orders. It tracks shipment records associated with specific orders, capturing delivery date, delivery address (street, city, state, postal code, special instructions), and contact information (contact name, primary phone, alternate phone). The Shipment domain also maintains a chronological event log for shipment lifecycle events (e.g., dispatch, delivery confirmation). The domain supports creating shipment records, updating delivery details, adding shipment events, and querying deliveries by status. The bounded context includes the presentation layer for shipment HTTP endpoints, models for shipment records, delivery addresses, phone information, shipment event details, and an aggregate delivery view combining order, quote, and shipment data, as well as data access for persisting and retrieving shipment records."
+    }
+  ]
+}

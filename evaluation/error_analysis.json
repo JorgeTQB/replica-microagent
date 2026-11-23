@@ -1,0 +1,3662 @@
+{
+  "jpetstore-6/claude-run4": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.8333
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping and Order Management": {
+        "particion": "order",
+        "similitud": 0.8462
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.8333
+      },
+      "order": {
+        "servicio": "Shopping and Order Management",
+        "similitud": 0.8462
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run5": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run6": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Product Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Product Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run7": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.5556
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Order & Cart Management": {
+        "particion": "order",
+        "similitud": 0.6471
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.5556
+      },
+      "order": {
+        "servicio": "Order & Cart Management",
+        "similitud": 0.6471
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Order & Cart Management (~order)"
+        ],
+        "de_mas_en": [
+          "Order & Cart Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Order & Cart Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Order & Cart Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Product",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Order & Cart Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Order & Cart Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Order & Cart Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Order & Cart Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Order & Cart Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Order & Cart Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Order & Cart Management (~order)"
+        ],
+        "de_mas_en": [
+          "Order & Cart Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run8": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.625
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.6875
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.625
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.6875
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run9": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run10": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.8333
+      },
+      "Catalog Management": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.8462
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.8333
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.8462
+      },
+      "catalog": {
+        "servicio": "Catalog Management",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog Management (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run11": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.8333
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart & Order Management": {
+        "particion": "order",
+        "similitud": 0.8462
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.8333
+      },
+      "order": {
+        "servicio": "Shopping Cart & Order Management",
+        "similitud": 0.8462
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart & Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart & Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart & Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart & Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run12": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run13": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.8333
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.7333
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.8333
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.7333
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/baseline-run1": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "AccountService": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "CatalogService": {
+        "particion": "catalog",
+        "similitud": 0.8333
+      },
+      "OrderService": {
+        "particion": "order",
+        "similitud": 0.7857
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "AccountService",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "OrderService",
+        "similitud": 0.7857
+      },
+      "catalog": {
+        "servicio": "CatalogService",
+        "similitud": 0.8333
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "AccountService (~account)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Cart",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.CartItem",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/baseline-run2": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "AccountService": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "CatalogService": {
+        "particion": "catalog",
+        "similitud": 0.8333
+      },
+      "OrderService": {
+        "particion": "order",
+        "similitud": 0.7857
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "AccountService",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "OrderService",
+        "similitud": 0.7857
+      },
+      "catalog": {
+        "servicio": "CatalogService",
+        "similitud": 0.8333
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "AccountService (~account)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Cart",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.CartItem",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/baseline-run3": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "AccountService": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "CatalogService": {
+        "particion": "catalog",
+        "similitud": 0.8333
+      },
+      "OrderService": {
+        "particion": "order",
+        "similitud": 0.7857
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "AccountService",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "OrderService",
+        "similitud": 0.7857
+      },
+      "catalog": {
+        "servicio": "CatalogService",
+        "similitud": 0.8333
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "AccountService (~account)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Cart",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.CartItem",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "OrderService (~order)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run1": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run2": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.5556
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.6875
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.5556
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.6875
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Product",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run3": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.625
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.6875
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.625
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.6875
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.mapper.ItemMapper",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run1-e4-r01": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run1-e4-r02": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.7143
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.6875
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.7143
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.6875
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.domain.Account",
+        "referencia": [
+          "account"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Item",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.domain.Product",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run1-e4-r03": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.8333
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.8462
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.8333
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.8462
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run1-e4-r04": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 0.8333
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.8462
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 0.8333
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.8462
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.service.CatalogService",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Account Management (~account)",
+          "Catalog (~catalog)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Account Management (~account)",
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "jpetstore-6/claude-run1-e4-r05": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Account Management": {
+        "particion": "account",
+        "similitud": 1.0
+      },
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9
+      },
+      "Shopping Cart and Order Management": {
+        "particion": "order",
+        "similitud": 0.9167
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "account": {
+        "servicio": "Account Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Shopping Cart and Order Management",
+        "similitud": 0.9167
+      },
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "org.mybatis.jpetstore.web.actions.CartActionBean",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "de_mas_en": [
+          "Shopping Cart and Order Management (~order)"
+        ],
+        "falta_en_particion_de_referencia": [
+          "catalog"
+        ]
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {}
+  },
+  "partsunlimited/claude-run4": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 1.0
+      },
+      "Dealer": {
+        "particion": "dealer",
+        "similitud": 1.0
+      },
+      "Quote": {
+        "particion": "quote",
+        "similitud": 1.0
+      },
+      "Order": {
+        "particion": "order",
+        "similitud": 1.0
+      },
+      "Shipment": {
+        "particion": "shipment",
+        "similitud": 1.0
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 1.0
+      },
+      "dealer": {
+        "servicio": "Dealer",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Order",
+        "similitud": 1.0
+      },
+      "quote": {
+        "servicio": "Quote",
+        "similitud": 1.0
+      },
+      "shipment": {
+        "servicio": "Shipment",
+        "similitud": 1.0
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ]
+    }
+  },
+  "partsunlimited/claude-run5": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Product Catalog": {
+        "particion": "catalog",
+        "similitud": 1.0
+      },
+      "Dealer Management": {
+        "particion": "dealer",
+        "similitud": 1.0
+      },
+      "Quote Management": {
+        "particion": "quote",
+        "similitud": 1.0
+      },
+      "Order Management": {
+        "particion": "order",
+        "similitud": 1.0
+      },
+      "Shipment and Delivery": {
+        "particion": "shipment",
+        "similitud": 0.9474
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "Product Catalog",
+        "similitud": 1.0
+      },
+      "dealer": {
+        "servicio": "Dealer Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Order Management",
+        "similitud": 1.0
+      },
+      "quote": {
+        "servicio": "Quote Management",
+        "similitud": 1.0
+      },
+      "shipment": {
+        "servicio": "Shipment and Delivery",
+        "similitud": 0.9474
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "smpl.ordering.models.OrderStatus",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "Order Management (~order)",
+          "Shipment and Delivery (~shipment)"
+        ],
+        "de_mas_en": [
+          "Shipment and Delivery (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ]
+    }
+  },
+  "partsunlimited/claude-run6": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Product Catalog": {
+        "particion": "catalog",
+        "similitud": 1.0
+      },
+      "Dealer Management": {
+        "particion": "dealer",
+        "similitud": 1.0
+      },
+      "Quote Management": {
+        "particion": "quote",
+        "similitud": 1.0
+      },
+      "Order Management": {
+        "particion": "order",
+        "similitud": 1.0
+      },
+      "Shipment Management": {
+        "particion": "shipment",
+        "similitud": 1.0
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "Product Catalog",
+        "similitud": 1.0
+      },
+      "dealer": {
+        "servicio": "Dealer Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Order Management",
+        "similitud": 1.0
+      },
+      "quote": {
+        "servicio": "Quote Management",
+        "similitud": 1.0
+      },
+      "shipment": {
+        "servicio": "Shipment Management",
+        "similitud": 1.0
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ]
+    }
+  },
+  "partsunlimited/baseline-run1": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "CatalogService": {
+        "particion": "catalog",
+        "similitud": 0.8571
+      },
+      "DealerService": {
+        "particion": "dealer",
+        "similitud": 0.8571
+      },
+      "QuoteService": {
+        "particion": "quote",
+        "similitud": 0.7
+      },
+      "OrderService": {
+        "particion": "order",
+        "similitud": 0.6296
+      },
+      "ShipmentService": {
+        "particion": "shipment",
+        "similitud": 0.5
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "CatalogService",
+        "similitud": 0.8571
+      },
+      "dealer": {
+        "servicio": "DealerService",
+        "similitud": 0.8571
+      },
+      "order": {
+        "servicio": "OrderService",
+        "similitud": 0.6296
+      },
+      "quote": {
+        "servicio": "QuoteService",
+        "similitud": 0.7
+      },
+      "shipment": {
+        "servicio": "ShipmentService",
+        "similitud": 0.5
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "smpl.ordering.BadRequestException",
+        "referencia": [
+          "order",
+          "quote",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.ConflictingRequestException",
+        "referencia": [
+          "order",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.DealerInfo",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "QuoteService (~quote)"
+        ],
+        "de_mas_en": [
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.Order",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderEventInfo",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderStatus",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderUpdateInfo",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.Quote",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.QuoteItemInfo",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.DealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.OrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.QuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockDealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockOrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockQuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.Dealer",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.OrderDetails",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.QuoteDetails",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ]
+    }
+  },
+  "partsunlimited/baseline-run2": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "CatalogService": {
+        "particion": "catalog",
+        "similitud": 0.8571
+      },
+      "DealerService": {
+        "particion": "dealer",
+        "similitud": 0.8571
+      },
+      "QuoteService": {
+        "particion": "quote",
+        "similitud": 0.6087
+      },
+      "OrderService": {
+        "particion": "order",
+        "similitud": 0.6538
+      },
+      "ShipmentService": {
+        "particion": "shipment",
+        "similitud": 0.5143
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "CatalogService",
+        "similitud": 0.8571
+      },
+      "dealer": {
+        "servicio": "DealerService",
+        "similitud": 0.8571
+      },
+      "order": {
+        "servicio": "OrderService",
+        "similitud": 0.6538
+      },
+      "quote": {
+        "servicio": "QuoteService",
+        "similitud": 0.6087
+      },
+      "shipment": {
+        "servicio": "ShipmentService",
+        "similitud": 0.5143
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "smpl.ordering.BadRequestException",
+        "referencia": [
+          "order",
+          "quote",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.ConflictingRequestException",
+        "referencia": [
+          "order",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.CatalogItem",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "QuoteService (~quote)"
+        ],
+        "de_mas_en": [
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.DealerInfo",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "QuoteService (~quote)"
+        ],
+        "de_mas_en": [
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.Order",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderEventInfo",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderStatus",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderUpdateInfo",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.Quote",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.QuoteItemInfo",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.CatalogItemsRepository",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "QuoteService (~quote)"
+        ],
+        "de_mas_en": [
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.DealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "QuoteService (~quote)"
+        ],
+        "de_mas_en": [
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.OrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.QuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockCatalogItemsRepository",
+        "referencia": [
+          "catalog"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "QuoteService (~quote)"
+        ],
+        "de_mas_en": [
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockDealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockOrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockQuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.Dealer",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.OrderDetails",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.QuoteDetails",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ]
+    }
+  },
+  "partsunlimited/baseline-run3": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "CatalogService": {
+        "particion": "catalog",
+        "similitud": 0.8571
+      },
+      "DealerService": {
+        "particion": "dealer",
+        "similitud": 0.8571
+      },
+      "QuoteService": {
+        "particion": "quote",
+        "similitud": 0.7
+      },
+      "OrderService": {
+        "particion": "order",
+        "similitud": 0.6071
+      },
+      "ShipmentService": {
+        "particion": "shipment",
+        "similitud": 0.4865
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "CatalogService",
+        "similitud": 0.8571
+      },
+      "dealer": {
+        "servicio": "DealerService",
+        "similitud": 0.8571
+      },
+      "order": {
+        "servicio": "OrderService",
+        "similitud": 0.6071
+      },
+      "quote": {
+        "servicio": "QuoteService",
+        "similitud": 0.7
+      },
+      "shipment": {
+        "servicio": "ShipmentService",
+        "similitud": 0.4865
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "smpl.ordering.BadRequestException",
+        "referencia": [
+          "order",
+          "quote",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.ConflictingRequestException",
+        "referencia": [
+          "order",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "CatalogService (~catalog)",
+          "DealerService (~dealer)",
+          "QuoteService (~quote)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.DealerInfo",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.Order",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderEventInfo",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderStatus",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.OrderUpdateInfo",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.Quote",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.models.QuoteItemInfo",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.DealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.OrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.QuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockDealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockOrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mock.MockQuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.Dealer",
+        "referencia": [
+          "dealer"
+        ],
+        "servicios_producidos": [
+          "DealerService (~dealer)",
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.OrderDetails",
+        "referencia": [
+          "order"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      },
+      {
+        "clase": "smpl.ordering.repositories.mongodb.models.QuoteDetails",
+        "referencia": [
+          "quote"
+        ],
+        "servicios_producidos": [
+          "OrderService (~order)",
+          "QuoteService (~quote)",
+          "ShipmentService (~shipment)"
+        ],
+        "de_mas_en": [
+          "OrderService (~order)",
+          "ShipmentService (~shipment)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "CatalogService",
+        "DealerService",
+        "OrderService",
+        "QuoteService",
+        "ShipmentService"
+      ]
+    }
+  },
+  "partsunlimited/claude-run1": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Product Catalog": {
+        "particion": "catalog",
+        "similitud": 1.0
+      },
+      "Dealer Management": {
+        "particion": "dealer",
+        "similitud": 1.0
+      },
+      "Quote Management": {
+        "particion": "quote",
+        "similitud": 1.0
+      },
+      "Order Management": {
+        "particion": "order",
+        "similitud": 1.0
+      },
+      "Shipment and Delivery": {
+        "particion": "shipment",
+        "similitud": 1.0
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "Product Catalog",
+        "similitud": 1.0
+      },
+      "dealer": {
+        "servicio": "Dealer Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Order Management",
+        "similitud": 1.0
+      },
+      "quote": {
+        "servicio": "Quote Management",
+        "similitud": 1.0
+      },
+      "shipment": {
+        "servicio": "Shipment and Delivery",
+        "similitud": 1.0
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment and Delivery"
+      ]
+    }
+  },
+  "partsunlimited/claude-run2": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Catalog": {
+        "particion": "catalog",
+        "similitud": 0.9231
+      },
+      "Dealer": {
+        "particion": "dealer",
+        "similitud": 0.9231
+      },
+      "Quote": {
+        "particion": "quote",
+        "similitud": 1.0
+      },
+      "Order": {
+        "particion": "order",
+        "similitud": 1.0
+      },
+      "Shipment": {
+        "particion": "shipment",
+        "similitud": 1.0
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "Catalog",
+        "similitud": 0.9231
+      },
+      "dealer": {
+        "servicio": "Dealer",
+        "similitud": 0.9231
+      },
+      "order": {
+        "servicio": "Order",
+        "similitud": 1.0
+      },
+      "quote": {
+        "servicio": "Quote",
+        "similitud": 1.0
+      },
+      "shipment": {
+        "servicio": "Shipment",
+        "similitud": 1.0
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [
+      {
+        "clase": "smpl.ordering.BadRequestException",
+        "referencia": [
+          "order",
+          "quote",
+          "shipment"
+        ],
+        "servicios_producidos": [
+          "Catalog (~catalog)",
+          "Dealer (~dealer)",
+          "Order (~order)",
+          "Quote (~quote)",
+          "Shipment (~shipment)"
+        ],
+        "de_mas_en": [
+          "Catalog (~catalog)",
+          "Dealer (~dealer)"
+        ],
+        "falta_en_particion_de_referencia": []
+      }
+    ],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "Catalog",
+        "Dealer",
+        "Order",
+        "Quote",
+        "Shipment"
+      ]
+    }
+  },
+  "partsunlimited/claude-run3": {
+    "asociacion_servicio_a_referencia_p2r": {
+      "Product Catalog": {
+        "particion": "catalog",
+        "similitud": 1.0
+      },
+      "Dealer Management": {
+        "particion": "dealer",
+        "similitud": 1.0
+      },
+      "Quote Management": {
+        "particion": "quote",
+        "similitud": 1.0
+      },
+      "Order Management": {
+        "particion": "order",
+        "similitud": 1.0
+      },
+      "Shipment Management": {
+        "particion": "shipment",
+        "similitud": 1.0
+      }
+    },
+    "asociacion_referencia_a_servicio_r2p": {
+      "catalog": {
+        "servicio": "Product Catalog",
+        "similitud": 1.0
+      },
+      "dealer": {
+        "servicio": "Dealer Management",
+        "similitud": 1.0
+      },
+      "order": {
+        "servicio": "Order Management",
+        "similitud": 1.0
+      },
+      "quote": {
+        "servicio": "Quote Management",
+        "similitud": 1.0
+      },
+      "shipment": {
+        "servicio": "Shipment Management",
+        "similitud": 1.0
+      }
+    },
+    "particiones_de_referencia_con_varios_servicios": {},
+    "particiones_de_referencia_sin_servicio_asociado": [],
+    "clases_mal_asignadas": [],
+    "clases_uncounted_donde_quedaron": {
+      "smpl.ordering.AppInsightsFilter": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.MongoDBProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.OrderingServiceProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.PostgresqlProperties": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.PropertyHelper": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.controllers.PingController": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ],
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": [
+        "Dealer Management",
+        "Order Management",
+        "Product Catalog",
+        "Quote Management",
+        "Shipment Management"
+      ]
+    }
+  }
+}

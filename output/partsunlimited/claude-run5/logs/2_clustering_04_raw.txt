@@ -1,0 +1,51 @@
+I have a comprehensive view of all classes. Let me now identify specifically the Order Management domain classes by carefully analyzing each one:
+
+**Order Management Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.OrderController` - The HTTP controller for /orders endpoint
+
+2. **Domain Objects (Models):**
+   - `smpl.ordering.models.Order` - Core order entity
+   - `smpl.ordering.models.OrderEventInfo` - Order event tracking
+   - `smpl.ordering.models.OrderStatus` - Order status enumeration
+   - `smpl.ordering.models.OrderUpdateInfo` - Order update data transfer object
+
+3. **Data Layer (Repository Interfaces):**
+   - `smpl.ordering.repositories.OrderRepository` - Repository interface for orders
+
+4. **Data Layer (Repository Implementations - Mock):**
+   - `smpl.ordering.repositories.mock.MockOrderRepository` - In-memory order repository
+
+5. **Data Layer (Repository Implementations - MongoDB):**
+   - `smpl.ordering.repositories.mongodb.MongoOrderRepository` - MongoDB order repository
+   - `smpl.ordering.repositories.mongodb.models.OrderDetails` - MongoDB document model for orders
+
+**Classes to EXCLUDE (belong to other domains):**
+- `smpl.ordering.controllers.ShipmentController` - Shipment domain
+- `smpl.ordering.models.Delivery` - Shipment domain
+- `smpl.ordering.models.Quote` - Quote Management domain
+- `smpl.ordering.repositories.QuoteRepository` - Quote Management domain
+- `smpl.ordering.repositories.RepositoryFactory` - Common/utility
+- `smpl.ordering.OrderingInitializer` - Application bootstrap
+- `smpl.ordering.Utility` - Common utility
+- `smpl.ordering.repositories.mock.MockShipmentRepository` - Shipment domain
+- `smpl.ordering.repositories.mongodb.MongoShipmentRepository` - Shipment domain
+
+The `OrderStatus` enum is shared with the Shipment domain (used for filtering shipments by status), but its primary definition and core usage is within the Order domain. It represents order lifecycle states and should belong to Order Management.
+
+```json
+{
+  "Order Management": [
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.models.Order",
+    "smpl.ordering.models.OrderEventInfo",
+    "smpl.ordering.models.OrderStatus",
+    "smpl.ordering.models.OrderUpdateInfo",
+    "smpl.ordering.repositories.OrderRepository",
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.models.OrderDetails"
+  ]
+}
+```

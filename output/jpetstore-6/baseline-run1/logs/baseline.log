@@ -1,0 +1,9 @@
+[2026-11-21T22:07:59-05:00] Linea base baseline-run1 de jpetstore-6 (n=3, modelo=claude-sonnet-4-6)
+[2026-11-21T22:07:59-05:00] Prompt: 73851 caracteres, 24 clases. Contexto: igual al de las corridas de MicroAgent (linea base prueba-humo-etapa1, 2026-11-16T15:57:25-05:00)
+[2026-11-21T22:07:59-05:00] 
+>>> baseline: una llamada sin herramientas (max-turns 1)
+[2026-11-21T22:08:06-05:00]   [OBSERVACION] json_entre_cercas_de_codigo: clean_json_output recorto 12 caracteres de 1613
+[2026-11-21T22:08:06-05:00] <<< baseline: 7.4 s, respuesta de 1613 caracteres, 3 servicios, 24 de 24 clases asignadas
+[2026-11-21T22:08:06-05:00] 
+--- Linea base completa ---
+[2026-11-21T22:08:06-05:00] Estado: completa | turnos: 1 | peticiones: 1 | duracion: 6 s | costo nominal: USD 0.1432 | tokens: {'input_tokens': 2, 'output_tokens': 589, 'cache_creation_input_tokens': 22400, 'cache_read_input_tokens': 0}

@@ -1,0 +1,68 @@
+All 3 domains have been saved. Here is a complete summary of the results:
+
+---
+
+## Common Classes Identified and Assigned
+
+### Common Classes Found:
+
+1. **`org.mybatis.jpetstore.web.actions.AbstractActionBean`**
+   - **Type**: Utility/Base class (incoming dependency)
+   - **Reason**: Abstract base class extended by ALL action beans (`AccountActionBean`, `CatalogActionBean`, `CartActionBean`, `OrderActionBean`). It provides shared web context management (session, messages) used across all 3 domains.
+   - **Assigned to**: All 3 domains
+
+2. **`org.mybatis.jpetstore.service.CatalogService`**
+   - **Type**: Shared service (incoming dependency)
+   - **Reason**: Used by action beans in 3 different domains:
+     - `CatalogActionBean` (Catalog domain) - primary user
+     - `AccountActionBean` (Account Management domain) - uses `getProductListByCategory()` for user's favorite products list
+     - `CartActionBean` (Shopping Cart and Order Management domain) - uses `isItemInStock()` and `getItem()` for cart operations
+   - **Assigned to**: All 3 domains
+
+---
+
+## Final Domain Assignments
+
+**Domains saved: 3 | Total classes across all domains: 28**
+
+| Domain | Classes |
+|--------|---------|
+| **Account Management** | 6 classes (4 original + 2 common) |
+| **Catalog** | 9 classes (8 original + 2 common - 1 already in original) |
+| **Shopping Cart and Order Management** | 13 classes (11 original + 2 common) |
+
+### Complete Domain Contents:
+
+**Account Management (6 classes):**
+- `org.mybatis.jpetstore.domain.Account`
+- `org.mybatis.jpetstore.service.AccountService`
+- `org.mybatis.jpetstore.mapper.AccountMapper`
+- `org.mybatis.jpetstore.web.actions.AccountActionBean`
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` *(common)*
+- `org.mybatis.jpetstore.service.CatalogService` *(common)*
+
+**Catalog (9 classes):**
+- `org.mybatis.jpetstore.domain.Category`
+- `org.mybatis.jpetstore.domain.Product`
+- `org.mybatis.jpetstore.domain.Item`
+- `org.mybatis.jpetstore.service.CatalogService` *(common)*
+- `org.mybatis.jpetstore.mapper.CategoryMapper`
+- `org.mybatis.jpetstore.mapper.ProductMapper`
+- `org.mybatis.jpetstore.mapper.ItemMapper`
+- `org.mybatis.jpetstore.web.actions.CatalogActionBean`
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` *(common)*
+
+**Shopping Cart and Order Management (13 classes):**
+- `org.mybatis.jpetstore.domain.Cart`
+- `org.mybatis.jpetstore.domain.CartItem`
+- `org.mybatis.jpetstore.web.actions.CartActionBean`
+- `org.mybatis.jpetstore.domain.Order`
+- `org.mybatis.jpetstore.domain.LineItem`
+- `org.mybatis.jpetstore.domain.Sequence`
+- `org.mybatis.jpetstore.service.OrderService`
+- `org.mybatis.jpetstore.mapper.OrderMapper`
+- `org.mybatis.jpetstore.mapper.LineItemMapper`
+- `org.mybatis.jpetstore.mapper.SequenceMapper`
+- `org.mybatis.jpetstore.web.actions.OrderActionBean`
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` *(common)*
+- `org.mybatis.jpetstore.service.CatalogService` *(common)*

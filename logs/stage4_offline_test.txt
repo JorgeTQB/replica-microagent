@@ -1,0 +1,56 @@
+A. Reconstruccion de la entrada de la Etapa 4 (sin crear carpetas ni llamar a `claude`)
+  [OK] claude-run1: prompt y system prompt reconstruidos identicos al de su Etapa 4
+  [OK] claude-run1: load_source no crea la carpeta de la repeticion
+  [OK] claude-run2: prompt y system prompt reconstruidos identicos al de su Etapa 4
+  [OK] claude-run2: load_source no crea la carpeta de la repeticion
+  [OK] claude-run3: prompt y system prompt reconstruidos identicos al de su Etapa 4
+  [OK] claude-run3: load_source no crea la carpeta de la repeticion
+
+B. Repeticion simulada con la entrada de claude-run1
+  [OK] run_stage4.py termina sin error
+  [OK] una sola llamada (4_common) y estado parcial_etapa4
+  [OK] registra simulado y origen
+  [OK] 4_common_prompt.txt identico byte a byte al de claude-run1
+  [OK] 4_common_system_prompt.txt identico byte a byte al de claude-run1
+  [OK] domains/ identico al de origen
+  [OK] misma linea de comandos de `claude` que la Etapa 4 de origen (salvo la ruta de la corrida)
+  [OK] mismas variables y valores que fija el orquestador para `claude`
+  [OK] ninguna variable CLAUDE*/ANTHROPIC* distinta de la Etapa 4 de origen
+  [INFO] variables de la sesion que lanza el proceso distintas de las de claude-run1: ['BUN_ENABLE_CRASH_REPORTING']
+  [OK] misma configuracion del servidor MCP (herramientas y variables), salvo la ruta de la corrida
+  [OK] con las mismas escrituras del agente, common_result.json identico al de origen
+  [OK] deja origen_etapa4.json
+  [OK] _sandbox vacio tras la repeticion
+
+C. Herramientas de la Etapa 4: mismas respuestas que en la corrida de origen
+  [OK] repeticion de las 10 llamadas registradas
+  [OK] get_all_class_hierarchy_complete() devuelve el mismo texto que en claude-run1
+  [OK] get_database_summary() devuelve el mismo texto que en claude-run1
+  [OK] rank_dependency_entropy() devuelve el mismo texto que en claude-run1
+  [OK] get_class_relation_and_code(class_name=...) devuelve el mismo texto que en claude-run1
+  [OK] get_more_potential_common_classes(common_classes=...): mismo contenido que en claude-run1 (el orden de sus listas depende de PYTHONHASHSEED)
+  [OK] get_class_relation_and_code(class_name=...) devuelve el mismo texto que en claude-run1
+  [OK] get_class_relation_and_code(class_name=...) devuelve el mismo texto que en claude-run1
+  [OK] get_class_relation_and_code(class_name=...) devuelve el mismo texto que en claude-run1
+  [OK] get_class_relation_and_code(class_name=...) devuelve el mismo texto que en claude-run1
+  [OK] assign_common_class_list(common_class_domains=...): mismo contenido que en claude-run1 (el orden de sus listas depende de PYTHONHASHSEED)
+  [OK] con PYTHONHASHSEED=0 fijo, esas herramientas devuelven siempre el mismo texto
+  [INFO] con 5 semillas distintas se obtienen 5 ordenes distintos de esas respuestas
+  [OK] control: assign_common_class_list de claude-run2 se reproduce con su propia carpeta
+
+D. Protecciones (no se crea la carpeta ni se lanza `claude`)
+  [OK] origen inexistente: se rechaza ('no existe la corrida de origen')
+  [OK] origen que ya es una repeticion: se rechaza ('ya es una repeticion')
+  [OK] run_id ya usado: se rechaza ('una corrida nunca se sobrescribe')
+  [OK] origen con el prompt alterado: se rechaza antes de llamar a `claude`
+  [OK] origen hecho con otro orquestador o herramientas: se rechaza antes de llamar a `claude`
+
+E. Nada se toca
+  [OK] claude-run1: todos sus archivos con el mismo SHA-256
+  [OK] claude-run2: todos sus archivos con el mismo SHA-256
+  [OK] claude-run3: todos sus archivos con el mismo SHA-256
+  [OK] run_pipeline.py, prompts, herramientas y YAML del original con el mismo SHA-256 que en la ultima corrida
+  [OK] no quedan carpetas de prueba en output/
+  [OK] _sandbox vacio al terminar
+
+TODO OK

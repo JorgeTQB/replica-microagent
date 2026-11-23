@@ -1,0 +1,47 @@
+Based on my thorough analysis of the codebase, I can now identify all classes that belong exclusively to the **Catalog** domain. Let me summarize my findings:
+
+**Core Catalog Domain Classes:**
+
+1. **Domain Objects (Data Layer):**
+   - `org.mybatis.jpetstore.domain.Category` - Represents a category (top-level grouping). Used exclusively by CatalogService, CategoryMapper, and CatalogActionBean.
+   - `org.mybatis.jpetstore.domain.Product` - Represents a product within a category. Used by CatalogService, ProductMapper, CatalogActionBean, and AccountActionBean (for favorite category display).
+   - `org.mybatis.jpetstore.domain.Item` - Represents a purchasable item variant. Used by CatalogService, ItemMapper, CatalogActionBean, and also by Cart/Order domains (but the Item entity itself is a catalog domain object).
+
+2. **Business Layer:**
+   - `org.mybatis.jpetstore.service.CatalogService` - Core service handling all catalog operations (category list, product list by category, search, item details, inventory check). Exclusively catalog-focused.
+
+3. **Data Access Layer (Mappers):**
+   - `org.mybatis.jpetstore.mapper.CategoryMapper` - Database interface for category queries.
+   - `org.mybatis.jpetstore.mapper.ProductMapper` - Database interface for product queries including search.
+   - `org.mybatis.jpetstore.mapper.ItemMapper` - Database interface for item and inventory queries. (Note: also used by OrderService for inventory updates, but the mapper itself is part of the catalog data layer)
+
+4. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Web controller for all catalog views (main, category, product, item, search).
+
+**Excluded classes (belong to other domains):**
+- `Cart`, `CartItem` → Shopping Cart domain
+- `LineItem` → Order Management domain
+- `Order` → Order Management domain
+- `Account` → Account Management domain
+- `Sequence` → Order Management domain (for order ID generation)
+- `OrderService`, `AccountService` → Other domains
+- `OrderMapper`, `AccountMapper`, `LineItemMapper`, `SequenceMapper` → Other domains
+- `AccountActionBean`, `CartActionBean`, `OrderActionBean` → Other domains
+- `AbstractActionBean` → Shared/common class (used across all domains)
+
+The `AbstractActionBean` is a base class used by all action beans across all domains - it's a shared/common class, not specific to Catalog domain.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean"
+  ]
+}
+```

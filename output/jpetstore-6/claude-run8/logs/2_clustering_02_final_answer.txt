@@ -1,0 +1,43 @@
+Based on my thorough analysis of the codebase, I can now identify the classes that belong exclusively to the Catalog domain:
+
+**Core Catalog Domain Classes:**
+
+1. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Handles catalog browsing, category viewing, product viewing, item viewing, and product search
+
+2. **Business Layer:**
+   - `org.mybatis.jpetstore.service.CatalogService` - Service class handling catalog operations (get categories, products, items, search, check inventory)
+
+3. **Data Layer (Mappers):**
+   - `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for category entities
+   - `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for product entities
+   - `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for item entities (including inventory quantity)
+
+4. **Domain Objects:**
+   - `org.mybatis.jpetstore.domain.Category` - Category domain object (used ONLY by catalog)
+   - `org.mybatis.jpetstore.domain.Product` - Product domain object (primarily catalog, referenced by others)
+   - `org.mybatis.jpetstore.domain.Item` - Item/SKU domain object (primarily catalog, referenced by others)
+
+**Excluded Classes (belong to other domains):**
+- `AbstractActionBean` - Shared/common class
+- `Cart`, `CartItem` - Shopping Cart domain
+- `LineItem` - Order Management domain
+- `OrderService` - Order Management domain
+- `AccountActionBean`, `CartActionBean` - Account/Cart domains
+
+The `AbstractActionBean` is a support class used across multiple domains, so it's not exclusively Catalog. `Item` is a core catalog entity even though it's referenced by cart and order domains (they reference catalog items).
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper",
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item"
+  ]
+}
+```

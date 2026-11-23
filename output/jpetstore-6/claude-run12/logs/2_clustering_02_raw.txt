@@ -1,0 +1,39 @@
+Now I have a comprehensive view. Let me analyze which classes belong exclusively or primarily to the Catalog domain:
+
+**Core Catalog Classes:**
+1. `org.mybatis.jpetstore.domain.Category` - Domain object for category table (catalog)
+2. `org.mybatis.jpetstore.domain.Product` - Domain object for product table (catalog)
+3. `org.mybatis.jpetstore.domain.Item` - Domain object for item table (catalog - includes supplier/inventory fields)
+4. `org.mybatis.jpetstore.service.CatalogService` - Service layer exclusively for catalog
+5. `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Presentation layer for catalog
+6. `org.mybatis.jpetstore.mapper.CategoryMapper` - Data mapper for category table
+7. `org.mybatis.jpetstore.mapper.ProductMapper` - Data mapper for product table
+8. `org.mybatis.jpetstore.mapper.ItemMapper` - Data mapper for item/inventory tables
+
+**Classes to EXCLUDE:**
+- `org.mybatis.jpetstore.domain.Cart` - Shopping Cart domain
+- `org.mybatis.jpetstore.domain.CartItem` - Shopping Cart domain
+- `org.mybatis.jpetstore.domain.LineItem` - Order Management domain
+- `org.mybatis.jpetstore.service.OrderService` - Order Management domain
+- `org.mybatis.jpetstore.web.actions.AccountActionBean` - Account Management domain
+- `org.mybatis.jpetstore.web.actions.CartActionBean` - Shopping Cart domain
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` - Common/shared base class (used across all domains)
+
+The `AbstractActionBean` is a shared base class used across all domains, and should not be exclusively assigned to Catalog.
+
+The `ItemMapper` is used by both `CatalogService` and `OrderService`, but the `item`, `inventory`, and `supplier` tables belong to the Catalog domain based on the domain description.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper"
+  ]
+}
+```

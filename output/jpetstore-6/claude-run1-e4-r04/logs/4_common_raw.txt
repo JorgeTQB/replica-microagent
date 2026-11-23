@@ -1,0 +1,31 @@
+All 3 domains have been saved. Here is a complete summary of what was done:
+
+---
+
+## Common Classes Analysis & Assignment Summary
+
+### Common Classes Identified
+
+**1. `org.mybatis.jpetstore.web.actions.AbstractActionBean`**
+- **Type**: Utility/Base class (incoming relationship)
+- **Reason**: Abstract base class extended by ALL action beans across all three domains — `AccountActionBean`, `CatalogActionBean`, `CartActionBean`, and `OrderActionBean`. Provides shared `ActionBeanContext` and messaging infrastructure.
+- **Assigned to**: All 3 domains
+
+**2. `org.mybatis.jpetstore.service.CatalogService`**
+- **Type**: Shared service (incoming relationship)  
+- **Reason**: Used by multiple domains beyond Catalog:
+  - `AccountActionBean` (Account Management) uses it to retrieve `myList` (favorite category products)
+  - `CartActionBean` (Shopping Cart & Order Management) uses it to fetch item details
+- **Assigned to**: All 3 domains
+
+---
+
+### Final Domain Class Lists
+
+| Domain | Classes |
+|--------|---------|
+| **Account Management** | 6 classes (4 original + 2 common) |
+| **Catalog** | 9 classes (8 original + 1 common: AbstractActionBean; CatalogService was already there) |
+| **Shopping Cart and Order Management** | 13 classes (11 original + 2 common) |
+
+**Total: 3 domains saved successfully.**

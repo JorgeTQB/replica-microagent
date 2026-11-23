@@ -1,0 +1,92 @@
+{
+  "app": "jpetstore-6",
+  "run_id": "baseline-run1",
+  "configuracion": "baseline",
+  "modelo": "claude-sonnet-4-6",
+  "number": "3",
+  "num": "THREE",
+  "simulado": false,
+  "solo_etapa1": false,
+  "estado": "completa",
+  "inicio": "2026-11-21T22:07:59-05:00",
+  "fin": "2026-11-21T22:08:06-05:00",
+  "fallo": null,
+  "fusion": "no_aplica",
+  "etapas": [
+    {
+      "etapa": "baseline",
+      "agente": "LLM base (zero-shot)",
+      "session_id": "0d40ecb1-c9e4-4e27-a648-24f93c4b90eb",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 1,
+      "max_turns": 1,
+      "peticiones_api": 1,
+      "duracion_ms": 5770,
+      "duracion_api_ms": 5413,
+      "costo_usd": 0.143241,
+      "tokens": {
+        "input_tokens": 2,
+        "output_tokens": 589,
+        "cache_creation_input_tokens": 22400,
+        "cache_read_input_tokens": 0
+      },
+      "llamadas_a_herramientas": 0,
+      "herramientas_usadas": {},
+      "etiqueta_final_answer": null,
+      "caracteres_respuesta": 1613,
+      "limite_de_turnos": false,
+      "stop_reason": null,
+      "caracteres_prompt": 73851,
+      "problemas": []
+    }
+  ],
+  "observaciones": [
+    {
+      "etapa": "baseline",
+      "tipo": "json_entre_cercas_de_codigo",
+      "detalle": "clean_json_output recorto 12 caracteres de 1613"
+    }
+  ],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 1,
+    "peticiones_api": 1,
+    "duracion_ms": 5770,
+    "duracion_api_ms": 5413,
+    "costo_usd": 0.143241,
+    "llamadas_a_herramientas": 0,
+    "tokens": {
+      "input_tokens": 2,
+      "output_tokens": 589,
+      "cache_creation_input_tokens": 22400,
+      "cache_read_input_tokens": 0
+    }
+  },
+  "resultado": {
+    "archivo": "output/jpetstore-6/baseline-run1/result.json",
+    "particiones": 3,
+    "particiones_pedidas": 3,
+    "particiones_igual_a_n": true,
+    "clases_por_particion": {
+      "AccountService": 5,
+      "CatalogService": 12,
+      "OrderService": 14
+    },
+    "clases_distintas_asignadas": 24,
+    "clases_del_universo": 24,
+    "clases_sin_asignar": [],
+    "clases_fuera_del_universo": [],
+    "clases_del_universo_asignadas": 24,
+    "clases_en_varios_servicios": {
+      "org.mybatis.jpetstore.domain.Account": 2,
+      "org.mybatis.jpetstore.domain.Cart": 2,
+      "org.mybatis.jpetstore.domain.CartItem": 2,
+      "org.mybatis.jpetstore.domain.Item": 2,
+      "org.mybatis.jpetstore.mapper.ItemMapper": 2,
+      "org.mybatis.jpetstore.web.actions.AbstractActionBean": 3
+    },
+    "repetidas_dentro_de_un_servicio": {},
+    "servicio_llamado_uncounted": false
+  }
+}

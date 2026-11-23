@@ -1,0 +1,31 @@
+{
+ "corrida_de_origen": "claude-run1",
+ "estado_de_origen": "completa",
+ "fusion_de_origen": "ejecutada",
+ "domain_clusters_desde": "domains/merged_domains.json",
+ "contexto_de_fusion": "3_merging_final_answer.txt",
+ "prompt_usuario_sha256": "0a3b921621b8eaaeb874978d305b2692852303a7aab54b1f1c7c8066e956671e",
+ "system_prompt_sha256": "c4ce8aedb90646edcb9dbca8330c0be3842c8c84ac54de691f09188cd4b1c09b",
+ "prompt_identico_al_origen": true,
+ "domains_de_origen_sha256": {
+  "Account Management.json": "064486661c32d3934360cd164cb1f29f480f275a468c835796e0a582b2a3f128",
+  "Catalog.json": "a003405983a5f3369961d6773a348160ae7cae09019d2f84ee02c894a1324c76",
+  "Order Management.json": "9da3bbc0c33c334db2f570e616435cbe683692e998a2e6d0ffd9833d0cdc326b",
+  "Shopping Cart and Order Management.json": "634b64dbe2a302a729a44d1a7a1e13e40d7cc7b73295f6bdff618600698c5a23",
+  "Shopping Cart.json": "89eaf2128e04e395651c8d4cd22bb36211fd2235fd504c2fee562dd941e0c147",
+  "all_domains.json": "c44dfbac1ad8905aa92d116c8d2e66f66330fb74885cb92d51e47a85a9c729a7",
+  "domain_clusters.json": "1ba221b6fc72ea71966c2ba6949edefb711b7fc5b8b31691f9a8b9acf1c05087",
+  "merged_domains.json": "2555050694c597ae08a7468083e8c2858dfd4ed0f43cf9e15539477f240e8851"
+ },
+ "contexto_sha256": "335b319a4ee4465c129f07e8abd56cc0388cdc61cd38760126b2c1c2764ce3d4",
+ "configuracion_igual_al_origen": {
+  "archivos_del_pipeline_sha256": true,
+  "esfuerzo": true,
+  "max_turns": true,
+  "herramientas_por_agente": true,
+  "entorno_de_claude": true,
+  "claude_code_version": true
+ },
+ "PYTHONHASHSEED_en_el_entorno": null,
+ "domains_copiados_identicos": true
+}

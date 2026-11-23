@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 5020,
+  "stop_reason": "end_turn",
+  "session_id": "f24ed286-3f3c-44c6-b365-b45745a2c4a0",
+  "total_cost_usd": 0.010934999999999999,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1099,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 289,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1099,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 289,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1099,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1099
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 289,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1099,
+      "webSearchRequests": 0,
+      "costUSD": 0.010934999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1099,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.SimpleCORSFilter\": {\n        \"summary\": \"A Spring component that implements the javax.servlet.Filter interface to handle Cross-Origin Resource Sharing (CORS) for the ordering application. Its primary purpose is to add the necessary HTTP response headers that allow cross-origin requests from any origin, enabling browser clients on different domains to interact with the API. In the doFilter method, it sets 'Access-Control-Allow-Origin' to '*' (all origins), permits the HTTP methods PUT, POST, GET, OPTIONS, and DELETE via 'Access-Control-Allow-Methods', sets a max preflight cache age of 1 second via 'Access-Control-Max-Age', and allows a specific set of request headers (Origin, X-Requested-With, Content-Type, Accept, Pragma, Cache-Control, If-Modified-Since) via 'Access-Control-Allow-Headers'. After setting these headers, it delegates the request to the next filter in the chain via chain.doFilter(). The init and destroy methods are present to satisfy the Filter contract but have no implementation, as no setup or teardown logic is required.\",\n        \"file_path\": \"smpl/ordering/SimpleCORSFilter.java\"\n    }\n}\n```",
+  "ttft_ms": 5361,
+  "type": "result",
+  "duration_ms": 5412,
+  "uuid": "7d4c562c-c4cc-4c50-884d-eed06a8a5835",
+  "ttft_stream_ms": 1341,
+  "time_to_request_ms": 373,
+  "first_content_frame_ms": 1342,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

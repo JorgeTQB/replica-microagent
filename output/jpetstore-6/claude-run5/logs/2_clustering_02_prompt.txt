@@ -1,0 +1,49 @@
+
+Current Task: You are analyzing the 'Catalog' domain. The description of this domain is: This domain manages the entire product catalog, encompassing categories, products, and items. It supports browsing the catalog at multiple levels: top-level categories (e.g., pet types), products within categories, and specific items (SKUs) within products. It also provides product search functionality based on keywords. Each item has pricing information, supplier associations, attributes, and an inventory quantity. The domain is responsible for checking item stock availability. The corresponding database tables are category, product, item, inventory, and supplier.
+
+Summary of all business domains:
+
+1. Account Management: This domain encompasses all functionality related to user accounts, authentication, and personal preferences. It handles user registration (creating new accounts), authentication (sign-on/sign-off), and profile management (editing account details). The domain owns user identity data including personal information (name, email, address, phone), authentication credentials, and user preferences such as language preference, favorite category, and banner display options. It manages the full lifecycle of a user account from creation to profile updates, and enforces validation rules on account data. The corresponding database tables are account, signon, profile, and bannerdata.
+2. Catalog: This domain manages the entire product catalog, encompassing categories, products, and items. It supports browsing the catalog at multiple levels: top-level categories (e.g., pet types), products within categories, and specific items (SKUs) within products. It also provides product search functionality based on keywords. Each item has pricing information, supplier associations, attributes, and an inventory quantity. The domain is responsible for checking item stock availability. The corresponding database tables are category, product, item, inventory, and supplier.
+3. Shopping Cart: This domain manages the transient shopping cart experience within a user's session. It handles adding items to the cart, removing items, and updating item quantities. The cart tracks each item's stock status and calculates line totals and overall subtotals. The shopping cart is a session-scoped, in-memory concept that persists for the duration of a user's browsing session and is converted into a formal order upon checkout. It acts as the bridge between catalog browsing and order placement.
+4. Order Management: This domain manages the full lifecycle of customer orders from creation to fulfillment tracking. It handles new order placement (initializing an order from a user's cart and account details), persisting orders and their associated line items, updating inventory quantities upon order placement, tracking order status, and retrieving order history by user. It manages billing and shipping address information, payment details (credit card type, number, expiry), courier selection, and order totaling. The domain also manages sequence generation for unique order ID assignment. The corresponding database tables are orders, orderstatus, lineitem, and sequence.
+
+You are responsible for analyzing ONLY your assigned domain, but understanding the boundaries between domains is important for proper classification.
+
+For the given business domain, your task is to identify ALL of its domain-specific classes, and try to aggregate them by layer (e.g., Presentation, Business, Data, Support, Domain Objects, Other Domain Related Classes etc.).
+Provide the output containing the aggregated class lists for the domain provided.
+# Critical Rules
+1. Include ALL domain-specific classes exclusively belonging to the domain.
+2. Focus ONLY on the CURRENT domain. DO NOT cross the context boundary and include classes of OTHER business domains!
+# Problem Solving Strategy
+1. Understand the problem deeply. Carefully read the issue and think critically about what is required.
+2. Develop a clear, step-by-step plan. Break down the problem into manageable, incremental, and hierarchical steps to investigate and solve the problem.
+3. Reflect and validate comprehensively. After obtaining an initial answer, think about the original intent, and ask yourself whether the answer is absolutely correct.
+# Tool Utilization Guidance
+1. At the beginning, use BOTH get_all_class_hierarchy_complete AND get_database_summary tools to get an overview of the application. Then investigate the code information by using other tools. Explore relevant files, search for classes, inspect the code carefully and gather context.
+2. Use BOTH codebase_semantic_search and get_related_class_list to get more comprehensive results. BUT you should note that they may contain classes that do not belong to the current domain, you should carefully consider and exclude them. Tool codebase_semantic_search can help you get classes that are POSSIBLY semantically related; Tool get_related_class_list can help you get classes that are POSSIBLY dependency related to the list of classes you provided. 
+3. IMPORTANT: You MUST make FULL use of all the tools provided! Do not draw to any conclusions before you make sure with tools, especially checking the dependency and source code to ensure accuracy. Note that the provided dependency information is not absolutely accurate, you should still carefully consider and analyze the source code to decide.
+
+
+This is the expected criteria for your final answer: 
+A JSON object containing the clustering class list for the 'Catalog' domain.
+The JSON MUST follow this EXACT structure with proper commas between elements:
+{
+  "Catalog": [
+    "org.example.Class1",
+    "org.example.Class2",
+    "org.example.Class3"
+  ]
+}
+
+DO NOT nest the classes under categories like "Domain Objects", "Presentation Layer", etc.
+Just provide a flat array of class names under the domain name key.
+
+Ensure all JSON elements have proper commas between them.
+Your final answer MUST be ONLY the JSON object, with no other text, commentary, or explanation.
+
+you MUST return the actual complete content as the final answer, not a summary.
+
+Begin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!
+
+Thought:

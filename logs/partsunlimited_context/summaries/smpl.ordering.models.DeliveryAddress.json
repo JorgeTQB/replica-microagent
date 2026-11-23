@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 7989,
+  "stop_reason": "end_turn",
+  "session_id": "a4b3242c-3815-4e81-8460-bb2bcc7912f6",
+  "total_cost_usd": 0.015552,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1246,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 538,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1246,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 538,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1246,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1246
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 538,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1246,
+      "webSearchRequests": 0,
+      "costUSD": 0.015552,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1246,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.DeliveryAddress\": {\n        \"summary\": \"DeliveryAddress is a model class representing a physical delivery address within the ordering system. It encapsulates all address-related fields needed for order delivery.\\n\\n**Purpose:** Stores and manages delivery address information, including street, city, state, postal code, and any special delivery instructions.\\n\\n**Key Methods:**\\n- `DeliveryAddress(String street, String city, String state, String postalCode, String specialInstructions)`: Parameterized constructor that initializes all address fields at once.\\n- `DeliveryAddress()`: Default no-argument constructor for cases where fields are set individually via setters.\\n- `getStreet()` / `setStreet(String)`: Accessor and mutator for the street field.\\n- `getCity()` / `setCity(String)`: Accessor and mutator for the city field.\\n- `getState()` / `setState(String)`: Accessor and mutator for the state field.\\n- `getPostalCode()` / `setPostalCode(String)`: Accessor and mutator for the postal code field.\\n- `getSpecialInstructions()` / `setSpecialInstructions(String)`: Accessor and mutator for any special delivery instructions.\\n- `validate()`: Validates the address by ensuring that the minimum required fields — `city` and `postalCode` — are non-null and non-empty. Returns `true` if valid.\\n- `isNotEmpty(String)` *(private static)*: Utility helper method that checks whether a given string is non-null and non-empty, used internally by `validate()`.\\n\\n**Additional Notes:**\\n- Follows a standard JavaBean pattern with private fields and public getters/setters.\\n- The `validate()` method enforces a minimal validation rule: only `city` and `postalCode` are mandatory, while `street`, `state`, and `specialInstructions` are optional.\\n- The `@SuppressWarnings(\\\"SameParameterValue\\\")` annotation on the parameterized constructor suggests it is primarily called with consistent argument values in the codebase.\",\n        \"file_path\": \"smpl/ordering/models/DeliveryAddress.java\"\n    }\n}\n```",
+  "ttft_ms": 8323,
+  "type": "result",
+  "duration_ms": 8366,
+  "uuid": "44fcaa8e-20f4-4728-bb30-b5a27df929e1",
+  "ttft_stream_ms": 1450,
+  "time_to_request_ms": 367,
+  "first_content_frame_ms": 1451,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

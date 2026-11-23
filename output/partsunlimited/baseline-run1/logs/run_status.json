@@ -1,0 +1,122 @@
+{
+  "app": "partsunlimited",
+  "run_id": "baseline-run1",
+  "configuracion": "baseline",
+  "modelo": "claude-sonnet-4-6",
+  "number": "5",
+  "num": "FIVE",
+  "simulado": false,
+  "solo_etapa1": false,
+  "estado": "completa",
+  "inicio": "2026-11-21T22:08:21-05:00",
+  "fin": "2026-11-21T22:08:40-05:00",
+  "fallo": null,
+  "fusion": "no_aplica",
+  "etapas": [
+    {
+      "etapa": "baseline",
+      "agente": "LLM base (zero-shot)",
+      "session_id": "e735c008-3328-4ea6-a4fa-4d3279ac9955",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 1,
+      "max_turns": 1,
+      "peticiones_api": 1,
+      "duracion_ms": 17670,
+      "duracion_api_ms": 17200,
+      "costo_usd": 0.31638,
+      "tokens": {
+        "input_tokens": 2,
+        "output_tokens": 2206,
+        "cache_creation_input_tokens": 47214,
+        "cache_read_input_tokens": 0
+      },
+      "llamadas_a_herramientas": 0,
+      "herramientas_usadas": {},
+      "etiqueta_final_answer": null,
+      "caracteres_respuesta": 7078,
+      "limite_de_turnos": false,
+      "stop_reason": null,
+      "caracteres_prompt": 171341,
+      "problemas": []
+    }
+  ],
+  "observaciones": [
+    {
+      "etapa": "baseline",
+      "tipo": "json_entre_cercas_de_codigo",
+      "detalle": "clean_json_output recorto 12 caracteres de 7078"
+    }
+  ],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 1,
+    "peticiones_api": 1,
+    "duracion_ms": 17670,
+    "duracion_api_ms": 17200,
+    "costo_usd": 0.31638,
+    "llamadas_a_herramientas": 0,
+    "tokens": {
+      "input_tokens": 2,
+      "output_tokens": 2206,
+      "cache_creation_input_tokens": 47214,
+      "cache_read_input_tokens": 0
+    }
+  },
+  "resultado": {
+    "archivo": "output/partsunlimited/baseline-run1/result.json",
+    "particiones": 5,
+    "particiones_pedidas": 5,
+    "particiones_igual_a_n": true,
+    "clases_por_particion": {
+      "CatalogService": 21,
+      "DealerService": 21,
+      "QuoteService": 27,
+      "OrderService": 34,
+      "ShipmentService": 43
+    },
+    "clases_distintas_asignadas": 53,
+    "clases_del_universo": 53,
+    "clases_sin_asignar": [],
+    "clases_fuera_del_universo": [],
+    "clases_del_universo_asignadas": 53,
+    "clases_en_varios_servicios": {
+      "smpl.ordering.AppInsightsFilter": 5,
+      "smpl.ordering.BadRequestException": 5,
+      "smpl.ordering.ConflictingRequestException": 5,
+      "smpl.ordering.MongoDBProperties": 5,
+      "smpl.ordering.OrderingConfiguration": 5,
+      "smpl.ordering.OrderingInitializer": 5,
+      "smpl.ordering.OrderingServiceProperties": 5,
+      "smpl.ordering.PostgresqlProperties": 5,
+      "smpl.ordering.PropertyHelper": 5,
+      "smpl.ordering.SimpleCORSFilter": 5,
+      "smpl.ordering.TestPath": 5,
+      "smpl.ordering.Utility": 5,
+      "smpl.ordering.controllers.PingController": 5,
+      "smpl.ordering.models.DealerInfo": 2,
+      "smpl.ordering.models.Order": 2,
+      "smpl.ordering.models.OrderEventInfo": 2,
+      "smpl.ordering.models.OrderStatus": 2,
+      "smpl.ordering.models.OrderUpdateInfo": 2,
+      "smpl.ordering.models.Quote": 3,
+      "smpl.ordering.models.QuoteItemInfo": 3,
+      "smpl.ordering.repositories.DealersRepository": 4,
+      "smpl.ordering.repositories.OrderRepository": 2,
+      "smpl.ordering.repositories.QuoteRepository": 3,
+      "smpl.ordering.repositories.RepositoryFactory": 5,
+      "smpl.ordering.repositories.mock.MockDealersRepository": 4,
+      "smpl.ordering.repositories.mock.MockOrderRepository": 2,
+      "smpl.ordering.repositories.mock.MockQuoteRepository": 3,
+      "smpl.ordering.repositories.mongodb.MongoDealersRepository": 4,
+      "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry": 5,
+      "smpl.ordering.repositories.mongodb.MongoOrderRepository": 2,
+      "smpl.ordering.repositories.mongodb.MongoQuoteRepository": 3,
+      "smpl.ordering.repositories.mongodb.models.Dealer": 4,
+      "smpl.ordering.repositories.mongodb.models.OrderDetails": 2,
+      "smpl.ordering.repositories.mongodb.models.QuoteDetails": 3
+    },
+    "repetidas_dentro_de_un_servicio": {},
+    "servicio_llamado_uncounted": false
+  }
+}

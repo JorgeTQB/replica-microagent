@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 9623,
+  "stop_reason": "end_turn",
+  "session_id": "e2d34062-e226-431c-a6cb-d69d828b4793",
+  "total_cost_usd": 0.014448,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1252,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 462,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1252,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 462,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1252,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1252
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 462,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1252,
+      "webSearchRequests": 0,
+      "costUSD": 0.014448,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1252,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.models.OrderDetails\": {\n        \"summary\": \"OrderDetails is a MongoDB document model class (mapped to the 'orders' collection) that serves as the persistence representation of an Order entity. It acts as a Data Transfer Object (DTO) between the application's domain model (Order) and MongoDB storage.\\n\\n**Purpose:** Provides the MongoDB-specific data model for storing and retrieving order information, handling the mapping between the domain Order object and its database representation.\\n\\n**Key Fields:**\\n- `id`: MongoDB document identifier (annotated with @Id).\\n- `orderId`: Indexed field representing the application-level order identifier.\\n- `quoteId`: Indexed field linking the order to its associated quote.\\n- `orderDate`: String representation of the order date.\\n- `status`: Indexed field of type OrderStatus representing the current state of the order.\\n- `events`: Array of OrderEventInfo objects capturing the history of order events.\\n\\n**Key Methods:**\\n- `OrderDetails()`: Default no-argument constructor required by MongoDB/Spring Data for deserialization.\\n- `OrderDetails(Order from)`: Conversion constructor that maps a domain Order object into a persistable OrderDetails instance, including converting the events list to an array.\\n- `toOrder()`: Converts the MongoDB document back into a domain Order object, re-adding all stored events to reconstruct the full order state.\\n- `getId()` / `setId(String id)`: Accessor and mutator for the MongoDB document ID.\\n\\n**Important Notes:**\\n- The class uses Spring Data MongoDB annotations (@Document, @Id, @Indexed) for collection mapping and query optimization.\\n- It bridges the gap between the domain model (smpl.ordering.models.Order) and the MongoDB storage layer, encapsulating all serialization/deserialization logic within the model itself.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/models/OrderDetails.java\"\n    }\n}\n```",
+  "ttft_ms": 9851,
+  "type": "result",
+  "duration_ms": 9886,
+  "uuid": "7af530a5-84e2-405a-8fcc-0a3766c5ad58",
+  "ttft_stream_ms": 2813,
+  "time_to_request_ms": 258,
+  "first_content_frame_ms": 2813,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

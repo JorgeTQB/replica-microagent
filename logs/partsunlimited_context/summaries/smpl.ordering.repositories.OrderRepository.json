@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 7370,
+  "stop_reason": "end_turn",
+  "session_id": "aac56a95-bdf6-4f73-9db7-9901278a2540",
+  "total_cost_usd": 0.013385999999999999,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1045,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 474,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1045,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 474,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1045,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1045
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 474,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1045,
+      "webSearchRequests": 0,
+      "costUSD": 0.013385999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1045,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.OrderRepository\": {\n        \"summary\": \"Interface for repositories holding order information. Defines the contract for data access operations related to orders in the ordering system.\\n\\nKey methods:\\n- `hasOrder(String id)`: Checks whether an order with the given ID exists in the repository.\\n- `getOrder(String id)`: Retrieves a single Order by its unique ID.\\n- `getOrderByQuoteId(String id)`: Retrieves an Order associated with a specific quote ID.\\n- `getOrdersByStatus(OrderStatus status)`: Returns a list of all Orders matching a given status.\\n- `getOrdersByDealerName(String dealer, OrderStatus status)`: Returns a list of Orders filtered by dealer name and optionally by status.\\n- `createOrder(String from)`: Creates a new Order from a source identifier (e.g., a quote ID); may throw `BadRequestException` if the request is invalid.\\n- `updateOrder(String id, Order order, String eTag)`: Updates an existing order identified by ID with a full Order object, using an ETag for optimistic concurrency control.\\n- `updateOrder(String id, OrderUpdateInfo info, String eTag)`: Updates an existing order identified by ID with partial update information (`OrderUpdateInfo`), using an ETag; may throw `BadRequestException`.\\n- `removeOrder(String id, String eTag)`: Deletes the order with the given ID, using an ETag for optimistic concurrency control.\\n\\nAdditional notes:\\n- Uses `@SuppressWarnings` annotations to suppress warnings about same/unused parameters, suggesting some implementations may not use all parameters.\\n- The ETag parameter in update/remove methods supports optimistic concurrency (conditional updates), a common REST pattern.\\n- Depends on domain models `Order`, `OrderStatus`, and `OrderUpdateInfo`, as well as the `BadRequestException` for input validation errors.\",\n        \"file_path\": \"smpl/ordering/repositories/OrderRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 7733,
+  "type": "result",
+  "duration_ms": 7764,
+  "uuid": "6e3a5c7b-b9ef-41e9-b962-d40e7a3dc5a3",
+  "ttft_stream_ms": 1572,
+  "time_to_request_ms": 397,
+  "first_content_frame_ms": 1572,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "schema": {
+    "schema_summary": {
+      "tables": [
+        {
+          "table_name": "CatalogItems",
+          "purpose": "Stores the product catalog with pricing information available for quoting and ordering.",
+          "columns": [
+            "sku_number",
+            "description",
+            "price"
+          ],
+          "primary_key": [
+            "sku_number"
+          ]
+        },
+        {
+          "table_name": "Dealers",
+          "purpose": "Stores dealer/supplier contact and location information associated with quotes.",
+          "columns": [
+            "name",
+            "contact",
+            "address",
+            "email",
+            "phone"
+          ],
+          "primary_key": [
+            "name"
+          ]
+        },
+        {
+          "table_name": "Quotes",
+          "purpose": "Stores customer price quotes including cost, discount, validity, and delivery location details.",
+          "columns": [
+            "quote_id",
+            "valid_until",
+            "customer_name",
+            "dealer_name",
+            "total_cost",
+            "discount",
+            "city",
+            "postal_code",
+            "state"
+          ],
+          "primary_key": [
+            "quote_id"
+          ],
+          "foreign_keys": [
+            "dealer_name references Dealers.name"
+          ]
+        },
+        {
+          "table_name": "QuoteAdditionalItemRecord",
+          "purpose": "Stores individual line items (catalog products) associated with each quote.",
+          "columns": [
+            "id",
+            "quote_id",
+            "sku_number",
+            "amount"
+          ],
+          "primary_key": [
+            "id"
+          ],
+          "foreign_keys": [
+            "quote_id references Quotes.quote_id",
+            "sku_number references CatalogItems.sku_number"
+          ]
+        },
+        {
+          "table_name": "Orders",
+          "purpose": "Tracks customer orders created from approved quotes, including current order status.",
+          "columns": [
+            "order_id",
+            "quote_id",
+            "order_date",
+            "status"
+          ],
+          "primary_key": [
+            "order_id"
+          ],
+          "foreign_keys": [
+            "quote_id references Quotes.quote_id"
+          ]
+        },
+        {
+          "table_name": "OrderEvents",
+          "purpose": "Records a chronological event/activity log with comments for each order.",
+          "columns": [
+            "id",
+            "order_id",
+            "order_date",
+            "comments"
+          ],
+          "primary_key": [
+            "id"
+          ],
+          "foreign_keys": [
+            "order_id references Orders.order_id"
+          ]
+        },
+        {
+          "table_name": "PhoneInfo",
+          "purpose": "Stores phone numbers with their type/kind classification used in shipment contact records.",
+          "columns": [
+            "phone",
+            "kind"
+          ],
+          "primary_key": [
+            "phone"
+          ]
+        },
+        {
+          "table_name": "DeliveryAddress",
+          "purpose": "Stores physical delivery addresses referenced by shipment records.",
+          "columns": [
+            "id",
+            "street",
+            "city",
+            "state",
+            "postal_code"
+          ],
+          "primary_key": [
+            "id"
+          ]
+        },
+        {
+          "table_name": "ShipmentRecords",
+          "purpose": "Stores shipment details for orders including delivery address, date, and primary/alternate contact phone numbers.",
+          "columns": [
+            "order_id",
+            "delivery_date",
+            "delivery_address",
+            "contact_name",
+            "primary_phone",
+            "alternate_phone"
+          ],
+          "primary_key": [
+            "order_id"
+          ],
+          "foreign_keys": [
+            "order_id references Orders.order_id",
+            "delivery_address references DeliveryAddress.id",
+            "primary_phone references PhoneInfo.phone",
+            "alternate_phone references PhoneInfo.phone"
+          ]
+        },
+        {
+          "table_name": "ShipmentEventInfo",
+          "purpose": "Records a chronological shipment event log with dates and comments for each order's shipment lifecycle.",
+          "columns": [
+            "id",
+            "order_id",
+            "date",
+            "comments"
+          ],
+          "primary_key": [
+            "id"
+          ],
+          "foreign_keys": [
+            "order_id references Orders.order_id"
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "source_table": "Quotes",
+          "source_field": "dealer_name",
+          "target_table": "Dealers"
+        },
+        {
+          "source_table": "QuoteAdditionalItemRecord",
+          "source_field": "quote_id",
+          "target_table": "Quotes"
+        },
+        {
+          "source_table": "QuoteAdditionalItemRecord",
+          "source_field": "sku_number",
+          "target_table": "CatalogItems"
+        },
+        {
+          "source_table": "Orders",
+          "source_field": "quote_id",
+          "target_table": "Quotes"
+        },
+        {
+          "source_table": "OrderEvents",
+          "source_field": "order_id",
+          "target_table": "Orders"
+        },
+        {
+          "source_table": "ShipmentRecords",
+          "source_field": "order_id",
+          "target_table": "Orders"
+        },
+        {
+          "source_table": "ShipmentRecords",
+          "source_field": "delivery_address",
+          "target_table": "DeliveryAddress"
+        },
+        {
+          "source_table": "ShipmentRecords",
+          "source_field": "primary_phone",
+          "target_table": "PhoneInfo"
+        },
+        {
+          "source_table": "ShipmentRecords",
+          "source_field": "alternate_phone",
+          "target_table": "PhoneInfo"
+        },
+        {
+          "source_table": "ShipmentEventInfo",
+          "source_field": "order_id",
+          "target_table": "Orders"
+        }
+      ]
+    },
+    "file_path": "resources/partsunlimited/src/Backend/OrderService/scripts/schema.psql"
+  }
+}

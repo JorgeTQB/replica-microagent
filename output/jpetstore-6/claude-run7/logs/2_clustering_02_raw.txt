@@ -1,0 +1,39 @@
+Now I have a clear picture. Let me analyze which classes belong exclusively to the Catalog domain:
+
+**Core Catalog Classes:**
+1. `org.mybatis.jpetstore.domain.Category` - Catalog domain object (Category entity)
+2. `org.mybatis.jpetstore.domain.Product` - Catalog domain object (Product entity)
+3. `org.mybatis.jpetstore.domain.Item` - Catalog domain object (Item/SKU entity) - **shared with Shopping Cart and Order**, but it's a Catalog entity
+4. `org.mybatis.jpetstore.service.CatalogService` - Business layer for Catalog
+5. `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Presentation layer for Catalog
+6. `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for Categories
+7. `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for Products
+8. `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for Items/inventory
+
+**Excluded classes (belong to other domains):**
+- `org.mybatis.jpetstore.domain.Cart` - Shopping Cart domain
+- `org.mybatis.jpetstore.domain.CartItem` - Shopping Cart domain
+- `org.mybatis.jpetstore.domain.LineItem` - Order Management domain
+- `org.mybatis.jpetstore.service.OrderService` - Order Management domain
+- `org.mybatis.jpetstore.web.actions.AccountActionBean` - Account Management domain
+- `org.mybatis.jpetstore.web.actions.CartActionBean` - Shopping Cart domain
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` - Shared/common class (used by all action beans)
+
+The `AbstractActionBean` is a shared base class used across all domains. It should be considered a common/shared class rather than belonging exclusively to Catalog.
+
+The Catalog domain clearly owns: Category, Product, Item (as catalog entity), CatalogService, CatalogActionBean, CategoryMapper, ProductMapper, and ItemMapper.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper"
+  ]
+}
+```

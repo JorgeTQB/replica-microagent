@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 9693,
+  "stop_reason": "end_turn",
+  "session_id": "145b912a-660e-42ba-9011-660d6c54c1ab",
+  "total_cost_usd": 0.025599,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2928,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 535,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2928,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 535,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2928,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2928
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 535,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2928,
+      "webSearchRequests": 0,
+      "costUSD": 0.025599,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2928,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.Quote\": {\n        \"summary\": \"Represents quote information sent from the service to the client, as indicated by its Javadoc. It is closely related to the Order model (see smpl.ordering.models.Order). The class encapsulates all the data associated with a sales or product quote, including identification, pricing, delivery location, and line items.\\n\\n**Key Fields:**\\n- `quoteId`: Unique identifier for the quote.\\n- `validUntil`: Expiration date string for the quote.\\n- `customerName` / `dealerName`: Parties involved in the quote.\\n- `quoteItems`: A list of `QuoteItemInfo` objects representing individual line items.\\n- `totalCost`: Overall cost before any discount.\\n- `discount`: Flat discount amount (not a percentage).\\n- `city`, `postalCode`, `state`: Delivery address fields used to estimate delivery costs and for local regulatory purposes.\\n\\n**Key Methods:**\\n- `Quote()`: Default no-arg constructor.\\n- `Quote(Quote quote)`: Copy constructor that performs a shallow copy of all fields from another Quote instance.\\n- `validate()`: Validates required fields (`dealerName` and `customerName`) using `Utility.validateStringField`. Returns a JSON-formatted error string if validation fails, or `null` if the quote is valid.\\n- `addQuoteItem(String sku, double amount)`: Lazily initializes the `quoteItems` list and appends a new `QuoteItemInfo` entry for the given SKU and quantity.\\n- Standard getters/setters for all fields.\\n- `equals(Object o)`: Deep equality check that compares all fields, including a sorted array comparison of `quoteItems` to ensure order-independent item equality.\\n- `hashCode()`: Consistent hash code implementation covering all fields.\\n\\n**Other Important Notes:**\\n- The `equals` method sorts both `quoteItems` lists (as arrays) before comparing, meaning `QuoteItemInfo` must implement `Comparable`.\\n- Delivery location fields (city, postalCode, state) serve a dual purpose: logistics cost estimation and regulatory compliance.\",\n        \"file_path\": \"smpl/ordering/models/Quote.java\"\n    }\n}\n```",
+  "ttft_ms": 10054,
+  "type": "result",
+  "duration_ms": 10089,
+  "uuid": "50dae138-887b-443d-9cf1-f10cc0e0e1a4",
+  "ttft_stream_ms": 1422,
+  "time_to_request_ms": 387,
+  "first_content_frame_ms": 1422,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

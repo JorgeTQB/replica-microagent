@@ -1,0 +1,75 @@
+All 5 domains have been saved successfully. Here is the complete final summary:
+
+---
+
+## Final Microservice Decomposition - Complete Results
+
+### Analysis of `smpl.ordering.PostgresqlProperties`
+
+**Finding**: `PostgresqlProperties` is a database configuration class (like `MongoDBProperties`) that holds PostgreSQL connection properties (username, password, driverClass, url). The database schema (`schema.psql`) is a PostgreSQL schema covering **all 5 domains** (CatalogItems, Dealers, Quotes, Orders, Shipments tables). It has no direct dependencies to any single domain.
+
+**Decision**: Assigned to **ALL 5 domains** — consistent with how `MongoDBProperties` was treated, as it's a cross-cutting infrastructure configuration class needed by any microservice that might use PostgreSQL as its data store.
+
+---
+
+### Final Domain Class Counts
+
+| Domain | Domain-Specific Classes | Total Classes |
+|---|---|---|
+| **Catalog** | 6 | **19** |
+| **Dealer** | 6 | **19** |
+| **Quote** | 7 | **21** |
+| **Order** | 9 | **24** |
+| **Shipment** | 10 | **25** |
+
+### Complete Class Lists Per Domain
+
+**Catalog (19 classes)**:
+- `smpl.ordering.controllers.CatalogController`
+- `smpl.ordering.models.CatalogItem`
+- `smpl.ordering.repositories.CatalogItemsRepository`
+- `smpl.ordering.repositories.mock.MockCatalogItemsRepository`
+- `smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository`
+- `smpl.ordering.repositories.mongodb.models.CatalogItem`
+- + 13 common classes (including `PostgresqlProperties`)
+
+**Dealer (19 classes)**:
+- `smpl.ordering.controllers.DealerController`
+- `smpl.ordering.models.DealerInfo`
+- `smpl.ordering.repositories.DealersRepository`
+- `smpl.ordering.repositories.mock.MockDealersRepository`
+- `smpl.ordering.repositories.mongodb.MongoDealersRepository`
+- `smpl.ordering.repositories.mongodb.models.Dealer`
+- + 13 common classes (including `PostgresqlProperties`)
+
+**Quote (21 classes)**:
+- `smpl.ordering.controllers.QuoteController`
+- `smpl.ordering.models.Quote`, `smpl.ordering.models.QuoteItemInfo`
+- `smpl.ordering.repositories.QuoteRepository`
+- `smpl.ordering.repositories.mock.MockQuoteRepository`
+- `smpl.ordering.repositories.mongodb.MongoQuoteRepository`
+- `smpl.ordering.repositories.mongodb.models.QuoteDetails`
+- `smpl.ordering.BadRequestException`
+- + 13 common classes (including `PostgresqlProperties`)
+
+**Order (24 classes)**:
+- `smpl.ordering.controllers.OrderController`
+- `smpl.ordering.models.Order`, `OrderEventInfo`, `OrderStatus`, `OrderUpdateInfo`
+- `smpl.ordering.repositories.OrderRepository`
+- `smpl.ordering.repositories.mock.MockOrderRepository`
+- `smpl.ordering.repositories.mongodb.MongoOrderRepository`
+- `smpl.ordering.repositories.mongodb.models.OrderDetails`
+- `smpl.ordering.BadRequestException`, `smpl.ordering.ConflictingRequestException`
+- + 13 common classes (including `PostgresqlProperties`)
+
+**Shipment (25 classes)**:
+- `smpl.ordering.controllers.ShipmentController`
+- `smpl.ordering.models.ShipmentRecord`, `ShipmentEventInfo`, `DeliveryAddress`, `PhoneInfo`, `Delivery`
+- `smpl.ordering.repositories.ShipmentRepository`
+- `smpl.ordering.repositories.mock.MockShipmentRepository`
+- `smpl.ordering.repositories.mongodb.MongoShipmentRepository`
+- `smpl.ordering.repositories.mongodb.models.ShipmentDetails`
+- `smpl.ordering.BadRequestException`, `smpl.ordering.ConflictingRequestException`
+- + 13 common classes (including `PostgresqlProperties`)
+
+**Total: 5 domains saved, all classes assigned. No anti-patterns introduced. ✅**

@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 7148,
+  "stop_reason": "end_turn",
+  "session_id": "0b5bc1f8-3cde-4e32-907d-8fd0cffc5b2d",
+  "total_cost_usd": 0.022551,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2520,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 495,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2520,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 495,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2520,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2520
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 495,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2520,
+      "webSearchRequests": 0,
+      "costUSD": 0.022551,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2520,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.CatalogController\": {\n        \"summary\": \"A Spring MVC REST controller that manages catalog items in the ordering system, mapped to the '/catalog' endpoint. It handles full CRUD operations for catalog items by delegating persistence to a CatalogItemsRepository obtained via RepositoryFactory.\\n\\nKey methods:\\n- getCatalogItems() [GET /catalog]: Retrieves the full list of available catalog items. Returns 200 OK with the list, or 404 NOT_FOUND if none exist.\\n- getCatalogItem(sku) [GET /catalog/{sku}]: Retrieves a single catalog item by its SKU number. Returns 200 OK with the item, or 404 NOT_FOUND if not found.\\n- addCatalogItem(info) [POST /catalog]: Creates a new catalog item. Validates the item, checks for duplicate SKU (returns 409 CONFLICT if exists), persists it, and sets the 'Location' response header to the new resource URL. Returns 200 OK or 201 CREATED depending on repository result.\\n- upsertCatalogItem(sku, info) [PUT /catalog/{sku}]: Updates an existing catalog item identified by SKU. Returns 404 NOT_FOUND if the item does not exist, otherwise 200 OK or 201 CREATED.\\n- removeCatalogItem(sku) [DELETE /catalog/{sku}]: Removes a catalog item by SKU. Returns 204 NO_CONTENT on success or 404 NOT_FOUND if the item does not exist.\\n- getRepository() [private]: Helper method that retrieves the CatalogItemsRepository instance from the RepositoryFactory.\\n\\nAll methods include exception handling that logs exceptions via Microsoft Application Insights TelemetryClient (obtained from Utility.getTelemetryClient()) and returns 500 INTERNAL_SERVER_ERROR on unexpected failures. Input validation is performed using CatalogItem.validate() before write operations.\",\n        \"file_path\": \"smpl/ordering/controllers/CatalogController.java\"\n    }\n}\n```",
+  "ttft_ms": 7439,
+  "type": "result",
+  "duration_ms": 7470,
+  "uuid": "206e8ccc-be82-46eb-b3b5-1f39e6f0b592",
+  "ttft_stream_ms": 1275,
+  "time_to_request_ms": 315,
+  "first_content_frame_ms": 1275,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

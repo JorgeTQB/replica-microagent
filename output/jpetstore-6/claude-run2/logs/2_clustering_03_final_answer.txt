@@ -1,0 +1,38 @@
+Based on my thorough analysis, let me now make decisions about which classes belong exclusively to the Shopping Cart domain:
+
+**Analysis:**
+
+1. **`org.mybatis.jpetstore.domain.Cart`** - Core domain object for the Shopping Cart. Manages the collection of CartItems. ✅ Shopping Cart domain.
+
+2. **`org.mybatis.jpetstore.domain.CartItem`** - Core domain object representing an item in the cart (holds Item reference, quantity, and total). ✅ Shopping Cart domain.
+
+3. **`org.mybatis.jpetstore.web.actions.CartActionBean`** - Presentation layer for cart operations (add, remove, update, checkout). ✅ Shopping Cart domain.
+
+4. **`org.mybatis.jpetstore.web.actions.AbstractActionBean`** - Base class used by ALL action beans (Account, Catalog, Cart, Order). This is a shared/common class, NOT exclusively Shopping Cart domain.
+
+5. **`org.mybatis.jpetstore.domain.Item`** - Catalog domain class (products/items in the catalog). Referenced by CartItem but belongs to the Catalog domain.
+
+6. **`org.mybatis.jpetstore.domain.LineItem`** - Order domain class (line items in an order). Referenced by CartItem for order creation but belongs to Order Management domain.
+
+7. **`org.mybatis.jpetstore.domain.Order`** - Order Management domain class. ❌ Not Shopping Cart domain.
+
+8. **`org.mybatis.jpetstore.service.CatalogService`** - Catalog domain service (used by CartActionBean to check stock and get items). ❌ Not Shopping Cart domain.
+
+9. **`org.mybatis.jpetstore.web.actions.OrderActionBean`** - Order Management domain. ❌ Not Shopping Cart domain.
+
+The Shopping Cart domain exclusively owns:
+- `Cart` - the cart aggregate root
+- `CartItem` - cart item entity
+- `CartActionBean` - the presentation layer for cart operations
+
+The `AbstractActionBean` is a shared infrastructure class used across all action beans. The `Item` class belongs to the Catalog domain. The `CatalogService` is used by CartActionBean to check stock availability, but it belongs to the Catalog domain. The Shopping Cart domain has no dedicated service layer or data access layer - it uses session state (not database persistence for the cart itself).
+
+```json
+{
+  "Shopping Cart": [
+    "org.mybatis.jpetstore.domain.Cart",
+    "org.mybatis.jpetstore.domain.CartItem",
+    "org.mybatis.jpetstore.web.actions.CartActionBean"
+  ]
+}
+```

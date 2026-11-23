@@ -1,0 +1,34 @@
+Based on my thorough analysis, I have identified all classes belonging to the Catalog domain. Let me summarize my findings:
+
+**Domain Objects:**
+- `org.mybatis.jpetstore.domain.Category` - Category entity (used exclusively by CatalogService)
+- `org.mybatis.jpetstore.domain.Product` - Product entity (used by CatalogService and CatalogActionBean)
+- `org.mybatis.jpetstore.domain.Item` - Item entity (core catalog item with pricing, supplier, attributes)
+
+**Business Layer:**
+- `org.mybatis.jpetstore.service.CatalogService` - Core catalog business logic (catalog browsing, search, inventory check)
+
+**Presentation Layer:**
+- `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Web action bean for catalog browsing
+
+**Data Layer (Mappers):**
+- `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for categories
+- `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for products (including search)
+- `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for items and inventory
+
+Note: `ItemMapper` is also used by `OrderService`, but its primary domain is Catalog as it handles catalog item retrieval and inventory management. The `Item` domain object is shared but belongs primarily to the Catalog domain. `AbstractActionBean` is shared infrastructure and not catalog-specific.
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper"
+  ]
+}
+```

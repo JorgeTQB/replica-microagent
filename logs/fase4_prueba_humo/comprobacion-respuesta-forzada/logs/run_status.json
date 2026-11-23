@@ -1,0 +1,79 @@
+{
+  "app": "jpetstore-6",
+  "run_id": "comprobacion-respuesta-forzada",
+  "modelo": "claude-sonnet-4-6",
+  "number": "3",
+  "num": "THREE",
+  "simulado": false,
+  "solo_etapa1": true,
+  "estado": "parcial_etapa1",
+  "inicio": "2026-11-16T22:37:38-05:00",
+  "fin": "2026-11-16T22:38:52-05:00",
+  "fallo": null,
+  "fusion": "no_alcanzada",
+  "etapas": [
+    {
+      "etapa": "1_domain",
+      "agente": "domain_agent",
+      "session_id": "2373742b-582b-4788-8265-581ef909ed00",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 5,
+      "max_turns": 3,
+      "duracion_ms": 21495,
+      "duracion_api_ms": 28160,
+      "costo_usd": 0.1382643,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 1228,
+        "cache_creation_input_tokens": 9323,
+        "cache_read_input_tokens": 24007
+      },
+      "llamadas_a_herramientas": 9,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy": 1,
+        "mcp__microagent__get_all_class_summaries": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_basic_info": 6
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 3433,
+      "limite_de_turnos": true,
+      "problemas": [],
+      "respuesta_forzada": {
+        "session_id": "2373742b-582b-4788-8265-581ef909ed00",
+        "subtype": "success",
+        "pidio_herramientas": false,
+        "turnos_primera_llamada": 4,
+        "costo_usd": 0.08158409999999999
+      }
+    }
+  ],
+  "observaciones": [
+    {
+      "etapa": "1_domain",
+      "tipo": "limite_de_turnos_respuesta_forzada",
+      "detalle": "el agente agoto sus 3 peticiones a la API; se pidio la respuesta final con el texto de CrewAI en una peticion mas (D39)"
+    },
+    {
+      "etapa": "1_domain",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    }
+  ],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 5,
+    "duracion_ms": 21495,
+    "duracion_api_ms": 28160,
+    "costo_usd": 0.1382643,
+    "llamadas_a_herramientas": 9,
+    "tokens": {
+      "input_tokens": 8,
+      "output_tokens": 1228,
+      "cache_creation_input_tokens": 9323,
+      "cache_read_input_tokens": 24007
+    }
+  },
+  "resultado": null
+}

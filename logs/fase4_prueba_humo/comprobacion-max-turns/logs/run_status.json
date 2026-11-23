@@ -1,0 +1,63 @@
+{
+  "app": "jpetstore-6",
+  "run_id": "comprobacion-max-turns",
+  "modelo": "claude-sonnet-4-6",
+  "number": "3",
+  "num": "THREE",
+  "simulado": false,
+  "solo_etapa1": true,
+  "estado": "fallida",
+  "inicio": "2026-11-16T16:03:40-05:00",
+  "fin": "2026-11-16T16:04:11-05:00",
+  "fallo": {
+    "etapa": "1_domain",
+    "motivo": "error_max_turns",
+    "detalle": "is_error=True; exit=1; api_error_status=None; texto: ''"
+  },
+  "fusion": "no_alcanzada",
+  "etapas": [
+    {
+      "etapa": "1_domain",
+      "agente": "domain_agent",
+      "session_id": "2d238227-211c-4aea-bbe8-c47e25470a07",
+      "subtype": "error_max_turns",
+      "is_error": true,
+      "turnos": 2,
+      "max_turns": 1,
+      "duracion_ms": 2356,
+      "duracion_api_ms": 2064,
+      "costo_usd": 0.012082199999999998,
+      "tokens": {
+        "input_tokens": 3,
+        "output_tokens": 132,
+        "cache_creation_input_tokens": 1617,
+        "cache_read_input_tokens": 1304
+      },
+      "llamadas_a_herramientas": 3,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy": 1,
+        "mcp__microagent__get_all_class_summaries": 1,
+        "mcp__microagent__get_database_summary": 1
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 0,
+      "problemas": []
+    }
+  ],
+  "observaciones": [],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 2,
+    "duracion_ms": 2356,
+    "duracion_api_ms": 2064,
+    "costo_usd": 0.012082199999999998,
+    "llamadas_a_herramientas": 3,
+    "tokens": {
+      "input_tokens": 3,
+      "output_tokens": 132,
+      "cache_creation_input_tokens": 1617,
+      "cache_read_input_tokens": 1304
+    }
+  },
+  "resultado": null
+}

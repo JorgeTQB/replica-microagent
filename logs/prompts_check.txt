@@ -1,0 +1,417 @@
+Comprobacion de prompts (Fase 3). Capturas: 10 en logs\prompts_golden
+  [OK] hay capturas del original (ejecuta scripts/capture_crewai_prompts.py si faltan)
+  [OK] jpetstore_con_fusion.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_con_fusion.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 8 ejecuciones de agente)
+  [OK] fusion ejecutada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3722 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3740 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3727 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:clustering el original envia [system, user]
+  [OK] 4:clustering mensaje de usuario identico (3685 caracteres)
+  [OK] 4:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 4:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:clustering bloque de contexto presente solo donde corresponde
+  [OK] 5:merging el original envia [system, user]
+  [OK] 5:merging mensaje de usuario identico (4193 caracteres)
+  [OK] 5:merging system del original = system de la replica (2687 car.) + bloque herramientas/ReAct (2797 car.)
+  [OK] 5:merging herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:merging bloque de contexto presente solo donde corresponde
+  [OK] 6:common el original envia [system, user]
+  [OK] 6:common mensaje de usuario identico (5787 caracteres)
+  [OK] 6:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 6:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 6:common bloque de contexto presente solo donde corresponde
+  [OK] 7:review el original envia [system, user]
+  [OK] 7:review mensaje de usuario identico (4518 caracteres)
+  [OK] 7:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 7:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 7:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_dominios_omitidos.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_dominios_omitidos.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 6 ejecuciones de agente)
+  [OK] fusion ejecutada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3649 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3612 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:merging el original envia [system, user]
+  [OK] 3:merging mensaje de usuario identico (3722 caracteres)
+  [OK] 3:merging system del original = system de la replica (2687 car.) + bloque herramientas/ReAct (2797 car.)
+  [OK] 3:merging herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:merging bloque de contexto presente solo donde corresponde
+  [OK] 4:common el original envia [system, user]
+  [OK] 4:common mensaje de usuario identico (5520 caracteres)
+  [OK] 4:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 4:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:common bloque de contexto presente solo donde corresponde
+  [OK] 5:review el original envia [system, user]
+  [OK] 5:review mensaje de usuario identico (5202 caracteres)
+  [OK] 5:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 5:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_fusion_domain_cluster.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_fusion_domain_cluster.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 8 ejecuciones de agente)
+  [OK] fusion ejecutada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3722 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3740 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3727 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:clustering el original envia [system, user]
+  [OK] 4:clustering mensaje de usuario identico (3685 caracteres)
+  [OK] 4:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 4:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:clustering bloque de contexto presente solo donde corresponde
+  [OK] 5:merging el original envia [system, user]
+  [OK] 5:merging mensaje de usuario identico (4193 caracteres)
+  [OK] 5:merging system del original = system de la replica (2687 car.) + bloque herramientas/ReAct (2797 car.)
+  [OK] 5:merging herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:merging bloque de contexto presente solo donde corresponde
+  [OK] 6:common el original envia [system, user]
+  [OK] 6:common mensaje de usuario identico (5953 caracteres)
+  [OK] 6:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 6:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 6:common bloque de contexto presente solo donde corresponde
+  [OK] 7:review el original envia [system, user]
+  [OK] 7:review mensaje de usuario identico (4518 caracteres)
+  [OK] 7:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 7:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 7:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_fusion_json_invalido.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_fusion_json_invalido.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 8 ejecuciones de agente)
+  [OK] fusion ejecutada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3722 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3740 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3727 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:clustering el original envia [system, user]
+  [OK] 4:clustering mensaje de usuario identico (3685 caracteres)
+  [OK] 4:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 4:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:clustering bloque de contexto presente solo donde corresponde
+  [OK] 5:merging el original envia [system, user]
+  [OK] 5:merging mensaje de usuario identico (4193 caracteres)
+  [OK] 5:merging system del original = system de la replica (2687 car.) + bloque herramientas/ReAct (2797 car.)
+  [OK] 5:merging herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:merging bloque de contexto presente solo donde corresponde
+  [OK] 6:common el original envia [system, user]
+  [OK] 6:common mensaje de usuario identico (5198 caracteres)
+  [OK] 6:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 6:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 6:common bloque de contexto presente solo donde corresponde
+  [OK] 7:review el original envia [system, user]
+  [OK] 7:review mensaje de usuario identico (4559 caracteres)
+  [OK] 7:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 7:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 7:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_limite_de_iteraciones.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_limite_de_iteraciones.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 6 ejecuciones de agente)
+  [OK] fusion saltada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3649 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3667 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3654 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:common el original envia [system, user]
+  [OK] 4:common mensaje de usuario identico (4828 caracteres)
+  [OK] 4:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 4:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:common bloque de contexto presente solo donde corresponde
+  [OK] 5:review el original envia [system, user]
+  [OK] 5:review mensaje de usuario identico (4468 caracteres)
+  [OK] 5:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 5:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_num_en_nombre.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_num_en_nombre.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 6 ejecuciones de agente)
+  [OK] fusion saltada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3653 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3683 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3658 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:common el original envia [system, user]
+  [OK] 4:common mensaje de usuario identico (4836 caracteres)
+  [OK] 4:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 4:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:common bloque de contexto presente solo donde corresponde
+  [OK] 5:review el original envia [system, user]
+  [OK] 5:review mensaje de usuario identico (4476 caracteres)
+  [OK] 5:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 5:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_sin_fusion.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_sin_fusion.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 6 ejecuciones de agente)
+  [OK] fusion saltada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3649 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3667 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3654 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:common el original envia [system, user]
+  [OK] 4:common mensaje de usuario identico (4828 caracteres)
+  [OK] 4:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 4:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:common bloque de contexto presente solo donde corresponde
+  [OK] 5:review el original envia [system, user]
+  [OK] 5:review mensaje de usuario identico (4468 caracteres)
+  [OK] 5:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 5:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:review bloque de contexto presente solo donde corresponde
+  [OK] jpetstore_variable_en_descripcion.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== jpetstore_variable_en_descripcion.json  (app=jpetstore-6, number=3, num=THREE, CrewAI 1.8.1, 1 ejecuciones de agente)
+  [OK] el original solo llego a ejecutar la Etapa 1
+  [OK] la replica lanza PromptInterpolationError donde el original aborta
+       original: ValueError: Missing required template variable 'Template variable 'boundaries' not found in inputs dictionary' in description
+       replica : Missing required template variable 'Template variable 'boundaries' not found in inputs dictionary' in description (clustering) (el original habria fallado igual en Crew.kickoff)
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2659 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] partsunlimited_con_fusion.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== partsunlimited_con_fusion.json  (app=partsunlimited, number=5, num=FIVE, CrewAI 1.8.1, 10 ejecuciones de agente)
+  [OK] fusion ejecutada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2658 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3865 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3883 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3870 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:clustering el original envia [system, user]
+  [OK] 4:clustering mensaje de usuario identico (3828 caracteres)
+  [OK] 4:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 4:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:clustering bloque de contexto presente solo donde corresponde
+  [OK] 5:clustering el original envia [system, user]
+  [OK] 5:clustering mensaje de usuario identico (3836 caracteres)
+  [OK] 5:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 5:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:clustering bloque de contexto presente solo donde corresponde
+  [OK] 6:clustering el original envia [system, user]
+  [OK] 6:clustering mensaje de usuario identico (3825 caracteres)
+  [OK] 6:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 6:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 6:clustering bloque de contexto presente solo donde corresponde
+  [OK] 7:merging el original envia [system, user]
+  [OK] 7:merging mensaje de usuario identico (4633 caracteres)
+  [OK] 7:merging system del original = system de la replica (2687 car.) + bloque herramientas/ReAct (2797 car.)
+  [OK] 7:merging herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 7:merging bloque de contexto presente solo donde corresponde
+  [OK] 8:common el original envia [system, user]
+  [OK] 8:common mensaje de usuario identico (6399 caracteres)
+  [OK] 8:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 8:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 8:common bloque de contexto presente solo donde corresponde
+  [OK] 9:review el original envia [system, user]
+  [OK] 9:review mensaje de usuario identico (6048 caracteres)
+  [OK] 9:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 9:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 9:review bloque de contexto presente solo donde corresponde
+  [OK] partsunlimited_sin_fusion.json capturada con CrewAI 1.8.1 (la version del artefacto)
+
+== partsunlimited_sin_fusion.json  (app=partsunlimited, number=5, num=FIVE, CrewAI 1.8.1, 8 ejecuciones de agente)
+  [OK] fusion saltada segun len == number
+  [OK] mismas etapas y en el mismo orden
+  [OK] 0:domain el original envia [system, user]
+  [OK] 0:domain mensaje de usuario identico (2658 caracteres)
+  [OK] 0:domain system del original = system de la replica (2652 car.) + bloque herramientas/ReAct (3076 car.)
+  [OK] 0:domain herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 0:domain bloque de contexto presente solo donde corresponde
+  [OK] 1:clustering el original envia [system, user]
+  [OK] 1:clustering mensaje de usuario identico (3795 caracteres)
+  [OK] 1:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 1:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 1:clustering bloque de contexto presente solo donde corresponde
+  [OK] 2:clustering el original envia [system, user]
+  [OK] 2:clustering mensaje de usuario identico (3813 caracteres)
+  [OK] 2:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 2:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 2:clustering bloque de contexto presente solo donde corresponde
+  [OK] 3:clustering el original envia [system, user]
+  [OK] 3:clustering mensaje de usuario identico (3800 caracteres)
+  [OK] 3:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 3:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 3:clustering bloque de contexto presente solo donde corresponde
+  [OK] 4:clustering el original envia [system, user]
+  [OK] 4:clustering mensaje de usuario identico (3758 caracteres)
+  [OK] 4:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 4:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 4:clustering bloque de contexto presente solo donde corresponde
+  [OK] 5:clustering el original envia [system, user]
+  [OK] 5:clustering mensaje de usuario identico (3766 caracteres)
+  [OK] 5:clustering system del original = system de la replica (2890 car.) + bloque herramientas/ReAct (4039 car.)
+  [OK] 5:clustering herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 5:clustering bloque de contexto presente solo donde corresponde
+  [OK] 6:common el original envia [system, user]
+  [OK] 6:common mensaje de usuario identico (5138 caracteres)
+  [OK] 6:common system del original = system de la replica (3024 car.) + bloque herramientas/ReAct (6161 car.)
+  [OK] 6:common herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 6:common bloque de contexto presente solo donde corresponde
+  [OK] 7:review el original envia [system, user]
+  [OK] 7:review mensaje de usuario identico (5998 caracteres)
+  [OK] 7:review system del original = system de la replica (2703 car.) + bloque herramientas/ReAct (4287 car.)
+  [OK] 7:review herramientas anunciadas por CrewAI = tabla de §5.3
+  [OK] 7:review bloque de contexto presente solo donde corresponde
+
+== Comprobaciones sin captura
+  [OK] jpetstore-6 system domain_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] jpetstore-6 system clustering_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] jpetstore-6 system merging_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] jpetstore-6 system common_class_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] jpetstore-6 system review_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] jpetstore-6 backstory del Merging Agent con {number} -> 3
+  [OK] jpetstore-6 envoltura completa de CrewAI en la Etapa 1
+  [OK] jpetstore-6 {num} -> THREE en la Etapa 1
+  [OK] jpetstore-6 llaves dobles del YAML intactas en la Etapa 1
+  [OK] partsunlimited system domain_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] partsunlimited system clustering_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] partsunlimited system merging_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] partsunlimited system common_class_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] partsunlimited system review_agent: role/backstory/goal del YAML, sin variables ni ReAct
+  [OK] partsunlimited backstory del Merging Agent con {number} -> 5
+  [OK] partsunlimited envoltura completa de CrewAI en la Etapa 1
+  [OK] partsunlimited {num} -> FIVE en la Etapa 1
+  [OK] partsunlimited llaves dobles del YAML intactas en la Etapa 1
+  [OK] clustering_task.description no tiene variables
+  [OK] common_class_task.description no tiene variables
+  [OK] save_prompt escribe los bytes exactos (UTF-8, sin CRLF)
+  sha256 agents.yaml: 783d78d946ea83eefaec3326559a0c5401e823b4f9d3309db9c213f9a452e667
+  sha256 tasks.yaml: 41697e7fb055f1e6ffa00dbac1a112d334144b97aee83659bf58c53d634a53f9
+
+RESULTADO: OK (0 problemas)

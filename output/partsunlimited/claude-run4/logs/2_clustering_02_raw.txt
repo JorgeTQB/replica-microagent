@@ -1,0 +1,30 @@
+I now have a clear picture of all the dealer-specific classes. Let me compile the complete list:
+
+**Dealer Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.DealerController` - HTTP endpoints for dealer operations
+
+2. **Domain Model:**
+   - `smpl.ordering.models.DealerInfo` - Dealer data model with business validation
+
+3. **Data Access - Interface:**
+   - `smpl.ordering.repositories.DealersRepository` - Repository interface for dealer operations
+
+4. **Data Access - Implementations:**
+   - `smpl.ordering.repositories.mock.MockDealersRepository` - In-memory mock implementation
+   - `smpl.ordering.repositories.mongodb.MongoDealersRepository` - MongoDB implementation
+   - `smpl.ordering.repositories.mongodb.models.Dealer` - MongoDB document model for dealer
+
+```json
+{
+  "Dealer": [
+    "smpl.ordering.controllers.DealerController",
+    "smpl.ordering.models.DealerInfo",
+    "smpl.ordering.repositories.DealersRepository",
+    "smpl.ordering.repositories.mock.MockDealersRepository",
+    "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+    "smpl.ordering.repositories.mongodb.models.Dealer"
+  ]
+}
+```

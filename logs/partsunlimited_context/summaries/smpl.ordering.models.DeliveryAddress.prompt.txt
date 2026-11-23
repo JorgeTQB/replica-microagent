@@ -1,0 +1,103 @@
+    Analyze the following Java code and for each class or interface, provide a concise and comprehensive summary of the class:
+    1. purpose of the class.
+    2. key methods and their functions.
+    3. any other important information.
+    These information should all be presented in "summary" entry.
+    
+    Note:
+    -If the class contains a summary in the comment, you should fully utilize it and complement if needed.
+    -If there are multiple classes in a file, you should separately summarize them; but if a class contains inner class(es), you only need to generate an entry for the outer class and summarize both the inner and outer classes.
+
+    Format your response as a JSON object where keys are complete class names and values are the summaries and paths:
+    
+    {
+        "package.ClassName1": {"summary": "Summary of class1", "file_path": "path/to/file.java"},
+        "package.ClassName2": {"summary": "Summary of class2", "file_path": "path/to/file.java"}
+    }
+    
+    Here's the Java code:
+    
+    package smpl.ordering.models;
+
+public class DeliveryAddress
+{
+    @SuppressWarnings("SameParameterValue")
+    public DeliveryAddress(String street, String city, String state, String postalCode, String specialInstructions)
+    {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.postalCode = postalCode;
+        this.specialInstructions = specialInstructions;
+    }
+
+    public DeliveryAddress()
+    {
+    }
+
+    public String getStreet()
+    {
+        return street;
+    }
+
+    public void setStreet(String street)
+    {
+        this.street = street;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public String getState()
+    {
+        return state;
+    }
+
+    public void setState(String state)
+    {
+        this.state = state;
+    }
+
+    public String getPostalCode()
+    {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode)
+    {
+        this.postalCode = postalCode;
+    }
+
+    public String getSpecialInstructions()
+    {
+        return specialInstructions;
+    }
+
+    public void setSpecialInstructions(String specialInstructions)
+    {
+        this.specialInstructions = specialInstructions;
+    }
+
+    public boolean validate()
+    {
+        return isNotEmpty(city) && isNotEmpty(postalCode);
+    }
+
+    private static boolean isNotEmpty(String str)
+    {
+        return str != null && !str.isEmpty();
+    }
+
+    private String street;
+    private String city;
+    private String state;
+    private String postalCode;
+    private String specialInstructions;
+}

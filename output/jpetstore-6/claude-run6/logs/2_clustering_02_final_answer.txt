@@ -1,0 +1,39 @@
+Based on my thorough analysis of the codebase, I have identified all classes belonging to the **Product Catalog** domain. Let me summarize my findings:
+
+**Domain Objects (Core Catalog Entities):**
+- `org.mybatis.jpetstore.domain.Category` - Represents product categories (taxonomy)
+- `org.mybatis.jpetstore.domain.Product` - Represents products within categories
+- `org.mybatis.jpetstore.domain.Item` - Represents individual SKUs/items (product variants with pricing, supplier info)
+
+**Service Layer (Business Logic):**
+- `org.mybatis.jpetstore.service.CatalogService` - Handles all catalog operations (browse by category, search, get item, check inventory)
+
+**Data Layer (Mappers):**
+- `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for categories
+- `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for products (search, list by category)
+- `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for items and inventory quantities
+
+**Presentation Layer:**
+- `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Web controller for catalog browsing, product view, item view, search
+
+**Note on excluded classes:**
+- `AbstractActionBean` - This is a shared base class used by ALL action beans (Account, Cart, Order, Catalog), so it's a common/support class not exclusive to Product Catalog
+- `Cart`, `CartItem` - Belong to Shopping Cart domain
+- `LineItem` - Belongs to Order Management domain  
+- `AccountActionBean`, `CartActionBean` - Belong to other domains
+- `OrderService` - Uses `ItemMapper` for inventory updates but belongs to Order Management domain
+
+```json
+{
+  "Product Catalog": [
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper",
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean"
+  ]
+}
+```

@@ -1,0 +1,33 @@
+I have a comprehensive list of related classes. Now let me analyze which ones specifically belong to the Catalog domain:
+
+**Catalog-specific classes (confirmed):**
+1. `smpl.ordering.controllers.CatalogController` - Presentation layer for catalog HTTP endpoints
+2. `smpl.ordering.models.CatalogItem` - Domain model for catalog items (Business/Domain Objects)
+3. `smpl.ordering.repositories.CatalogItemsRepository` - Data access interface for catalog items
+4. `smpl.ordering.repositories.mock.MockCatalogItemsRepository` - Mock implementation for testing
+5. `smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository` - MongoDB implementation for catalog data access
+6. `smpl.ordering.repositories.mongodb.models.CatalogItem` - MongoDB document model for catalog items
+
+**Classes to exclude:**
+- `smpl.ordering.OrderingInitializer` - Application-wide initialization (shared/common class)
+- `smpl.ordering.Utility` - Shared utility class used across all domains
+- `smpl.ordering.TestPath` - Shared testing interface implemented by multiple mock repositories
+- `smpl.ordering.repositories.RepositoryFactory` - Shared factory used by all controllers
+- `smpl.ordering.repositories.mock.MockQuoteRepository` - Belongs to Quote domain (only uses CatalogItemsRepository to validate SKUs)
+- `smpl.ordering.repositories.mongodb.MongoOperationsWithRetry` - Shared MongoDB utility class
+- `smpl.ordering.models.QuoteItemInfo` - Belongs to Quote domain
+
+The 6 Catalog-specific classes are all confirmed as exclusively belonging to the Catalog bounded context.
+
+```json
+{
+  "Catalog": [
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.models.CatalogItem",
+    "smpl.ordering.repositories.CatalogItemsRepository",
+    "smpl.ordering.repositories.mock.MockCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.models.CatalogItem"
+  ]
+}
+```

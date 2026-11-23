@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 9504,
+  "stop_reason": "end_turn",
+  "session_id": "7ab67118-52a7-4902-985c-a7cfeab8060e",
+  "total_cost_usd": 0.028194,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3153,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 618,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3153,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 618,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 3153,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3153
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 618,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 3153,
+      "webSearchRequests": 0,
+      "costUSD": 0.028194,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 3153,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.OrderController\": {\n        \"summary\": \"A Spring MVC REST controller that handles HTTP requests for order management, mapped to the '/orders' endpoint. It acts as the entry point for all order-related operations in the ordering system, delegating persistence to repository abstractions obtained via RepositoryFactory.\\n\\nKey methods:\\n- getOrderById(String orderId) [GET /{orderId}]: Retrieves a single order by its unique ID, returning 200 OK with the order or 404 NOT FOUND if it does not exist.\\n- getOrdersByDealerName(String dealer, OrderStatus status) [GET /orders]: Retrieves a list of orders filtered by dealer name and/or order status. If no dealer is provided, it filters only by status. Returns 404 if no matching orders are found.\\n- createOrder(String from) [POST /orders]: Creates a new order from an existing quote (identified by 'fromQuote' query parameter). Returns 201 CREATED with a 'Location' header pointing to the new order, 400 BAD REQUEST if the quote doesn't exist, or 409 CONFLICT if there is a conflicting request.\\n- addEvent(String orderId, OrderEventInfo info) [POST /{orderId}/events]: Appends a new event (with an auto-set current date) to an existing order's event history and persists the update. Returns 201 CREATED on success or 400 BAD REQUEST if the order is not found.\\n- updateOrder(String orderId, Order order) [PUT /{orderId}]: Fully updates an existing order after validating its fields. Returns 200 OK on success or 404 NOT FOUND if the order does not exist.\\n- updateStatus(String orderId, OrderUpdateInfo info) [PUT /{orderId}/status]: Updates the status of an existing order along with event information (auto-setting the current date). Returns 200 OK on success or 400 BAD REQUEST if the order is not found.\\n- deleteOrder(String orderId) [DELETE /{orderId}]: Removes an existing order from the system. Returns 204 NO CONTENT on success or 404 NOT FOUND if the order does not exist.\\n- getQuotes() / getOrders(): Private helper methods that retrieve QuoteRepository and OrderRepository instances from the RepositoryFactory respectively.\\n\\nAll public methods include exception handling that tracks unexpected exceptions via Azure Application Insights TelemetryClient (obtained in a thread-safe manner) and returns 500 INTERNAL SERVER ERROR in such cases.\",\n        \"file_path\": \"smpl/ordering/controllers/OrderController.java\"\n    }\n}\n```",
+  "ttft_ms": 10139,
+  "type": "result",
+  "duration_ms": 10170,
+  "uuid": "b627a861-ef64-4c44-a3fb-8769151d98c1",
+  "ttft_stream_ms": 1732,
+  "time_to_request_ms": 661,
+  "first_content_frame_ms": 1732,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

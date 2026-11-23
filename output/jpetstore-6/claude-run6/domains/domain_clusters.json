@@ -1,0 +1,20 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Account Management",
+      "description": "This domain handles all aspects of user identity and account lifecycle within the application. It encompasses user registration (creating new accounts), authentication (sign-on and sign-off), account profile updates, and management of user preferences such as language preferences, favorite category, and banner display settings. The domain maintains the relationship between user credentials (username/password), personal information (name, email, address), and user-specific customization options. It also supports the retrieval of personalized product lists based on user preferences. This domain owns the user identity context and provides authentication state that other domains depend upon."
+    },
+    {
+      "domain_name": "Product Catalog",
+      "description": "This domain manages the complete product browsing and discovery experience. It encompasses the hierarchical organization of the store's offerings through categories, products, and individual items (SKUs). The domain supports browsing products by category, viewing detailed product and item information, searching for products by keywords, and checking item availability in inventory. It manages the product taxonomy (categories containing products, products having multiple item variants) along with item attributes, pricing, supplier associations, and stock levels. This domain serves as the primary read-oriented domain that exposes the store's inventory to customers."
+    },
+    {
+      "domain_name": "Shopping Cart",
+      "description": "This domain manages the transient shopping cart experience for customers as they browse and select items to purchase. It encompasses operations for adding items to the cart (including stock availability checks), removing items from the cart, updating item quantities, and calculating cart subtotals. The cart maintains a session-scoped collection of cart items, each linking a catalog item with a desired quantity and tracking in-stock status. This domain serves as the intermediate step in the purchase workflow, bridging catalog browsing with order creation, and owns the cart state until the customer proceeds to checkout."
+    },
+    {
+      "domain_name": "Order Management",
+      "description": "This domain manages the complete order lifecycle from creation through fulfillment tracking. It encompasses the creation of new orders from cart contents (capturing shipping and billing addresses, payment information, and line items), persisting order records with their associated line items, updating inventory quantities upon order placement, tracking order status, and retrieving order history by customer. The domain handles the financial aspects of orders including total price calculation, credit card information capture (card type, card number, expiry date), and courier/shipping method selection. It also manages sequence generation for unique order ID assignment. This domain owns the transactional record of all customer purchases."
+    }
+  ]
+}

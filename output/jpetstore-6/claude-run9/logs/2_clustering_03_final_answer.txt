@@ -1,0 +1,30 @@
+Now I have a comprehensive understanding. Let me analyze what belongs exclusively to the Shopping Cart domain:
+
+**Analysis:**
+
+1. **`org.mybatis.jpetstore.domain.Cart`** - Core domain object for shopping cart ✅
+2. **`org.mybatis.jpetstore.domain.CartItem`** - Core domain object representing cart item ✅
+3. **`org.mybatis.jpetstore.web.actions.CartActionBean`** - Presentation layer for cart actions ✅
+4. **`org.mybatis.jpetstore.web.actions.AbstractActionBean`** - Base class used by ALL action beans (Account, Catalog, Cart, Order) - this is a shared/common class, NOT exclusively Shopping Cart
+5. **`org.mybatis.jpetstore.domain.Item`** - Belongs to Catalog domain (catalog manages items/products)
+6. **`org.mybatis.jpetstore.domain.LineItem`** - Belongs to Order Management domain
+7. **`org.mybatis.jpetstore.domain.Order`** - Belongs to Order Management domain
+8. **`org.mybatis.jpetstore.service.CatalogService`** - Belongs to Catalog domain
+9. **`org.mybatis.jpetstore.web.actions.OrderActionBean`** - Belongs to Order Management domain
+
+The Shopping Cart domain exclusively owns:
+- `Cart` - the session-scoped aggregate
+- `CartItem` - cart item domain object
+- `CartActionBean` - the presentation/action layer for cart operations
+
+The `AbstractActionBean` is used by all 4 action beans across all domains, so it's a common/shared class, not exclusive to Shopping Cart.
+
+```json
+{
+  "Shopping Cart": [
+    "org.mybatis.jpetstore.domain.Cart",
+    "org.mybatis.jpetstore.domain.CartItem",
+    "org.mybatis.jpetstore.web.actions.CartActionBean"
+  ]
+}
+```

@@ -1,0 +1,9 @@
+[2026-11-21T22:08:40-05:00] Linea base baseline-run2 de partsunlimited (n=5, modelo=claude-sonnet-4-6)
+[2026-11-21T22:08:40-05:00] Prompt: 171341 caracteres, 53 clases. Contexto: igual al de las corridas de MicroAgent (linea base claude-run1, 2026-11-21T14:32:42-05:00)
+[2026-11-21T22:08:40-05:00] 
+>>> baseline: una llamada sin herramientas (max-turns 1)
+[2026-11-21T22:08:59-05:00]   [OBSERVACION] json_entre_cercas_de_codigo: clean_json_output recorto 12 caracteres de 7137
+[2026-11-21T22:08:59-05:00] <<< baseline: 18.6 s, respuesta de 7137 caracteres, 5 servicios, 53 de 53 clases asignadas
+[2026-11-21T22:08:59-05:00] 
+--- Linea base completa ---
+[2026-11-21T22:08:59-05:00] Estado: completa | turnos: 1 | peticiones: 1 | duracion: 17 s | costo nominal: USD 0.0476 | tokens: {'input_tokens': 2, 'output_tokens': 2228, 'cache_creation_input_tokens': 0, 'cache_read_input_tokens': 47214}

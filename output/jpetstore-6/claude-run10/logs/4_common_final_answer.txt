@@ -1,0 +1,33 @@
+All 3 domains have been saved. Here is the complete final result:
+
+---
+
+## Summary: Common Classes Identified and Assigned
+
+### Common Classes Found
+
+**1. `org.mybatis.jpetstore.web.actions.AbstractActionBean`** (Utility/Base class)
+- **Type**: Incoming dependency (utility base class)
+- **Reason**: Abstract base class extended by ALL 4 ActionBeans across all 3 domains:
+  - `AccountActionBean` → Account Management
+  - `CatalogActionBean` → Catalog Management
+  - `CartActionBean` → Shopping Cart and Order Management
+  - `OrderActionBean` → Shopping Cart and Order Management
+- **Assigned to**: ALL 3 domains
+
+**2. `org.mybatis.jpetstore.service.CatalogService`** (Cross-domain service)
+- **Type**: Incoming dependency (shared service)
+- **Reason**: Already part of Catalog Management, but also used by other domains:
+  - `AccountActionBean` uses it for `getProductListByCategory()` (favorite category products after login/registration)
+  - `CartActionBean` uses it for `isItemInStock()` and `getItem()` when adding items to cart
+- **Assigned to**: Account Management + Shopping Cart and Order Management (in addition to its native Catalog Management)
+
+---
+
+### Final Domain Clusters (28 total class-domain assignments)
+
+| Domain | Classes | Count |
+|--------|---------|-------|
+| **Account Management** | Account, AccountMapper, AccountService, AccountActionBean, **AbstractActionBean**, **CatalogService** | 6 |
+| **Catalog Management** | CatalogActionBean, CatalogService, CategoryMapper, ProductMapper, ItemMapper, Category, Product, Item, **AbstractActionBean** | 9 |
+| **Shopping Cart and Order Management** | Cart, CartItem, CartActionBean, Order, LineItem, Sequence, OrderService, OrderActionBean, OrderMapper, LineItemMapper, SequenceMapper, **AbstractActionBean**, **CatalogService** | 13 |

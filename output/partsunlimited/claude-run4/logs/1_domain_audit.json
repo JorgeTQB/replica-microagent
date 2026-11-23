@@ -1,0 +1,377 @@
+{
+ "etapa": "1_domain",
+ "agente": "domain_agent",
+ "modelo_pedido": "claude-sonnet-4-6",
+ "modelos_que_respondieron": [
+  "claude-sonnet-4-6"
+ ],
+ "servidores_mcp": {
+  "microagent": "connected"
+ },
+ "herramientas_del_agente": [
+  "mcp__microagent__get_all_class_hierarchy",
+  "mcp__microagent__get_all_class_summaries",
+  "mcp__microagent__get_class_basic_info",
+  "mcp__microagent__get_class_summary",
+  "mcp__microagent__get_database_summary"
+ ],
+ "herramientas_visibles_init": [
+  "mcp__microagent__get_all_class_hierarchy",
+  "mcp__microagent__get_all_class_summaries",
+  "mcp__microagent__get_class_basic_info",
+  "mcp__microagent__get_class_summary",
+  "mcp__microagent__get_database_summary"
+ ],
+ "apiKeySource": "none",
+ "claude_code_version": "2.1.330",
+ "llamadas": [
+  {
+   "id": "toolu_01SYU1GUqjtv4x47dm6MWQA5",
+   "herramienta": "mcp__microagent__get_all_class_hierarchy",
+   "argumentos": {},
+   "error": false
+  },
+  {
+   "id": "toolu_01PjtNdeNCtC84wkj8zANXBE",
+   "herramienta": "mcp__microagent__get_all_class_summaries",
+   "argumentos": {},
+   "error": false
+  },
+  {
+   "id": "toolu_01WSDrvoajKiP3K8qFKScohb",
+   "herramienta": "mcp__microagent__get_database_summary",
+   "argumentos": {},
+   "error": false
+  },
+  {
+   "id": "toolu_015cPv1Ecn38HBwGkPFVzQc1",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.controllers.CatalogController"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01GAPM54UECeGTyG483vxvbw",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.controllers.QuoteController"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_019gLRzDNF7MMxrixdpemXXb",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.controllers.OrderController"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01EYyGeGnG4fHECNzzhJgG9z",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.controllers.ShipmentController"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01F1eq4zeKqFa7gnPzWx5tCx",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.controllers.DealerController"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_019DVmGjghGvKQQRaddnTu6h",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.Quote"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01LJbyqT5LVW9teQjoMTmS8Z",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.Order"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_011z2ickbWd6uRmeCp2M4LCz",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.ShipmentRecord"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_015e1TNnx4aHxQW9mbKfjfgS",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.CatalogItem"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01Kt5dLKVjbTi3QoZSzg6gUE",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.DealerInfo"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01HDULJDb6rZmqUCekAYgerm",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.Delivery"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01Am75MEd2Eg56KRFECGdegF",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.OrderRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01DdNb1bcTbxK8q1LeaddBhD",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.QuoteRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01NUK1ypfvJE4YqkVv1SvQry",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.ShipmentRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_018FrhVr2de1uJkTnbEmyp14",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.RepositoryFactory"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_019yVP63BvdCmS8ts9MUxTQ6",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.OrderingInitializer"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01QDyQ2k8PFCASQkE9mefbW2",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.OrderStatus"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_017A8oyuxvxgpT9gquNo8h1M",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.OrderEventInfo"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01Xx6Uf1RCaqgeFSz5apVKUH",
+   "herramienta": "mcp__microagent__get_class_summary",
+   "argumentos": {
+    "class_name": "smpl.ordering.controllers.PingController"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01VhE1EroFHgfRVSBfyuVF14",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.QuoteItemInfo"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01S38eMAvycThCiBKD35UnA2",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.ShipmentEventInfo"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01ApoHoyAEY6SNUMAXx3unbo",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.DeliveryAddress"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01FikzjPeaRqDkmojyqKWQhv",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.mongodb.MongoOrderRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01AVAH4CTsWwj1ktCiFehRFo",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.mongodb.MongoQuoteRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_018q5ca2TNSRLm1U5F69Xzup",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.mongodb.MongoShipmentRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01DWNBq8MkxyLjvoNypfdftD",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01BR8FUmN3kciLWK64RmpPhp",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.repositories.mongodb.MongoDealersRepository"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01Tzq8EQDfemZdyeEbDe4XD5",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.OrderUpdateInfo"
+   },
+   "error": false
+  },
+  {
+   "id": "toolu_01627EZRqAr55X2EPQPn2cCZ",
+   "herramienta": "mcp__microagent__get_class_basic_info",
+   "argumentos": {
+    "class_name": "smpl.ordering.models.PhoneInfo"
+   },
+   "error": false
+  }
+ ],
+ "llamadas_por_herramienta": {
+  "mcp__microagent__get_all_class_hierarchy": 1,
+  "mcp__microagent__get_all_class_summaries": 1,
+  "mcp__microagent__get_database_summary": 1,
+  "mcp__microagent__get_class_basic_info": 28,
+  "mcp__microagent__get_class_summary": 1
+ },
+ "llamadas_fuera_de_lista": [],
+ "llamadas_registradas_por_el_servidor": 32,
+ "bloques_thinking": 0,
+ "permission_denials": [],
+ "etiqueta_final_answer": false,
+ "rutas_search_file": [],
+ "entrega": {
+  "archivo": "1_domain_transcript.jsonl",
+  "peticiones_api": 9,
+  "formas_de_peticion": 1,
+  "legible": true,
+  "system_bloques": [
+   {
+    "caracteres": 62,
+    "sha256": "0d7062851dd7bd7e66d4be4f12ac4951e3d2f587ec408295333a49963bd3f6b7",
+    "es_el_de_la_replica": false,
+    "inicio": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+   },
+   {
+    "caracteres": 2652,
+    "sha256": "ff5ba061b7bfd97a6519ae99e883da50da080552b86c41ae53daacce3e9d62cd",
+    "es_el_de_la_replica": true,
+    "inicio": "You are Expert Software Architect - domain agent. You are an expert software arc"
+   }
+  ],
+  "system_entregado_identico": true,
+  "system_contenido_en_lo_enviado": true,
+  "system_solo_recortado": false,
+  "usuario_entregado_identico": true,
+  "usuario_solo_recortado": false,
+  "usuario_bloques_anadidos_por_claude_code": [
+   {
+    "caracteres": 954,
+    "inicio": "<system-reminder>\n# Environment\nYou have been invoked in the"
+   },
+   {
+    "caracteres": 167,
+    "inicio": "<system-reminder>\nYou are powered by the model named Sonnet "
+   },
+   {
+    "caracteres": 86,
+    "inicio": "<system-reminder>\n<total_tokens>15000000 tokens left</total_"
+   },
+   {
+    "caracteres": 650,
+    "inicio": "<system-reminder>\nAs you answer the user's questions, you ca"
+   },
+   {
+    "caracteres": 65,
+    "inicio": "<system-reminder>\nToday's date is 2026-11-22.\n</system-remin"
+   }
+  ],
+  "contexto_anadido_inesperado": [],
+  "herramientas_en_la_peticion": [
+   "mcp__microagent__get_all_class_hierarchy",
+   "mcp__microagent__get_all_class_summaries",
+   "mcp__microagent__get_class_basic_info",
+   "mcp__microagent__get_class_summary",
+   "mcp__microagent__get_database_summary"
+  ],
+  "herramientas_por_forma_de_peticion": [
+   [
+    "mcp__microagent__get_all_class_hierarchy",
+    "mcp__microagent__get_all_class_summaries",
+    "mcp__microagent__get_class_basic_info",
+    "mcp__microagent__get_class_summary",
+    "mcp__microagent__get_database_summary"
+   ]
+  ],
+  "parametros_de_las_peticiones": [
+   {
+    "model": "claude-sonnet-4-6",
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "disabled"
+    },
+    "temperature": 1,
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  ],
+  "transcripcion": "1_domain_transcript.jsonl"
+ },
+ "problemas": [],
+ "observaciones": [
+  [
+   "sin_etiqueta_final_answer",
+   "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+  ]
+ ]
+}

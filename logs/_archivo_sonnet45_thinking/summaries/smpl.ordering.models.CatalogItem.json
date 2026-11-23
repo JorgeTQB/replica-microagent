@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 14412,
+  "stop_reason": "end_turn",
+  "session_id": "b504457b-7dbe-4bc5-b93e-315d810568e6",
+  "total_cost_usd": 0.019866,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1384,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 769,
+    "output_tokens_details": {
+      "thinking_tokens": 527
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1384,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 769,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1384,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1384
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 769,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1384,
+      "webSearchRequests": 0,
+      "costUSD": 0.019866,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 527,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1384,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.CatalogItem\": {\n        \"summary\": \"A data model class representing a catalog item in an ordering system. The class encapsulates catalog item information including SKU number, description, price, inventory count, and lead time. It provides three constructors: a default no-args constructor, a parameterized constructor accepting all fields, and a copy constructor for creating a duplicate CatalogItem. Key methods include standard getters and setters for all five fields (skuNumber, description, price, inventory, leadTime), and a validate() method that validates the SKU number and description fields using the Utility class helper methods. The validate() method returns a JSON-formatted string containing errors if validation fails, or null if the item is valid. This is a typical POJO (Plain Old Java Object) following the JavaBean pattern, suitable for use in data transfer, persistence, or business logic operations within the ordering system.\",\n        \"file_path\": \"smpl/ordering/models/CatalogItem.java\"\n    }\n}\n```",
+  "ttft_ms": 11294,
+  "type": "result",
+  "duration_ms": 14556,
+  "uuid": "8b10390c-849d-4864-a81a-70ac858c2d26",
+  "ttft_stream_ms": 2068,
+  "time_to_request_ms": 144,
+  "first_content_frame_ms": 2069,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

@@ -1,0 +1,32 @@
+Based on my comprehensive investigation of the codebase, I have identified all domain-specific classes for the Account Management domain. Let me summarize my findings:
+
+**Account Management Domain Classes:**
+
+1. **Domain Object Layer:**
+   - `org.mybatis.jpetstore.domain.Account` - Core domain entity representing user account with credentials, personal info, and preferences (username, password, email, address, language preference, favorite category, banner settings)
+
+2. **Data Layer (Mapper):**
+   - `org.mybatis.jpetstore.mapper.AccountMapper` - Data access interface for CRUD operations on account, profile, and signon tables
+
+3. **Business Layer (Service):**
+   - `org.mybatis.jpetstore.service.AccountService` - Business logic for account management (insert/update account, authentication)
+
+4. **Presentation Layer (Web Action):**
+   - `org.mybatis.jpetstore.web.actions.AccountActionBean` - Web controller handling user registration, authentication, profile editing, sign-on/sign-off
+
+5. **Support/Base Class:**
+   - `org.mybatis.jpetstore.web.actions.AbstractActionBean` - Abstract base class extended by AccountActionBean (and other action beans)
+
+Note: `AbstractActionBean` is a shared base class used by all action beans (Account, Cart, Catalog, Order), so it's a common/support class. However, since the task asks for domain-specific classes, I'll include it as it's part of the presentation support structure used by AccountActionBean.
+
+```json
+{
+  "Account Management": [
+    "org.mybatis.jpetstore.domain.Account",
+    "org.mybatis.jpetstore.mapper.AccountMapper",
+    "org.mybatis.jpetstore.service.AccountService",
+    "org.mybatis.jpetstore.web.actions.AccountActionBean",
+    "org.mybatis.jpetstore.web.actions.AbstractActionBean"
+  ]
+}
+```

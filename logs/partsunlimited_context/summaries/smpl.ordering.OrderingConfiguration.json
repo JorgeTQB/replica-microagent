@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 10476,
+  "stop_reason": "end_turn",
+  "session_id": "a7b9803d-ff19-4542-959a-8e1c80b25592",
+  "total_cost_usd": 0.019821000000000002,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1940,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 545,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1940,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 545,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1940,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1940
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 545,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1940,
+      "webSearchRequests": 0,
+      "costUSD": 0.019821000000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1940,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.OrderingConfiguration\": {\n        \"summary\": \"OrderingConfiguration is the main Spring Boot application configuration class for the Ordering Service. It serves as the entry point and central configuration hub, implementing ApplicationContextAware to provide static access to the Spring ApplicationContext throughout the application.\\n\\n**Purpose:** Bootstraps and configures the Ordering Service Spring Boot application, wiring together MongoDB connectivity, repository factories, and Azure Application Insights telemetry.\\n\\n**Key Methods:**\\n- `main(String[] args)`: Application entry point; launches the Spring Boot application using SpringApplication with startup logging disabled.\\n- `mongoTemplate()`: Bean factory method that creates and configures a MongoTemplate instance. It supports dynamic host resolution via the MONGO_PORT environment variable (for Docker container compatibility), handles comma-separated host lists for multi-host configurations, and falls back to a default local MongoDB connection if host/database properties are absent.\\n- `repositoryFactory()`: Bean factory method that initializes and returns a RepositoryFactory singleton, configured with the storage type defined in OrderingServiceProperties.\\n- `orderingServiceProperties()`: Exposes the autowired OrderingServiceProperties as a Spring Bean for injection elsewhere.\\n- `getTelemetryClient()`: Bean factory method that provides a thread-local TelemetryClient for Azure Application Insights. It lazily initializes the client per thread, optionally setting a custom instrumentation key from OrderingServiceProperties. Returns null if no active TelemetryConfiguration is present.\\n- `setApplicationContext(ApplicationContext)` / `getApplicationContext()`: Implements ApplicationContextAware to store and expose the ApplicationContext statically for use across the application.\\n\\n**Important Details:**\\n- Annotated with @Configuration, @ComponentScan, @EnableAutoConfiguration, @ConditionalOnClass, and @EnableConfigurationProperties, making it the root configuration for component scanning and property binding (MongoDBProperties, OrderingServiceProperties).\\n- Uses a static ThreadLocal<TelemetryClient> (t_ambientTelemetryClient) to ensure thread-safe, per-thread telemetry client instances.\\n- Supports Docker-style MONGO_PORT environment variable (tcp:// URL format) for dynamic MongoDB host resolution, anticipating containerized deployments.\",\n        \"file_path\": \"smpl/ordering/OrderingConfiguration.java\"\n    }\n}\n```",
+  "ttft_ms": 10996,
+  "type": "result",
+  "duration_ms": 11056,
+  "uuid": "b4aa6add-f6be-4065-bada-a7848ad5782f",
+  "ttft_stream_ms": 1933,
+  "time_to_request_ms": 562,
+  "first_content_frame_ms": 1933,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

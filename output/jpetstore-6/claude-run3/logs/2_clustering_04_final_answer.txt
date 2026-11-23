@@ -1,0 +1,42 @@
+Based on my thorough analysis of the codebase, I have identified all the classes belonging to the Order Management domain. Let me verify the ItemMapper usage in OrderService to confirm it's shared but used in Order Management context:
+
+The `OrderService` uses `ItemMapper` specifically for:
+1. `updateInventoryQuantity` - when inserting an order (inventory management)
+2. `getItem` and `getInventoryQuantity` - when retrieving order details
+
+However, `ItemMapper` primarily belongs to the **Catalog** domain (it manages items/inventory data). It's used by both `CatalogService` and `OrderService`, making it a shared/common class. Since the task asks for domain-specific classes EXCLUSIVELY belonging to Order Management, `ItemMapper` should not be included here.
+
+The `AbstractActionBean` is a base class used by ALL action beans across all domains, so it's a shared/common class.
+
+The Order Management domain-specific classes are:
+
+**Domain Objects:**
+- `org.mybatis.jpetstore.domain.Order` - Core order entity
+- `org.mybatis.jpetstore.domain.LineItem` - Order line item entity
+- `org.mybatis.jpetstore.domain.Sequence` - Sequence ID generator entity
+
+**Business Layer:**
+- `org.mybatis.jpetstore.service.OrderService` - Order business logic service
+
+**Data Layer:**
+- `org.mybatis.jpetstore.mapper.OrderMapper` - Order database operations
+- `org.mybatis.jpetstore.mapper.LineItemMapper` - Line item database operations
+- `org.mybatis.jpetstore.mapper.SequenceMapper` - Sequence database operations
+
+**Presentation Layer:**
+- `org.mybatis.jpetstore.web.actions.OrderActionBean` - Order web action handler
+
+```json
+{
+  "Order Management": [
+    "org.mybatis.jpetstore.domain.Order",
+    "org.mybatis.jpetstore.domain.LineItem",
+    "org.mybatis.jpetstore.domain.Sequence",
+    "org.mybatis.jpetstore.service.OrderService",
+    "org.mybatis.jpetstore.mapper.OrderMapper",
+    "org.mybatis.jpetstore.mapper.LineItemMapper",
+    "org.mybatis.jpetstore.mapper.SequenceMapper",
+    "org.mybatis.jpetstore.web.actions.OrderActionBean"
+  ]
+}
+```

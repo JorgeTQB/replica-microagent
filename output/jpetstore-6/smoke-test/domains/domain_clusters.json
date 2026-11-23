@@ -1,0 +1,16 @@
+{
+  "business_domains": [
+    {
+      "name": "domain"
+    },
+    {
+      "name": "mapper"
+    },
+    {
+      "name": "service"
+    },
+    {
+      "name": "web"
+    }
+  ]
+}

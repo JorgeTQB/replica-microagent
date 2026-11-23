@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 11980,
+  "stop_reason": "end_turn",
+  "session_id": "05e6a49f-ace9-4336-834d-943b944c8d59",
+  "total_cost_usd": 0.020787,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2006,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 583,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2006,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 583,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2006,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2006
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 583,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2006,
+      "webSearchRequests": 0,
+      "costUSD": 0.020787,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2006,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.MongoQuoteRepository\": {\n        \"summary\": \"MongoQuoteRepository is a MongoDB-backed implementation of the QuoteRepository interface, responsible for managing Quote entities in a MongoDB database. It also implements the TestPath interface, indicating it supports test-related operations such as resetting state.\\n\\n**Purpose:** Provides CRUD operations for Quote objects, persisting and retrieving them from MongoDB using Spring Data MongoDB. It internally maps between the domain model (Quote) and the MongoDB persistence model (QuoteDetails).\\n\\n**Key Methods:**\\n- `getQuote(String id)`: Retrieves a single Quote by its quote ID. Returns null if not found.\\n- `findExistingQuote(String id)` (private): Performs the actual MongoDB query to find a QuoteDetails document by quoteId.\\n- `getQuotesByCustomerName(String customerName)`: Fetches all quotes and filters in-memory by customer name (case-insensitive substring match). Note: contains a TODO to push filtering to the database layer instead.\\n- `getQuoteIdsByDealerName(String dealerName)`: Queries MongoDB for all quotes associated with a given dealer name and returns their quote IDs.\\n- `createQuote(Quote from)`: Creates and persists a new Quote. Auto-generates a quote ID if none is provided; throws BadRequestException on duplicate IDs. Also ensures the associated dealer exists, creating one if necessary.\\n- `updateQuote(String id, Quote from, String eTag)`: Updates an existing Quote document in MongoDB. Returns false if the quote does not exist. Also ensures the dealer exists.\\n- `removeQuote(String id, String eTag)`: Deletes a Quote by its ID using findAndRemove. Returns true if the document was found and removed.\\n- `reset()`: Drops the entire 'quotes' MongoDB collection; used for test cleanup (TestPath interface).\\n\\n**Other Important Details:**\\n- Uses MongoOperationsWithRetry (a wrapper around MongoTemplate) for resilient MongoDB operations.\\n- Maintains a static Random instance (s_counter) for generating unique quote IDs when none is supplied.\\n- Collaborates with DealersRepository to validate/create dealer records during quote creation and update.\\n- Constructor accepts a MongoTemplate and DealersRepository, wiring all dependencies at instantiation time.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/MongoQuoteRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 12157,
+  "type": "result",
+  "duration_ms": 12247,
+  "uuid": "ac11033c-26ab-4a5b-85dc-f96e360efb68",
+  "ttft_stream_ms": 3190,
+  "time_to_request_ms": 244,
+  "first_content_frame_ms": 3190,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

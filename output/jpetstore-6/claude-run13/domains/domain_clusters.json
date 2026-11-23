@@ -1,0 +1,20 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Account Management",
+      "description": "This domain encompasses all functionality related to user account lifecycle management, authentication, and user profile preferences. It covers user registration (creating new accounts), authentication (sign-on/sign-off), and account profile editing including personal details (name, email, address), language preferences, and favorite product category settings. The domain is responsible for managing user identity and credentials, storing personal information, and maintaining user preferences such as banner display options and category favorites. It has a clear bounded context around the user as a system actor, and its data is centered on user identity and profile data persisted in the signon, account, profile, and bannerdata tables."
+    },
+    {
+      "domain_name": "Catalog",
+      "description": "This domain covers the core product catalog capabilities of the pet store, including browsing and searching for products across categories. It manages the hierarchical structure of product information: categories (top-level groupings like FISH, DOGS, CATS), products (specific product types within a category), and items (individual purchasable SKUs with pricing, supplier, status, and attributes). The domain supports keyword-based product search, category browsing, product listing, and individual item detail views. It also tracks inventory availability for items. The domain data spans the category, product, item, inventory, and supplier database tables. This is a read-heavy domain that serves as the product information backbone for the application."
+    },
+    {
+      "domain_name": "Shopping Cart",
+      "description": "This domain handles the session-based shopping cart experience, allowing users to build a collection of items they intend to purchase before committing to an order. The core business capabilities include adding catalog items to a cart, removing items, updating item quantities, viewing the cart with subtotal calculations, and proceeding to checkout. The cart maintains item state (in-stock status, quantity, total price per item) and aggregates these into a subtotal. The cart exists as a transient session-based concept and serves as the transition point between catalog browsing and order placement. Its bounded context is distinct from the catalog (it doesn't manage item data) and from order management (it does not persist orders)."
+    },
+    {
+      "domain_name": "Order Management",
+      "description": "This domain covers the complete order lifecycle from checkout through order fulfillment tracking. Its core business capabilities include creating new orders from a user's cart and account information, capturing shipping and billing addresses, processing payment information (credit card details), persisting order line items with quantities and unit prices, tracking order and line item status, and providing order history retrieval for users. The domain manages the transition of a shopping cart into a persisted, trackable business transaction. It also handles inventory deduction when orders are placed. The domain data spans the orders, orderstatus, lineitem, and sequence database tables. It has a dependency on account information for order initialization but owns the full order transaction context."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+I now have a comprehensive view of all Quote domain classes. Let me compile the final list:
+
+**Quote Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.QuoteController` - HTTP endpoints for quote CRUD operations
+
+2. **Domain Models:**
+   - `smpl.ordering.models.Quote` - Core quote model with customer/dealer associations, validity, pricing
+   - `smpl.ordering.models.QuoteItemInfo` - Quote line item linking catalog products to quantities/pricing
+
+3. **Data Access - Interfaces:**
+   - `smpl.ordering.repositories.QuoteRepository` - Repository interface for quote data access
+
+4. **Data Access - Implementations:**
+   - `smpl.ordering.repositories.mock.MockQuoteRepository` - In-memory mock implementation for testing
+   - `smpl.ordering.repositories.mongodb.MongoQuoteRepository` - MongoDB implementation
+   - `smpl.ordering.repositories.mongodb.models.QuoteDetails` - MongoDB document model for quote persistence
+
+```json
+{
+  "Quote": [
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.models.Quote",
+    "smpl.ordering.models.QuoteItemInfo",
+    "smpl.ordering.repositories.QuoteRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.models.QuoteDetails"
+  ]
+}
+```

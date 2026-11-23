@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 12807,
+  "stop_reason": "end_turn",
+  "session_id": "92ddcbb2-4997-4d2e-80a8-9abbefa20967",
+  "total_cost_usd": 0.026993999999999997,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 2542,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 781,
+    "output_tokens_details": {
+      "thinking_tokens": 452
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2542,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 781,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2542,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2542
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 781,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2542,
+      "webSearchRequests": 0,
+      "costUSD": 0.026993999999999997,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 452,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2542,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.CatalogController\": {\n        \"summary\": \"REST controller that manages catalog items in an ordering system. Provides CRUD operations for catalog items through HTTP endpoints mapped to /catalog. Key methods include: getCatalogItems() (GET /catalog) to retrieve all catalog items; getCatalogItem(String sku) (GET /catalog/{sku}) to retrieve a specific item by SKU number; addCatalogItem(CatalogItem info) (POST /catalog) to create new catalog items with validation and conflict checking; upsertCatalogItem(String sku, CatalogItem info) (PUT /catalog/{sku}) to update existing items; and removeCatalogItem(String sku) (DELETE /catalog/{sku}) to remove items. The controller integrates with Application Insights for telemetry tracking, validates all input data before processing, returns appropriate HTTP status codes (200 OK, 201 CREATED, 204 NO_CONTENT, 400 BAD_REQUEST, 404 NOT_FOUND, 409 CONFLICT, 500 INTERNAL_SERVER_ERROR), and uses the repository pattern through CatalogItemsRepository to abstract data access operations. Exception handling is implemented across all endpoints with telemetry tracking for monitoring and debugging purposes.\",\n        \"file_path\": \"smpl/ordering/controllers/CatalogController.java\"\n    }\n}\n```",
+  "ttft_ms": 8258,
+  "type": "result",
+  "duration_ms": 13040,
+  "uuid": "edfee6fa-1376-4a87-92d6-fe5bb7f68861",
+  "ttft_stream_ms": 1093,
+  "time_to_request_ms": 223,
+  "first_content_frame_ms": 1094,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

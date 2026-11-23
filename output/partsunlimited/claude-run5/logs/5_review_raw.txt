@@ -1,0 +1,93 @@
+All 5 domains have been successfully saved. Here is a complete summary of the final microservice decomposition:
+
+---
+
+## Final Microservice Decomposition Summary
+
+All **5 domains** with a total of **109 class assignments** (with shared classes counted per domain) have been saved.
+
+### Microservice 1: Product Catalog (19 classes)
+**Core Domain Classes:**
+- `smpl.ordering.controllers.CatalogController`
+- `smpl.ordering.models.CatalogItem`
+- `smpl.ordering.repositories.CatalogItemsRepository`
+- `smpl.ordering.repositories.mock.MockCatalogItemsRepository`
+- `smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository`
+- `smpl.ordering.repositories.mongodb.models.CatalogItem`
+
+**Shared Infrastructure Classes:** Utility, RepositoryFactory, MongoOperationsWithRetry, TestPath, OrderingInitializer, OrderingConfiguration, MongoDBProperties, OrderingServiceProperties, SimpleCORSFilter, AppInsightsFilter, PingController, PropertyHelper, PostgresqlProperties
+
+---
+
+### Microservice 2: Dealer Management (19 classes)
+**Core Domain Classes:**
+- `smpl.ordering.controllers.DealerController`
+- `smpl.ordering.models.DealerInfo`
+- `smpl.ordering.repositories.DealersRepository`
+- `smpl.ordering.repositories.mock.MockDealersRepository`
+- `smpl.ordering.repositories.mongodb.MongoDealersRepository`
+- `smpl.ordering.repositories.mongodb.models.Dealer`
+
+**Shared Infrastructure Classes:** Same 13 as Product Catalog
+
+---
+
+### Microservice 3: Quote Management (21 classes)
+**Core Domain Classes:**
+- `smpl.ordering.controllers.QuoteController`
+- `smpl.ordering.models.Quote`
+- `smpl.ordering.models.QuoteItemInfo`
+- `smpl.ordering.repositories.QuoteRepository`
+- `smpl.ordering.repositories.mock.MockQuoteRepository`
+- `smpl.ordering.repositories.mongodb.MongoQuoteRepository`
+- `smpl.ordering.repositories.mongodb.models.QuoteDetails`
+- `smpl.ordering.BadRequestException` *(used by Quote repositories)*
+
+**Shared Infrastructure Classes:** Same 13 as above
+
+---
+
+### Microservice 4: Order Management (24 classes)
+**Core Domain Classes:**
+- `smpl.ordering.controllers.OrderController`
+- `smpl.ordering.models.Order`
+- `smpl.ordering.models.OrderEventInfo`
+- `smpl.ordering.models.OrderStatus`
+- `smpl.ordering.models.OrderUpdateInfo`
+- `smpl.ordering.repositories.OrderRepository`
+- `smpl.ordering.repositories.mock.MockOrderRepository`
+- `smpl.ordering.repositories.mongodb.MongoOrderRepository`
+- `smpl.ordering.repositories.mongodb.models.OrderDetails`
+- `smpl.ordering.BadRequestException`
+- `smpl.ordering.ConflictingRequestException`
+
+**Shared Infrastructure Classes:** Same 13 as above
+
+---
+
+### Microservice 5: Shipment and Delivery (26 classes)
+**Core Domain Classes:**
+- `smpl.ordering.controllers.ShipmentController`
+- `smpl.ordering.models.ShipmentRecord`
+- `smpl.ordering.models.ShipmentEventInfo`
+- `smpl.ordering.models.DeliveryAddress`
+- `smpl.ordering.models.PhoneInfo`
+- `smpl.ordering.models.Delivery`
+- `smpl.ordering.models.OrderStatus` *(shared with Order Management)*
+- `smpl.ordering.repositories.ShipmentRepository`
+- `smpl.ordering.repositories.mock.MockShipmentRepository`
+- `smpl.ordering.repositories.mongodb.MongoShipmentRepository`
+- `smpl.ordering.repositories.mongodb.models.ShipmentDetails`
+- `smpl.ordering.BadRequestException`
+- `smpl.ordering.ConflictingRequestException`
+
+**Shared Infrastructure Classes:** Same 13 as above
+
+---
+
+### Design Decisions
+1. **No unassigned classes** — all 0 remaining classes were accounted for.
+2. **No anti-patterns** introduced — each service has a clear single responsibility aligned to a business domain.
+3. **Common classes** (infrastructure/cross-cutting) are replicated across microservices as each would be independently deployed.
+4. **`OrderStatus`** is shared between Order Management and Shipment & Delivery since shipment state changes depend on order state progression (Shipped, Delivered, Installed statuses).
+5. **Exception classes** are only included in services that actually use them, avoiding unnecessary coupling.

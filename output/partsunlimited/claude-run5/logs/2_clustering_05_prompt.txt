@@ -1,0 +1,50 @@
+
+Current Task: You are analyzing the 'Shipment and Delivery' domain. The description of this domain is: This domain manages the physical fulfillment and logistics aspect of the ordering process, tracking how confirmed orders are physically delivered to customers. Each order corresponds to at most one shipment record, which captures the delivery date, delivery address, contact information (contact name, primary and alternate phone numbers), and a chronological log of shipment events (e.g., dispatched, in transit, delivered). The domain also supports the concept of a 'delivery' — an aggregate view that combines shipment information with its related order and quote details to provide a complete delivery picture. It handles the creation of shipment records for existing orders, updates to shipment details, tracking of shipment event milestones, retrieval of shipments by status (including filtering by DeliveryConfirmed status), and deletion of shipment records. The bounded context covers all business logic and data persistence for shipment tracking, delivery address management, phone contact information, and the HTTP interface for shipment operations (GET, POST, PUT, DELETE on /shipments endpoint).
+
+Summary of all business domains:
+
+1. Product Catalog: This domain manages the product catalog, which is the central repository of all items available for purchase in the ordering system. It encompasses the lifecycle management of catalog items including their creation, retrieval, update, and removal. Each catalog item is uniquely identified by a SKU number and carries product attributes such as description, price, available inventory count, and lead time. This domain provides the foundational reference data that other domains (particularly quoting) rely upon when specifying which products are included in a quote or order. The bounded context covers all business logic related to maintaining an accurate and up-to-date product catalog, as well as the HTTP interface for catalog item operations (GET, POST, PUT, DELETE on /catalog endpoint) and the underlying data persistence layer for catalog data.
+2. Dealer Management: This domain manages the network of dealers and suppliers that participate in the ordering process. A dealer is a business entity with identifying information including name, contact person, address, email, and phone number. Dealers are associated with quotes, as each quote is issued by a specific dealer on behalf of a customer. This domain is responsible for maintaining accurate dealer records throughout their lifecycle: registration, information update, and removal from the system. It provides the dealer reference data that the quoting process depends on for validation and association. The bounded context covers all business logic and data persistence for dealer entities, as well as the HTTP interface for dealer CRUD operations (GET, POST, PUT, DELETE on /dealers endpoint).
+3. Quote Management: This domain handles the sales quoting process, which is the mechanism by which potential orders are proposed and negotiated. A quote represents a formal price proposal made to a customer by a dealer, containing one or more line items referencing catalog products (by SKU and quantity), pricing information (total cost and discount), customer and dealer identification, delivery location details (city, postal code, state), and an expiration date. Quotes serve as the precursor to orders — an order is created from an approved quote. This domain manages the full lifecycle of quotes: creation, retrieval (by ID or customer name), update, and deletion. It also validates that associated dealers exist when creating or updating a quote. The bounded context covers all business logic surrounding quotation, including customer-dealer negotiation data, quote line items, pricing calculations, and the HTTP interface for quote operations (GET, POST, PUT, DELETE on /quotes endpoint).
+4. Order Management: This domain governs the order lifecycle after a quote has been accepted and converted into a confirmed order. An order is created from an existing quote and tracks the progression of a customer's purchase from creation through fulfillment. Each order has a unique order ID, references its originating quote, records the order date, maintains a current status (e.g., Created, Confirmed, Fulfilled), and maintains a chronological event log of activities and status changes. This domain is responsible for creating orders from quotes (ensuring the quote exists and hasn't already been used), retrieving orders (by ID, dealer name, or status), updating order details and status, appending order events, and deleting orders. The bounded context includes all business rules related to order processing, state transitions, event tracking, and order validation, as well as the HTTP interface for order operations (GET, POST, PUT, DELETE on /orders endpoint).
+5. Shipment and Delivery: This domain manages the physical fulfillment and logistics aspect of the ordering process, tracking how confirmed orders are physically delivered to customers. Each order corresponds to at most one shipment record, which captures the delivery date, delivery address, contact information (contact name, primary and alternate phone numbers), and a chronological log of shipment events (e.g., dispatched, in transit, delivered). The domain also supports the concept of a 'delivery' — an aggregate view that combines shipment information with its related order and quote details to provide a complete delivery picture. It handles the creation of shipment records for existing orders, updates to shipment details, tracking of shipment event milestones, retrieval of shipments by status (including filtering by DeliveryConfirmed status), and deletion of shipment records. The bounded context covers all business logic and data persistence for shipment tracking, delivery address management, phone contact information, and the HTTP interface for shipment operations (GET, POST, PUT, DELETE on /shipments endpoint).
+
+You are responsible for analyzing ONLY your assigned domain, but understanding the boundaries between domains is important for proper classification.
+
+For the given business domain, your task is to identify ALL of its domain-specific classes, and try to aggregate them by layer (e.g., Presentation, Business, Data, Support, Domain Objects, Other Domain Related Classes etc.).
+Provide the output containing the aggregated class lists for the domain provided.
+# Critical Rules
+1. Include ALL domain-specific classes exclusively belonging to the domain.
+2. Focus ONLY on the CURRENT domain. DO NOT cross the context boundary and include classes of OTHER business domains!
+# Problem Solving Strategy
+1. Understand the problem deeply. Carefully read the issue and think critically about what is required.
+2. Develop a clear, step-by-step plan. Break down the problem into manageable, incremental, and hierarchical steps to investigate and solve the problem.
+3. Reflect and validate comprehensively. After obtaining an initial answer, think about the original intent, and ask yourself whether the answer is absolutely correct.
+# Tool Utilization Guidance
+1. At the beginning, use BOTH get_all_class_hierarchy_complete AND get_database_summary tools to get an overview of the application. Then investigate the code information by using other tools. Explore relevant files, search for classes, inspect the code carefully and gather context.
+2. Use BOTH codebase_semantic_search and get_related_class_list to get more comprehensive results. BUT you should note that they may contain classes that do not belong to the current domain, you should carefully consider and exclude them. Tool codebase_semantic_search can help you get classes that are POSSIBLY semantically related; Tool get_related_class_list can help you get classes that are POSSIBLY dependency related to the list of classes you provided. 
+3. IMPORTANT: You MUST make FULL use of all the tools provided! Do not draw to any conclusions before you make sure with tools, especially checking the dependency and source code to ensure accuracy. Note that the provided dependency information is not absolutely accurate, you should still carefully consider and analyze the source code to decide.
+
+
+This is the expected criteria for your final answer: 
+A JSON object containing the clustering class list for the 'Shipment and Delivery' domain.
+The JSON MUST follow this EXACT structure with proper commas between elements:
+{
+  "Shipment and Delivery": [
+    "org.example.Class1",
+    "org.example.Class2",
+    "org.example.Class3"
+  ]
+}
+
+DO NOT nest the classes under categories like "Domain Objects", "Presentation Layer", etc.
+Just provide a flat array of class names under the domain name key.
+
+Ensure all JSON elements have proper commas between them.
+Your final answer MUST be ONLY the JSON object, with no other text, commentary, or explanation.
+
+you MUST return the actual complete content as the final answer, not a summary.
+
+Begin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!
+
+Thought:

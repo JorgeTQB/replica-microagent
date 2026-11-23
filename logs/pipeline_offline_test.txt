@@ -1,0 +1,229 @@
+Prueba sin cupo de run_pipeline.py (Fase 4). Capturas del original: 10
+
+== Piezas sueltas
+  [OK] clean_json_output es copia literal de main.py (mismo arbol sintactico)
+  [OK] extract_final_answer sigue la regla de crewai/agents/parser.py (1.8.1)
+  [OK] domain_file_name: `/`->`-` como el original; el resto solo se sanea en la ruta
+  [OK] classify_path resuelve las rutas como search_file y las clasifica
+  [OK] huella del contexto de JPetStore: estable, 3 + 24 archivos
+  [OK] huella del contexto de PartsUnlimitedMRP: 3 + 53 archivos
+  [OK] herramientas de cada agente = las de crew.py original, en el mismo orden
+  [OK] limite de turnos de cada agente = max_iter de crew.py original (30/30/30/45/45)
+  [OK] modelo y esfuerzo por defecto: claude-sonnet-4-6, high
+  [OK] prueba de humo real: prompts identicos, solo el contexto habitual de Claude Code y las 5 herramientas del Domain Agent
+  [OK] unexpected_context: acepta lo habitual y rechaza 6 variantes con contexto ajeno
+  [OK] analyze_forced (transcripcion real): reconoce el texto de CrewAI identico y detecta uno distinto
+  [OK] en la llamada real reanudada, costo y modelUsage son acumulados y usage es de esa llamada
+  [OK] analyze_transcript lee una transcripcion real (check5): prompt identico, 1 herramienta, thinking desactivado
+  [OK] analyze_transcript detecta un system prompt distinto y un mensaje recortado
+       parametros de la API registrados en esa transcripcion: [{'model': 'claude-sonnet-4-6', 'max_tokens': 32000, 'thinking': {'type': 'disabled'}, 'temperature': 1, 'output_config': {'effort': 'high'}}]
+       bloques de system que envio Claude Code: ["You are a Claude agent, built on Anthropic's Claude Agent SDK."]
+
+== Protecciones del orquestador
+  [OK] --only-stage1: solo la Etapa 1, estado parcial_etapa1
+  [OK] una corrida existente no se sobrescribe
+  [OK] una corrida simulada no puede usar un identificador de corrida real
+  [OK] una corrida real no puede usar el prefijo de las simuladas (y no se llama a `claude`)
+  [OK] --number/--num distintos de los de la aplicacion: se rechaza
+  [OK] el identificador reservado `smoke-test` se rechaza
+  [OK] una corrida interrumpida con Ctrl+C queda registrada como fallida (no 'en_curso')
+  [OK] con el contexto igual al de la linea base real, la corrida arranca y la linea base no se toca
+  [OK] si el contexto no coincide con el de la primera corrida, se aborta antes de llamar a nadie (D32)
+  [OK] la linea base del contexto queda como estaba antes de la prueba
+
+== jpetstore_con_fusion.json  (app=jpetstore-6, 8 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 8 ejecuciones
+  [OK] system prompt = inicio del system del original en las 8 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 9 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_dominios_omitidos.json  (app=jpetstore-6, 6 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 6 ejecuciones
+  [OK] system prompt = inicio del system del original en las 6 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 9 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_fusion_domain_cluster.json  (app=jpetstore-6, 8 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 8 ejecuciones
+  [OK] system prompt = inicio del system del original en las 8 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 9 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_fusion_json_invalido.json  (app=jpetstore-6, 8 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 8 ejecuciones
+  [OK] system prompt = inicio del system del original en las 8 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 7 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_limite_de_iteraciones.json  (app=jpetstore-6, 6 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (1)
+  [OK] 4_common: el mensaje que pide la respuesta final es el texto que CrewAI anadio en el original
+  [OK] 4_common: la peticion forzada reanuda la misma sesion, con una sola peticion, las herramientas declaradas pero ninguna permitida, y la misma configuracion
+  [OK] 4_common: max_iter + 1 llamadas al modelo en el original = max-turns peticiones + 1 forzada
+  [OK] mensaje de usuario identico al del original en las 6 ejecuciones
+  [OK] system prompt = inicio del system del original en las 6 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 7 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_num_en_nombre.json  (app=jpetstore-6, 6 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 6 ejecuciones
+  [OK] system prompt = inicio del system del original en las 6 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 7 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_sin_fusion.json  (app=jpetstore-6, 6 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 6 ejecuciones
+  [OK] system prompt = inicio del system del original en las 6 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 7 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== jpetstore_variable_en_descripcion.json  (app=jpetstore-6, 1 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'fallida' y codigo de salida 1 (el original aborto)
+  [OK] la corrida falla donde el original aborta (variable desconocida al interpolar)
+       original: ValueError: Missing required template variable 'Template variable 'boundaries' not found in inputs dictionary' in description
+       replica : Missing required template variable 'Template variable 'boundaries' not found in inputs dictionary' in description (clustering) (el original habria fallado igual en Crew.kickoff)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 1 ejecuciones
+  [OK] system prompt = inicio del system del original en las 1 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 1 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== partsunlimited_con_fusion.json  (app=partsunlimited, 10 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 10 ejecuciones
+  [OK] system prompt = inicio del system del original en las 10 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 12 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== partsunlimited_sin_fusion.json  (app=partsunlimited, 8 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 8 ejecuciones
+  [OK] system prompt = inicio del system del original en las 8 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 9 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+
+== Ramas que las capturas no cubren
+  [OK] dominio sin descripcion: se reproduce el desajuste de main.py ({A: [...], B: [], C: []})
+  [OK] la fusion se salta porque len == number, como en el original
+  [OK] queda registrado que tarea se emparejo con que dominio
+  [OK] el desajuste queda documentado en las observaciones de la corrida
+  [OK] Etapa 1 sin dominios: el flujo se detiene como en main.py y la corrida queda fallida
+  [OK] Etapa 1 con JSON invalido: el flujo se detiene como en main.py y la corrida queda fallida
+  [OK] sin llamadas a write_result_to_json: common_result.json y result.json salen del texto de la respuesta
+  [OK] el uso del respaldo queda registrado
+  [OK] resumen final correcto (no el error de `final_result_raw` de main.py)
+  [OK] Etapa 5 sin resultados ni JSON: se guarda result.txt, no hay result.json y la corrida queda fallida
+
+== jpetstore_con_fusion.json-sin-etiqueta  (app=jpetstore-6, 8 ejecuciones de agente en el original)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 8 ejecuciones
+  [OK] system prompt = inicio del system del original en las 8 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 9 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+  [OK] sin 'Final Answer:': mismas salidas y contexto, y queda anotado en cada etapa
+
+== Validez de cada llamada (una llamada invalida deja la corrida como fallida)
+  [OK] mcp_failed en domain: corrida fallida (servidor_mcp_o_herramientas), sin etapas posteriores ni result.json
+  [OK] mcp_failed: el proceso se corta al ver el `init` invalido, sin esperar la respuesta
+  [OK] extra_tool_visible en domain: corrida fallida (servidor_mcp_o_herramientas), sin etapas posteriores ni result.json
+  [OK] extra_tool_visible: el proceso se corta al ver el `init` invalido, sin esperar la respuesta
+  [OK] no_result en domain: corrida fallida (sin_resultado_de_claude), sin etapas posteriores ni result.json
+  [OK] thinking en domain: corrida fallida (auditoria), sin etapas posteriores ni result.json
+  [OK] wrong_model en domain: corrida fallida (auditoria), sin etapas posteriores ni result.json
+  [OK] tool_outside en domain: corrida fallida (auditoria), sin etapas posteriores ni result.json
+  [OK] api_error en clustering: corrida fallida (error_api_429), sin etapas posteriores ni result.json
+  [OK] forced_tool en merging: corrida fallida (respuesta_forzada_vacia), sin etapas posteriores ni result.json
+  [OK] forced_tool_undenied en merging: corrida fallida (auditoria), sin etapas posteriores ni result.json
+  [OK] forced_api_error en review: corrida fallida (error_api_429), sin etapas posteriores ni result.json
+  [OK] una corrida que falla con result.json a medias lo aparta con otro nombre
+  [OK] limite de turnos: costo y tiempo de API acumulados de la sesion, tokens sumados y peticiones contadas
+  [OK] totales de la corrida: peticiones y costo sumados por etapa
+  [OK] limite de turnos en merging: se pide la respuesta final, la corrida termina y deja las salidas del original
+  [OK] respuesta forzada que pide una herramienta: no se ejecuta, se toma su texto (como CrewAI) y pasa de contexto a la Etapa 5
+
+== jpetstore_con_fusion.json-mcp-real  (app=jpetstore-6, 8 ejecuciones de agente en el original, servidor MCP real en: merging,common,review)
+  [OK] el orquestador deja run_status.json
+  [OK] estado 'completa' y codigo de salida 0 (el original termino)
+  [OK] mismas ejecuciones de agente y en el mismo orden que el original
+  [OK] cada `claude` recibe modelo, esfuerzo, max-turns y herramientas de crew.py, el entorno fijado y ninguna variable heredada
+  [OK] respuesta final forzada en las mismas ejecuciones que el original (0)
+  [OK] mensaje de usuario identico al del original en las 8 ejecuciones
+  [OK] system prompt = inicio del system del original en las 8 ejecuciones
+  [OK] mismos archivos de salida que el original
+  [OK] contenido identico al del original en los 9 archivos de salida
+  [OK] los archivos de salida usan saltos de linea LF
+  [OK] 3_merging: el servidor MCP real publica exactamente las herramientas del agente (4)
+  [OK] 3_merging: el registro del servidor coincide con el flujo (5 llamadas)
+  [OK] 4_common: el servidor MCP real publica exactamente las herramientas del agente (8)
+  [OK] 4_common: el registro del servidor coincide con el flujo (3 llamadas)
+  [OK] 5_review: el servidor MCP real publica exactamente las herramientas del agente (6)
+  [OK] 5_review: el registro del servidor coincide con el flujo (3 llamadas)
+  [OK] auditoria de rutas de search_file: dentro de resources/<app>, fuera y contaminante
+  [OK] una lectura de salidas de otra corrida marca la corrida como contaminada (no la descarta)
+
+== Limpieza
+  [OK] las corridas simuladas no crearon ni cambiaron la linea base del contexto
+  [OK] _sandbox vacio al terminar
+  [OK] no quedan corridas de prueba en output/
+
+RESULTADO: OK (0 problemas)

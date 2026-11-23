@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 10549,
+  "stop_reason": "end_turn",
+  "session_id": "0936858a-26cf-48fd-a573-e0b7a60d40cb",
+  "total_cost_usd": 0.013644,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1118,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 462,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1118,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 462,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1118,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1118
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 462,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1118,
+      "webSearchRequests": 0,
+      "costUSD": 0.013644,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1118,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.models.Dealer\": {\n        \"summary\": \"The `Dealer` class is a MongoDB document model that represents a dealer entity stored in the 'dealers' collection. It serves as a persistence layer mapping between the MongoDB database and the application's domain model (`DealerInfo`).\\n\\n**Purpose:** Acts as a MongoDB-mapped document class (via `@Document`) for storing and retrieving dealer information, including name, contact, address, email, and phone. The `name` field is indexed (`@Indexed`) to optimize query performance.\\n\\n**Key Methods:**\\n- `Dealer()`: Default no-arg constructor required by Spring Data MongoDB for deserialization.\\n- `Dealer(DealerInfo from)`: Conversion constructor that creates a `Dealer` document from a `DealerInfo` domain object, mapping all relevant fields (name, contact, address, email, phone).\\n- `toDealerInfo()`: Converts the MongoDB `Dealer` document back into a `DealerInfo` domain object, effectively acting as an anti-corruption layer between the persistence and domain layers.\\n- `getId()` / `setId(String id)`: Standard accessor and mutator for the MongoDB document's `@Id` field.\\n\\n**Other Important Information:**\\n- Uses Spring Data MongoDB annotations: `@Document` maps the class to the 'dealers' collection, `@Id` designates the primary key, and `@Indexed` creates a MongoDB index on the `name` field for faster lookups.\\n- Follows a DTO/entity conversion pattern — domain logic uses `DealerInfo`, while this class handles persistence concerns, keeping the two layers decoupled.\\n- Other fields (contact, address, email, phone) have no explicit setters exposed, suggesting they are only set during construction from a `DealerInfo` object.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/models/Dealer.java\"\n    }\n}\n```",
+  "ttft_ms": 10807,
+  "type": "result",
+  "duration_ms": 10823,
+  "uuid": "61006db6-1521-4d7a-bd63-5b65aba46ce7",
+  "ttft_stream_ms": 3172,
+  "time_to_request_ms": 274,
+  "first_content_frame_ms": 3172,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

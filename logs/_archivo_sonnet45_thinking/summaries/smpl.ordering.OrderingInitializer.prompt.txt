@@ -1,0 +1,61 @@
+    Analyze the following Java code and for each class or interface, provide a concise and comprehensive summary of the class:
+    1. purpose of the class.
+    2. key methods and their functions.
+    3. any other important information.
+    These information should all be presented in "summary" entry.
+    
+    Note:
+    -If the class contains a summary in the comment, you should fully utilize it and complement if needed.
+    -If there are multiple classes in a file, you should separately summarize them; but if a class contains inner class(es), you only need to generate an entry for the outer class and summarize both the inner and outer classes.
+
+    Format your response as a JSON object where keys are complete class names and values are the summaries and paths:
+    
+    {
+        "package.ClassName1": {"summary": "Summary of class1", "file_path": "path/to/file.java"},
+        "package.ClassName2": {"summary": "Summary of class2", "file_path": "path/to/file.java"}
+    }
+    
+    Here's the Java code:
+    
+    package smpl.ordering;
+
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
+/**
+ * This is the application starting point when the application is deployed in Tomcat on a server.
+ */
+public class OrderingInitializer
+        extends SpringBootServletInitializer
+{
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
+    {
+        return application.sources(OrderingConfiguration.class);
+    }
+
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException
+    {
+        super.onStartup(servletContext);
+
+        if (servletContext != null)
+        {
+            String path = servletContext.getContextPath();
+            if (path != null)
+            {
+                s_applicationPath = path;
+            }
+        }
+    }
+
+    public static String getApplicationPath()
+    {
+        return s_applicationPath;
+    }
+
+    private static String s_applicationPath = "";
+}

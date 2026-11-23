@@ -1,0 +1,39 @@
+I have now examined all the core Quote Management classes. Let me compile the final list of classes that belong exclusively to the Quote Management domain:
+
+**Quote Management Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.QuoteController` - REST controller for quote CRUD operations
+
+2. **Domain Objects / Models:**
+   - `smpl.ordering.models.Quote` - Main quote domain model
+   - `smpl.ordering.models.QuoteItemInfo` - Quote line item model
+
+3. **Data / Repository Layer:**
+   - `smpl.ordering.repositories.QuoteRepository` - Repository interface for quotes
+   - `smpl.ordering.repositories.mock.MockQuoteRepository` - In-memory mock implementation
+   - `smpl.ordering.repositories.mongodb.MongoQuoteRepository` - MongoDB implementation
+   - `smpl.ordering.repositories.mongodb.models.QuoteDetails` - MongoDB document model for quotes
+
+**Classes to EXCLUDE (belong to other domains):**
+- `smpl.ordering.models.Order`, `smpl.ordering.controllers.OrderController`, `smpl.ordering.repositories.OrderRepository`, etc. → Order Management domain
+- `smpl.ordering.models.CatalogItem`, `smpl.ordering.controllers.CatalogController`, etc. → Product Catalog domain
+- `smpl.ordering.models.DealerInfo`, `smpl.ordering.controllers.DealerController`, etc. → Dealer Management domain
+- `smpl.ordering.models.ShipmentRecord`, `smpl.ordering.controllers.ShipmentController`, etc. → Shipment Management domain
+- `smpl.ordering.repositories.RepositoryFactory` - Shared/utility class used across all domains
+- `smpl.ordering.OrderingInitializer`, `smpl.ordering.Utility` - Application-wide utility classes
+- `smpl.ordering.models.Delivery` - Relates to shipment domain
+
+```json
+{
+  "Quote Management": [
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.models.Quote",
+    "smpl.ordering.models.QuoteItemInfo",
+    "smpl.ordering.repositories.QuoteRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.models.QuoteDetails"
+  ]
+}
+```

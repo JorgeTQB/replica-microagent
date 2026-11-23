@@ -1,0 +1,64 @@
+{
+  "app": "jpetstore-6",
+  "run_id": "comprobacion-max-turns-3",
+  "modelo": "claude-sonnet-4-6",
+  "number": "3",
+  "num": "THREE",
+  "simulado": false,
+  "solo_etapa1": true,
+  "estado": "fallida",
+  "inicio": "2026-11-16T22:13:15-05:00",
+  "fin": "2026-11-16T22:14:40-05:00",
+  "fallo": {
+    "etapa": "1_domain",
+    "motivo": "error_max_turns",
+    "detalle": "is_error=True; exit=1; api_error_status=None; texto: ''"
+  },
+  "fusion": "no_alcanzada",
+  "etapas": [
+    {
+      "etapa": "1_domain",
+      "agente": "domain_agent",
+      "session_id": "a09f32f0-3041-4994-8ad3-5a434877da43",
+      "subtype": "error_max_turns",
+      "is_error": true,
+      "turnos": 4,
+      "max_turns": 3,
+      "duracion_ms": 7731,
+      "duracion_api_ms": 7441,
+      "costo_usd": 0.0722064,
+      "tokens": {
+        "input_tokens": 5,
+        "output_tokens": 565,
+        "cache_creation_input_tokens": 10057,
+        "cache_read_input_tokens": 11248
+      },
+      "llamadas_a_herramientas": 9,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy": 1,
+        "mcp__microagent__get_all_class_summaries": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_basic_info": 6
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 0,
+      "problemas": []
+    }
+  ],
+  "observaciones": [],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 4,
+    "duracion_ms": 7731,
+    "duracion_api_ms": 7441,
+    "costo_usd": 0.0722064,
+    "llamadas_a_herramientas": 9,
+    "tokens": {
+      "input_tokens": 5,
+      "output_tokens": 565,
+      "cache_creation_input_tokens": 10057,
+      "cache_read_input_tokens": 11248
+    }
+  },
+  "resultado": null
+}

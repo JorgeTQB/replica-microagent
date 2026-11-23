@@ -1,0 +1,14 @@
+{
+  "Shipment Management": [
+    "smpl.ordering.controllers.ShipmentController",
+    "smpl.ordering.models.ShipmentRecord",
+    "smpl.ordering.models.ShipmentEventInfo",
+    "smpl.ordering.models.DeliveryAddress",
+    "smpl.ordering.models.PhoneInfo",
+    "smpl.ordering.models.Delivery",
+    "smpl.ordering.repositories.ShipmentRepository",
+    "smpl.ordering.repositories.mock.MockShipmentRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository",
+    "smpl.ordering.repositories.mongodb.models.ShipmentDetails"
+  ]
+}

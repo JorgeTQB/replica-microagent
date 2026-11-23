@@ -1,0 +1,29 @@
+Based on my thorough analysis of the codebase, I can now identify all classes belonging to the Account Management domain. Let me summarize my findings:
+
+**Account Management Domain Classes:**
+
+1. **`org.mybatis.jpetstore.domain.Account`** - The core domain object representing a user account with all profile data (username, password, email, name, address, preferences, banner settings). This is exclusively an Account Management domain object.
+
+2. **`org.mybatis.jpetstore.mapper.AccountMapper`** - Data access interface exclusively for account operations (getAccountByUsername, getAccountByUsernameAndPassword, insertAccount, insertProfile, insertSignon, updateAccount, updateProfile, updateSignon). Maps to the `account`, `profile`, `signon`, and `bannerdata` database tables.
+
+3. **`org.mybatis.jpetstore.service.AccountService`** - Business service exclusively managing account lifecycle: retrieving accounts, inserting new accounts (with profile and signon), updating accounts (with profile and signon). Pure account management logic.
+
+4. **`org.mybatis.jpetstore.web.actions.AccountActionBean`** - Presentation layer controller handling all account-related web actions: newAccountForm, newAccount, editAccountForm, editAccount, signonForm, signon, signoff. This is the web entry point for all account management operations.
+
+**Classes excluded and why:**
+- `AbstractActionBean` - Shared base class used by ALL action beans (Catalog, Cart, Order, Account) - it's a common/shared infrastructure class, not exclusively Account Management
+- `Order` - Belongs to Order Management domain
+- `Product` - Belongs to Catalog domain
+- `CatalogService` - Belongs to Catalog domain (AccountActionBean uses it to get product lists by favorite category, but that's a cross-domain call)
+- `OrderActionBean` - Belongs to Order Management domain
+
+```json
+{
+  "Account Management": [
+    "org.mybatis.jpetstore.domain.Account",
+    "org.mybatis.jpetstore.mapper.AccountMapper",
+    "org.mybatis.jpetstore.service.AccountService",
+    "org.mybatis.jpetstore.web.actions.AccountActionBean"
+  ]
+}
+```

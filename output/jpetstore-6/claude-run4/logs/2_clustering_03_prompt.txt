@@ -1,0 +1,49 @@
+
+Current Task: You are analyzing the 'Shopping Cart' domain. The description of this domain is: This domain manages the transient, session-based shopping cart experience. It handles the core business capabilities of adding items to a cart, removing items from a cart, updating item quantities, and calculating the cart's subtotal. It acts as a temporary holding area for selected items before the customer proceeds to checkout. The domain maintains the in-progress shopping state across user interactions within a session, tracking each selected item's quantity, price, and stock availability. It bridges catalog browsing and order placement by collecting selected items prior to order confirmation.
+
+Summary of all business domains:
+
+1. Account Management: This domain encompasses all user account-related business capabilities, including user registration, authentication (sign-on and sign-off), account profile management, and user preferences. It manages the complete lifecycle of user identity in the system — from creating new accounts to updating personal information (name, email, address, contact details), managing login credentials, and storing user preferences such as language settings and favorite product categories. It also covers profile-based personalization features such as banner display options. The domain owns all data and logic pertaining to who the user is, how they authenticate, and what their preferences are.
+2. Catalog: This domain covers the product catalog and inventory management capabilities of the pet store. It manages the hierarchical structure of the store's offerings: categories (e.g., types of pets), products (e.g., specific breeds), and items (e.g., individual purchasable units with pricing, supplier, and attributes). It also handles inventory tracking — checking stock availability for specific items — and product search functionality that allows customers to find products by keyword. The domain is responsible for browsing experiences, from the main catalog view down to individual item details, and it manages the relationship between items and their suppliers.
+3. Shopping Cart: This domain manages the transient, session-based shopping cart experience. It handles the core business capabilities of adding items to a cart, removing items from a cart, updating item quantities, and calculating the cart's subtotal. It acts as a temporary holding area for selected items before the customer proceeds to checkout. The domain maintains the in-progress shopping state across user interactions within a session, tracking each selected item's quantity, price, and stock availability. It bridges catalog browsing and order placement by collecting selected items prior to order confirmation.
+4. Order Management: This domain manages the full lifecycle of customer orders — from the moment a customer confirms a purchase through checkout, to order persistence, order status tracking, and retrieval of order history. It handles the conversion of a shopping cart into a formal order, capturing shipping and billing address details, payment information (credit card type, card number, expiry), order date, and total price. It manages the individual line items within each order, tracks order status, and handles inventory updates upon order placement. It also supports generating unique order identifiers via sequences and provides customers access to their historical orders.
+
+You are responsible for analyzing ONLY your assigned domain, but understanding the boundaries between domains is important for proper classification.
+
+For the given business domain, your task is to identify ALL of its domain-specific classes, and try to aggregate them by layer (e.g., Presentation, Business, Data, Support, Domain Objects, Other Domain Related Classes etc.).
+Provide the output containing the aggregated class lists for the domain provided.
+# Critical Rules
+1. Include ALL domain-specific classes exclusively belonging to the domain.
+2. Focus ONLY on the CURRENT domain. DO NOT cross the context boundary and include classes of OTHER business domains!
+# Problem Solving Strategy
+1. Understand the problem deeply. Carefully read the issue and think critically about what is required.
+2. Develop a clear, step-by-step plan. Break down the problem into manageable, incremental, and hierarchical steps to investigate and solve the problem.
+3. Reflect and validate comprehensively. After obtaining an initial answer, think about the original intent, and ask yourself whether the answer is absolutely correct.
+# Tool Utilization Guidance
+1. At the beginning, use BOTH get_all_class_hierarchy_complete AND get_database_summary tools to get an overview of the application. Then investigate the code information by using other tools. Explore relevant files, search for classes, inspect the code carefully and gather context.
+2. Use BOTH codebase_semantic_search and get_related_class_list to get more comprehensive results. BUT you should note that they may contain classes that do not belong to the current domain, you should carefully consider and exclude them. Tool codebase_semantic_search can help you get classes that are POSSIBLY semantically related; Tool get_related_class_list can help you get classes that are POSSIBLY dependency related to the list of classes you provided. 
+3. IMPORTANT: You MUST make FULL use of all the tools provided! Do not draw to any conclusions before you make sure with tools, especially checking the dependency and source code to ensure accuracy. Note that the provided dependency information is not absolutely accurate, you should still carefully consider and analyze the source code to decide.
+
+
+This is the expected criteria for your final answer: 
+A JSON object containing the clustering class list for the 'Shopping Cart' domain.
+The JSON MUST follow this EXACT structure with proper commas between elements:
+{
+  "Shopping Cart": [
+    "org.example.Class1",
+    "org.example.Class2",
+    "org.example.Class3"
+  ]
+}
+
+DO NOT nest the classes under categories like "Domain Objects", "Presentation Layer", etc.
+Just provide a flat array of class names under the domain name key.
+
+Ensure all JSON elements have proper commas between them.
+Your final answer MUST be ONLY the JSON object, with no other text, commentary, or explanation.
+
+you MUST return the actual complete content as the final answer, not a summary.
+
+Begin! This is VERY important to you, use the tools available and give your best Final Answer, your job depends on it!
+
+Thought:

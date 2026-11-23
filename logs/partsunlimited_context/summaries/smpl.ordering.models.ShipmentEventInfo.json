@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 4511,
+  "stop_reason": "end_turn",
+  "session_id": "5ff81fb3-30a3-4aab-a498-83cf63909ce0",
+  "total_cost_usd": 0.00672,
+  "usage": {
+    "input_tokens": 1025,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 243,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 1025,
+        "output_tokens": 243,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 1025,
+      "outputTokens": 243,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.00672,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.ShipmentEventInfo\": {\n        \"summary\": \"A model class representing information about a shipment event. It encapsulates two key pieces of data: a date (String) and comments (String) associated with a shipment event. The class provides two constructors: a default no-argument constructor and a parameterized constructor that accepts date and comments. Key methods include: getDate()/setDate(String) for accessing and modifying the event date; getComments()/setComments(String) for accessing and modifying the event comments; and validate(), which performs basic validation by checking that the comments field is not null or empty, returning null if valid or an error message string ('No or shipment event comment') if invalid. This class follows a standard JavaBean pattern and is likely used as a data transfer object (DTO) or domain model within the ordering system to track events that occur during the shipment lifecycle.\",\n        \"file_path\": \"smpl/ordering/models/ShipmentEventInfo.java\"\n    }\n}\n```",
+  "ttft_ms": 4711,
+  "type": "result",
+  "duration_ms": 4748,
+  "uuid": "118191d4-ab78-419a-b689-395ee1786b9b",
+  "ttft_stream_ms": 1206,
+  "time_to_request_ms": 228,
+  "first_content_frame_ms": 1207,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

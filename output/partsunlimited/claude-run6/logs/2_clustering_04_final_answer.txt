@@ -1,0 +1,32 @@
+All the Order Management domain classes are confirmed. Based on my analysis, here are the classes exclusively belonging to the **Order Management** domain:
+
+**Presentation Layer:**
+- `smpl.ordering.controllers.OrderController` - REST controller managing order HTTP endpoints
+
+**Domain Objects / Models:**
+- `smpl.ordering.models.Order` - Core order entity
+- `smpl.ordering.models.OrderEventInfo` - Order event log entry (timestamped activity with comments)
+- `smpl.ordering.models.OrderStatus` - Enum for order status stages (Created, Confirmed, Started, Built, DeliveryConfirmed, Shipped, Delivered, Installed)
+- `smpl.ordering.models.OrderUpdateInfo` - Order update record combining status and event info
+
+**Data / Repository Layer:**
+- `smpl.ordering.repositories.OrderRepository` - Repository interface for order data access
+- `smpl.ordering.repositories.mock.MockOrderRepository` - In-memory mock implementation for testing
+- `smpl.ordering.repositories.mongodb.MongoOrderRepository` - MongoDB implementation of OrderRepository
+- `smpl.ordering.repositories.mongodb.models.OrderDetails` - MongoDB document model for Order persistence
+
+```json
+{
+  "Order Management": [
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.models.Order",
+    "smpl.ordering.models.OrderEventInfo",
+    "smpl.ordering.models.OrderStatus",
+    "smpl.ordering.models.OrderUpdateInfo",
+    "smpl.ordering.repositories.OrderRepository",
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.models.OrderDetails"
+  ]
+}
+```

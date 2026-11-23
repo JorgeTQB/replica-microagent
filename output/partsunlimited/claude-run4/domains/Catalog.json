@@ -1,0 +1,10 @@
+{
+  "Catalog": [
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.models.CatalogItem",
+    "smpl.ordering.repositories.CatalogItemsRepository",
+    "smpl.ordering.repositories.mock.MockCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.models.CatalogItem"
+  ]
+}

@@ -1,0 +1,74 @@
+All 3 domains have been successfully saved. Here is the complete summary of the final microservice decomposition:
+
+---
+
+## Final Microservice Decomposition — JPetStore 6
+
+### Overview
+All **3 domains** have been saved with their complete class lists, totaling **35 class assignments** across 3 microservices (with intentional shared/duplicated classes for cross-domain dependencies).
+
+---
+
+### Microservice 1: Account Management (9 classes)
+**Responsibility:** User registration, authentication, profile management, and personalized product list display.
+
+| Class | Layer |
+|---|---|
+| `org.mybatis.jpetstore.domain.Account` | Domain |
+| `org.mybatis.jpetstore.service.AccountService` | Service |
+| `org.mybatis.jpetstore.mapper.AccountMapper` | Data |
+| `org.mybatis.jpetstore.web.actions.AccountActionBean` | Presentation |
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Support (Base) |
+| `org.mybatis.jpetstore.service.CatalogService` | Shared Service |
+| `org.mybatis.jpetstore.domain.Item` | Shared Domain |
+| `org.mybatis.jpetstore.mapper.ItemMapper` | Shared Data |
+| `org.mybatis.jpetstore.domain.Product` | Shared Domain |
+
+---
+
+### Microservice 2: Catalog (9 classes)
+**Responsibility:** Product catalog browsing, category navigation, item details, and inventory checks.
+
+| Class | Layer |
+|---|---|
+| `org.mybatis.jpetstore.domain.Category` | Domain |
+| `org.mybatis.jpetstore.domain.Product` | Domain |
+| `org.mybatis.jpetstore.domain.Item` | Domain |
+| `org.mybatis.jpetstore.service.CatalogService` | Service |
+| `org.mybatis.jpetstore.web.actions.CatalogActionBean` | Presentation |
+| `org.mybatis.jpetstore.mapper.CategoryMapper` | Data |
+| `org.mybatis.jpetstore.mapper.ProductMapper` | Data |
+| `org.mybatis.jpetstore.mapper.ItemMapper` | Data |
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Support (Base) |
+
+---
+
+### Microservice 3: Order & Cart Management (17 classes)
+**Responsibility:** Shopping cart operations, order creation, order processing, and order history.
+
+| Class | Layer |
+|---|---|
+| `org.mybatis.jpetstore.domain.Cart` | Domain |
+| `org.mybatis.jpetstore.domain.CartItem` | Domain |
+| `org.mybatis.jpetstore.web.actions.CartActionBean` | Presentation |
+| `org.mybatis.jpetstore.domain.Order` | Domain |
+| `org.mybatis.jpetstore.domain.LineItem` | Domain |
+| `org.mybatis.jpetstore.domain.Sequence` | Domain |
+| `org.mybatis.jpetstore.service.OrderService` | Service |
+| `org.mybatis.jpetstore.web.actions.OrderActionBean` | Presentation |
+| `org.mybatis.jpetstore.mapper.OrderMapper` | Data |
+| `org.mybatis.jpetstore.mapper.LineItemMapper` | Data |
+| `org.mybatis.jpetstore.mapper.SequenceMapper` | Data |
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Support (Base) |
+| `org.mybatis.jpetstore.service.CatalogService` | Shared Service |
+| `org.mybatis.jpetstore.domain.Item` | Shared Domain |
+| `org.mybatis.jpetstore.mapper.ItemMapper` | Shared Data |
+| `org.mybatis.jpetstore.domain.Account` | Shared Domain |
+| `org.mybatis.jpetstore.domain.Product` | Shared Domain |
+
+---
+
+### Design Rationale for Shared Classes:
+- **`AbstractActionBean`** → Shared across all 3 microservices as it is the base class for all action beans
+- **`CatalogService`** + **`Item`** + **`ItemMapper`** + **`Product`** → Included in Account Management (for personalized `myList` via `getProductListByCategory()`) and in Order & Cart Management (for `CartActionBean` to look up items and check stock via `CatalogService`)
+- **`Account`** → Included in Order & Cart Management because `Order.initOrder(Account, Cart)` directly uses Account data to populate shipping/billing info

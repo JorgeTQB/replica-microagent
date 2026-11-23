@@ -1,0 +1,165 @@
+{
+  "referencia": "evaluation/references/jpetstore-6.json",
+  "common_dict": "evaluation/common_dicts/jpetstore-6.json",
+  "objetivo": "output/jpetstore-6/baseline-run2/result.json",
+  "evaluate_similarity": {
+    "p2r": {
+      "results_m1": {
+        "AccountService": {
+          "best_match": "account",
+          "similarity": 1.0,
+          "weight": 5
+        },
+        "CatalogService": {
+          "best_match": "catalog",
+          "similarity": 0.8333333333333334,
+          "weight": 10
+        },
+        "OrderService": {
+          "best_match": "order",
+          "similarity": 0.7857142857142857,
+          "weight": 11
+        }
+      },
+      "results_m2": {
+        "AccountService": {
+          "best_match": "account",
+          "similarity": 1.0,
+          "weight": 5
+        },
+        "CatalogService": {
+          "best_match": "catalog",
+          "similarity": 0.8333333333333334,
+          "weight": 10
+        },
+        "OrderService": {
+          "best_match": "order",
+          "similarity": 0.7857142857142857,
+          "weight": 11
+        }
+      },
+      "metrics_m1": {
+        "average": 0.873015873015873,
+        "weighted_average": 0.8452380952380951,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 0.6666666666666666,
+        "above_0.9": 0.3333333333333333
+      },
+      "metrics_m2": {
+        "average": 0.873015873015873,
+        "weighted_average": 0.8452380952380951,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 0.6666666666666666,
+        "above_0.9": 0.3333333333333333
+      }
+    },
+    "r2p": {
+      "results_m1": {
+        "account": {
+          "best_match": "AccountService",
+          "similarity": 1.0,
+          "weight": 5
+        },
+        "order": {
+          "best_match": "OrderService",
+          "similarity": 0.7857142857142857,
+          "weight": 14
+        },
+        "catalog": {
+          "best_match": "CatalogService",
+          "similarity": 0.8333333333333334,
+          "weight": 12
+        }
+      },
+      "results_m2": {
+        "account": {
+          "best_match": "AccountService",
+          "similarity": 1.0,
+          "weight": 5
+        },
+        "order": {
+          "best_match": "OrderService",
+          "similarity": 0.7857142857142857,
+          "weight": 14
+        },
+        "catalog": {
+          "best_match": "CatalogService",
+          "similarity": 0.8333333333333334,
+          "weight": 12
+        }
+      },
+      "metrics_m1": {
+        "average": 0.873015873015873,
+        "weighted_average": 0.8387096774193549,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 0.6666666666666666,
+        "above_0.9": 0.3333333333333333
+      },
+      "metrics_m2": {
+        "average": 0.873015873015873,
+        "weighted_average": 0.8387096774193549,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 0.6666666666666666,
+        "above_0.9": 0.3333333333333333
+      }
+    },
+    "f1": {
+      "metrics_m1": {
+        "average": 0.8730158730158731,
+        "weighted_average": 0.8419612314709236,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 0.6666666666666666,
+        "above_0.9": 0.3333333333333333
+      },
+      "metrics_m2": {
+        "average": 0.8730158730158731,
+        "weighted_average": 0.8419612314709236,
+        "above_0.5": 1.0,
+        "above_0.75": 1.0,
+        "above_0.8": 0.6666666666666666,
+        "above_0.9": 0.3333333333333333
+      }
+    },
+    "uncounted_info": {
+      "uncounted_classes": [],
+      "uncounted_count": 0,
+      "reference_class_count": 24,
+      "target_class_count": 24,
+      "universal_class_count": null,
+      "reference_partition_count": 3,
+      "target_partition_count": 3,
+      "using_universal_set": false
+    }
+  },
+  "calculate_metrics": {
+    "service_level": {
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "utility_level": {
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  }
+}

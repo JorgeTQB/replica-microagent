@@ -1,0 +1,20 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Account Management",
+      "description": "This domain handles all aspects of user account lifecycle, including user registration, authentication (sign-on/sign-off), and account profile management. It encapsulates personal information such as name, contact details, billing/shipping address, as well as user preferences such as language settings, favorite pet category, and display options (banner and list preferences). The domain is responsible for validating credentials, creating new accounts, updating existing account profiles, and managing login sessions. It represents the bounded context for identity and user profile within the application, interacting with the signon, account, profile, and bannerdata data stores."
+    },
+    {
+      "domain_name": "Catalog",
+      "description": "This domain manages the entire product catalog of the pet store, encompassing the hierarchy of categories, products, and items (specific product variants). It supports browsing capabilities such as listing categories, viewing products within a category, viewing specific item details, and searching for products by keyword. It also tracks inventory levels for each item and maintains supplier information associated with items. This domain represents the bounded context for all catalog browsing, product discovery, and inventory availability checks. It interacts with the category, product, item, inventory, and supplier data stores."
+    },
+    {
+      "domain_name": "Shopping Cart",
+      "description": "This domain manages the transient shopping cart experience for a user during their browsing session. It is responsible for adding items to the cart, removing items, updating item quantities, calculating the cart subtotal, and initiating the checkout process. The cart maintains a collection of cart items (each linking a catalog item with a quantity and total price) and operates as a session-scoped, in-memory aggregate. This bounded context is distinct from order management as it represents the pre-purchase, mutable state of a user's intended purchase before it is confirmed and persisted as an order."
+    },
+    {
+      "domain_name": "Order Management",
+      "description": "This domain handles the full lifecycle of a customer order, from the moment a shopping cart is submitted through order confirmation, persistence, and retrieval. It encompasses creating new orders (initializing from account and cart data), recording line items for each ordered product, tracking order status, managing payment details (credit card information), handling shipping and billing address information, and listing a user's historical orders. The domain also manages sequence generation for unique order IDs. It represents the bounded context for all post-checkout transactional activities, interacting with the orders, orderstatus, lineitem, and sequence data stores."
+    }
+  ]
+}

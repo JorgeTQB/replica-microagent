@@ -1,0 +1,38 @@
+Based on my thorough analysis of the codebase, I have identified all the domain-specific classes for the Shipment domain. Let me compile the final list:
+
+**Shipment Domain Classes:**
+
+**Presentation Layer:**
+- `smpl.ordering.controllers.ShipmentController` - REST controller for shipment endpoints
+
+**Domain Objects / Models:**
+- `smpl.ordering.models.ShipmentRecord` - Core shipment record entity
+- `smpl.ordering.models.ShipmentEventInfo` - Shipment lifecycle event tracking
+- `smpl.ordering.models.DeliveryAddress` - Delivery address (exclusively used by Shipment)
+- `smpl.ordering.models.PhoneInfo` - Phone contact info (exclusively used by Shipment)
+- `smpl.ordering.models.Delivery` - Consolidated delivery view (created and used only by ShipmentController)
+
+**Data Layer:**
+- `smpl.ordering.repositories.ShipmentRepository` - Repository interface for shipments
+- `smpl.ordering.repositories.mock.MockShipmentRepository` - Mock implementation for testing
+- `smpl.ordering.repositories.mongodb.MongoShipmentRepository` - MongoDB implementation
+- `smpl.ordering.repositories.mongodb.models.ShipmentDetails` - MongoDB document model for shipments
+
+The `DeliveryAddress` and `PhoneInfo` classes are exclusively used by Shipment domain classes (only used by `ShipmentRecord` and `ShipmentDetails`). The `Delivery` class is created and used exclusively by `ShipmentController` to provide the consolidated delivery view described in the domain specification.
+
+```json
+{
+  "Shipment": [
+    "smpl.ordering.controllers.ShipmentController",
+    "smpl.ordering.models.ShipmentRecord",
+    "smpl.ordering.models.ShipmentEventInfo",
+    "smpl.ordering.models.DeliveryAddress",
+    "smpl.ordering.models.PhoneInfo",
+    "smpl.ordering.models.Delivery",
+    "smpl.ordering.repositories.ShipmentRepository",
+    "smpl.ordering.repositories.mock.MockShipmentRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository",
+    "smpl.ordering.repositories.mongodb.models.ShipmentDetails"
+  ]
+}
+```

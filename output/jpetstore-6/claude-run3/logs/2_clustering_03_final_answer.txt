@@ -1,0 +1,33 @@
+Now I have a thorough picture of the Shopping Cart domain. Let me analyze the findings:
+
+**Domain-Specific Classes for Shopping Cart:**
+
+1. **`org.mybatis.jpetstore.domain.Cart`** - The core cart domain object that manages a collection of CartItem objects, supports adding/removing/updating items, and calculates the subtotal. This is exclusively a shopping cart concept.
+
+2. **`org.mybatis.jpetstore.domain.CartItem`** - Represents an item in the shopping cart with quantity, stock status, and total price. Used by Cart directly and exclusively part of the cart domain.
+
+3. **`org.mybatis.jpetstore.web.actions.CartActionBean`** - The presentation/controller layer for cart operations (add, remove, update quantities, view cart, checkout). This is the session-scoped action bean for cart management.
+
+**Classes that BELONG to other domains:**
+- `org.mybatis.jpetstore.domain.Item` → Catalog domain (product catalog item)
+- `org.mybatis.jpetstore.domain.LineItem` → Order Management domain (order line items)
+- `org.mybatis.jpetstore.domain.Order` → Order Management domain
+- `org.mybatis.jpetstore.service.CatalogService` → Catalog domain (used by Cart but belongs to Catalog)
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` → Shared/base class used across all action beans (not specific to Shopping Cart)
+- `org.mybatis.jpetstore.web.actions.OrderActionBean` → Order Management domain
+
+**Note on `AbstractActionBean`:** It's shared across ALL action beans (Account, Catalog, Cart, Order). It's a common/utility base class, not specific to Shopping Cart.
+
+**Note on `CatalogService`:** While CartActionBean uses it to verify item availability and get item details, the CatalogService belongs to the Catalog domain.
+
+The Shopping Cart domain exclusively owns: `Cart`, `CartItem`, and `CartActionBean`.
+
+```json
+{
+  "Shopping Cart": [
+    "org.mybatis.jpetstore.domain.Cart",
+    "org.mybatis.jpetstore.domain.CartItem",
+    "org.mybatis.jpetstore.web.actions.CartActionBean"
+  ]
+}
+```

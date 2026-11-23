@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 10251,
+  "stop_reason": "end_turn",
+  "session_id": "a1e3acab-e99e-438f-b7fa-ee6ddaf83b42",
+  "total_cost_usd": 0.020637,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2021,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 567,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2021,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 567,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2021,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2021
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 567,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2021,
+      "webSearchRequests": 0,
+      "costUSD": 0.020637,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2021,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mock.MockQuoteRepository\": {\n        \"summary\": \"An in-memory repository of quotes used for testing the API surface area. It implements both the `QuoteRepository` and `TestPath` interfaces, storing quote data in an `ArrayList` rather than a persistent database, making it suitable for unit and integration testing.\\n\\n**Key Methods:**\\n- `MockQuoteRepository(CatalogItemsRepository catalog, DealersRepository dealers)`: Constructor that initializes the in-memory quote list and stores a reference to the dealers repository for dealer validation.\\n- `getQuote(String id)`: Retrieves a single quote by its ID via linear search; returns `null` if not found.\\n- `getQuotesByCustomerName(String customerName)`: Returns a list of quotes whose customer name contains the given substring (case-insensitive).\\n- `getQuoteIdsByDealerName(String dealerName)`: Returns a list of quote IDs associated with a specific dealer name (case-insensitive exact match).\\n- `createQuote(Quote quote)`: Creates a new quote; auto-generates a random positive integer ID if none is provided, validates for duplicates, and ensures the associated dealer exists (creating one if necessary). Throws `BadRequestException` on duplicate IDs.\\n- `updateQuote(String id, Quote from, String eTag)`: Updates an existing quote by replacing it in the list; ensures the dealer exists and preserves the original quote ID. Returns `false` if the quote does not exist.\\n- `removeQuote(String id, String eTag)`: Deletes a quote by ID; returns `false` if not found.\\n- `reset()`: Clears all stored quotes, fulfilling the `TestPath` contract for resetting state between tests.\\n\\n**Other Important Details:**\\n- Uses a static `Random` instance (`s_counter`) initialized in a static block to generate quote IDs.\\n- The `eTag` parameter in `updateQuote` and `removeQuote` is accepted but not enforced (optimistic concurrency is not implemented in the mock).\\n- The `@SuppressWarnings(\\\"UnusedParameters\\\")` annotation acknowledges that some parameters (e.g., `eTag`, `catalog`) are intentionally unused in this mock implementation.\",\n        \"file_path\": \"smpl/ordering/repositories/mock/MockQuoteRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 10858,
+  "type": "result",
+  "duration_ms": 10970,
+  "uuid": "d46384a1-748d-4c73-81a5-47c1ae3dca6a",
+  "ttft_stream_ms": 3670,
+  "time_to_request_ms": 664,
+  "first_content_frame_ms": 3671,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

@@ -1,0 +1,42 @@
+Now I have a thorough understanding of the Order Management domain. Let me analyze my findings:
+
+**Order Management Domain Classes:**
+
+1. **Domain Objects:**
+   - `org.mybatis.jpetstore.domain.Order` - Core order entity with shipping/billing/payment details
+   - `org.mybatis.jpetstore.domain.LineItem` - Line items within an order
+   - `org.mybatis.jpetstore.domain.Sequence` - Used exclusively by OrderService for unique order ID generation
+
+2. **Business Layer:**
+   - `org.mybatis.jpetstore.service.OrderService` - Business logic for order placement, retrieval, status tracking
+
+3. **Data Layer (Mappers):**
+   - `org.mybatis.jpetstore.mapper.OrderMapper` - Maps to `orders` and `orderstatus` tables
+   - `org.mybatis.jpetstore.mapper.LineItemMapper` - Maps to `lineitem` table
+   - `org.mybatis.jpetstore.mapper.SequenceMapper` - Maps to `sequence` table
+
+4. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.OrderActionBean` - Web action handler for order operations
+
+**Notes on boundaries:**
+- `AbstractActionBean` is shared across all action beans (Account, Cart, Catalog, Order) - it's a common class, not Order-specific
+- `ItemMapper` is used by both `CatalogService` and `OrderService` - it's shared/common, not exclusively Order Management
+- `Item` domain object is primarily part of the Catalog domain
+- `CartItem` and `Cart` are part of the Shopping Cart domain
+
+The core Order Management classes are those exclusively related to orders, line items, sequences for order IDs, and their corresponding service/mapper/action classes.
+
+```json
+{
+  "Order Management": [
+    "org.mybatis.jpetstore.domain.Order",
+    "org.mybatis.jpetstore.domain.LineItem",
+    "org.mybatis.jpetstore.domain.Sequence",
+    "org.mybatis.jpetstore.service.OrderService",
+    "org.mybatis.jpetstore.mapper.OrderMapper",
+    "org.mybatis.jpetstore.mapper.LineItemMapper",
+    "org.mybatis.jpetstore.mapper.SequenceMapper",
+    "org.mybatis.jpetstore.web.actions.OrderActionBean"
+  ]
+}
+```

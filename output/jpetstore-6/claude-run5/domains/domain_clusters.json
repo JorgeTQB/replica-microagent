@@ -1,0 +1,20 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Account Management",
+      "description": "This domain encompasses all functionality related to user accounts, authentication, and personal preferences. It handles user registration (creating new accounts), authentication (sign-on/sign-off), and profile management (editing account details). The domain owns user identity data including personal information (name, email, address, phone), authentication credentials, and user preferences such as language preference, favorite category, and banner display options. It manages the full lifecycle of a user account from creation to profile updates, and enforces validation rules on account data. The corresponding database tables are account, signon, profile, and bannerdata."
+    },
+    {
+      "domain_name": "Catalog",
+      "description": "This domain manages the entire product catalog, encompassing categories, products, and items. It supports browsing the catalog at multiple levels: top-level categories (e.g., pet types), products within categories, and specific items (SKUs) within products. It also provides product search functionality based on keywords. Each item has pricing information, supplier associations, attributes, and an inventory quantity. The domain is responsible for checking item stock availability. The corresponding database tables are category, product, item, inventory, and supplier."
+    },
+    {
+      "domain_name": "Shopping Cart",
+      "description": "This domain manages the transient shopping cart experience within a user's session. It handles adding items to the cart, removing items, and updating item quantities. The cart tracks each item's stock status and calculates line totals and overall subtotals. The shopping cart is a session-scoped, in-memory concept that persists for the duration of a user's browsing session and is converted into a formal order upon checkout. It acts as the bridge between catalog browsing and order placement."
+    },
+    {
+      "domain_name": "Order Management",
+      "description": "This domain manages the full lifecycle of customer orders from creation to fulfillment tracking. It handles new order placement (initializing an order from a user's cart and account details), persisting orders and their associated line items, updating inventory quantities upon order placement, tracking order status, and retrieving order history by user. It manages billing and shipping address information, payment details (credit card type, number, expiry), courier selection, and order totaling. The domain also manages sequence generation for unique order ID assignment. The corresponding database tables are orders, orderstatus, lineitem, and sequence."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+Based on my thorough analysis of the codebase, I can now identify all the domain-specific classes for the Catalog domain. Let me summarize my findings:
+
+**Catalog Domain Classes:**
+
+1. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.CatalogActionBean` - Handles catalog-related HTTP requests (view category, view product, view item, search products)
+
+2. **Business/Service Layer:**
+   - `org.mybatis.jpetstore.service.CatalogService` - Core service managing categories, products, items, and inventory checks
+
+3. **Data Layer (Mappers):**
+   - `org.mybatis.jpetstore.mapper.CategoryMapper` - Data access for category table
+   - `org.mybatis.jpetstore.mapper.ProductMapper` - Data access for product table (with search)
+   - `org.mybatis.jpetstore.mapper.ItemMapper` - Data access for item and inventory tables
+
+4. **Domain Objects:**
+   - `org.mybatis.jpetstore.domain.Category` - Represents a product category
+   - `org.mybatis.jpetstore.domain.Product` - Represents a product within a category
+   - `org.mybatis.jpetstore.domain.Item` - Represents a purchasable SKU with pricing and attributes
+
+**Classes excluded from Catalog domain (belong to other domains):**
+- `AbstractActionBean` - Shared/common infrastructure used by ALL action beans
+- `Cart`, `CartItem` - Shopping Cart domain
+- `LineItem`, `Order`, `OrderService` - Order Management domain
+- `AccountActionBean`, `CartActionBean`, `OrderActionBean` - Other domains' presentation layer
+- `AccountMapper`, `AccountService`, `Account` - Account Management domain
+- `SequenceMapper`, `Sequence` - Order Management domain support
+
+```json
+{
+  "Catalog": [
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper",
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item"
+  ]
+}
+```

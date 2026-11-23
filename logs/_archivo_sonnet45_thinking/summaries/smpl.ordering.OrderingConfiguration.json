@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 15075,
+  "stop_reason": "end_turn",
+  "session_id": "54583d08-7534-4407-a8f6-ba9b26886291",
+  "total_cost_usd": 0.024129,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1962,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 822,
+    "output_tokens_details": {
+      "thinking_tokens": 467
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1962,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 822,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1962,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1962
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 822,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1962,
+      "webSearchRequests": 0,
+      "costUSD": 0.024129,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 467,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1962,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.OrderingConfiguration\": {\n    \"summary\": \"Main Spring Boot configuration class for the ordering service application. Serves as the application entry point and configures essential beans including MongoDB connectivity, repository factory, and Application Insights telemetry.\\n\\nKey methods:\\n- main(String[] args): Launches the Spring Boot application with startup logging disabled.\\n- mongoTemplate(): Creates and configures MongoTemplate bean for MongoDB operations. Supports Docker deployment by reading MONGO_PORT environment variable and handles multiple MongoDB hosts (comma-separated). Configures socket keep-alive to false.\\n- repositoryFactory(): Creates RepositoryFactory bean, resetting it with the configured storage type from OrderingServiceProperties.\\n- getTelemetryClient(): Creates Application Insights TelemetryClient bean with thread-local storage pattern for thread safety. Uses instrumentation key from OrderingServiceProperties if available.\\n- setApplicationContext() and getApplicationContext(): Implements ApplicationContextAware interface to provide static access to the Spring ApplicationContext.\\n\\nImportant features:\\n- Uses thread-local storage (ThreadLocal<TelemetryClient>) to manage telemetry client instances per thread\\n- Docker-aware configuration that can detect containerized deployment via environment variables\\n- Conditional configuration based on the presence of MongoDBProperties and OrderingServiceProperties classes\\n- Autowired dependencies for OrderingServiceProperties and MongoDBProperties to configure the application\",\n    \"file_path\": \"smpl/ordering/OrderingConfiguration.java\"\n  }\n}\n```",
+  "ttft_ms": 9473,
+  "type": "result",
+  "duration_ms": 15434,
+  "uuid": "7ef524ac-a0a1-4d0f-bd0e-50f9e770d201",
+  "ttft_stream_ms": 1267,
+  "time_to_request_ms": 355,
+  "first_content_frame_ms": 1267,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

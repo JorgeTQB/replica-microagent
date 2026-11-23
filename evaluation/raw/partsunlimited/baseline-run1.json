@@ -1,0 +1,213 @@
+{
+  "referencia": "evaluation/references/partsunlimited.json",
+  "common_dict": "evaluation/common_dicts/partsunlimited.json",
+  "objetivo": "output/partsunlimited/baseline-run1/result.json",
+  "evaluate_similarity": {
+    "p2r": {
+      "results_m1": {
+        "CatalogService": {
+          "best_match": "catalog",
+          "similarity": 0.5714285714285714,
+          "weight": 12
+        },
+        "DealerService": {
+          "best_match": "dealer",
+          "similarity": 0.5714285714285714,
+          "weight": 12
+        },
+        "QuoteService": {
+          "best_match": "quote",
+          "similarity": 0.5185185185185185,
+          "weight": 14
+        },
+        "OrderService": {
+          "best_match": "order",
+          "similarity": 0.5,
+          "weight": 17
+        },
+        "ShipmentService": {
+          "best_match": "shipment",
+          "similarity": 0.4186046511627907,
+          "weight": 18
+        }
+      },
+      "results_m2": {
+        "CatalogService": {
+          "best_match": "catalog",
+          "similarity": 0.8571428571428571,
+          "weight": 12
+        },
+        "DealerService": {
+          "best_match": "dealer",
+          "similarity": 0.8571428571428571,
+          "weight": 12
+        },
+        "QuoteService": {
+          "best_match": "quote",
+          "similarity": 0.7,
+          "weight": 14
+        },
+        "OrderService": {
+          "best_match": "order",
+          "similarity": 0.6296296296296297,
+          "weight": 17
+        },
+        "ShipmentService": {
+          "best_match": "shipment",
+          "similarity": 0.5,
+          "weight": 18
+        }
+      },
+      "metrics_m1": {
+        "average": 0.5159960625076904,
+        "weighted_average": 0.5069647766366466,
+        "above_0.5": 0.6,
+        "above_0.75": 0.0,
+        "above_0.8": 0.0,
+        "above_0.9": 0.0
+      },
+      "metrics_m2": {
+        "average": 0.7087830687830687,
+        "weighted_average": 0.6859607160977024,
+        "above_0.5": 0.8,
+        "above_0.75": 0.4,
+        "above_0.8": 0.4,
+        "above_0.9": 0.0
+      }
+    },
+    "r2p": {
+      "results_m1": {
+        "catalog": {
+          "best_match": "CatalogService",
+          "similarity": 0.5714285714285714,
+          "weight": 21
+        },
+        "dealer": {
+          "best_match": "DealerService",
+          "similarity": 0.5714285714285714,
+          "weight": 21
+        },
+        "order": {
+          "best_match": "OrderService",
+          "similarity": 0.5,
+          "weight": 34
+        },
+        "quote": {
+          "best_match": "QuoteService",
+          "similarity": 0.5185185185185185,
+          "weight": 27
+        },
+        "shipment": {
+          "best_match": "ShipmentService",
+          "similarity": 0.4186046511627907,
+          "weight": 43
+        }
+      },
+      "results_m2": {
+        "catalog": {
+          "best_match": "CatalogService",
+          "similarity": 0.8571428571428571,
+          "weight": 14
+        },
+        "dealer": {
+          "best_match": "DealerService",
+          "similarity": 0.8571428571428571,
+          "weight": 14
+        },
+        "order": {
+          "best_match": "OrderService",
+          "similarity": 0.6296296296296297,
+          "weight": 27
+        },
+        "quote": {
+          "best_match": "QuoteService",
+          "similarity": 0.7,
+          "weight": 20
+        },
+        "shipment": {
+          "best_match": "ShipmentService",
+          "similarity": 0.5,
+          "weight": 36
+        }
+      },
+      "metrics_m1": {
+        "average": 0.5159960625076904,
+        "weighted_average": 0.5,
+        "above_0.5": 0.6,
+        "above_0.75": 0.0,
+        "above_0.8": 0.0,
+        "above_0.9": 0.0
+      },
+      "metrics_m2": {
+        "average": 0.7087830687830687,
+        "weighted_average": 0.6576576576576577,
+        "above_0.5": 0.8,
+        "above_0.75": 0.4,
+        "above_0.8": 0.4,
+        "above_0.9": 0.0
+      }
+    },
+    "f1": {
+      "metrics_m1": {
+        "average": 0.5159960625076904,
+        "weighted_average": 0.5034583020172313,
+        "above_0.5": 0.6,
+        "above_0.75": 0,
+        "above_0.8": 0,
+        "above_0.9": 0
+      },
+      "metrics_m2": {
+        "average": 0.7087830687830687,
+        "weighted_average": 0.6715110876805018,
+        "above_0.5": 0.8000000000000002,
+        "above_0.75": 0.4000000000000001,
+        "above_0.8": 0.4000000000000001,
+        "above_0.9": 0
+      }
+    },
+    "uncounted_info": {
+      "uncounted_classes": [
+        "smpl.ordering.AppInsightsFilter",
+        "smpl.ordering.MongoDBProperties",
+        "smpl.ordering.OrderingServiceProperties",
+        "smpl.ordering.PostgresqlProperties",
+        "smpl.ordering.PropertyHelper",
+        "smpl.ordering.controllers.PingController",
+        "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry"
+      ],
+      "uncounted_count": 7,
+      "reference_class_count": 46,
+      "target_class_count": 53,
+      "universal_class_count": null,
+      "reference_partition_count": 5,
+      "target_partition_count": 5,
+      "using_universal_set": false
+    }
+  },
+  "calculate_metrics": {
+    "service_level": {
+      "micro": {
+        "precision": 0.9142857142857143,
+        "recall": 1.0,
+        "f1": 0.955223880597015
+      },
+      "macro": {
+        "precision": 0.9142857142857143,
+        "recall": 1.0,
+        "f1": 0.9538461538461538
+      }
+    },
+    "utility_level": {
+      "micro": {
+        "precision": 0.9142857142857143,
+        "recall": 1.0,
+        "f1": 0.955223880597015
+      },
+      "macro": {
+        "precision": 0.9142857142857144,
+        "recall": 1.0,
+        "f1": 0.9387755102040816
+      }
+    }
+  }
+}

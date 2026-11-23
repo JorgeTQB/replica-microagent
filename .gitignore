@@ -1,0 +1,30 @@
+# --- Datos personales -------------------------------------------------------
+# Las transcripciones de Claude Code copiadas de ~/.claude/projects/ incluyen el
+# correo de la cuenta, accountUuid y organizationUuid. Se conservan en local; la
+# auditoría derivada (<etapa>_audit.json) sí se versiona.
+*_transcript.jsonl
+
+# --- Reproducibles (ver README §3) -------------------------------------------
+# Clones de las aplicaciones (con su propio .git); se recuperan con git clone + checkout.
+resources/
+# Analizador Java compilado (mvn clean package en graph/).
+graph/target/
+
+# --- Carpeta de trabajo de claude -p (tiene que estar vacía) ------------------
+_sandbox/
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# --- Claude Code / editores / sistema ------------------------------------------
+.claude/settings.local.json
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*

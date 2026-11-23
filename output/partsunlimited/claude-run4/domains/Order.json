@@ -1,0 +1,13 @@
+{
+  "Order": [
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.models.Order",
+    "smpl.ordering.models.OrderEventInfo",
+    "smpl.ordering.models.OrderStatus",
+    "smpl.ordering.models.OrderUpdateInfo",
+    "smpl.ordering.repositories.OrderRepository",
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.models.OrderDetails"
+  ]
+}

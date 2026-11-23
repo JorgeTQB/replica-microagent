@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "microagent": {
+      "command": "C:\\Python314\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "C:/Jorge Quispe Bendezu/ULima/Tesis/Replica de Paper/replica-claude-code\\tools\\mcp_server.py"
+      ],
+      "env": {
+        "APP_NAME": "jpetstore-6",
+        "RUN_ID": "comprobacion-denegacion",
+        "MICROAGENT_TOOLS": "get_database_summary",
+        "MICROAGENT_LOG": "C:/Jorge Quispe Bendezu/ULima/Tesis/Replica de Paper/replica-claude-code/logs/fase4_prueba_humo/comprobacion-denegacion-sin-allowedtools\\server.jsonl"
+      }
+    }
+  }
+}

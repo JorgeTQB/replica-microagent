@@ -1,0 +1,27 @@
+Based on my thorough analysis of the codebase, I can now identify the Shopping Cart domain classes:
+
+**Domain-specific classes for Shopping Cart:**
+
+1. **`org.mybatis.jpetstore.domain.Cart`** - The core cart domain object managing cart items, quantities, and subtotal calculation. Session-scoped, not persisted in DB.
+
+2. **`org.mybatis.jpetstore.domain.CartItem`** - Wraps a catalog Item with quantity and stock status. Exclusively used by the Cart domain.
+
+3. **`org.mybatis.jpetstore.web.actions.CartActionBean`** - The presentation layer action bean handling add/remove/update cart operations and the checkout transition. Session-scoped.
+
+**Excluded classes (belong to other domains):**
+- `AbstractActionBean` - Shared infrastructure used by ALL action beans (Account, Catalog, Order, Cart)
+- `Item` - Belongs to Catalog domain (catalog product item)
+- `LineItem` - Belongs to Order Management domain (order line items)
+- `Order` - Belongs to Order Management domain
+- `CatalogService` - Belongs to Catalog domain
+- `OrderActionBean` - Belongs to Order Management domain
+
+```json
+{
+  "Shopping Cart": [
+    "org.mybatis.jpetstore.domain.Cart",
+    "org.mybatis.jpetstore.domain.CartItem",
+    "org.mybatis.jpetstore.web.actions.CartActionBean"
+  ]
+}
+```

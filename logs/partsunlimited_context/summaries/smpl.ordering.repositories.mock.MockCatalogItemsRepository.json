@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 9041,
+  "stop_reason": "end_turn",
+  "session_id": "7cf0c6ca-1acf-43b4-9682-67bb9420b072",
+  "total_cost_usd": 0.017424000000000002,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1703,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 480,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1703,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 480,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1703,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1703
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 480,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1703,
+      "webSearchRequests": 0,
+      "costUSD": 0.017424000000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1703,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mock.MockCatalogItemsRepository\": {\n        \"summary\": \"An in-memory repository of catalog items used for testing the API surface area. It implements both CatalogItemsRepository and TestPath interfaces, providing a lightweight, non-persistent data store suitable for unit and integration tests.\\n\\nThe constructor pre-populates the repository with three sample catalog items (brake pads, brake calipers, and brake caliper guide pins) using SKU numbers prefixed with 'MRP-'.\\n\\nKey methods:\\n- getCatalogItems(): Returns a defensive copy list of all catalog items currently stored in the in-memory list.\\n- getCatalogItem(String sku): Looks up a single catalog item by SKU number (case-insensitive comparison) and returns a copy of it, or null if not found.\\n- upsertCatalogItem(String sku, CatalogItem catalogItem, String eTag): Inserts a new catalog item or updates an existing one matched by SKU (case-insensitive). Returns true if an update occurred, false if a new item was inserted. The eTag parameter is accepted but not enforced (no optimistic concurrency logic is implemented in this mock).\\n- removeCatalogItem(String sku, String eTag): Removes a catalog item by SKU (case-insensitive). Returns true if the item was found and removed, false otherwise. The eTag parameter is similarly unused.\\n- reset(): Clears all items from the in-memory catalog list, allowing tests to start from a clean state. This method is part of the TestPath interface contract.\\n\\nInternally, it uses a private ArrayList<CatalogItem> as the backing store and a private helper method compareSkuNumbers() for case-insensitive SKU comparisons. All retrieval methods return copies of CatalogItem objects rather than direct references, ensuring encapsulation of the internal state.\",\n        \"file_path\": \"smpl/ordering/repositories/mock/MockCatalogItemsRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 9654,
+  "type": "result",
+  "duration_ms": 9704,
+  "uuid": "c59009e2-3ee1-4e26-8b38-1aee5598ae5e",
+  "ttft_stream_ms": 3668,
+  "time_to_request_ms": 660,
+  "first_content_frame_ms": 3681,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

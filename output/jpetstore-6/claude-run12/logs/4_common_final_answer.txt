@@ -1,0 +1,31 @@
+All 3 domains have been saved. Here is a complete summary of the results:
+
+---
+
+## Common Class Identification and Assignment Summary
+
+### Common Class Identified
+
+**`org.mybatis.jpetstore.web.actions.AbstractActionBean`** is the only true common class in this application:
+- It is a **pure utility/base class** with no business logic
+- It provides shared web framework infrastructure (ActionBean interface, ActionBeanContext, message handling)
+- It is **extended by ALL 4 action beans** across all 3 domains:
+  - `AccountActionBean` → Account Management
+  - `CatalogActionBean` → Catalog
+  - `CartActionBean` → Shopping Cart and Order Management
+  - `OrderActionBean` → Shopping Cart and Order Management
+
+### Classes Considered but NOT classified as Common
+
+- **`CatalogService`**: Domain-specific service for Catalog domain. Already in Catalog cluster. Cross-domain usage by `AccountActionBean` and `CartActionBean` represents inter-service calls, not utility/coordinator usage.
+- **`Item`** and **`ItemMapper`**: Domain-specific Catalog entities/mappers. Already in Catalog cluster. Used by Order domain for inventory, but they are domain objects, not utility classes.
+
+### Final Domain Assignments (with `AbstractActionBean` added)
+
+| Domain | Class Count | Classes |
+|--------|------------|---------|
+| **Account Management** | 5 | Account, AccountMapper, AccountService, AccountActionBean, **AbstractActionBean** |
+| **Catalog** | 9 | Category, Product, Item, CatalogService, CatalogActionBean, CategoryMapper, ProductMapper, ItemMapper, **AbstractActionBean** |
+| **Shopping Cart and Order Management** | 12 | Cart, CartItem, CartActionBean, Order, LineItem, Sequence, OrderService, OrderMapper, LineItemMapper, SequenceMapper, OrderActionBean, **AbstractActionBean** |
+
+**Total: 3 domains saved, with `AbstractActionBean` assigned to all 3 domains as the common utility base class.**

@@ -1,0 +1,30 @@
+Based on my thorough investigation, I can now analyze what belongs to the Shopping Cart domain:
+
+**Core Shopping Cart domain classes:**
+1. `org.mybatis.jpetstore.domain.Cart` - The main cart domain object
+2. `org.mybatis.jpetstore.domain.CartItem` - Items within the cart
+3. `org.mybatis.jpetstore.web.actions.CartActionBean` - Presentation layer (web action handler)
+
+**Classes that are related but belong to OTHER domains:**
+- `org.mybatis.jpetstore.domain.Item` - Belongs to Catalog domain
+- `org.mybatis.jpetstore.domain.LineItem` - Belongs to Order Management domain
+- `org.mybatis.jpetstore.domain.Order` - Belongs to Order Management domain
+- `org.mybatis.jpetstore.service.CatalogService` - Belongs to Catalog domain (used by CartActionBean to fetch item data)
+- `org.mybatis.jpetstore.web.actions.OrderActionBean` - Belongs to Order Management domain
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` - Shared base class used by all action beans (not specific to Shopping Cart)
+
+The Shopping Cart domain has no dedicated service class (it uses `CatalogService` for item lookups) and no dedicated mapper/repository (since the cart is session-scoped/transient and not persisted to the database directly).
+
+The Shopping Cart domain consists exclusively of:
+- **Domain Objects**: `Cart`, `CartItem`
+- **Presentation Layer**: `CartActionBean`
+
+```json
+{
+  "Shopping Cart": [
+    "org.mybatis.jpetstore.domain.Cart",
+    "org.mybatis.jpetstore.domain.CartItem",
+    "org.mybatis.jpetstore.web.actions.CartActionBean"
+  ]
+}
+```

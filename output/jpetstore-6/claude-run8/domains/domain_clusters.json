@@ -1,0 +1,20 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Account Management",
+      "description": "This domain handles all aspects of user identity and account lifecycle within the application. It encompasses user registration, authentication (sign-on/sign-off), profile management, and personal preferences. The domain manages user credentials, personal contact information, and customization options such as language preference, favorite category, and banner display settings. It is responsible for validating and persisting user data across multiple related data stores (account details, signon credentials, profile preferences). This domain has a clear bounded context around user identity and personalization, with operations including creating new accounts, updating existing account information, and authenticating users against stored credentials."
+    },
+    {
+      "domain_name": "Catalog",
+      "description": "This domain manages the product catalog that users browse when shopping. It covers the hierarchical organization of merchandise into categories, products within those categories, and specific items (SKUs) with associated pricing, supplier details, attributes, and inventory status. The domain provides capabilities to browse categories, view products within a category, search for products by keywords, view specific item details, and check item availability in stock. Inventory tracking is also part of this domain, as it determines whether items are available for purchase. The catalog domain serves as the primary product information repository that other domains (such as cart and order) reference when dealing with specific items."
+    },
+    {
+      "domain_name": "Shopping Cart",
+      "description": "This domain manages the transient, session-based shopping experience where users collect items they intend to purchase before proceeding to checkout. It encapsulates the concept of a cart that holds cart items (each being a product item with quantity and total price), and provides capabilities to add items to the cart, remove items, update item quantities, view the current cart contents, and calculate the cart subtotal. The cart is a session-scoped construct that exists in memory during a user's shopping session and does not persist to a database directly. It acts as an intermediate state between browsing the catalog and placing an order, and is consumed during order creation to initialize an order with the selected items."
+    },
+    {
+      "domain_name": "Order Management",
+      "description": "This domain handles the full lifecycle of purchase orders from creation through fulfillment tracking. It covers capturing an order from a user's cart (including shipping address, billing address, payment details like credit card information), persisting orders and their associated line items to the database, tracking order status, retrieving order history by user, and viewing individual order details. The domain manages the conversion of cart items into order line items with finalized pricing, generates unique order identifiers via a sequence mechanism, and updates inventory quantities when orders are placed. It also enforces authorization rules to ensure users can only view their own orders. This domain represents a completed financial and logistical transaction within the system."
+    }
+  ]
+}

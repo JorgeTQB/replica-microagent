@@ -1,0 +1,36 @@
+I now have all the information needed to compile the complete list of classes for the Shipment domain. Let me summarize my findings:
+
+**Presentation Layer:**
+- `smpl.ordering.controllers.ShipmentController` - REST controller for shipment HTTP endpoints
+
+**Domain Models/Objects:**
+- `smpl.ordering.models.ShipmentRecord` - Core shipment record model
+- `smpl.ordering.models.ShipmentEventInfo` - Shipment lifecycle event information
+- `smpl.ordering.models.DeliveryAddress` - Delivery address model (used exclusively by shipment)
+- `smpl.ordering.models.PhoneInfo` - Phone information model (used exclusively by shipment)
+- `smpl.ordering.models.Delivery` - Aggregate delivery view combining Order, Quote, and ShipmentRecord
+
+**Data Access Layer:**
+- `smpl.ordering.repositories.ShipmentRepository` - Interface for shipment data access
+- `smpl.ordering.repositories.mock.MockShipmentRepository` - In-memory mock implementation
+- `smpl.ordering.repositories.mongodb.MongoShipmentRepository` - MongoDB implementation
+- `smpl.ordering.repositories.mongodb.models.ShipmentDetails` - MongoDB document model for shipments
+
+All classes are exclusively used in the Shipment domain context. The `DeliveryAddress` and `PhoneInfo` models are only used by shipment-related classes. The `Delivery` model is an aggregate created specifically in the ShipmentController for the deliveries endpoint.
+
+```json
+{
+  "Shipment": [
+    "smpl.ordering.controllers.ShipmentController",
+    "smpl.ordering.models.ShipmentRecord",
+    "smpl.ordering.models.ShipmentEventInfo",
+    "smpl.ordering.models.DeliveryAddress",
+    "smpl.ordering.models.PhoneInfo",
+    "smpl.ordering.models.Delivery",
+    "smpl.ordering.repositories.ShipmentRepository",
+    "smpl.ordering.repositories.mock.MockShipmentRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository",
+    "smpl.ordering.repositories.mongodb.models.ShipmentDetails"
+  ]
+}
+```

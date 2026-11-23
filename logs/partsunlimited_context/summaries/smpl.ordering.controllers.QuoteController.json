@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 7591,
+  "stop_reason": "end_turn",
+  "session_id": "e8ed72a2-0f81-469f-a8c2-d30b6b3ed47f",
+  "total_cost_usd": 0.02169,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2429,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 474,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2429,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 474,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2429,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2429
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 474,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2429,
+      "webSearchRequests": 0,
+      "costUSD": 0.02169,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2429,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.QuoteController\": {\n        \"summary\": \"A Spring MVC REST controller that handles HTTP requests for quote management, mapped to the '/quotes' endpoint. It acts as the web layer for CRUD operations on Quote resources, delegating persistence to a QuoteRepository obtained via RepositoryFactory.\\n\\nKey methods:\\n- getQuoteById(String quoteId): Handles GET /quotes/{quoteId}. Retrieves a single quote by its ID, returning 200 OK with the quote or 404 NOT_FOUND if it does not exist.\\n- getQuotesByCustomerName(String name): Handles GET /quotes?name=. Searches for quotes whose customer name contains the given substring (case-insensitive), returning a list of matching quotes or 404 NOT_FOUND if none are found.\\n- updateQuote(String quoteId, Quote info): Handles PUT /quotes/{quoteId}. Validates the input Quote object, then updates the existing quote; returns 200 OK on success or 404 NOT_FOUND if the quote does not exist.\\n- createQuote(Quote info): Handles POST /quotes. Validates the input Quote object and creates a new quote. On success, returns 201 CREATED with a Location header pointing to the new resource. Returns 409 CONFLICT if a duplicate exists, or 400 BAD_REQUEST for invalid input.\\n- deleteQuote(String quoteId): Handles DELETE /quotes/{quoteId}. Removes the specified quote, returning 204 NO_CONTENT on success or 404 NOT_FOUND if the quote does not exist.\\n- getRepository(): Private helper that retrieves the QuoteRepository instance from RepositoryFactory.\\n\\nAll public methods include exception handling that tracks errors via Azure Application Insights TelemetryClient and returns a 500 INTERNAL_SERVER_ERROR response with the exception message when unexpected errors occur.\",\n        \"file_path\": \"smpl/ordering/controllers/QuoteController.java\"\n    }\n}\n```",
+  "ttft_ms": 7934,
+  "type": "result",
+  "duration_ms": 7978,
+  "uuid": "e7a59c56-3bc5-4424-a675-64d06664e053",
+  "ttft_stream_ms": 1909,
+  "time_to_request_ms": 381,
+  "first_content_frame_ms": 1910,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

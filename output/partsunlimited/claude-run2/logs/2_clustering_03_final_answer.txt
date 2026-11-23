@@ -1,0 +1,35 @@
+I now have a clear picture of all the Quote domain classes. Let me compile the final list based on my analysis:
+
+**Quote Domain Classes:**
+
+**Presentation Layer (Controller):**
+- `smpl.ordering.controllers.QuoteController` - REST controller for quote CRUD operations
+
+**Business/Domain Layer (Models):**
+- `smpl.ordering.models.Quote` - Core Quote domain object with all fields and validation
+- `smpl.ordering.models.QuoteItemInfo` - Line item model for quoted items (SKU + amount)
+
+**Data Layer (Repositories):**
+- `smpl.ordering.repositories.QuoteRepository` - Repository interface for quote data access
+- `smpl.ordering.repositories.mock.MockQuoteRepository` - In-memory mock implementation for testing
+- `smpl.ordering.repositories.mongodb.MongoQuoteRepository` - MongoDB implementation
+- `smpl.ordering.repositories.mongodb.models.QuoteDetails` - MongoDB document model for quotes
+
+All these classes exclusively belong to the Quote domain. I excluded:
+- `smpl.ordering.models.Delivery` - Used by Shipment domain (shows order+quote+shipment info together)
+- `smpl.ordering.OrderingInitializer`, `smpl.ordering.Utility`, `smpl.ordering.repositories.RepositoryFactory` - Common/shared infrastructure classes used across all domains
+- `smpl.ordering.repositories.mock.MockOrderRepository`, `smpl.ordering.repositories.mongodb.MongoOrderRepository` - Order domain classes that reference Quote but belong to Order domain
+
+```json
+{
+  "Quote": [
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.models.Quote",
+    "smpl.ordering.models.QuoteItemInfo",
+    "smpl.ordering.repositories.QuoteRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.models.QuoteDetails"
+  ]
+}
+```

@@ -1,0 +1,36 @@
+Based on my thorough analysis of the codebase, I have identified all the classes that belong exclusively to the Order Management domain. Let me compile the final answer:
+
+**Order Management Domain Classes:**
+
+1. **Domain Objects:**
+   - `org.mybatis.jpetstore.domain.Order` - Core order entity with shipping/billing/payment details
+   - `org.mybatis.jpetstore.domain.LineItem` - Individual purchased items within an order
+   - `org.mybatis.jpetstore.domain.Sequence` - Sequence mechanism for unique order ID generation
+
+2. **Business Layer:**
+   - `org.mybatis.jpetstore.service.OrderService` - Business logic for order operations (insert, retrieve, ID generation)
+
+3. **Data Layer (Mappers):**
+   - `org.mybatis.jpetstore.mapper.OrderMapper` - Data access for order persistence and retrieval
+   - `org.mybatis.jpetstore.mapper.LineItemMapper` - Data access for line item persistence and retrieval
+   - `org.mybatis.jpetstore.mapper.SequenceMapper` - Data access for sequence management
+
+4. **Presentation Layer:**
+   - `org.mybatis.jpetstore.web.actions.OrderActionBean` - Web action handler for order-related UI operations
+
+Note: `ItemMapper` is used by `OrderService` for inventory updates during order placement, but it primarily belongs to the Catalog domain. The `Order` class uses `Account` and `Cart` as inputs to initialize an order, but those belong to Account Management and Shopping Cart domains respectively.
+
+```json
+{
+  "Order Management": [
+    "org.mybatis.jpetstore.domain.Order",
+    "org.mybatis.jpetstore.domain.LineItem",
+    "org.mybatis.jpetstore.domain.Sequence",
+    "org.mybatis.jpetstore.service.OrderService",
+    "org.mybatis.jpetstore.mapper.OrderMapper",
+    "org.mybatis.jpetstore.mapper.LineItemMapper",
+    "org.mybatis.jpetstore.mapper.SequenceMapper",
+    "org.mybatis.jpetstore.web.actions.OrderActionBean"
+  ]
+}
+```

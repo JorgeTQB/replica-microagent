@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 11086,
+  "stop_reason": "end_turn",
+  "session_id": "d8ee95de-0632-4304-bdf2-609d36544f0d",
+  "total_cost_usd": 0.020055,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1929,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 565,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1929,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 565,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1929,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1929
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 565,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1929,
+      "webSearchRequests": 0,
+      "costUSD": 0.020055,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1929,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.MongoShipmentRepository\": {\n        \"summary\": \"MongoDB-based implementation of the ShipmentRepository interface, also implementing TestPath. This class manages shipment records stored in a MongoDB collection, using MongoOperations (wrapped in MongoOperationsWithRetry for resilience) for all database interactions and an injected OrderRepository to validate and query associated orders.\\n\\nKey methods:\\n- getShipments(OrderStatus status): Retrieves all shipment records whose associated orders match the given status. It first fetches matching orders from the OrderRepository, collects their IDs, then queries MongoDB for shipments matching those IDs.\\n- getShipmentById(String id): Finds and returns a single ShipmentRecord by order ID, or null if not found.\\n- createShipment(ShipmentRecord info): Creates a new shipment record. Validates that the associated order exists (throws BadRequestException if not) and that no shipment for that order already exists (throws ConflictingRequestException if one does), then inserts a new ShipmentDetails document.\\n- addEvent(String id, ShipmentEventInfo event): Appends a new event to an existing shipment's event list and persists the update. Returns false if the shipment does not exist.\\n- updateShipment(ShipmentRecord info): Updates an existing shipment record identified by order ID. Returns false if no existing shipment is found.\\n- removeShipment(String id, String eTag): Finds and removes a shipment record by order ID. Returns true if a record was found and deleted, false otherwise. The eTag parameter is accepted but not used for optimistic concurrency control.\\n- reset(): Drops the entire 'shipments' MongoDB collection, intended for test/cleanup purposes as indicated by the TestPath interface.\\n\\nPrivate helpers:\\n- findExistingShipmentDetails(String id): Queries MongoDB for a ShipmentDetails document by order ID.\\n- saveUpdates(ShipmentDetails existing, ShipmentRecord result): Converts a ShipmentRecord to ShipmentDetails, preserves the existing MongoDB document ID, and saves it.\\n\\nThe constructor accepts a MongoTemplate and an OrderRepository, wrapping the template in a MongoOperationsWithRetry instance for fault tolerance.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/MongoShipmentRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 11257,
+  "type": "result",
+  "duration_ms": 11274,
+  "uuid": "eddc5eb6-1fbb-44fd-b44a-d66603f3ec46",
+  "ttft_stream_ms": 3096,
+  "time_to_request_ms": 185,
+  "first_content_frame_ms": 3096,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

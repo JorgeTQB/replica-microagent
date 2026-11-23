@@ -1,0 +1,62 @@
+{
+  "smpl.ordering.BadRequestException": [
+    "smpl.ordering.ConflictingRequestException",
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mock.MockShipmentRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository"
+  ],
+  "smpl.ordering.ConflictingRequestException": [
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository"
+  ],
+  "smpl.ordering.OrderingConfiguration": [
+    "smpl.ordering.Utility",
+    "smpl.ordering.repositories.RepositoryFactory"
+  ],
+  "smpl.ordering.OrderingInitializer": [
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.controllers.DealerController",
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.controllers.ShipmentController"
+  ],
+  "smpl.ordering.TestPath": [
+    "smpl.ordering.repositories.mock.MockCatalogItemsRepository",
+    "smpl.ordering.repositories.mock.MockDealersRepository",
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mock.MockShipmentRepository",
+    "smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository"
+  ],
+  "smpl.ordering.Utility": [
+    "smpl.ordering.AppInsightsFilter",
+    "smpl.ordering.OrderingConfiguration",
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.controllers.DealerController",
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.controllers.PingController",
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.controllers.ShipmentController",
+    "smpl.ordering.models.CatalogItem",
+    "smpl.ordering.models.DealerInfo",
+    "smpl.ordering.models.Order",
+    "smpl.ordering.models.Quote",
+    "smpl.ordering.repositories.mongodb.MongoOperationsWithRetry"
+  ],
+  "smpl.ordering.repositories.RepositoryFactory": [
+    "smpl.ordering.OrderingConfiguration",
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.controllers.DealerController",
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.controllers.ShipmentController"
+  ]
+}

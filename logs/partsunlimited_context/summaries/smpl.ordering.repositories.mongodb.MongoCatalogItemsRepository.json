@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 8084,
+  "stop_reason": "end_turn",
+  "session_id": "72adbd8f-c577-432d-b7ca-71676f845218",
+  "total_cost_usd": 0.01494,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1529,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 384,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1529,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 384,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1529,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1529
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 384,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1529,
+      "webSearchRequests": 0,
+      "costUSD": 0.01494,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1529,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository\": {\n        \"summary\": \"MongoDB-based catalog items repository implementation class that provides persistent storage and retrieval operations for catalog items using MongoDB. It implements both CatalogItemsRepository (for CRUD operations) and TestPath (for test reset functionality).\\n\\nKey methods:\\n- getCatalogItems(): Retrieves all catalog items from MongoDB, converting each MongoDB-specific CatalogItem model to the domain model.\\n- getCatalogItem(String sku): Fetches a single catalog item by its SKU number, returning null if not found.\\n- upsertCatalogItem(String sku, CatalogItem catalogItem, String eTag): Inserts or updates a catalog item by SKU. If the item already exists, it preserves the MongoDB document ID before saving. Returns true if an update occurred, false if it was an insert.\\n- removeCatalogItem(String sku, String eTag): Deletes a catalog item by SKU using MongoDB's findAndRemove, returning true if an item was actually removed.\\n- reset(): Drops the entire CatalogItem MongoDB collection, intended for test cleanup (via TestPath interface).\\n\\nInternally uses a MongoOperationsWithRetry wrapper around MongoTemplate to handle transient failures. The private helper findExistingCatalogItem(String sku) performs a query by 'skuNumber' field and is reused across multiple methods to avoid duplication.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/MongoCatalogItemsRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 8321,
+  "type": "result",
+  "duration_ms": 8403,
+  "uuid": "ece74901-ed2f-4e3a-a013-b994a74bf357",
+  "ttft_stream_ms": 3233,
+  "time_to_request_ms": 277,
+  "first_content_frame_ms": 3234,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

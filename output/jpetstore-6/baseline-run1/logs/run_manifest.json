@@ -1,0 +1,295 @@
+{
+ "app": "jpetstore-6",
+ "run_id": "baseline-run1",
+ "configuracion": "baseline",
+ "number": "3",
+ "modelo_pedido": "claude-sonnet-4-6",
+ "simulado": false,
+ "fecha": "2026-11-21T22:07:59-05:00",
+ "argv": [
+  "run_baseline.py",
+  "--app",
+  "jpetstore-6",
+  "--run-id",
+  "baseline-run1"
+ ],
+ "claude_code_version": "2.1.330 (Claude Code)",
+ "claude_cmd": [
+  "C:\\Users\\jquis\\.local\\bin\\claude.EXE"
+ ],
+ "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+ "plataforma": "Windows-11-10.0.26200-SP0",
+ "entorno_de_claude": {
+  "DISABLE_AUTOUPDATER": "1",
+  "API_TIMEOUT_MS": "900000",
+  "CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1",
+  "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
+  "PYTHONDONTWRITEBYTECODE": "1",
+  "MAX_THINKING_TOKENS": "0",
+  "MCP_TIMEOUT": "300000",
+  "MCP_TOOL_TIMEOUT": "600000"
+ },
+ "esfuerzo": "high",
+ "system_prompt": "",
+ "max_turns": 1,
+ "variables_quitadas_del_entorno": [
+  "AI_AGENT",
+  "ANTHROPIC_BASE_URL",
+  "API_TIMEOUT_MS",
+  "BAGGAGE",
+  "CLAUDECODE",
+  "CLAUDE_AGENT_SDK_MCP_NO_PREFIX",
+  "CLAUDE_AGENT_SDK_VERSION",
+  "CLAUDE_CODE_ACCOUNT_UUID",
+  "CLAUDE_CODE_CHILD_NOTES_DIR",
+  "CLAUDE_CODE_CHILD_SESSION",
+  "CLAUDE_CODE_DESKTOP_APP_VERSION",
+  "CLAUDE_CODE_DISABLE_CRON",
+  "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
+  "CLAUDE_CODE_EAGER_FLUSH",
+  "CLAUDE_CODE_EMIT_STARTUP_TIMING",
+  "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+  "CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL",
+  "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
+  "CLAUDE_CODE_ENTRYPOINT",
+  "CLAUDE_CODE_EXECPATH",
+  "CLAUDE_CODE_HOST_SESSION_ID",
+  "CLAUDE_CODE_HOST_SHORT_TEMP_DIRS",
+  "CLAUDE_CODE_MESSAGING_SOCKET",
+  "CLAUDE_CODE_MESSAGING_TOKEN",
+  "CLAUDE_CODE_ORGANIZATION_UUID",
+  "CLAUDE_CODE_REPORT_FINDINGS",
+  "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
+  "CLAUDE_CODE_SESSION_ATTENDED",
+  "CLAUDE_CODE_SESSION_ID",
+  "CLAUDE_CODE_SIMPLE",
+  "CLAUDE_CODE_STARTUP_FAILURE_RESULTS",
+  "CLAUDE_CODE_TERMINAL_MCP_TOOLS",
+  "CLAUDE_CODE_USER_EMAIL",
+  "CLAUDE_EFFORT",
+  "CLAUDE_PID",
+  "CLAUDE_PREVIEW_CLASSIFIER_FLOOR",
+  "DISABLE_AUTOUPDATER",
+  "DISABLE_MICROCOMPACT",
+  "MCP_CONNECTION_NONBLOCKING",
+  "MCP_SERVER_CONNECTION_BATCH_SIZE",
+  "SENTRY-TRACE",
+  "USE_LOCAL_OAUTH",
+  "USE_STAGING_OAUTH"
+ ],
+ "variables_que_recibe_claude": [
+  "ALLUSERSPROFILE",
+  "API_TIMEOUT_MS",
+  "APPDATA",
+  "BUN_ENABLE_CRASH_REPORTING",
+  "CHOCOLATEYINSTALL",
+  "CLAUDE_CODE_DISABLE_AUTO_MEMORY",
+  "CLAUDE_CODE_DISABLE_CLAUDE_MDS",
+  "COMMONPROGRAMFILES",
+  "COMMONPROGRAMFILES(X86)",
+  "COMMONPROGRAMW6432",
+  "COMPUTERNAME",
+  "COMSPEC",
+  "COREPACK_ENABLE_AUTO_PIN",
+  "DISABLE_AUTOUPDATER",
+  "DRIVERDATA",
+  "EXEPATH",
+  "GIT_EDITOR",
+  "HOME",
+  "HOMEDRIVE",
+  "HOMEPATH",
+  "INTELLIJ IDEA",
+  "LEVEL_ZERO_V1_SDK_PATH",
+  "LOCALAPPDATA",
+  "LOGONSERVER",
+  "MAVEN_HOME",
+  "MAX_THINKING_TOKENS",
+  "MCP_TIMEOUT",
+  "MCP_TOOL_TIMEOUT",
+  "MSYSTEM",
+  "NODEFAULTCURRENTDIRECTORYINEXEPATH",
+  "NODE_USE_SYSTEM_CA",
+  "NUMBER_OF_PROCESSORS",
+  "OLDPWD",
+  "ONEDRIVE",
+  "OS",
+  "PATH",
+  "PATHEXT",
+  "PLINK_PROTOCOL",
+  "PROCESSOR_ARCHITECTURE",
+  "PROCESSOR_IDENTIFIER",
+  "PROCESSOR_LEVEL",
+  "PROCESSOR_REVISION",
+  "PROGRAMDATA",
+  "PROGRAMFILES",
+  "PROGRAMFILES(X86)",
+  "PROGRAMW6432",
+  "PSMODULEPATH",
+  "PT8HOME",
+  "PUBLIC",
+  "PWD",
+  "PYTHONDONTWRITEBYTECODE",
+  "SHELL",
+  "SHLVL",
+  "SYSTEMDRIVE",
+  "SYSTEMROOT",
+  "TEMP",
+  "TERM",
+  "TMP",
+  "USERDOMAIN",
+  "USERDOMAIN_ROAMINGPROFILE",
+  "USERNAME",
+  "USERPROFILE",
+  "VBOX_MSI_INSTALL_PATH",
+  "WINDIR",
+  "_"
+ ],
+ "prompt": {
+  "caracteres": 73851,
+  "bytes_utf8": 73851,
+  "sha256": "4aa7c961a464e9e406167b15b0d1b82d66c5f9da2e19b9539d771fe5eca79312",
+  "comparacion": "primera corrida real: se guarda la huella del prompt",
+  "clases": 24,
+  "archivos_incluidos_sha256": {
+   "resources/jpetstore-6/src/main/resources/database/jpetstore-hsqldb-schema.sql": {
+    "disco": "5dbd098b01cf5be5aae929c11570841abddefc5bb4293bc497dbbdcc6354103f",
+    "texto": "2715fb2db4ec4c59f6ed5c69bde1339579f12265fa4248bb68231e4485aa44e2"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/CategoryMapper.java": {
+    "disco": "cbd4952bf0d2df5dbeaecf3487a68ef0a86002803923b0a3f36faf8e701b87dd",
+    "texto": "d500d45aca1fda402cde769617badcba786d0144ce34c5c9101268cce8be1fb4"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/LineItemMapper.java": {
+    "disco": "04e80afda480dd832da13c2780d7ed613f11b2ed73611bff6567b30a84e8ce7c",
+    "texto": "8077cedda19eba04698864677a6ea347f22e649003f30b8f190fc86f2956fa1b"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/ItemMapper.java": {
+    "disco": "feb5567811e069438c43c1238e5ab16f7a10f268c5c1f5daddd8e5a4c558246d",
+    "texto": "2822d219bf68e0beb1946a703a575b186a46ef79565927f21e418fc82488f067"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/OrderMapper.java": {
+    "disco": "871f40a1b2165f2f4c6a735dcaf813dfcfd6142772d44cacc0c3dd75795c26a3",
+    "texto": "e216405525afe17a3302ceaa929c5a6bc05c5c77137fb938f4dc554c8072df12"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/AccountMapper.java": {
+    "disco": "b9fe90d0d218c9b0a9e73b255c88a2269d4bf47f548e1d9a7e400d5f6ecdb5ef",
+    "texto": "388d77d4b5bd80b72528e01ddb986e82cab686f1ea79e525269a1a29fa7cc20c"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/SequenceMapper.java": {
+    "disco": "af4513b632df2ca4ebea2ba852133d1c6be3a8cac80ef63dea7aac8dc2231d66",
+    "texto": "44dd02236ddabbfbd7e7557656e82844b60d83d400ada519cd45d250417ae3e3"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/ProductMapper.java": {
+    "disco": "734df4a6a50d70dc195cf0a35f83e17544f47aa50617195f59a2805fb06abe28",
+    "texto": "77207c1e50cb3f107f6ad4a983d26adbdfa228346d74d1fa4dfe841d2f283d29"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java": {
+    "disco": "be181d6d663fda305040d17def6018fb0d7647f746e264fb9e860b379a3c0d78",
+    "texto": "64e599cd75b165c29a20a32754fa1d9dd07abd787771c0fac9ce49269c71de85"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java": {
+    "disco": "dd6900802256661551cb2e7201e446c726d5d12472ef19b3587b917dbd9eb4ad",
+    "texto": "4cfa714462b4fd0a073eb354c9c1b9864c37538e23e72b53d3a5587cada756e3"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java": {
+    "disco": "cb71a802aa41f8c9df720280c4e3fc2ae5e8bc2239a324d9ac818656359edd45",
+    "texto": "0bb3bf7066fa8458d32a675834cc58f1f00f54bb94bc70ba0151cd6492511e16"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Order.java": {
+    "disco": "f26e4194a96013255d3bec9c7396a7a34202b1d4e1ca4cceb2ee89b80bb0f74d",
+    "texto": "17175c57edd69e6663e43d55dd00cd4e97c2d1b209176fcef3013e37872df5dc"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Sequence.java": {
+    "disco": "933658267af9f08d4494ba11e583c1400cd11bedb3719ae8e13951f64439bb06",
+    "texto": "77095a5ec1a3db18b3ee6165061dca9a5bd3ab5feeb65c2bdb1bdf5c7d54e1f6"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Product.java": {
+    "disco": "02b470d41b1a7dafc8598fd8eaa6bb3abb04204eff5894f01581cab22080edf3",
+    "texto": "af34efbe9856ff8bedd0d67cb25573e22d8858763436655b3ddbc898caf5f8fd"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/LineItem.java": {
+    "disco": "3de3cf59d7840a886e5d74522b948631d0feb2dc5edd7c278ada2038a5ea2c47",
+    "texto": "11e23f2962327f14891311bac94ceffef11e0efae6054704b227f74ebd39e9e5"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Category.java": {
+    "disco": "360e4d9bb3f3d74bbddb0786a1ae4fece878bd220734c409cf290da18559bc63",
+    "texto": "7fd3e5a5b80c3b2b88882f8be194b822e532d3805d4c96fac064cb577024d69c"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/CartItem.java": {
+    "disco": "8f986710083fff17456b76d8c132c9a9b57adb8e8909cd951e5a94a1765bf359",
+    "texto": "1da9d9b5bbe206e0be560578f76f61c4983aaef0c26db944e3959f821541beae"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Account.java": {
+    "disco": "6b8c727463c9ed918ceb20f09e651330a009c38e3db30cca7df3bb4d13170b6d",
+    "texto": "b5e0a78b443c4a0f79d84d2cdbd0109fe587c3f1d6ba7a400c1d09d5bda70c59"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java": {
+    "disco": "dc491338e6659eea6ac5016b5d58ffde952523a7a76bc9d011ea98f0798c1923",
+    "texto": "c4fdb43297a19d884dab94e7564cb24ceb1c7aaa80de3f56fbf1a5eae1658fc8"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Item.java": {
+    "disco": "5f09a8972d1821a089659aaf1cd9ab8912a956542749cfe89370b92e7b571f3d",
+    "texto": "303360a9c00e8ace9fa58b9da15d8a6be9b91b9548a33adc6b20d7ee48cdc96f"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java": {
+    "disco": "888122ea0575b7b7226cf469228bfe9d4e885d9a79aedfe7a7755dbb94646438",
+    "texto": "0e85ae3cfe82a22a3ca633fa8257e3e3c6e32373a098efafbbf4ae9662cd6332"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java": {
+    "disco": "8b4c5138bfc228d4485ff7efc9a538de81d9721ba8d8ab56d3c894d1861c753b",
+    "texto": "5c597878abb215b1f2292abebf63fa707ff80c864196ea4baf1925b582699546"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AbstractActionBean.java": {
+    "disco": "d67fa8302f21a7c23ed1922603d5b8c8db88f06d67b3e7602034c78be2818647",
+    "texto": "4bc46fa52cce85167ce435de773c353f33445c0c42243b8cbb038bd3d29a163a"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java": {
+    "disco": "1c0c981a14cce97200e6e35948313d786dc152e716bd811e8f553bf797ef269d",
+    "texto": "3b0e14949acc875ea1b4e12b86b921faa6b801f9015766380e312d5a2dea4ac1"
+   },
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java": {
+    "disco": "36ba4693a16129753e8a25f50ac0a319231d412d2ba2d99fd64c6d271718422d",
+    "texto": "87b990640ca478ec8afe0855de61718b8f405f6f3eca70007e00b8e1c43e02bc"
+   }
+  }
+ },
+ "contexto": {
+  "comparacion": "igual al de las corridas de MicroAgent (linea base prueba-humo-etapa1, 2026-11-16T15:57:25-05:00)",
+  "app": "jpetstore-6",
+  "digest": "335b319a4ee4465c129f07e8abd56cc0388cdc61cd38760126b2c1c2764ce3d4",
+  "n_files": 27,
+  "files": {
+   "context/jpetstore-6/class_info_dependency.json": "627f57a8e2fb5fee51b465cf40320c69b54d9f51e1dc44741089177dd389efdb",
+   "context/jpetstore-6/class_summaries.json": "31d5da0ca3dcb27f7ed79350e57ca8709bdfac94528a979b1674ebb5e863a2b7",
+   "database/jpetstore-6/sql-summary.json": "1a64fb11c26778d6139be78064cfa4269e223603fd0b20cc8c87a07cbba5f82b",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Account.java": "6b8c727463c9ed918ceb20f09e651330a009c38e3db30cca7df3bb4d13170b6d",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Cart.java": "dc491338e6659eea6ac5016b5d58ffde952523a7a76bc9d011ea98f0798c1923",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/CartItem.java": "8f986710083fff17456b76d8c132c9a9b57adb8e8909cd951e5a94a1765bf359",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Category.java": "360e4d9bb3f3d74bbddb0786a1ae4fece878bd220734c409cf290da18559bc63",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Item.java": "5f09a8972d1821a089659aaf1cd9ab8912a956542749cfe89370b92e7b571f3d",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/LineItem.java": "3de3cf59d7840a886e5d74522b948631d0feb2dc5edd7c278ada2038a5ea2c47",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Order.java": "f26e4194a96013255d3bec9c7396a7a34202b1d4e1ca4cceb2ee89b80bb0f74d",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Product.java": "02b470d41b1a7dafc8598fd8eaa6bb3abb04204eff5894f01581cab22080edf3",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/domain/Sequence.java": "933658267af9f08d4494ba11e583c1400cd11bedb3719ae8e13951f64439bb06",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/AccountMapper.java": "b9fe90d0d218c9b0a9e73b255c88a2269d4bf47f548e1d9a7e400d5f6ecdb5ef",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/CategoryMapper.java": "cbd4952bf0d2df5dbeaecf3487a68ef0a86002803923b0a3f36faf8e701b87dd",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/ItemMapper.java": "feb5567811e069438c43c1238e5ab16f7a10f268c5c1f5daddd8e5a4c558246d",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/LineItemMapper.java": "04e80afda480dd832da13c2780d7ed613f11b2ed73611bff6567b30a84e8ce7c",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/OrderMapper.java": "871f40a1b2165f2f4c6a735dcaf813dfcfd6142772d44cacc0c3dd75795c26a3",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/ProductMapper.java": "734df4a6a50d70dc195cf0a35f83e17544f47aa50617195f59a2805fb06abe28",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/mapper/SequenceMapper.java": "af4513b632df2ca4ebea2ba852133d1c6be3a8cac80ef63dea7aac8dc2231d66",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/AccountService.java": "be181d6d663fda305040d17def6018fb0d7647f746e264fb9e860b379a3c0d78",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/CatalogService.java": "cb71a802aa41f8c9df720280c4e3fc2ae5e8bc2239a324d9ac818656359edd45",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/service/OrderService.java": "dd6900802256661551cb2e7201e446c726d5d12472ef19b3587b917dbd9eb4ad",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AbstractActionBean.java": "d67fa8302f21a7c23ed1922603d5b8c8db88f06d67b3e7602034c78be2818647",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/AccountActionBean.java": "36ba4693a16129753e8a25f50ac0a319231d412d2ba2d99fd64c6d271718422d",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CartActionBean.java": "888122ea0575b7b7226cf469228bfe9d4e885d9a79aedfe7a7755dbb94646438",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/CatalogActionBean.java": "1c0c981a14cce97200e6e35948313d786dc152e716bd811e8f553bf797ef269d",
+   "resources/jpetstore-6/src/main/java/org/mybatis/jpetstore/web/actions/OrderActionBean.java": "8b4c5138bfc228d4485ff7efc9a538de81d9721ba8d8ab56d3c894d1861c753b"
+  }
+ },
+ "archivos_sha256": {
+  "replica-claude-code/run_baseline.py": "eaee00b03d7e0e8012be8cf679a08268f5abeee728fe9d2577e3acd105bce718",
+  "replica-claude-code/run_pipeline.py": "7db75bbb1f774f5e11d92174057092abb280087f7b6de8d475af00d414ccf108"
+ }
+}

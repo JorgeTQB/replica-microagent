@@ -1,0 +1,9 @@
+{
+  "Account Management": [
+    "org.mybatis.jpetstore.domain.Account",
+    "org.mybatis.jpetstore.mapper.AccountMapper",
+    "org.mybatis.jpetstore.service.AccountService",
+    "org.mybatis.jpetstore.web.actions.AccountActionBean",
+    "org.mybatis.jpetstore.web.actions.AbstractActionBean"
+  ]
+}

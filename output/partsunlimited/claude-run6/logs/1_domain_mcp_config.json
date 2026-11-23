@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "microagent": {
+      "command": "C:\\Python314\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\tools\\mcp_server.py"
+      ],
+      "env": {
+        "APP_NAME": "partsunlimited",
+        "RUN_ID": "claude-run6",
+        "MICROAGENT_TOOLS": "get_all_class_hierarchy,get_database_summary,get_all_class_summaries,get_class_basic_info,get_class_summary",
+        "MICROAGENT_LOG": "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\output\\partsunlimited\\claude-run6\\logs\\1_domain_server.jsonl"
+      }
+    }
+  }
+}

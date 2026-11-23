@@ -1,0 +1,36 @@
+I have now examined all the key catalog classes. Let me compile the complete list of classes that belong exclusively to the Catalog domain:
+
+**Catalog Domain Classes:**
+
+1. **Presentation Layer (Controller):**
+   - `smpl.ordering.controllers.CatalogController` - REST controller for `/catalog` endpoints
+
+2. **Domain Model:**
+   - `smpl.ordering.models.CatalogItem` - Domain model for catalog items with SKU, description, price, inventory, lead time
+
+3. **Data Layer (Repository Interface):**
+   - `smpl.ordering.repositories.CatalogItemsRepository` - Interface defining CRUD operations for catalog items
+
+4. **Data Layer (Mock Repository):**
+   - `smpl.ordering.repositories.mock.MockCatalogItemsRepository` - In-memory mock implementation for testing
+
+5. **Data Layer (MongoDB Repository):**
+   - `smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository` - MongoDB-based implementation
+
+6. **Data Layer (MongoDB Model):**
+   - `smpl.ordering.repositories.mongodb.models.CatalogItem` - MongoDB document model for catalog items
+
+These are all exclusively catalog-domain classes. The `RepositoryFactory`, `Utility`, `OrderingInitializer`, `TestPath`, and `MongoOperationsWithRetry` are shared infrastructure/utility classes used across multiple domains, not exclusively part of the Catalog domain.
+
+```json
+{
+  "Catalog": [
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.models.CatalogItem",
+    "smpl.ordering.repositories.CatalogItemsRepository",
+    "smpl.ordering.repositories.mock.MockCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.models.CatalogItem"
+  ]
+}
+```

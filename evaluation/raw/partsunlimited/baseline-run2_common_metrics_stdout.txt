@@ -1,0 +1,8 @@
+Calculating service-level metrics for 5 services
+False positive: smpl.ordering.ConflictingRequestException in CatalogService
+False positive: smpl.ordering.ConflictingRequestException in DealerService
+False positive: smpl.ordering.ConflictingRequestException in QuoteService
+Calculating utility-level metrics for 7 utility classes
+False positive: smpl.ordering.ConflictingRequestException in CatalogService
+False positive: smpl.ordering.ConflictingRequestException in DealerService
+False positive: smpl.ordering.ConflictingRequestException in QuoteService

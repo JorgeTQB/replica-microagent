@@ -1,0 +1,66 @@
+{
+  "app": "jpetstore-6",
+  "run_id": "prueba-humo-etapa1-b",
+  "modelo": "claude-sonnet-4-6",
+  "number": "3",
+  "num": "THREE",
+  "simulado": false,
+  "solo_etapa1": true,
+  "estado": "parcial_etapa1",
+  "inicio": "2026-11-16T16:12:09-05:00",
+  "fin": "2026-11-16T16:13:37-05:00",
+  "fallo": null,
+  "fusion": "no_alcanzada",
+  "etapas": [
+    {
+      "etapa": "1_domain",
+      "agente": "domain_agent",
+      "session_id": "6209bbcd-d190-4c6c-9d3f-e1e4e82fb875",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 20,
+      "max_turns": 30,
+      "duracion_ms": 33296,
+      "duracion_api_ms": 32804,
+      "costo_usd": 0.1479414,
+      "tokens": {
+        "input_tokens": 9,
+        "output_tokens": 2153,
+        "cache_creation_input_tokens": 15794,
+        "cache_read_input_tokens": 69518
+      },
+      "llamadas_a_herramientas": 19,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy": 1,
+        "mcp__microagent__get_all_class_summaries": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_basic_info": 16
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 4345,
+      "problemas": []
+    }
+  ],
+  "observaciones": [
+    {
+      "etapa": "1_domain",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    }
+  ],
+  "totales": {
+    "llamadas": 1,
+    "turnos": 20,
+    "duracion_ms": 33296,
+    "duracion_api_ms": 32804,
+    "costo_usd": 0.1479414,
+    "llamadas_a_herramientas": 19,
+    "tokens": {
+      "input_tokens": 9,
+      "output_tokens": 2153,
+      "cache_creation_input_tokens": 15794,
+      "cache_read_input_tokens": 69518
+    }
+  },
+  "resultado": null
+}

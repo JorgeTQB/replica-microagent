@@ -1,0 +1,30 @@
+I now have a comprehensive view of the Dealer domain classes. Let me compile the final list:
+
+**Dealer Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.DealerController` - REST controller for dealer CRUD operations
+
+2. **Domain Objects:**
+   - `smpl.ordering.models.DealerInfo` - The domain model representing dealer information
+
+3. **Data Layer (Repository Interface):**
+   - `smpl.ordering.repositories.DealersRepository` - Repository interface for dealer data access
+
+4. **Data Layer (Repository Implementations):**
+   - `smpl.ordering.repositories.mock.MockDealersRepository` - In-memory mock implementation
+   - `smpl.ordering.repositories.mongodb.MongoDealersRepository` - MongoDB implementation
+   - `smpl.ordering.repositories.mongodb.models.Dealer` - MongoDB document model for dealers
+
+```json
+{
+  "Dealer": [
+    "smpl.ordering.controllers.DealerController",
+    "smpl.ordering.models.DealerInfo",
+    "smpl.ordering.repositories.DealersRepository",
+    "smpl.ordering.repositories.mock.MockDealersRepository",
+    "smpl.ordering.repositories.mongodb.MongoDealersRepository",
+    "smpl.ordering.repositories.mongodb.models.Dealer"
+  ]
+}
+```

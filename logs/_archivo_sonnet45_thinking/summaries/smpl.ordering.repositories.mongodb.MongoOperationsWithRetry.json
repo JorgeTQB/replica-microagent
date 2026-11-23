@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 20860,
+  "stop_reason": "end_turn",
+  "session_id": "e00cf549-8998-4896-b924-725b35f9ce82",
+  "total_cost_usd": 0.055338,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 6521,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1079,
+    "output_tokens_details": {
+      "thinking_tokens": 674
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6521,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 1079,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 6521,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 6521
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 1079,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 6521,
+      "webSearchRequests": 0,
+      "costUSD": 0.055338,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 674,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 6521,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.repositories.mongodb.MongoOperationsWithRetry\": {\n    \"summary\": \"A decorator/wrapper class that implements the MongoOperations interface to add retry logic and telemetry tracking to MongoDB operations. **Purpose**: Enhances MongoDB operations with automatic retry on socket timeout exceptions and Application Insights telemetry monitoring. **Key Methods**: (1) Constructor `MongoOperationsWithRetry(MongoOperations underlying)` - wraps an underlying MongoOperations instance; (2) `sendTelemetry(Date start, Date end, String operation, boolean success)` - private helper that sends telemetry data to Application Insights, tracking operation duration and success status; (3) Enhanced methods with retry and telemetry: `dropCollection`, `findAll`, `findOne`, `exists`, `find`, `findAndRemove`, `insert`, and `save` - these methods catch `DataAccessResourceFailureException`, check if the root cause is a `SocketTimeoutException`, retry once if it is, and send telemetry data; (4) All other MongoOperations interface methods are delegated directly to the underlying instance without modification. **Retry Logic**: For specific operations, if a `SocketTimeoutException` occurs, the operation is automatically retried once; other exceptions are rethrown. **Telemetry**: Uses Microsoft Application Insights to track MongoDB operations as remote dependencies with operation name format 'MongoDB.[operation]', recording duration, count, and success/failure status. The class follows the Decorator pattern to add cross-cutting concerns (monitoring and resilience) without modifying core MongoDB functionality.\",\n    \"file_path\": \"smpl/ordering/repositories/mongodb/MongoOperationsWithRetry.java\"\n  }\n}\n```",
+  "ttft_ms": 14765,
+  "type": "result",
+  "duration_ms": 21079,
+  "uuid": "4a707462-f6a9-411b-ae22-c1d04afc70d1",
+  "ttft_stream_ms": 2196,
+  "time_to_request_ms": 215,
+  "first_content_frame_ms": 2196,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

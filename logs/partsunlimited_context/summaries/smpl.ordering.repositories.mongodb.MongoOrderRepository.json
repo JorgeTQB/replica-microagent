@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 11127,
+  "stop_reason": "end_turn",
+  "session_id": "cad19784-4a96-4ced-ad7c-5e10d403256c",
+  "total_cost_usd": 0.022161,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2330,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 545,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2330,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 545,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2330,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2330
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 545,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2330,
+      "webSearchRequests": 0,
+      "costUSD": 0.022161,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2330,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.MongoOrderRepository\": {\n        \"summary\": \"MongoOrderRepository is a MongoDB-backed implementation of the OrderRepository and TestPath interfaces, responsible for managing Order entities in a MongoDB database. It uses Spring Data MongoDB (MongoOperations/MongoTemplate) for all database interactions, wrapping operations through a MongoOperationsWithRetry wrapper for resilience.\\n\\nKey methods:\\n- hasOrder(String id): Checks whether an order with the given ID exists in the database.\\n- getOrder(String id): Retrieves a single Order by its order ID, returning null if not found.\\n- getOrdersByStatus(OrderStatus status): Returns all orders matching a given status; if status is None, returns all orders.\\n- getOrdersByDealerName(String dealer, OrderStatus status): Retrieves orders associated with a specific dealer (by looking up quote IDs from the QuoteRepository), optionally filtered by status.\\n- getOrderByQuoteId(String id): Fetches the order linked to a specific quote ID.\\n- createOrder(String from): Creates a new order from a quote ID. Validates that the quote exists and has not already been used for another order. Sets the order date, generates an order ID (formatted as 'order-{quoteId}'), and sets the initial status to Created.\\n- updateOrder(String id, Order order, String eTag): Replaces the order data for the given ID with the provided Order object.\\n- updateOrder(String id, OrderUpdateInfo info, String eTag): Partially updates an order by appending an event and updating the status from an OrderUpdateInfo object.\\n- removeOrder(String id, String eTag): Deletes the order with the given ID from the database.\\n- reset(): Drops the entire 'orders' collection and resets the internal atomic counter; used for test cleanup (TestPath interface).\\n\\nThe class maintains a QuoteRepository dependency to validate and look up quote information during order creation and dealer-based queries. An AtomicLong static counter (s_counter) is initialized for potential ID generation, though it is reset alongside the collection in the reset() method. The class is instantiated via a constructor accepting a MongoTemplate and a QuoteRepository.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/MongoOrderRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 11453,
+  "type": "result",
+  "duration_ms": 11501,
+  "uuid": "68239c48-d310-4584-b71a-3394353265f4",
+  "ttft_stream_ms": 3430,
+  "time_to_request_ms": 405,
+  "first_content_frame_ms": 3431,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

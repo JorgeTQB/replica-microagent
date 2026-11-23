@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 18643,
+  "stop_reason": "end_turn",
+  "session_id": "c38fd9ec-8356-418d-a2f7-ac3e894f5d92",
+  "total_cost_usd": 0.027479999999999997,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 2028,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1019,
+    "output_tokens_details": {
+      "thinking_tokens": 692
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2028,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 1019,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2028,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2028
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 1019,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2028,
+      "webSearchRequests": 0,
+      "costUSD": 0.027479999999999997,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 692,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2028,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.repositories.mongodb.MongoQuoteRepository\": {\n    \"summary\": \"MongoDB implementation of the QuoteRepository interface that provides data access operations for managing quotes in a MongoDB database. Key methods include: `getQuote(String id)` retrieves a quote by ID; `getQuotesByCustomerName(String customerName)` searches quotes by customer name with case-insensitive partial matching (NOTE: currently loads all quotes into memory for filtering rather than using database queries - see TODO); `getQuoteIdsByDealerName(String dealerName)` returns quote IDs for a specific dealer; `createQuote(Quote from)` creates a new quote, auto-generating an ID if needed and validating for duplicates; `updateQuote(String id, Quote from, String eTag)` updates an existing quote; `removeQuote(String id, String eTag)` deletes a quote. The class uses MongoOperationsWithRetry wrapper for database operations (providing retry logic), maintains a DealersRepository reference for dealer validation/creation, and works with QuoteDetails as the MongoDB document model. It implements TestPath interface providing a `reset()` method that drops the quotes collection for testing purposes. Quote IDs are generated using a static Random counter as positive integers.\",\n    \"file_path\": \"smpl/ordering/repositories/mongodb/MongoQuoteRepository.java\"\n  }\n}\n```",
+  "ttft_ms": 13973,
+  "type": "result",
+  "duration_ms": 18849,
+  "uuid": "da50d63d-167f-4dad-b0b3-e8e7f9eff7e8",
+  "ttft_stream_ms": 1068,
+  "time_to_request_ms": 188,
+  "first_content_frame_ms": 1069,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

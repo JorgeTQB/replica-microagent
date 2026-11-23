@@ -1,0 +1,34 @@
+Based on my thorough analysis of the codebase, I have now identified all the classes that belong exclusively to the Order domain. Let me compile the final list:
+
+**Order Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.OrderController` - REST controller for order management
+
+2. **Business/Domain Model Layer:**
+   - `smpl.ordering.models.Order` - Core order domain entity
+   - `smpl.ordering.models.OrderEventInfo` - Order event/comment information
+   - `smpl.ordering.models.OrderStatus` - Order lifecycle status enumeration
+   - `smpl.ordering.models.OrderUpdateInfo` - Order status update information
+
+3. **Data Access Layer:**
+   - `smpl.ordering.repositories.OrderRepository` - Repository interface for orders
+   - `smpl.ordering.repositories.mock.MockOrderRepository` - In-memory mock implementation
+   - `smpl.ordering.repositories.mongodb.MongoOrderRepository` - MongoDB implementation
+   - `smpl.ordering.repositories.mongodb.models.OrderDetails` - MongoDB document model for orders
+
+```json
+{
+  "Order": [
+    "smpl.ordering.controllers.OrderController",
+    "smpl.ordering.models.Order",
+    "smpl.ordering.models.OrderEventInfo",
+    "smpl.ordering.models.OrderStatus",
+    "smpl.ordering.models.OrderUpdateInfo",
+    "smpl.ordering.repositories.OrderRepository",
+    "smpl.ordering.repositories.mock.MockOrderRepository",
+    "smpl.ordering.repositories.mongodb.MongoOrderRepository",
+    "smpl.ordering.repositories.mongodb.models.OrderDetails"
+  ]
+}
+```

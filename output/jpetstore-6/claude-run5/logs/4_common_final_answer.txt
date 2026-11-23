@@ -1,0 +1,29 @@
+## Summary
+
+All 3 domains have been saved successfully. Here's what was identified and assigned:
+
+### Common Class Identified: `AbstractActionBean`
+
+**Analysis:**
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` is a pure infrastructure/utility base class with no domain-specific logic
+- It is extended by **all 4 action beans** across all 3 domains:
+  - `AccountActionBean` → Account Management
+  - `CatalogActionBean` → Catalog  
+  - `CartActionBean` → Shopping Cart and Order Management
+  - `OrderActionBean` → Shopping Cart and Order Management
+- It provides shared web framework infrastructure (`ActionBean` interface implementation, context management, messaging)
+- **Assigned to all 3 domains**
+
+**Other High-Entropy Classes Evaluated (NOT common classes):**
+- `CatalogService` - Domain-specific service belonging to Catalog; used by other domains for data access but it's not a utility/common class
+- `Item` - Domain entity belonging to Catalog; cross-domain usage is normal data access, not utility behavior
+- `Account` - Domain entity belonging to Account Management; used by Order domain as data transfer
+- `AccountActionBean`, `CartActionBean` - Domain-specific action beans; `OrderActionBean` using them is cross-domain coordination within the merged "Shopping Cart and Order Management" domain
+
+### Final Domain Assignments:
+
+| Domain | Classes |
+|--------|---------|
+| **Account Management** | 5 classes (4 original + AbstractActionBean) |
+| **Catalog** | 9 classes (8 original + AbstractActionBean) |
+| **Shopping Cart and Order Management** | 12 classes (11 original + AbstractActionBean) |

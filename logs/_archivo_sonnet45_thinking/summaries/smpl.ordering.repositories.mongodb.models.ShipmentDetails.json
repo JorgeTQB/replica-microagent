@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 11498,
+  "stop_reason": "end_turn",
+  "session_id": "f22dd1e0-e9ac-4e68-9fa4-d046231cca92",
+  "total_cost_usd": 0.018504,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1352,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 691,
+    "output_tokens_details": {
+      "thinking_tokens": 459
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1352,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 691,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1352,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1352
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 691,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1352,
+      "webSearchRequests": 0,
+      "costUSD": 0.018504,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 459,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1352,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.mongodb.models.ShipmentDetails\": {\n        \"summary\": \"A MongoDB document entity class that represents shipment details stored in the 'shipments' collection. This class serves as a data transfer object between the MongoDB persistence layer and the domain model layer. It contains shipment information including order reference, delivery events, delivery address, and contact information. Key methods include: getId()/setId() for managing the MongoDB document identifier; a constructor that accepts a ShipmentRecord to convert from domain model to MongoDB model; and toShipmentRecord() which converts the MongoDB model back to a domain model ShipmentRecord. The orderId field is indexed for efficient querying. The class maintains arrays of ShipmentEventInfo objects to track shipment events, DeliveryAddress for destination information, and PhoneInfo objects for primary and alternate contact numbers.\",\n        \"file_path\": \"smpl/ordering/repositories/mongodb/models/ShipmentDetails.java\"\n    }\n}\n```",
+  "ttft_ms": 8251,
+  "type": "result",
+  "duration_ms": 11778,
+  "uuid": "a0ff60a8-d239-4fd7-8c7a-6bf2f7b3fde4",
+  "ttft_stream_ms": 1152,
+  "time_to_request_ms": 281,
+  "first_content_frame_ms": 1152,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

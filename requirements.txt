@@ -1,0 +1,8 @@
+# Réplica de MicroAgent con Claude Code (INSTRUCCIONES §4.1). No se instala CrewAI (shim en tools/microagent_shim.py).
+sentence-transformers>=4.1.0
+scikit-learn
+numpy
+pyyaml
+pydantic>=2
+# mcp 2.x renombró FastMCP a MCPServer; la especificación pide FastMCP (DECISIONES.md D19).
+mcp>=1.30,<2

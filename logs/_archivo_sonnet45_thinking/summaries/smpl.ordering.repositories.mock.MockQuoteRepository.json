@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 13960,
+  "stop_reason": "end_turn",
+  "session_id": "c778332d-11f1-4a20-b6ee-c430ae535109",
+  "total_cost_usd": 0.024375,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 2043,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 806,
+    "output_tokens_details": {
+      "thinking_tokens": 496
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2043,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 806,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2043,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2043
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 806,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2043,
+      "webSearchRequests": 0,
+      "costUSD": 0.024375,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 496,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2043,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.repositories.mock.MockQuoteRepository\": {\n    \"summary\": \"An in-memory repository implementation for managing Quote objects, used for testing the API surface area. This class implements QuoteRepository and TestPath interfaces, providing full CRUD operations on quotes. Key methods include: getQuote(String id) for retrieving a specific quote by ID; getQuotesByCustomerName(String customerName) for searching quotes by customer name with case-insensitive partial matching; getQuoteIdsByDealerName(String dealerName) for retrieving quote IDs by dealer name; createQuote(Quote quote) for creating new quotes with automatic ID generation if not provided and duplicate validation; updateQuote(String id, Quote from, String eTag) for updating existing quotes; removeQuote(String id, String eTag) for deleting quotes; and reset() for clearing all quotes (test utility method). The repository stores quotes in an in-memory ArrayList, uses a static Random counter for generating quote IDs, and automatically creates dealer entries in the DealersRepository if they don't exist when creating or updating quotes. While the methods accept eTag parameters for optimistic concurrency control, the mock implementation does not actually validate them.\",\n    \"file_path\": \"smpl/ordering/repositories/mock/MockQuoteRepository.java\"\n  }\n}\n```",
+  "ttft_ms": 9546,
+  "type": "result",
+  "duration_ms": 14154,
+  "uuid": "5b42bac1-3c94-4ced-9794-2e9d49061c5c",
+  "ttft_stream_ms": 1098,
+  "time_to_request_ms": 193,
+  "first_content_frame_ms": 1098,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

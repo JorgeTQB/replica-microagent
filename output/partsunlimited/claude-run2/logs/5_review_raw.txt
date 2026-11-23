@@ -1,0 +1,30 @@
+All 5 domains have been saved successfully. Here is the complete final summary:
+
+---
+
+## Final Microservice Decomposition — Complete Results
+
+### Analysis of `smpl.ordering.PostgresqlProperties`
+
+**Investigation Results:**
+- `PostgresqlProperties` is a `@ConfigurationProperties(prefix = "postgresql")` class holding PostgreSQL connection settings (username, password, driverClass, url)
+- It has **zero dependencies** — no class depends on it and it depends on nothing
+- It was **not referenced** in `OrderingConfiguration`, `RepositoryFactory`, or any other class
+- It is a **parallel infrastructure configuration class** to `MongoDBProperties` (which is already assigned to all 5 domains)
+- The database schema (`schema.psql`) confirms PostgreSQL tables exist, suggesting this class supports an alternative storage backend
+
+**Decision:** Assign `PostgresqlProperties` to **all 5 domains** as a shared infrastructure configuration class. This mirrors the treatment of `MongoDBProperties` and ensures each microservice can independently configure its data storage layer, avoiding the "shared database configuration" anti-pattern.
+
+---
+
+### Final Microservice Partitions (5 Microservices):
+
+| Domain | Total Classes | Key Domain Classes | Shared/Common Classes |
+|--------|--------------|-------------------|----------------------|
+| **Catalog** | 20 | CatalogController, CatalogItem (model), CatalogItemsRepository, MockCatalogItemsRepository, MongoCatalogItemsRepository, CatalogItem (mongodb model) | 14 common classes + PostgresqlProperties |
+| **Dealer** | 20 | DealerController, DealerInfo, DealersRepository, MockDealersRepository, MongoDealersRepository, Dealer (mongodb model) | 14 common classes + PostgresqlProperties |
+| **Quote** | 21 | QuoteController, Quote, QuoteItemInfo, QuoteRepository, MockQuoteRepository, MongoQuoteRepository, QuoteDetails | 14 common classes + PostgresqlProperties |
+| **Order** | 24 | OrderController, Order, OrderEventInfo, OrderStatus, OrderUpdateInfo, OrderRepository, MockOrderRepository, MongoOrderRepository, OrderDetails, ConflictingRequestException | 14 common classes + PostgresqlProperties |
+| **Shipment** | 25 | ShipmentController, ShipmentRecord, ShipmentEventInfo, DeliveryAddress, PhoneInfo, Delivery, ShipmentRepository, MockShipmentRepository, MongoShipmentRepository, ShipmentDetails, ConflictingRequestException | 14 common classes + PostgresqlProperties |
+
+**Total: 5 microservices, 110 class assignments (with shared classes counted per domain)**

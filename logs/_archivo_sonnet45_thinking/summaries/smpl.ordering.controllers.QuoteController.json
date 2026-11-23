@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 19921,
+  "stop_reason": "end_turn",
+  "session_id": "f17d5711-8583-479c-94f0-3818cc560e7c",
+  "total_cost_usd": 0.033243,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 2451,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1234,
+    "output_tokens_details": {
+      "thinking_tokens": 924
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2451,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 1234,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2451,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2451
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 1234,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2451,
+      "webSearchRequests": 0,
+      "costUSD": 0.033243,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 924,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 2451,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.QuoteController\": {\n        \"summary\": \"REST controller that manages quote-related HTTP requests mapped to the '/quotes' endpoint. Provides complete CRUD operations for quotes: (1) getQuoteById() - retrieves a single quote by ID via GET /{quoteId}; (2) getQuotesByCustomerName() - searches quotes by customer name fragment via GET with 'name' query parameter (case-insensitive); (3) createQuote() - creates a new quote via POST, sets Location header in response, returns 201 CREATED on success or 409 CONFLICT if quote already exists; (4) updateQuote() - updates an existing quote via PUT /{quoteId}; (5) deleteQuote() - removes a quote via DELETE /{quoteId}, returns 204 NO_CONTENT on success. All methods perform input validation using Quote.validate() before processing, return appropriate HTTP status codes (200, 201, 204, 400, 404, 409, 500), and include comprehensive exception handling with telemetry tracking via Application Insights TelemetryClient. Accesses data layer through QuoteRepository obtained from RepositoryFactory.\",\n        \"file_path\": \"smpl/ordering/controllers/QuoteController.java\"\n    }\n}\n```",
+  "ttft_ms": 16358,
+  "type": "result",
+  "duration_ms": 20136,
+  "uuid": "5cba38be-d4fe-45d3-ab23-3fb2c1f82a0e",
+  "ttft_stream_ms": 1123,
+  "time_to_request_ms": 211,
+  "first_content_frame_ms": 1124,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

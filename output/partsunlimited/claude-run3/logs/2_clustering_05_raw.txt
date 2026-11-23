@@ -1,0 +1,34 @@
+Based on my thorough analysis of the codebase, I can now identify all domain-specific classes for the Shipment Management domain. Let me compile the final list:
+
+**Presentation Layer:**
+- `smpl.ordering.controllers.ShipmentController` - REST controller for shipment operations
+
+**Domain Objects / Models:**
+- `smpl.ordering.models.ShipmentRecord` - Core shipment domain entity
+- `smpl.ordering.models.ShipmentEventInfo` - Shipment event log entries
+- `smpl.ordering.models.Delivery` - Aggregate delivery view (shipment + order + quote)
+- `smpl.ordering.models.DeliveryAddress` - Delivery address details (exclusively used by ShipmentRecord/ShipmentDetails)
+- `smpl.ordering.models.PhoneInfo` - Contact phone information (exclusively used by ShipmentRecord/ShipmentDetails)
+
+**Data Layer:**
+- `smpl.ordering.repositories.ShipmentRepository` - Repository interface for shipments
+- `smpl.ordering.repositories.mock.MockShipmentRepository` - In-memory test implementation
+- `smpl.ordering.repositories.mongodb.MongoShipmentRepository` - MongoDB implementation
+- `smpl.ordering.repositories.mongodb.models.ShipmentDetails` - MongoDB document model for shipments
+
+```json
+{
+  "Shipment Management": [
+    "smpl.ordering.controllers.ShipmentController",
+    "smpl.ordering.models.ShipmentRecord",
+    "smpl.ordering.models.ShipmentEventInfo",
+    "smpl.ordering.models.Delivery",
+    "smpl.ordering.models.DeliveryAddress",
+    "smpl.ordering.models.PhoneInfo",
+    "smpl.ordering.repositories.ShipmentRepository",
+    "smpl.ordering.repositories.mock.MockShipmentRepository",
+    "smpl.ordering.repositories.mongodb.MongoShipmentRepository",
+    "smpl.ordering.repositories.mongodb.models.ShipmentDetails"
+  ]
+}
+```

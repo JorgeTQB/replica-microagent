@@ -1,0 +1,34 @@
+Based on my thorough analysis of the codebase, I can now identify all the domain-specific classes for the Catalog Management domain. Let me compile the final list:
+
+**Presentation Layer:**
+- `CatalogActionBean` - handles catalog browsing, category/product/item viewing, and search
+
+**Business Layer:**
+- `CatalogService` - business logic for catalog operations (search, browse by category, item availability)
+
+**Data Layer (Mappers):**
+- `CategoryMapper` - data access for categories
+- `ProductMapper` - data access for products
+- `ItemMapper` - data access for items and inventory
+
+**Domain Objects:**
+- `Category` - represents a product category (e.g., Fish, Dogs)
+- `Product` - represents a product within a category
+- `Item` - represents a specific SKU with pricing, attributes, supplier info, and inventory
+
+Note: `AbstractActionBean` is a shared base class used across multiple domains (Account, Cart, Order, Catalog), so it belongs to common/support classes, not exclusively to Catalog Management. The `ItemMapper` is used by both CatalogService and OrderService, but since it primarily serves catalog data (item lookup, inventory query), and inventory deduction by OrderService is a cross-domain operation, `ItemMapper` is core to Catalog Management.
+
+```json
+{
+  "Catalog Management": [
+    "org.mybatis.jpetstore.web.actions.CatalogActionBean",
+    "org.mybatis.jpetstore.service.CatalogService",
+    "org.mybatis.jpetstore.mapper.CategoryMapper",
+    "org.mybatis.jpetstore.mapper.ProductMapper",
+    "org.mybatis.jpetstore.mapper.ItemMapper",
+    "org.mybatis.jpetstore.domain.Category",
+    "org.mybatis.jpetstore.domain.Product",
+    "org.mybatis.jpetstore.domain.Item"
+  ]
+}
+```

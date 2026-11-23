@@ -1,0 +1,31 @@
+Based on my thorough analysis of the codebase, I can now identify the classes belonging exclusively to the Account Management domain. Let me review my findings:
+
+**Account Management Domain Classes:**
+
+1. **`org.mybatis.jpetstore.domain.Account`** - Domain object representing a user account with all personal information, credentials, and preferences (maps to `signon`, `account`, `profile`, and `bannerdata` tables)
+
+2. **`org.mybatis.jpetstore.mapper.AccountMapper`** - Data layer interface providing all persistence operations for accounts (get, insert, update for account, profile, signon)
+
+3. **`org.mybatis.jpetstore.service.AccountService`** - Business logic layer handling account creation, updates, and authentication
+
+4. **`org.mybatis.jpetstore.web.actions.AccountActionBean`** - Presentation layer handling all account-related HTTP requests (registration, signon, signoff, profile editing)
+
+**Classes to EXCLUDE:**
+- `org.mybatis.jpetstore.web.actions.AbstractActionBean` - This is a base/common class extended by all action beans (Account, Cart, Catalog, Order), so it's a shared utility
+- `org.mybatis.jpetstore.domain.Order` - Belongs to Order Management domain
+- `org.mybatis.jpetstore.domain.Product` - Belongs to Catalog domain
+- `org.mybatis.jpetstore.service.CatalogService` - Belongs to Catalog domain
+- `org.mybatis.jpetstore.web.actions.OrderActionBean` - Belongs to Order Management domain
+
+The `AccountActionBean` uses `CatalogService` to fetch product lists by favorite category for display purposes, but `CatalogService` itself belongs to the Catalog domain. The `AbstractActionBean` is a shared base class used across all domains.
+
+```json
+{
+  "Account Management": [
+    "org.mybatis.jpetstore.domain.Account",
+    "org.mybatis.jpetstore.mapper.AccountMapper",
+    "org.mybatis.jpetstore.service.AccountService",
+    "org.mybatis.jpetstore.web.actions.AccountActionBean"
+  ]
+}
+```

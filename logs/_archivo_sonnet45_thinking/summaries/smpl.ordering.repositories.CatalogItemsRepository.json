@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 12678,
+  "stop_reason": "end_turn",
+  "session_id": "2691ca45-facc-4ba9-a623-81fabeafe9d9",
+  "total_cost_usd": 0.015855,
+  "usage": {
+    "input_tokens": 960,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 865,
+    "output_tokens_details": {
+      "thinking_tokens": 630
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 960,
+        "output_tokens": 865,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 960,
+      "outputTokens": 865,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.015855,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 630,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.repositories.CatalogItemsRepository\": {\n    \"summary\": \"Repository interface for managing catalog item data. Provides CRUD operations for catalog items including: (1) getCatalogItems() - retrieves all catalog items; (2) getCatalogItem(String sku) - retrieves a specific catalog item by SKU (Stock Keeping Unit); (3) upsertCatalogItem(String sku, CatalogItem catalogItem, String eTag) - inserts or updates a catalog item with optimistic concurrency control via eTag, returns true if successful; (4) removeCatalogItem(String sku, String eTag) - removes a catalog item by SKU with eTag-based concurrency control, returns true if successful. The interface uses eTag parameters in modification operations to support optimistic concurrency control and prevent conflicting updates.\",\n    \"file_path\": \"smpl/ordering/repositories/CatalogItemsRepository.java\"\n  }\n}\n```",
+  "ttft_ms": 10381,
+  "type": "result",
+  "duration_ms": 12868,
+  "uuid": "481d59ef-9c37-40cc-a368-b6592cd39eb1",
+  "ttft_stream_ms": 1034,
+  "time_to_request_ms": 185,
+  "first_content_frame_ms": 1035,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "app": "partsunlimited",
+  "run_id": "claude-run1",
+  "modelo": "claude-sonnet-4-6",
+  "number": "5",
+  "num": "FIVE",
+  "simulado": false,
+  "solo_etapa1": false,
+  "estado": "completa",
+  "inicio": "2026-11-21T14:32:41-05:00",
+  "fin": "2026-11-21T14:46:36-05:00",
+  "fallo": null,
+  "fusion": "saltada",
+  "etapas": [
+    {
+      "etapa": "1_domain",
+      "agente": "domain_agent",
+      "session_id": "a120e9a4-6e4a-4590-921f-3bca5a68322c",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 44,
+      "max_turns": 30,
+      "peticiones_api": 10,
+      "duracion_ms": 49305,
+      "duracion_api_ms": 48891,
+      "costo_usd": 0.25845419999999997,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 3884,
+        "cache_creation_input_tokens": 27220,
+        "cache_read_input_tokens": 122794
+      },
+      "llamadas_a_herramientas": 43,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy": 1,
+        "mcp__microagent__get_all_class_summaries": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_basic_info": 30,
+        "mcp__microagent__get_class_summary": 10
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 5968,
+      "limite_de_turnos": false,
+      "problemas": []
+    },
+    {
+      "etapa": "2_clustering_01",
+      "agente": "clustering_agent",
+      "session_id": "b3a99938-d4a7-420e-97fe-9f04756e5c36",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 11,
+      "max_turns": 30,
+      "peticiones_api": 6,
+      "duracion_ms": 25260,
+      "duracion_api_ms": 18105,
+      "costo_usd": 0.1346328,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 1198,
+        "cache_creation_input_tokens": 16998,
+        "cache_read_input_tokens": 48836
+      },
+      "llamadas_a_herramientas": 10,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__codebase_semantic_search": 1,
+        "mcp__microagent__get_related_class_list": 1,
+        "mcp__microagent__get_class_relation_and_code": 6
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 1494,
+      "limite_de_turnos": false,
+      "problemas": [],
+      "dominio_de_la_tarea": "Product Catalog",
+      "dominio_emparejado": "Product Catalog"
+    },
+    {
+      "etapa": "2_clustering_02",
+      "agente": "clustering_agent",
+      "session_id": "841b682d-4973-42a2-b695-bfcd334d508e",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 11,
+      "max_turns": 30,
+      "peticiones_api": 6,
+      "duracion_ms": 27291,
+      "duracion_api_ms": 18897,
+      "costo_usd": 0.1216494,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 1251,
+        "cache_creation_input_tokens": 14679,
+        "cache_read_input_tokens": 49288
+      },
+      "llamadas_a_herramientas": 10,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__codebase_semantic_search": 1,
+        "mcp__microagent__get_related_class_list": 1,
+        "mcp__microagent__get_class_relation_and_code": 6
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 1800,
+      "limite_de_turnos": false,
+      "problemas": [],
+      "dominio_de_la_tarea": "Dealer Management",
+      "dominio_emparejado": "Dealer Management"
+    },
+    {
+      "etapa": "2_clustering_03",
+      "agente": "clustering_agent",
+      "session_id": "fe233dd1-18ab-4447-abe0-e55ba1d695c8",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 12,
+      "max_turns": 30,
+      "peticiones_api": 6,
+      "duracion_ms": 32827,
+      "duracion_api_ms": 20590,
+      "costo_usd": 0.1585845,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 1440,
+        "cache_creation_input_tokens": 19804,
+        "cache_read_input_tokens": 60455
+      },
+      "llamadas_a_herramientas": 11,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_relation_and_code": 7,
+        "mcp__microagent__codebase_semantic_search": 1,
+        "mcp__microagent__get_related_class_list": 1
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 2145,
+      "limite_de_turnos": false,
+      "problemas": [],
+      "dominio_de_la_tarea": "Quote Management",
+      "dominio_emparejado": "Quote Management"
+    },
+    {
+      "etapa": "2_clustering_04",
+      "agente": "clustering_agent",
+      "session_id": "47fcab05-b09b-4727-87a4-2c48f676136b",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 12,
+      "max_turns": 30,
+      "peticiones_api": 4,
+      "duracion_ms": 15920,
+      "duracion_api_ms": 15058,
+      "costo_usd": 0.1180968,
+      "tokens": {
+        "input_tokens": 6,
+        "output_tokens": 1090,
+        "cache_creation_input_tokens": 15751,
+        "cache_read_input_tokens": 24076
+      },
+      "llamadas_a_herramientas": 11,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_relation_and_code": 9
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 1483,
+      "limite_de_turnos": false,
+      "problemas": [],
+      "dominio_de_la_tarea": "Order Management",
+      "dominio_emparejado": "Order Management"
+    },
+    {
+      "etapa": "2_clustering_05",
+      "agente": "clustering_agent",
+      "session_id": "39b5bf57-4412-451b-9d11-2fb53be67c99",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 15,
+      "max_turns": 30,
+      "peticiones_api": 8,
+      "duracion_ms": 31902,
+      "duracion_api_ms": 22191,
+      "costo_usd": 0.18167489999999997,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 1534,
+        "cache_creation_input_tokens": 21489,
+        "cache_read_input_tokens": 99003
+      },
+      "llamadas_a_herramientas": 14,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__codebase_semantic_search": 1,
+        "mcp__microagent__get_related_class_list": 1,
+        "mcp__microagent__get_class_relation_and_code": 10
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 1639,
+      "limite_de_turnos": false,
+      "problemas": [],
+      "dominio_de_la_tarea": "Shipment and Delivery",
+      "dominio_emparejado": "Shipment and Delivery"
+    },
+    {
+      "etapa": "4_common",
+      "agente": "common_class_agent",
+      "session_id": "f88d19b4-f0e2-4f92-b6fb-afdb9d90951c",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 25,
+      "max_turns": 45,
+      "peticiones_api": 17,
+      "duracion_ms": 62113,
+      "duracion_api_ms": 60313,
+      "costo_usd": 0.36287310000000006,
+      "tokens": {
+        "input_tokens": 19,
+        "output_tokens": 5102,
+        "cache_creation_input_tokens": 31738,
+        "cache_read_input_tokens": 319527
+      },
+      "llamadas_a_herramientas": 24,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__rank_dependency_entropy": 1,
+        "mcp__microagent__get_more_potential_common_classes": 1,
+        "mcp__microagent__get_class_relation_and_code": 14,
+        "mcp__microagent__assign_common_class_list": 1,
+        "mcp__microagent__write_result_to_json": 5
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 1924,
+      "limite_de_turnos": false,
+      "problemas": []
+    },
+    {
+      "etapa": "5_review",
+      "agente": "review_agent",
+      "session_id": "be1d4f02-5c80-4fd7-9f46-004bd91832c9",
+      "subtype": "success",
+      "is_error": false,
+      "turnos": 24,
+      "max_turns": 45,
+      "peticiones_api": 15,
+      "duracion_ms": 61667,
+      "duracion_api_ms": 60052,
+      "costo_usd": 0.3416442,
+      "tokens": {
+        "input_tokens": 17,
+        "output_tokens": 4256,
+        "cache_creation_input_tokens": 31575,
+        "cache_read_input_tokens": 294344
+      },
+      "llamadas_a_herramientas": 23,
+      "herramientas_usadas": {
+        "mcp__microagent__get_all_class_hierarchy_complete": 1,
+        "mcp__microagent__get_database_summary": 1,
+        "mcp__microagent__get_class_relation_and_code": 16,
+        "mcp__microagent__write_result_to_json": 5
+      },
+      "etiqueta_final_answer": false,
+      "caracteres_respuesta": 3202,
+      "limite_de_turnos": false,
+      "problemas": []
+    }
+  ],
+  "observaciones": [
+    {
+      "etapa": "1_domain",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "2_clustering_01",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "2_clustering_02",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "2_clustering_03",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "2_clustering_04",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "2_clustering_05",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "4_common",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    },
+    {
+      "etapa": "5_review",
+      "tipo": "sin_etiqueta_final_answer",
+      "detalle": "el texto final no contiene 'Final Answer:'; se toma completo (D31)"
+    }
+  ],
+  "totales": {
+    "llamadas": 8,
+    "turnos": 154,
+    "peticiones_api": 72,
+    "duracion_ms": 306285,
+    "duracion_api_ms": 264097,
+    "costo_usd": 1.6776099,
+    "llamadas_a_herramientas": 146,
+    "tokens": {
+      "input_tokens": 88,
+      "output_tokens": 19755,
+      "cache_creation_input_tokens": 179254,
+      "cache_read_input_tokens": 1018323
+    }
+  },
+  "resultado": {
+    "archivo": "output/partsunlimited/claude-run1/result.json",
+    "particiones": 5,
+    "clases_por_particion": {
+      "Product Catalog": 19,
+      "Dealer Management": 19,
+      "Quote Management": 21,
+      "Order Management": 24,
+      "Shipment and Delivery": 25
+    },
+    "clases_distintas_asignadas": 53,
+    "clases_del_universo": 53,
+    "clases_sin_asignar": [],
+    "clases_fuera_del_universo": []
+  }
+}

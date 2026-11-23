@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 8351,
+  "stop_reason": "end_turn",
+  "session_id": "ccb00289-f0e7-40bd-9521-0a6b2f1adb03",
+  "total_cost_usd": 0.009336,
+  "usage": {
+    "input_tokens": 947,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 433,
+    "output_tokens_details": {
+      "thinking_tokens": 245
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 947,
+        "output_tokens": 433,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 947,
+      "outputTokens": 433,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.009336,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 245,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.repositories.DealersRepository\": {\n        \"summary\": \"Repository interface for managing dealer information. Provides CRUD operations for dealers including: retrieving all dealers via getDealers(), fetching a specific dealer by name using getDealer(), upserting (insert or update) a dealer with optimistic concurrency control via upsertDealer() which takes a DealerInfo object and eTag parameter, and removing a dealer by name with removeDealer() also using an eTag for concurrency control. The eTag parameters in upsert and remove operations suggest support for optimistic locking to prevent concurrent modification conflicts. Boolean return values indicate operation success or failure.\",\n        \"file_path\": \"smpl/ordering/repositories/DealersRepository.java\"\n    }\n}\n```",
+  "ttft_ms": 5260,
+  "type": "result",
+  "duration_ms": 8567,
+  "uuid": "0e1646e9-7430-4ebc-bbae-c2fad2d4e713",
+  "ttft_stream_ms": 1093,
+  "time_to_request_ms": 209,
+  "first_content_frame_ms": 1093,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

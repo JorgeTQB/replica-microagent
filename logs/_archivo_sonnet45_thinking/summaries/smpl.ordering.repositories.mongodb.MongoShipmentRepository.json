@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 16326,
+  "stop_reason": "end_turn",
+  "session_id": "3d63318e-60b3-417f-b65b-8aba1c408953",
+  "total_cost_usd": 0.026073,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1951,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 956,
+    "output_tokens_details": {
+      "thinking_tokens": 649
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1951,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 956,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1951,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1951
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 956,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1951,
+      "webSearchRequests": 0,
+      "costUSD": 0.026073,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 649,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1951,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n  \"smpl.ordering.repositories.mongodb.MongoShipmentRepository\": {\n    \"summary\": \"MongoDB-based implementation of the ShipmentRepository interface for managing shipment records. This class provides CRUD operations for shipments stored in MongoDB, integrating with the OrderRepository for order validation. Key methods include: getShipments(OrderStatus) which retrieves shipments filtered by order status; getShipmentById(String) for fetching individual shipments by order ID; createShipment(ShipmentRecord) which validates the associated order exists and ensures no duplicate shipments before insertion (throws BadRequestException if order not found, ConflictingRequestException if shipment already exists); addEvent(String, ShipmentEventInfo) for adding events to existing shipments; updateShipment(ShipmentRecord) for updating shipment records; and removeShipment(String, String) for deletion. The class uses ShipmentDetails as the MongoDB document model and converts to/from ShipmentRecord domain objects. It wraps MongoTemplate operations in MongoOperationsWithRetry for resilience. Also implements TestPath interface, providing a reset() method that drops the shipments collection for testing purposes.\",\n    \"file_path\": \"smpl/ordering/repositories/mongodb/MongoShipmentRepository.java\"\n  }\n}\n```",
+  "ttft_ms": 11851,
+  "type": "result",
+  "duration_ms": 16578,
+  "uuid": "2af776de-e1aa-4c1a-9ea9-d62eca2b0d10",
+  "ttft_stream_ms": 1139,
+  "time_to_request_ms": 255,
+  "first_content_frame_ms": 1139,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

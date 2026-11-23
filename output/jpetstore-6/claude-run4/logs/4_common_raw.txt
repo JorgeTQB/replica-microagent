@@ -1,0 +1,50 @@
+All 3 domains have been saved. Here is a complete summary of the final results:
+
+---
+
+## Common Class Identification & Assignment — Complete Summary
+
+### Common Classes Identified
+
+| Class | Type | Reason |
+|-------|------|--------|
+| `org.mybatis.jpetstore.web.actions.AbstractActionBean` | Utility/Base class | Extended by **all 4** action beans across all 3 domains (AccountActionBean, CartActionBean, CatalogActionBean, OrderActionBean). Provides shared web context handling and messaging infrastructure. |
+| `org.mybatis.jpetstore.service.CatalogService` | Cross-domain Service | Used by **3 action beans** from 3 different domains: `CatalogActionBean` (Catalog), `AccountActionBean` (Account Management — to load product favorites), and `CartActionBean` (Shopping & Order Management — for item lookup and stock checks). |
+
+### Final Domain Clusters (3 domains, with common classes added)
+
+**1. Account Management** (6 classes):
+- `org.mybatis.jpetstore.domain.Account`
+- `org.mybatis.jpetstore.mapper.AccountMapper`
+- `org.mybatis.jpetstore.service.AccountService`
+- `org.mybatis.jpetstore.web.actions.AccountActionBean`
+- ➕ `org.mybatis.jpetstore.web.actions.AbstractActionBean` *(common)*
+- ➕ `org.mybatis.jpetstore.service.CatalogService` *(common — used for product favorites)*
+
+**2. Catalog** (9 classes):
+- `org.mybatis.jpetstore.domain.Category`
+- `org.mybatis.jpetstore.domain.Product`
+- `org.mybatis.jpetstore.domain.Item`
+- `org.mybatis.jpetstore.service.CatalogService`
+- `org.mybatis.jpetstore.web.actions.CatalogActionBean`
+- `org.mybatis.jpetstore.mapper.CategoryMapper`
+- `org.mybatis.jpetstore.mapper.ProductMapper`
+- `org.mybatis.jpetstore.mapper.ItemMapper`
+- ➕ `org.mybatis.jpetstore.web.actions.AbstractActionBean` *(common)*
+
+**3. Shopping and Order Management** (13 classes):
+- `org.mybatis.jpetstore.domain.Cart`
+- `org.mybatis.jpetstore.domain.CartItem`
+- `org.mybatis.jpetstore.web.actions.CartActionBean`
+- `org.mybatis.jpetstore.domain.Order`
+- `org.mybatis.jpetstore.domain.LineItem`
+- `org.mybatis.jpetstore.domain.Sequence`
+- `org.mybatis.jpetstore.service.OrderService`
+- `org.mybatis.jpetstore.web.actions.OrderActionBean`
+- `org.mybatis.jpetstore.mapper.OrderMapper`
+- `org.mybatis.jpetstore.mapper.LineItemMapper`
+- `org.mybatis.jpetstore.mapper.SequenceMapper`
+- ➕ `org.mybatis.jpetstore.web.actions.AbstractActionBean` *(common)*
+- ➕ `org.mybatis.jpetstore.service.CatalogService` *(common — used for item lookup & stock checks)*
+
+**Total: 3 domains saved with 6, 9, and 13 classes respectively.**

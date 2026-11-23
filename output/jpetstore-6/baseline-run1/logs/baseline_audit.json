@@ -1,0 +1,77 @@
+{
+ "etapa": "baseline",
+ "modelo_pedido": "claude-sonnet-4-6",
+ "modelos_que_respondieron": [
+  "claude-sonnet-4-6"
+ ],
+ "herramientas_visibles_init": [],
+ "servidores_mcp": [],
+ "apiKeySource": "none",
+ "claude_code_version": "2.1.330",
+ "peticiones_api": 1,
+ "llamadas_a_herramientas": [],
+ "bloques_thinking": 0,
+ "stop_reason": null,
+ "entrega": {
+  "archivo": "baseline_transcript.jsonl",
+  "peticiones_api": 1,
+  "formas_de_peticion": 1,
+  "legible": true,
+  "system_bloques": [
+   {
+    "caracteres": 62,
+    "sha256": "0d7062851dd7bd7e66d4be4f12ac4951e3d2f587ec408295333a49963bd3f6b7",
+    "es_el_de_la_replica": false,
+    "inicio": "You are a Claude agent, built on Anthropic's Claude Agent SDK."
+   }
+  ],
+  "system_entregado_identico": false,
+  "system_contenido_en_lo_enviado": true,
+  "system_solo_recortado": false,
+  "usuario_entregado_identico": true,
+  "usuario_solo_recortado": false,
+  "usuario_bloques_anadidos_por_claude_code": [
+   {
+    "caracteres": 954,
+    "inicio": "<system-reminder>\n# Environment\nYou have been invoked in the"
+   },
+   {
+    "caracteres": 167,
+    "inicio": "<system-reminder>\nYou are powered by the model named Sonnet "
+   },
+   {
+    "caracteres": 86,
+    "inicio": "<system-reminder>\n<total_tokens>15000000 tokens left</total_"
+   },
+   {
+    "caracteres": 650,
+    "inicio": "<system-reminder>\nAs you answer the user's questions, you ca"
+   },
+   {
+    "caracteres": 65,
+    "inicio": "<system-reminder>\nToday's date is 2026-11-21.\n</system-remin"
+   }
+  ],
+  "contexto_anadido_inesperado": [],
+  "herramientas_en_la_peticion": [],
+  "herramientas_por_forma_de_peticion": [
+   []
+  ],
+  "parametros_de_las_peticiones": [
+   {
+    "model": "claude-sonnet-4-6",
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "disabled"
+    },
+    "temperature": 1,
+    "output_config": {
+     "effort": "high"
+    }
+   }
+  ],
+  "transcripcion": "baseline_transcript.jsonl"
+ },
+ "problemas": [],
+ "observaciones": []
+}

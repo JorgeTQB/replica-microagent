@@ -1,0 +1,20 @@
+{
+  "business_domains": [
+    {
+      "domain_name": "Account Management",
+      "description": "This domain encompasses all functionality related to user identity, authentication, and profile management. It manages the lifecycle of user accounts, including registration (creating new accounts), authentication (signon and signoff), and profile updates. The domain maintains personal information such as contact details, address, and user preferences including language preference, favorite category, and banner display settings. It is responsible for validating user credentials and managing secure access to the application."
+    },
+    {
+      "domain_name": "Catalog",
+      "description": "This domain covers the product catalog and inventory management capabilities of the application. It is responsible for organizing and presenting the store's merchandise in a hierarchical structure of categories, products, and items. It supports browsing by category, viewing product details, viewing specific items with pricing and supplier information, checking item stock availability, and searching for products by keyword. This domain manages the core product data that drives the store's offerings."
+    },
+    {
+      "domain_name": "Shopping Cart",
+      "description": "This domain manages the transient shopping experience prior to order placement. It encapsulates the logic for maintaining a customer's in-progress selection of items, including adding items to the cart, removing items, updating item quantities, and calculating subtotals. The cart represents the customer's intended purchase before it is committed as a formal order. This domain bridges the catalog browsing experience and the order fulfillment process."
+    },
+    {
+      "domain_name": "Order Management",
+      "description": "This domain handles the entire lifecycle of customer orders from placement through fulfillment tracking. It manages the creation of new orders from a customer's cart, persisting order details including shipping and billing addresses, payment information, and line items. It supports retrieving order history for a customer, viewing order details, tracking order status, managing inventory deductions upon order placement, and generating unique order identifiers via a sequence mechanism. This domain represents the transactional core of the e-commerce application."
+    }
+  ]
+}

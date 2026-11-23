@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "microagent": {
+      "command": "C:\\Python314\\python.exe",
+      "args": [
+        "-X",
+        "utf8",
+        "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\tools\\mcp_server.py"
+      ],
+      "env": {
+        "APP_NAME": "jpetstore-6",
+        "RUN_ID": "claude-run12",
+        "MICROAGENT_TOOLS": "get_all_class_hierarchy_complete,get_database_summary,codebase_semantic_search,get_related_class_list,get_class_relation_and_code,search_file",
+        "MICROAGENT_LOG": "C:\\Jorge Quispe Bendezu\\ULima\\Tesis\\Replica de Paper\\replica-claude-code\\output\\jpetstore-6\\claude-run12\\logs\\2_clustering_04_server.jsonl"
+      }
+    }
+  }
+}

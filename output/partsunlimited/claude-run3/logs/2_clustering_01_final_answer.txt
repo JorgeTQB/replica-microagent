@@ -1,0 +1,42 @@
+Based on my thorough analysis, I can now make a clear determination about which classes belong exclusively to the Product Catalog domain:
+
+**Product Catalog Domain Classes:**
+
+1. **Presentation Layer:**
+   - `smpl.ordering.controllers.CatalogController` - The REST controller handling catalog CRUD operations
+
+2. **Domain Objects (Model Layer):**
+   - `smpl.ordering.models.CatalogItem` - The catalog item model with SKU, description, price, inventory, lead time, and validation
+
+3. **Data Layer (Repository Interfaces):**
+   - `smpl.ordering.repositories.CatalogItemsRepository` - Interface for catalog items data access
+
+4. **Data Layer (Mock Implementations):**
+   - `smpl.ordering.repositories.mock.MockCatalogItemsRepository` - In-memory mock implementation of catalog repository
+
+5. **Data Layer (MongoDB Implementations):**
+   - `smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository` - MongoDB implementation of catalog repository
+
+6. **Data Layer (MongoDB Models):**
+   - `smpl.ordering.repositories.mongodb.models.CatalogItem` - MongoDB document model for catalog items (contains the inventory-aware lead time calculation business rule)
+
+**Excluded Classes (shared/cross-domain):**
+- `smpl.ordering.repositories.RepositoryFactory` - Shared factory across all domains
+- `smpl.ordering.repositories.mongodb.MongoOperationsWithRetry` - Shared MongoDB utility used by all MongoDB repositories
+- `smpl.ordering.OrderingInitializer` - Application-level shared class
+- `smpl.ordering.Utility` - Shared utility class
+- `smpl.ordering.TestPath` - Shared test interface
+- `smpl.ordering.repositories.mock.MockQuoteRepository` - Belongs to Quote domain
+
+```json
+{
+  "Product Catalog": [
+    "smpl.ordering.controllers.CatalogController",
+    "smpl.ordering.models.CatalogItem",
+    "smpl.ordering.repositories.CatalogItemsRepository",
+    "smpl.ordering.repositories.mock.MockCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository",
+    "smpl.ordering.repositories.mongodb.models.CatalogItem"
+  ]
+}
+```

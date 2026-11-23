@@ -1,0 +1,3 @@
+# Guardar los bytes tal cual: el contexto, las referencias y los prompts se comparan
+# por SHA-256 y byte a byte (D32, D41), así que git no debe convertir CRLF/LF.
+* -text

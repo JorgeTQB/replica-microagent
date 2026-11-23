@@ -1,0 +1,121 @@
+{
+  "duration_api_ms": 16558,
+  "stop_reason": "end_turn",
+  "session_id": "bbd5945a-9b37-47ed-9116-03edfd3fb0ec",
+  "total_cost_usd": 0.024213,
+  "usage": {
+    "input_tokens": 9,
+    "cache_creation_input_tokens": 1546,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 994,
+    "output_tokens_details": {
+      "thinking_tokens": 755
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1546,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 9,
+        "output_tokens": 994,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 1546,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1546
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-5": {
+      "inputTokens": 9,
+      "outputTokens": 994,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1546,
+      "webSearchRequests": 0,
+      "costUSD": 0.024213,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 755,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1546,
+      "canonicalModel": "claude-sonnet-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.models.Order\": {\n        \"summary\": \"Represents an agreed-upon order of a refrigeration or freezer room, along with catalog items such as shelving and cooling equipment. The class manages order data including orderId (unique identifier), quoteId (reference to associated quote), orderDate, status (OrderStatus enum), and a chronological list of order events (OrderEventInfo). Key methods include: validate() which verifies that quoteId and orderDate fields are present and returns a JSON-formatted error message if validation fails (null otherwise); addEvent() to append new events to the order's event history; standard getters and setters for all fields; and properly implemented equals() and hashCode() methods that compare orders based on all fields (orderId, quoteId, orderDate, status, and events). The default constructor initializes the order with an empty events list and sets the status to OrderStatus.None.\",\n        \"file_path\": \"smpl/ordering/models/Order.java\"\n    }\n}\n```",
+  "ttft_ms": 14070,
+  "type": "result",
+  "duration_ms": 16732,
+  "uuid": "837c138e-34cc-4252-80a4-d5cb9b0f6959",
+  "ttft_stream_ms": 1150,
+  "time_to_request_ms": 168,
+  "first_content_frame_ms": 1150,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-5",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ]
+}

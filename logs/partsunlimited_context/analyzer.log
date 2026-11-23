@@ -1,0 +1,701 @@
+Analyzing Java project at paths:
+  - resources/partsunlimited/src/Backend/OrderService/src/main/java
+Results will be exported to JSON: logs/partsunlimited_context/analyzer_raw_output.json
+DOT file will be generated: logs/partsunlimited_context/diagram.dot
+JPG image will be generated: logs/partsunlimited_context/diagram.jpg
+Collecting user-defined classes...
+Found 53 user-defined classes
+Building class hierarchy and collecting method information...
+Resolving imports...
+Resolved imports for class relationships
+Analyzing class relationships and method calls...
+Analyzing repository relationships with entities...
+Identified standard repository interface: smpl.ordering.repositories.QuoteRepository for smpl.ordering.repositories.mock.MockQuoteRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mock.MockQuoteRepository
+Identified standard repository interface: smpl.ordering.repositories.CatalogItemsRepository for smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository
+Identified standard repository interface: smpl.ordering.repositories.DealersRepository for smpl.ordering.repositories.mongodb.MongoDealersRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mongodb.MongoDealersRepository
+Identified standard repository interface: smpl.ordering.repositories.OrderRepository for smpl.ordering.repositories.mongodb.MongoOrderRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mongodb.MongoOrderRepository
+Identified standard repository interface: smpl.ordering.repositories.ShipmentRepository for smpl.ordering.repositories.mock.MockShipmentRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mock.MockShipmentRepository
+Identified standard repository interface: smpl.ordering.repositories.ShipmentRepository for smpl.ordering.repositories.mongodb.MongoShipmentRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mongodb.MongoShipmentRepository
+Identified standard repository interface: smpl.ordering.repositories.DealersRepository for smpl.ordering.repositories.mock.MockDealersRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mock.MockDealersRepository
+Identified standard repository interface: smpl.ordering.repositories.CatalogItemsRepository for smpl.ordering.repositories.mock.MockCatalogItemsRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mock.MockCatalogItemsRepository
+Identified standard repository interface: smpl.ordering.repositories.QuoteRepository for smpl.ordering.repositories.mongodb.MongoQuoteRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mongodb.MongoQuoteRepository
+Identified standard repository interface: smpl.ordering.repositories.OrderRepository for smpl.ordering.repositories.mock.MockOrderRepository
+Identified as standard repository but couldn't extract entity from generics: smpl.ordering.repositories.mock.MockOrderRepository
+Removed 0 classes (built-in classes, framework classes, and inner classes) from the analysis
+Class Relationships:
+===================
+smpl.ordering.models.CatalogItem:
+  CALLS -> smpl.ordering.Utility
+
+smpl.ordering.repositories.mock.MockQuoteRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.QuoteRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.repositories.CatalogItemsRepository
+  USES -> smpl.ordering.repositories.DealersRepository
+  USES -> smpl.ordering.models.Quote
+  USES -> smpl.ordering.models.DealerInfo
+  CALLS -> smpl.ordering.models.Quote
+  CREATES -> smpl.ordering.models.DealerInfo
+  CREATES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.BadRequestException
+
+smpl.ordering.TestPath:
+  No relationships
+
+smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.CatalogItemsRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.models.CatalogItem
+  CALLS -> smpl.ordering.models.CatalogItem
+  CREATES -> smpl.ordering.models.CatalogItem
+  CREATES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+  USES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+
+smpl.ordering.repositories.mongodb.models.CatalogItem:
+  USES -> smpl.ordering.models.CatalogItem
+  CALLS -> smpl.ordering.models.CatalogItem
+  CREATES -> smpl.ordering.models.CatalogItem
+
+smpl.ordering.repositories.DealersRepository:
+  USES -> smpl.ordering.models.DealerInfo
+
+smpl.ordering.PropertyHelper:
+  No relationships
+
+smpl.ordering.ConflictingRequestException:
+  EXTENDS -> smpl.ordering.BadRequestException
+
+smpl.ordering.repositories.mongodb.MongoDealersRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.DealersRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.models.DealerInfo
+  USES -> smpl.ordering.repositories.mongodb.models.Dealer
+  CALLS -> smpl.ordering.repositories.mongodb.models.Dealer
+  CALLS -> smpl.ordering.models.DealerInfo
+  CREATES -> smpl.ordering.repositories.mongodb.models.Dealer
+  CREATES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+  USES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+
+smpl.ordering.models.ShipmentEventInfo:
+  No relationships
+
+smpl.ordering.repositories.mongodb.MongoOrderRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.OrderRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.repositories.mongodb.models.OrderDetails
+  CALLS -> smpl.ordering.repositories.mongodb.models.OrderDetails
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.Quote
+  CREATES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.BadRequestException
+  CREATES -> smpl.ordering.ConflictingRequestException
+  USES -> smpl.ordering.ConflictingRequestException
+  CALLS -> smpl.ordering.models.Order
+  CREATES -> smpl.ordering.models.Order
+  CREATES -> smpl.ordering.repositories.mongodb.models.OrderDetails
+  USES -> smpl.ordering.models.OrderUpdateInfo
+  CALLS -> smpl.ordering.models.OrderUpdateInfo
+  USES -> smpl.ordering.repositories.QuoteRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+  USES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+
+smpl.ordering.OrderingConfiguration:
+  CALLS -> smpl.ordering.Utility
+  USES -> smpl.ordering.repositories.RepositoryFactory
+  CALLS -> smpl.ordering.repositories.RepositoryFactory
+  USES -> smpl.ordering.OrderingServiceProperties
+  INJECTS -> smpl.ordering.OrderingServiceProperties
+  USES -> smpl.ordering.MongoDBProperties
+  INJECTS -> smpl.ordering.MongoDBProperties
+
+smpl.ordering.repositories.RepositoryFactory:
+  USES -> smpl.ordering.repositories.CatalogItemsRepository
+  USES -> smpl.ordering.repositories.DealersRepository
+  USES -> smpl.ordering.repositories.OrderRepository
+  USES -> smpl.ordering.repositories.QuoteRepository
+  USES -> smpl.ordering.repositories.ShipmentRepository
+  CALLS -> smpl.ordering.OrderingConfiguration
+  CREATES -> smpl.ordering.repositories.mock.MockCatalogItemsRepository
+  USES -> smpl.ordering.repositories.mock.MockCatalogItemsRepository
+  CREATES -> smpl.ordering.repositories.mock.MockDealersRepository
+  USES -> smpl.ordering.repositories.mock.MockDealersRepository
+  CREATES -> smpl.ordering.repositories.mock.MockQuoteRepository
+  USES -> smpl.ordering.repositories.mock.MockQuoteRepository
+  CREATES -> smpl.ordering.repositories.mock.MockOrderRepository
+  USES -> smpl.ordering.repositories.mock.MockOrderRepository
+  CREATES -> smpl.ordering.repositories.mock.MockShipmentRepository
+  USES -> smpl.ordering.repositories.mock.MockShipmentRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository
+  USES -> smpl.ordering.repositories.mongodb.MongoCatalogItemsRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoDealersRepository
+  USES -> smpl.ordering.repositories.mongodb.MongoDealersRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoQuoteRepository
+  USES -> smpl.ordering.repositories.mongodb.MongoQuoteRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoOrderRepository
+  USES -> smpl.ordering.repositories.mongodb.MongoOrderRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoShipmentRepository
+  USES -> smpl.ordering.repositories.mongodb.MongoShipmentRepository
+
+smpl.ordering.controllers.CatalogController:
+  CALLS -> smpl.ordering.Utility
+  USES -> smpl.ordering.models.CatalogItem
+  CALLS -> smpl.ordering.models.CatalogItem
+  CALLS -> smpl.ordering.OrderingInitializer
+  USES -> smpl.ordering.repositories.CatalogItemsRepository
+  CALLS -> smpl.ordering.repositories.RepositoryFactory
+
+smpl.ordering.repositories.ShipmentRepository:
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.ShipmentRecord
+  USES -> smpl.ordering.models.ShipmentEventInfo
+
+smpl.ordering.repositories.mongodb.models.QuoteDetails:
+  USES -> smpl.ordering.models.QuoteItemInfo
+  USES -> smpl.ordering.models.Quote
+  CALLS -> smpl.ordering.models.Quote
+  CREATES -> smpl.ordering.models.Quote
+
+smpl.ordering.PostgresqlProperties:
+  No relationships
+
+smpl.ordering.Utility:
+  CALLS -> smpl.ordering.OrderingConfiguration
+
+smpl.ordering.controllers.PingController:
+  USES -> smpl.ordering.OrderingServiceProperties
+  INJECTS -> smpl.ordering.OrderingServiceProperties
+  CALLS -> smpl.ordering.Utility
+  CALLS -> smpl.ordering.PropertyHelper
+
+smpl.ordering.MongoDBProperties:
+  No relationships
+
+smpl.ordering.SimpleCORSFilter:
+  No relationships
+
+smpl.ordering.controllers.OrderController:
+  CALLS -> smpl.ordering.Utility
+  USES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.Quote
+  CALLS -> smpl.ordering.OrderingInitializer
+  CALLS -> smpl.ordering.models.Order
+  USES -> smpl.ordering.models.OrderEventInfo
+  CALLS -> smpl.ordering.models.OrderEventInfo
+  USES -> smpl.ordering.models.OrderUpdateInfo
+  CALLS -> smpl.ordering.models.OrderUpdateInfo
+  USES -> smpl.ordering.repositories.QuoteRepository
+  CALLS -> smpl.ordering.repositories.RepositoryFactory
+  USES -> smpl.ordering.repositories.OrderRepository
+
+smpl.ordering.models.QuoteItemInfo:
+  No relationships
+
+smpl.ordering.repositories.mock.MockShipmentRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.ShipmentRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.repositories.OrderRepository
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.ShipmentRecord
+  USES -> smpl.ordering.models.Order
+  CALLS -> smpl.ordering.models.Order
+  CREATES -> smpl.ordering.models.ShipmentRecord
+  CALLS -> smpl.ordering.models.ShipmentRecord
+  CREATES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.models.ShipmentEventInfo
+  CREATES -> smpl.ordering.models.ShipmentEventInfo
+  CALLS -> smpl.ordering.models.ShipmentEventInfo
+
+smpl.ordering.AppInsightsFilter:
+  CALLS -> smpl.ordering.Utility
+
+smpl.ordering.repositories.mongodb.MongoShipmentRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.ShipmentRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.repositories.mongodb.models.ShipmentDetails
+  USES -> smpl.ordering.models.ShipmentRecord
+  CALLS -> smpl.ordering.repositories.mongodb.models.ShipmentDetails
+  CALLS -> smpl.ordering.models.ShipmentRecord
+  CREATES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.BadRequestException
+  CREATES -> smpl.ordering.ConflictingRequestException
+  USES -> smpl.ordering.ConflictingRequestException
+  CREATES -> smpl.ordering.repositories.mongodb.models.ShipmentDetails
+  CREATES -> smpl.ordering.models.ShipmentRecord
+  USES -> smpl.ordering.models.ShipmentEventInfo
+  USES -> smpl.ordering.repositories.OrderRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+  USES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+
+smpl.ordering.repositories.mongodb.models.OrderDetails:
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.OrderEventInfo
+  USES -> smpl.ordering.models.Order
+  CALLS -> smpl.ordering.models.Order
+  CREATES -> smpl.ordering.models.Order
+
+smpl.ordering.models.Order:
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.OrderEventInfo
+  CALLS -> smpl.ordering.Utility
+
+smpl.ordering.repositories.mongodb.models.Dealer:
+  USES -> smpl.ordering.models.DealerInfo
+  CALLS -> smpl.ordering.models.DealerInfo
+  CREATES -> smpl.ordering.models.DealerInfo
+
+smpl.ordering.models.Delivery:
+  USES -> smpl.ordering.models.Quote
+  USES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.models.ShipmentRecord
+
+smpl.ordering.repositories.mongodb.MongoOperationsWithRetry:
+  CALLS -> smpl.ordering.Utility
+
+smpl.ordering.BadRequestException:
+  No relationships
+
+smpl.ordering.controllers.QuoteController:
+  CALLS -> smpl.ordering.Utility
+  USES -> smpl.ordering.models.Quote
+  CALLS -> smpl.ordering.models.Quote
+  CALLS -> smpl.ordering.OrderingInitializer
+  USES -> smpl.ordering.repositories.QuoteRepository
+  CALLS -> smpl.ordering.repositories.RepositoryFactory
+
+smpl.ordering.models.ShipmentRecord:
+  USES -> smpl.ordering.models.ShipmentEventInfo
+  CREATES -> smpl.ordering.models.ShipmentEventInfo
+  USES -> smpl.ordering.models.DeliveryAddress
+  USES -> smpl.ordering.models.PhoneInfo
+
+smpl.ordering.controllers.DealerController:
+  CALLS -> smpl.ordering.Utility
+  USES -> smpl.ordering.models.DealerInfo
+  CALLS -> smpl.ordering.models.DealerInfo
+  CALLS -> smpl.ordering.OrderingInitializer
+  USES -> smpl.ordering.repositories.DealersRepository
+  CALLS -> smpl.ordering.repositories.RepositoryFactory
+
+smpl.ordering.repositories.OrderRepository:
+  USES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.OrderUpdateInfo
+
+smpl.ordering.repositories.QuoteRepository:
+  USES -> smpl.ordering.models.Quote
+
+smpl.ordering.controllers.ShipmentController:
+  USES -> smpl.ordering.models.OrderStatus
+  CALLS -> smpl.ordering.Utility
+  USES -> smpl.ordering.models.ShipmentRecord
+  USES -> smpl.ordering.models.Delivery
+  USES -> smpl.ordering.repositories.OrderRepository
+  USES -> smpl.ordering.repositories.QuoteRepository
+  CREATES -> smpl.ordering.models.Delivery
+  CALLS -> smpl.ordering.models.Delivery
+  USES -> smpl.ordering.models.Order
+  CALLS -> smpl.ordering.repositories.OrderRepository
+  CALLS -> smpl.ordering.repositories.mock.MockOrderRepository
+  CALLS -> smpl.ordering.repositories.mongodb.MongoOrderRepository
+  CALLS -> smpl.ordering.models.ShipmentRecord
+  USES -> smpl.ordering.models.Quote
+  CALLS -> smpl.ordering.repositories.QuoteRepository
+  CALLS -> smpl.ordering.repositories.mock.MockQuoteRepository
+  CALLS -> smpl.ordering.repositories.mongodb.MongoQuoteRepository
+  CALLS -> smpl.ordering.models.Order
+  CALLS -> smpl.ordering.OrderingInitializer
+  USES -> smpl.ordering.models.ShipmentEventInfo
+  CALLS -> smpl.ordering.models.ShipmentEventInfo
+  USES -> smpl.ordering.repositories.ShipmentRepository
+  CALLS -> smpl.ordering.repositories.RepositoryFactory
+
+smpl.ordering.models.OrderStatus:
+  No relationships
+
+smpl.ordering.models.PhoneInfo:
+  No relationships
+
+smpl.ordering.repositories.mock.MockDealersRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.DealersRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.models.DealerInfo
+  CREATES -> smpl.ordering.models.DealerInfo
+  CALLS -> smpl.ordering.models.DealerInfo
+
+smpl.ordering.models.OrderEventInfo:
+  No relationships
+
+smpl.ordering.OrderingInitializer:
+  No relationships
+
+smpl.ordering.models.DeliveryAddress:
+  No relationships
+
+smpl.ordering.repositories.mongodb.models.ShipmentDetails:
+  USES -> smpl.ordering.models.ShipmentEventInfo
+  USES -> smpl.ordering.models.DeliveryAddress
+  USES -> smpl.ordering.models.PhoneInfo
+  USES -> smpl.ordering.models.ShipmentRecord
+  CALLS -> smpl.ordering.models.ShipmentRecord
+  CREATES -> smpl.ordering.models.ShipmentRecord
+
+smpl.ordering.repositories.mock.MockCatalogItemsRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.CatalogItemsRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  CREATES -> smpl.ordering.models.CatalogItem
+  USES -> smpl.ordering.models.CatalogItem
+  CALLS -> smpl.ordering.models.CatalogItem
+
+smpl.ordering.repositories.mongodb.MongoQuoteRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.QuoteRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.models.Quote
+  USES -> smpl.ordering.repositories.mongodb.models.QuoteDetails
+  CALLS -> smpl.ordering.repositories.mongodb.models.QuoteDetails
+  CREATES -> smpl.ordering.models.Quote
+  USES -> smpl.ordering.models.DealerInfo
+  CALLS -> smpl.ordering.models.Quote
+  CREATES -> smpl.ordering.models.DealerInfo
+  CREATES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.BadRequestException
+  CREATES -> smpl.ordering.repositories.mongodb.models.QuoteDetails
+  USES -> smpl.ordering.repositories.DealersRepository
+  CREATES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+  USES -> smpl.ordering.repositories.mongodb.MongoOperationsWithRetry
+
+smpl.ordering.models.OrderUpdateInfo:
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.OrderEventInfo
+  CREATES -> smpl.ordering.models.OrderEventInfo
+
+smpl.ordering.models.DealerInfo:
+  CALLS -> smpl.ordering.Utility
+
+smpl.ordering.repositories.mock.MockOrderRepository:
+  IMPLEMENTS -> smpl.ordering.repositories.OrderRepository
+  IMPLEMENTS -> smpl.ordering.TestPath
+  USES -> smpl.ordering.repositories.QuoteRepository
+  USES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.models.OrderStatus
+  USES -> smpl.ordering.models.Quote
+  CALLS -> smpl.ordering.models.Quote
+  CREATES -> smpl.ordering.BadRequestException
+  USES -> smpl.ordering.BadRequestException
+  CREATES -> smpl.ordering.ConflictingRequestException
+  USES -> smpl.ordering.ConflictingRequestException
+  CALLS -> smpl.ordering.models.Order
+  CREATES -> smpl.ordering.models.Order
+  USES -> smpl.ordering.models.OrderUpdateInfo
+  CALLS -> smpl.ordering.models.OrderUpdateInfo
+
+smpl.ordering.models.Quote:
+  USES -> smpl.ordering.models.QuoteItemInfo
+  CALLS -> smpl.ordering.Utility
+  CREATES -> smpl.ordering.models.QuoteItemInfo
+
+smpl.ordering.repositories.CatalogItemsRepository:
+  USES -> smpl.ordering.models.CatalogItem
+
+smpl.ordering.OrderingServiceProperties:
+  No relationships
+
+Relationships exported to: logs/partsunlimited_context/analyzer_raw_output.json
+DOT file exported to: logs/partsunlimited_context/diagram.dot
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogItem--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Utility--OrderingConfiguration' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderingConfiguration--Reposit' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderingConfiguration--Orderin' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderingConfiguration--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderingConfiguration--MongoDB' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MockDealers' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MockQuoteRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MongoCatalo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MongoQuoteR' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MockShipmen' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MockCatalog' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--DealersRepo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--OrderReposi' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MongoDealer' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MockOrderRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--QuoteReposi' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MongoShipme' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--MongoOrderR' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--OrderingCon' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--ShipmentRep' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'RepositoryFactory--CatalogItem' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockDealersRepository--DealerI' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockDealersRepository--TestPat' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockDealersRepository--Dealers' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealerInfo--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealersRepository--DealerInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--DealerInf' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--QuoteRepo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--TestPath' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--BadReques' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--DealersRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockQuoteRepository--CatalogIt' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteRepository--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Quote--QuoteItemInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Quote--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogItemsRepository--Catalo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoCatalogItemsRepository--C' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoCatalogItemsRepository--T' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoCatalogItemsRepository--M' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoCatalogItemsRepository--C' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOperationsWithRetry--Util' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--DealerIn' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--QuoteRep' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--TestPath' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--MongoOpe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--BadReque' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--QuoteDet' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoQuoteRepository--DealersR' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteDetails--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteDetails--QuoteItemInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--TestPa' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--Shipme' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--BadReq' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--Shipme' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--Shipme' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--OrderR' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockShipmentRepository--OrderS' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentRepository--ShipmentEv' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentRepository--ShipmentRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentRepository--OrderStatu' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentRecord--DeliveryAddres' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentRecord--ShipmentEventI' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentRecord--PhoneInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Order--OrderEventInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Order--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Order--OrderStatus' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderRepository--OrderUpdateIn' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderRepository--OrderStatus' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderUpdateInfo--OrderEventInf' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderUpdateInfo--OrderStatus' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockCatalogItemsRepository--Ca' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockCatalogItemsRepository--Te' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockCatalogItemsRepository--Ca' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoDealersRepository--Dealer' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoDealersRepository--TestPa' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoDealersRepository--MongoO' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoDealersRepository--Dealer' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoDealersRepository--Dealer' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Dealer--DealerInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--Conflicti' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--QuoteRepo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--TestPath' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--BadReques' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--OrderUpda' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--OrderRepo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MockOrderRepository--OrderStat' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ConflictingRequestException--B' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Confl' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--TestP' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Shipm' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Shipm' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Mongo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--BadRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Shipm' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Shipm' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoShipmentRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentDetails--DeliveryAddre' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentDetails--ShipmentEvent' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentDetails--ShipmentRecor' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentDetails--PhoneInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--Conflict' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--QuoteRep' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--TestPath' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--MongoOpe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--BadReque' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--OrderUpd' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--OrderDet' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--OrderRep' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'MongoOrderRepository--OrderSta' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderDetails--OrderEventInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderDetails--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderDetails--OrderStatus' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogController--CatalogItem' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogController--OrderingIni' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogController--RepositoryF' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogController--CatalogItem' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'CatalogController--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'PingController--PropertyHelper' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'PingController--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'PingController--OrderingServic' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--QuoteReposito' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--OrderEventInf' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--OrderingIniti' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--RepositoryFac' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--OrderUpdateIn' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--OrderReposito' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'OrderController--OrderStatus' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'AppInsightsFilter--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Delivery--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Delivery--ShipmentRecord' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'Delivery--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteController--QuoteReposito' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteController--OrderingIniti' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteController--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteController--RepositoryFac' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'QuoteController--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealerController--DealerInfo' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealerController--OrderingInit' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealerController--RepositoryFa' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealerController--DealersRepos' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'DealerController--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--MockQuoteR' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--Delivery' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--OrderingIn' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--MongoQuote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--ShipmentRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--OrderRepos' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--MockOrderR' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--QuoteRepos' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--Quote' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--ShipmentEv' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--MongoOrder' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--Repository' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--ShipmentRe' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--Order' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--Utility' -> 'arrowhead' has its default value 'normal'.
+[main] INFO guru.nidi.graphviz.model.Serializer - INFO  link 'ShipmentController--OrderStatu' -> 'arrowhead' has its default value 'normal'.
+[main] ERROR guru.nidi.graphviz.service.CommandRunner - Problem finding path for dot.exe
+java.nio.file.NotDirectoryException: C:\Users\jquis\.local\bin\claude.exe
+	at java.base/sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:84)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:516)
+	at java.base/java.nio.file.Files.newDirectoryStream(Files.java:445)
+	at java.base/java.nio.file.Files.list(Files.java:3422)
+	at guru.nidi.graphviz.service.CommandRunner.lambda$which$2(CommandRunner.java:87)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1034)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:147)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:588)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:230)
+	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:196)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.anyMatch(ReferencePipeline.java:668)
+	at guru.nidi.graphviz.service.CommandRunner.isExecutableFound(CommandRunner.java:110)
+	at guru.nidi.graphviz.engine.GraphvizCmdLineEngine.getEngineExecutable(GraphvizCmdLineEngine.java:174)
+	at guru.nidi.graphviz.engine.GraphvizCmdLineEngine.doInit(GraphvizCmdLineEngine.java:113)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
+	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
+	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
+	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
+	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
+	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
+	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
+	at org.example.GraphExporter.exportToJpg(GraphExporter.java:74)
+	at org.example.Graph.main(Graph.java:107)
+[main] ERROR guru.nidi.graphviz.service.CommandRunner - Problem finding path for dot.bat
+java.nio.file.NotDirectoryException: C:\Users\jquis\.local\bin\claude.exe
+	at java.base/sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:84)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:516)
+	at java.base/java.nio.file.Files.newDirectoryStream(Files.java:445)
+	at java.base/java.nio.file.Files.list(Files.java:3422)
+	at guru.nidi.graphviz.service.CommandRunner.lambda$which$2(CommandRunner.java:87)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1034)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:147)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:588)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:230)
+	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:196)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.anyMatch(ReferencePipeline.java:668)
+	at guru.nidi.graphviz.service.CommandRunner.isExecutableFound(CommandRunner.java:110)
+	at guru.nidi.graphviz.engine.GraphvizCmdLineEngine.getEngineExecutable(GraphvizCmdLineEngine.java:174)
+	at guru.nidi.graphviz.engine.GraphvizCmdLineEngine.doInit(GraphvizCmdLineEngine.java:113)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
+	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
+	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
+	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
+	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
+	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
+	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
+	at org.example.GraphExporter.exportToJpg(GraphExporter.java:74)
+	at org.example.Graph.main(Graph.java:107)
+[main] ERROR guru.nidi.graphviz.service.CommandRunner - Problem finding path for dot.cmd
+java.nio.file.NotDirectoryException: C:\Users\jquis\.local\bin\claude.exe
+	at java.base/sun.nio.fs.WindowsDirectoryStream.<init>(WindowsDirectoryStream.java:84)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newDirectoryStream(WindowsFileSystemProvider.java:516)
+	at java.base/java.nio.file.Files.newDirectoryStream(Files.java:445)
+	at java.base/java.nio.file.Files.list(Files.java:3422)
+	at guru.nidi.graphviz.service.CommandRunner.lambda$which$2(CommandRunner.java:87)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1034)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:147)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:588)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:230)
+	at java.base/java.util.stream.MatchOps$MatchOp.evaluateSequential(MatchOps.java:196)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.anyMatch(ReferencePipeline.java:668)
+	at guru.nidi.graphviz.service.CommandRunner.isExecutableFound(CommandRunner.java:110)
+	at guru.nidi.graphviz.engine.GraphvizCmdLineEngine.getEngineExecutable(GraphvizCmdLineEngine.java:174)
+	at guru.nidi.graphviz.engine.GraphvizCmdLineEngine.doInit(GraphvizCmdLineEngine.java:113)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.initTask(AbstractGraphvizEngine.java:50)
+	at guru.nidi.graphviz.engine.AbstractGraphvizEngine.init(AbstractGraphvizEngine.java:42)
+	at guru.nidi.graphviz.engine.Graphviz.doUseEngine(Graphviz.java:146)
+	at guru.nidi.graphviz.engine.Graphviz.useEngine(Graphviz.java:138)
+	at guru.nidi.graphviz.engine.Graphviz.useDefaultEngines(Graphviz.java:112)
+	at guru.nidi.graphviz.engine.Graphviz.getEngine(Graphviz.java:152)
+	at guru.nidi.graphviz.engine.Graphviz.doExecute(Graphviz.java:312)
+	at guru.nidi.graphviz.engine.Graphviz.execute(Graphviz.java:292)
+	at guru.nidi.graphviz.engine.Renderer.execute(Renderer.java:139)
+	at guru.nidi.graphviz.engine.Renderer.toFile(Renderer.java:59)
+	at org.example.GraphExporter.exportToJpg(GraphExporter.java:74)
+	at org.example.Graph.main(Graph.java:107)
+[main] INFO guru.nidi.graphviz.engine.AbstractGraphvizEngine - Could not initialize guru.nidi.graphviz.engine.GraphvizCmdLineEngine
+guru.nidi.graphviz.engine.GraphvizException: [dot.exe, dot.bat, dot.cmd] command not found
+[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Starting V8 runtime...
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by com.eclipsesource.v8.LibraryLoader in an unnamed module (file:/C:/Jorge%20Quispe%20Bendezu/ULima/Tesis/Replica%20de%20Paper/replica-claude-code/graph/target/java-class-analyzer.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Started V8 runtime. Initializing javascript...
+[main] INFO guru.nidi.graphviz.engine.V8JavascriptEngine - Initialized javascript.
+Image file exported to: logs/partsunlimited_context/diagram.jpg (width: 4000px)

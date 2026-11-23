@@ -1,0 +1,124 @@
+{
+  "duration_api_ms": 10186,
+  "stop_reason": "end_turn",
+  "session_id": "c7ae93b8-048a-4abc-90d7-1f5697cf1f95",
+  "total_cost_usd": 0.030057,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3441,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 627,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3441,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 627,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 3441,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3441
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 2,
+      "outputTokens": 627,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 3441,
+      "webSearchRequests": 0,
+      "costUSD": 0.030057,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 3441,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\n    \"smpl.ordering.controllers.ShipmentController\": {\n        \"summary\": \"A Spring MVC REST controller that handles HTTP requests related to shipment management, mapped to the '/shipments' base URL. It acts as the web layer for shipment operations, delegating data persistence to repository interfaces obtained via a RepositoryFactory.\\n\\n**Key Methods:**\\n- `getShipments(OrderStatus status)` [GET /shipments]: Retrieves a list of all shipment records, optionally filtered by an `OrderStatus` query parameter. Returns 404 if none are found.\\n- `getDeliveries()` [GET /shipments/deliveries]: Retrieves all shipments with a `DeliveryConfirmed` status and enriches each with its associated `Order` and `Quote` data, returning a list of `Delivery` objects.\\n- `getShipment(String id)` [GET /shipments/{id}]: Retrieves a single shipment record by its corresponding order ID. Returns 404 if not found.\\n- `createShipmentRecord(ShipmentRecord info)` [POST /shipments]: Creates a new shipment record after validating it and checking for duplicates. On success, returns HTTP 201 with a `Location` header pointing to the new resource. Returns 409 (CONFLICT) if a record for the order already exists.\\n- `updateShipment(String id, ShipmentRecord record)` [PUT /shipments/{id}]: Updates an existing shipment record. Validates the record and ensures the path ID matches the record's order ID. Returns 400 for mismatched or invalid data, 404 if not found.\\n- `addEvent(String id, ShipmentEventInfo event)` [POST /shipments/{id}/events]: Appends a new shipment event (e.g., a status update) to an existing shipment record, automatically stamping it with the current date.\\n- `deleteShipment(String orderId)` [DELETE /shipments/{orderId}]: Removes a shipment record by order ID. Returns 204 (NO_CONTENT) on success, 404 if not found.\\n\\n**Other Important Information:**\\n- Uses `TelemetryClient` from Azure Application Insights to track exceptions for observability.\\n- Relies on three repositories (`ShipmentRepository`, `OrderRepository`, `QuoteRepository`) accessed through `RepositoryFactory`, promoting loose coupling.\\n- Input validation is performed by calling `.validate()` on request body objects (`ShipmentRecord`, `ShipmentEventInfo`) before processing.\",\n        \"file_path\": \"smpl/ordering/controllers/ShipmentController.java\"\n    }\n}\n```",
+  "ttft_ms": 10851,
+  "type": "result",
+  "duration_ms": 10884,
+  "uuid": "9f22acf7-8126-473c-8830-70f15993908f",
+  "ttft_stream_ms": 1649,
+  "time_to_request_ms": 699,
+  "first_content_frame_ms": 1650,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-06T07:51:03.209Z",
+  "_exit_code": 0,
+  "_stderr": "",
+  "_cmd": [
+    "-p",
+    "--model",
+    "claude-sonnet-4-6",
+    "--system-prompt",
+    "",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--max-turns",
+    "1",
+    "--output-format",
+    "json"
+  ],
+  "_env": {
+    "MAX_THINKING_TOKENS": "0"
+  }
+}

@@ -1,0 +1,29 @@
+All 3 domains have been saved. Here is a complete summary of the final results:
+
+---
+
+## ✅ Common Class Identification and Assignment Complete
+
+### Common Classes Identified:
+
+| Common Class | Reason | Assigned Domains |
+|---|---|---|
+| `AbstractActionBean` | Base utility class extended by ALL action beans across all domains | Account Management, Catalog, Shopping Cart & Order Management |
+| `CatalogService` | Used by `AccountActionBean` (Account Mgmt), `CartActionBean` (Cart & Order), `CatalogActionBean` (Catalog) | Account Management, Catalog, Shopping Cart & Order Management |
+| `Item` | Catalog entity used by `Cart`, `CartItem`, `LineItem`, `OrderService` in Cart & Order domain | Catalog, Shopping Cart & Order Management |
+| `Account` | Account entity used by `Order.initOrder()` and `OrderActionBean` in Cart & Order domain | Account Management, Shopping Cart & Order Management |
+| `Product` | Catalog entity used by `AccountActionBean.myList` (Account Mgmt) and CatalogService | Account Management, Catalog |
+
+### Final Domain Assignments:
+
+**Account Management (7 classes):**
+- Original: `Account`, `AccountService`, `AccountMapper`, `AccountActionBean`
+- Added common: `AbstractActionBean`, `CatalogService`, `Product`
+
+**Catalog (9 classes):**
+- Original: `Category`, `Product`, `Item`, `CatalogService`, `CategoryMapper`, `ProductMapper`, `ItemMapper`, `CatalogActionBean`
+- Added common: `AbstractActionBean`
+
+**Shopping Cart and Order Management (16 classes):**
+- Original: `Cart`, `CartItem`, `CartActionBean`, `Order`, `LineItem`, `Sequence`, `OrderService`, `OrderMapper`, `LineItemMapper`, `SequenceMapper`, `OrderActionBean`
+- Added common: `AbstractActionBean`, `CatalogService`, `Item`, `Account`, `Product`

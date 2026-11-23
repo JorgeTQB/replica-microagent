@@ -1,0 +1,11 @@
+{
+  "Quote": [
+    "smpl.ordering.controllers.QuoteController",
+    "smpl.ordering.models.Quote",
+    "smpl.ordering.models.QuoteItemInfo",
+    "smpl.ordering.repositories.QuoteRepository",
+    "smpl.ordering.repositories.mock.MockQuoteRepository",
+    "smpl.ordering.repositories.mongodb.MongoQuoteRepository",
+    "smpl.ordering.repositories.mongodb.models.QuoteDetails"
+  ]
+}
